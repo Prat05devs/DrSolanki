@@ -1,6 +1,6 @@
 import Footer from "@/components/global/Footer";
 import Link from "next/link";
-import { ArrowRight, Person, ChildCare, Science, PrecisionManufacturing, Spa, Verified, MeetingRoom } from "lucide-react";
+import { ArrowRight, Person, ChildCare, Science, PrecisionManufacturing, Sparkles, Verified, MeetingRoom } from "lucide-react";
 
 export default function ExpertisePage() {
   const expertise = [
@@ -35,7 +35,7 @@ export default function ExpertisePage() {
     {
       title: "Aesthetic Gynecology",
       description: "Non-surgical aesthetic treatments using advanced laser technology. Restore confidence and enhance wellness.",
-      icon: Spa,
+      icon: Sparkles,
       link: "/expertise/aesthetic-gynecology",
       color: "from-[#8FA392] to-[#6B8E7A]"
     },
