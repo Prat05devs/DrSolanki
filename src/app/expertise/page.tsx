@@ -1,6 +1,6 @@
 import Footer from "@/components/global/Footer";
 import Link from "next/link";
-import { ArrowRight, Person, ChildCare, FlaskConical, Bot, Sparkles, Verified, MeetingRoom } from "lucide-react";
+import { ArrowRight, Person, Baby, FlaskConical, Bot, Sparkles, Verified, MeetingRoom } from "lucide-react";
 
 export default function ExpertisePage() {
   const expertise = [
@@ -14,7 +14,7 @@ export default function ExpertisePage() {
     {
       title: "Uterus Transplant",
       description: "Advanced reproductive options for absolute uterine factor infertility. Pioneering work in uterus transplantation.",
-      icon: ChildCare,
+      icon: Baby,
       link: "/expertise/uterus-transplant",
       color: "from-[#f4c025] to-[#dba915]"
     },
