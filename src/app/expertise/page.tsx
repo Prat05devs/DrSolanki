@@ -1,6 +1,6 @@
 import Footer from "@/components/global/Footer";
 import Link from "next/link";
-import { ArrowRight, Person, ChildCare, FlaskConical, PrecisionManufacturing, Sparkles, Verified, MeetingRoom } from "lucide-react";
+import { ArrowRight, Person, ChildCare, FlaskConical, Bot, Sparkles, Verified, MeetingRoom } from "lucide-react";
 
 export default function ExpertisePage() {
   const expertise = [
@@ -28,7 +28,7 @@ export default function ExpertisePage() {
     {
       title: "Robotic Surgery",
       description: "Da Vinci Robotic System for precision procedures. Minimally invasive surgery with faster recovery.",
-      icon: PrecisionManufacturing,
+      icon: Bot,
       link: "/expertise/robotic-surgery",
       color: "from-[#df4320] to-[#b93518]"
     },
