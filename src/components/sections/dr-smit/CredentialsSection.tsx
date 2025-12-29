@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Stethoscope, ActivitySquare, Microscope, GraduationCap, BookOpen } from "lucide-react";
+import { Stethoscope, Activity, Search, GraduationCap, BookOpen } from "lucide-react";
 
 export default function CredentialsSection() {
   const ref = useRef(null);
@@ -22,7 +22,7 @@ export default function CredentialsSection() {
       title: "Fellowship in Da Vinci Robotic Surgery",
       institution: "International Training Program",
       description: "Advanced certification in minimally invasive robotic procedures",
-      icon: ActivitySquare,
+      icon: Activity,
       color: "from-[#df4320] to-[#b93518]"
     },
     {
@@ -30,7 +30,7 @@ export default function CredentialsSection() {
       title: "Fellowship in Reproductive Medicine",
       institution: "Leading Fertility Institute",
       description: "Specialized training in IVF, IUI, and advanced fertility techniques",
-      icon: Microscope,
+      icon: Search,
       color: "from-[#8DA399] to-[#6B8E7A]"
     },
     {

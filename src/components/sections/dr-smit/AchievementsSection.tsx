@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { BookOpen, Microscope, Award, GraduationCap } from "lucide-react";
+import { BookOpen, Search, Award, GraduationCap } from "lucide-react";
 
 export default function AchievementsSection() {
   const ref = useRef(null);
@@ -20,7 +20,7 @@ export default function AchievementsSection() {
       title: "Conference Presentations",
       count: "50+",
       description: "National and international medical conferences",
-      icon: Microscope,
+      icon: Search,
       color: "from-[#8DA399] to-[#6B8E7A]"
     },
     {

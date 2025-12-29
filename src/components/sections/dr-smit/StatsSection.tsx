@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Star, Users, ActivitySquare, Award } from "lucide-react";
+import { Star, Users, Activity, Award } from "lucide-react";
 
 export default function StatsSection() {
   const ref = useRef(null);
@@ -11,7 +11,7 @@ export default function StatsSection() {
   const stats = [
     { number: "98.5%", label: "Success Rate", icon: Star },
     { number: "15,000+", label: "Patients Treated", icon: Users },
-    { number: "1,000+", label: "Surgeries Performed", icon: ActivitySquare },
+    { number: "1,000+", label: "Surgeries Performed", icon: Activity },
     { number: "15+", label: "Years of Excellence", icon: Award }
   ];
 

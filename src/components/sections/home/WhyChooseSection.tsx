@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { GraduationCap, Award, Users, ActivitySquare } from "lucide-react";
+import { GraduationCap, Award, Users, Activity } from "lucide-react";
 
 export default function WhyChooseSection() {
   const ref = useRef(null);
@@ -28,7 +28,7 @@ export default function WhyChooseSection() {
       color: "from-[#f4c025] to-[#f4c025]/70"
     },
     {
-      icon: ActivitySquare,
+      icon: Activity,
       title: "Advanced Technology",
       description: "State-of-the-art Da Vinci Xi Robotic System for precision and faster recovery",
       color: "from-[#C07766] to-[#8DA399]"

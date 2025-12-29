@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ActivitySquare, Heart, Zap, Target, TrendingUp } from "lucide-react";
+import { Activity, Heart, Zap, Target, TrendingUp } from "lucide-react";
 
 export default function ExpertiseShowcase() {
   const ref = useRef(null);
@@ -12,7 +12,7 @@ export default function ExpertiseShowcase() {
     {
       title: "Robotic Surgery",
       description: "Da Vinci Xi System expertise for complex gynecological procedures",
-      icon: ActivitySquare,
+      icon: Activity,
       color: "from-[#df4320] to-[#b93518]",
       stats: "1,000+ Procedures"
     },

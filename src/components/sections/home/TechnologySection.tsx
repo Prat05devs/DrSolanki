@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ArrowRight, ActivitySquare, Eye, Zap } from "lucide-react";
+import { ArrowRight, Activity, Eye, Zap } from "lucide-react";
 
 export default function TechnologySection() {
   const ref = useRef(null);
@@ -12,7 +12,7 @@ export default function TechnologySection() {
 
   const technologies = [
     {
-      icon: ActivitySquare,
+      icon: Activity,
       title: "Da Vinci Robotic System",
       description: "World's most advanced surgical robot for precision procedures"
     },

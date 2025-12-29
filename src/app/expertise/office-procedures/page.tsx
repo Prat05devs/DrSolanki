@@ -1,6 +1,6 @@
 import Footer from "@/components/global/Footer";
 import Link from "next/link";
-import { ArrowRight, MeetingRoom, Stethoscope } from "lucide-react";
+import { ArrowRight, Building2, Stethoscope } from "lucide-react";
 
 export default function OfficeProceduresPage() {
   return (
