@@ -1,0 +1,71 @@
+"use client";
+
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { Calendar, Phone, Clock, MapPin, Shield, ArrowRight } from "lucide-react";
+
+export default function AppointmentCTA() {
+  return (
+    <section className="min-h-screen flex items-center bg-gradient-to-br from-[#C07766] to-[#8DA399] relative overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#f4c025]/10 rounded-full blur-3xl" />
+      
+      <div className="container mx-auto px-6 max-w-4xl relative z-10">
+        <div className="text-center text-white">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 mb-6">
+              <Calendar className="w-4 h-4" />
+              <span className="text-sm font-semibold">Book Your Consultation</span>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 leading-tight">
+              Ready to Take the Next Step?
+            </h2>
+            
+            <p className="text-xl text-white/90 mb-10 leading-relaxed max-w-2xl mx-auto">
+              Schedule your consultation with Dr. Smit Bharat Solanki and discover how advanced robotic surgery 
+              can provide gentle, effective solutions for your health concerns.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link href="/contact" className="group inline-flex items-center gap-2 px-8 py-4 bg-white hover:bg-gray-50 text-[#C07766] font-bold rounded-xl shadow-2xl hover:shadow-3xl transition-all">
+                <Calendar className="w-5 h-5" />
+                Schedule Appointment
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              
+              <Link href="tel:+919712982198" className="inline-flex items-center gap-2 px-8 py-4 bg-transparent hover:bg-white/10 text-white font-semibold rounded-xl border-2 border-white/30 hover:border-white/50 backdrop-blur-sm transition-all">
+                <Phone className="w-5 h-5" />
+                Call Us: +91 97129 82198
+              </Link>
+            </div>
+
+            <div className="mt-12 pt-8 border-t border-white/20">
+              <div className="flex flex-wrap justify-center items-center gap-8 text-white/80">
+                <div className="flex items-center gap-2">
+                  <Clock className="w-5 h-5" />
+                  <span className="text-sm">Mon-Sat: 9AM-6PM</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-5 h-5" />
+                  <span className="text-sm">Ahmedabad, India</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Shield className="w-5 h-5" />
+                  <span className="text-sm">Insurance Accepted</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+

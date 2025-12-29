@@ -1,0 +1,332 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Navbar Colors */
+  --color-primary: #f4c025;
+  --color-primary-dark: #dba915;
+  --color-cream: #FDFBF7;
+  --color-cream-dark: #F5F2EA;
+  --color-charcoal: #2D2A26;
+  --color-terracotta: #C07766;
+  --color-sage: #8DA399;
+  --color-sage-light: #E8EFED;
+  --color-gold-soft: #D4AF37;
+  --color-border-soft: #E6E2D6;
+  
+  /* Custom Colors */
+  --color-terra-cotta: #cd8570;
+  --color-terra-light: #eac6bc;
+  --color-sage-old: #8ab098;
+  --color-text-dark: #4a4036;
+  --color-text-light: #7c726a;
+  --color-peach: #f4a261;
+  --color-paper: #fdfcf8;
+  --color-soft-gold: #E5C276;
+  
+  /* Laparoscopic Page Colors */
+  --color-primary: #eebd2b;
+  --color-terracotta: #c77d63;
+  --color-background-light: #f8f7f6;
+  --color-background-dark: #221d10;
+
+  /* Technology Care Page Colors */
+  --color-tech-primary: #df4320;
+  --color-tech-bg-light: #FFFBF7;
+  --color-tech-bg-dark: #211411;
+  --color-tech-neutral: #171211;
+  --color-tech-muted: #876a64;
+  --color-tech-sage: #8FA392;
+  --color-tech-gold: #D4AF37;
+
+  /* Support Circle Page Colors */
+  --color-support-primary: #13ec13;
+  --color-warm-accent: #D98E5F;
+  --color-warm-accent-hover: #c57d4f;
+  --color-paper: #FDFBF7;
+  --color-ink: #2D241E;
+  --color-warm-beige: #F5F2EB;
+  --color-soft-cream: #FAF9F5;
+  --color-text-brown: #4A4036;
+  --color-border-warm: #E6DCCA;
+  --color-muted-terracotta: #E07A5F;
+  --color-support-soft-gold: #F2CC8F;
+
+  /* FAQ Page Colors */
+  --color-faq-primary: #ee5b2b;
+  --color-faq-secondary: #8ba898;
+  --color-faq-bg-light: #f8f6f6;
+  --color-faq-bg-dark: #221510;
+  --color-sage-light: #eef3f0;
+  --color-terracotta-light: #fdf1ec;
+
+  /* International Page Colors */
+  --color-intl-primary: #f0c442;
+  --color-soft-gold: #E6C86E;
+  --color-intl-bg-light: #fdfbf7;
+  --color-intl-bg-dark: #221d10;
+  --color-text-main: #181611;
+  --color-text-muted: #897f61;
+  --color-sage-green: #8BA88E;
+  --color-intl-terracotta: #C9886E;
+  --color-cream-accent: #F9F5EB;
+
+  /* Font Families */
+  --font-display: var(--font-lexend);
+  --font-serif: var(--font-playfair);
+
+  /* Border Radius */
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2.5rem;
+  --radius-3xl: 3.5rem;
+  --radius-full: 9999px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fcfbf7;
+  color: #4a4036;
+}
+
+/* Paper Texture */
+.paper-texture {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCcFBShdy-s6mBkkTevodNVPuPbStUFbeoOUvWlhCzoGCjcyaOcfgFgwjd8i4z_IyjbtJvuKVzFQHRqfA4wivaE8KBNfBeQJg5aFIeZU4lpK1za2Jb7I--ho7T-cVDLfigCmwsn_EaqXMnmvbrbiUCkotwgV4Wrdp0fj07aooJspF-MKfOWud708_QfftsMeuII1hPyOgrKd4Gz8YZ41rP485ZfvyfNwc4XKbqARtSCZZxvOO5UKIxSq4k88KuMvBQ7vWQi6-rKkw');
+}
+
+/* Glass Panel */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Soft Card */
+.soft-card {
+  background: #fff;
+  box-shadow: 0 10px 30px -5px rgba(205, 133, 112, 0.1);
+  border: 1px solid rgba(205, 133, 112, 0.1);
+  transition: all 0.4s ease;
+}
+
+.soft-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -5px rgba(205, 133, 112, 0.2);
+  border-color: rgba(205, 133, 112, 0.3);
+}
+
+/* Wave Separators */
+.wave-separator {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wave-separator svg {
+  position: relative;
+  display: block;
+  width: calc(150% + 1.3px);
+  height: 120px;
+}
+
+.wave-top {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+/* Hide Scrollbar */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Material Symbols */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Gold Gradient Text - for Technology pages */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #b8860b 0%, #eebd2b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Soft Shadow - for Technology pages */
+.soft-shadow {
+  box-shadow: 0 4px 20px -2px rgba(238, 189, 43, 0.15);
+}
+
+/* Technology Care Page Scrollbar */
+.tech-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.tech-scrollbar::-webkit-scrollbar-track {
+  background: #FFFBF7;
+}
+.tech-scrollbar::-webkit-scrollbar-thumb {
+  background: #df4320;
+  border-radius: 4px;
+}
+.tech-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #b93518;
+}
+
+/* Hotspot Animations */
+@keyframes pulse-ring {
+  0% { 
+    transform: scale(0.33); 
+  }
+  80%, 100% { 
+    opacity: 0; 
+  }
+}
+
+@keyframes pulse-dot {
+  0% { 
+    transform: scale(0.8); 
+  }
+  50% { 
+    transform: scale(1); 
+  }
+  100% { 
+    transform: scale(0.8); 
+  }
+}
+
+.hotspot-dot {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.hotspot-dot::before {
+  content: '';
+  position: relative;
+  display: block;
+  width: 300%;
+  height: 300%;
+  box-sizing: border-box;
+  margin-left: -100%;
+  margin-top: -100%;
+  border-radius: 45px;
+  background-color: #df4320;
+  animation: pulse-ring 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  opacity: 0.6;
+}
+
+.hotspot-dot::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #df4320;
+  border-radius: 15px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  animation: pulse-dot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
+}
+
+.hotspot:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Support Circle Page Styles */
+.paper-shadow {
+  box-shadow: 0 10px 30px -5px rgba(45, 36, 30, 0.05), 0 4px 10px -2px rgba(45, 36, 30, 0.02);
+}
+
+.handwritten-feel {
+  letter-spacing: -0.01em;
+}
+
+.paper-lines {
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 31px,
+    #e5e7eb 31px,
+    #e5e7eb 32px
+  );
+}
+
+/* FAQ Page Accordion Styles */
+.accordion-content {
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+details[open] .accordion-content {
+  max-height: 500px;
+  opacity: 1;
+}
+
+
+/* International Page Styles */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.shadow-glass {
+  box-shadow: 0 8px 32px 0 rgba(201, 136, 110, 0.1);
+}
+
+.shadow-soft {
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+}
+details[open] .accordion-icon {
+  transform: rotate(180deg);
+}
+
+/* Navbar Dropdown Styles */
+.dropdown-menu {
+  transition: all 0.2s ease-in-out;
+  transform: translateY(10px);
+}
+
+.group:hover .group-hover\:visible {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+details > summary {
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
