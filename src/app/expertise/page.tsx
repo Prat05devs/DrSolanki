@@ -1,6 +1,6 @@
 import Footer from "@/components/global/Footer";
 import Link from "next/link";
-import { ArrowRight, Person, ChildCare, Science, PrecisionManufacturing, Sparkles, Verified, MeetingRoom } from "lucide-react";
+import { ArrowRight, Person, ChildCare, FlaskConical, PrecisionManufacturing, Sparkles, Verified, MeetingRoom } from "lucide-react";
 
 export default function ExpertisePage() {
   const expertise = [
@@ -21,7 +21,7 @@ export default function ExpertisePage() {
     {
       title: "IVF & IUI Services",
       description: "Comprehensive fertility treatments with high success rates. Personalized care for your fertility journey.",
-      icon: Science,
+      icon: FlaskConical,
       link: "/expertise/ivf-iui",
       color: "from-[#8DA399] to-[#6B8E7A]"
     },
