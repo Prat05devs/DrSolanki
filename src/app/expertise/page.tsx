@@ -1,6 +1,6 @@
 import Footer from "@/components/global/Footer";
 import Link from "next/link";
-import { ArrowRight, Person, Baby, FlaskConical, Bot, Sparkles, Verified, MeetingRoom } from "lucide-react";
+import { ArrowRight, Person, Baby, FlaskConical, Bot, Sparkles, CheckCircle2, Building2 } from "lucide-react";
 
 export default function ExpertisePage() {
   const expertise = [
@@ -42,7 +42,7 @@ export default function ExpertisePage() {
     {
       title: "Research & Insights",
       description: "Scientific publications and research insights. Evidence-based care backed by peer-reviewed studies.",
-      icon: Verified,
+      icon: CheckCircle2,
       link: "/research-insights",
       color: "from-[#C07766] to-[#8DA399]"
     }
