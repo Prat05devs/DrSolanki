@@ -1,13 +1,13 @@
 import Footer from "@/components/global/Footer";
 import Link from "next/link";
-import { ArrowRight, Person, Baby, FlaskConical, Bot, Sparkles, CheckCircle2, Building2 } from "lucide-react";
+import { ArrowRight, PersonStanding, Baby, FlaskConical, Bot, Sparkles, CheckCircle2, Building2 } from "lucide-react";
 
 export default function ExpertisePage() {
   const expertise = [
     {
       title: "Meet Dr. Smit Bharat Solanki",
       description: "Learn about Dr. Smit Bharat Solanki's qualifications, philosophy, and commitment to excellence in women's healthcare.",
-      icon: Person,
+      icon: PersonStanding,
       link: "/expertise/dr-smit",
       color: "from-[#C07766] to-[#8DA399]"
     },
