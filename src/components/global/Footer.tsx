@@ -289,8 +289,11 @@ export default function Footer() {
               Terms &amp; Conditions
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all group-hover:w-full"></span>
             </a>
-            <a className="hover:text-white transition-colors relative group" href="#">
-              Disclaimer
+            <a 
+              href="/sitemap"
+              className="hover:text-white transition-colors relative group"
+            >
+              Sitemap
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all group-hover:w-full"></span>
             </a>
           </div>
