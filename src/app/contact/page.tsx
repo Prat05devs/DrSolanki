@@ -1,6 +1,6 @@
 import Footer from "@/components/global/Footer";
 import Link from "next/link";
-import { hospitals, consultationMessage } from "@/data/siteData";
+import { hospitals, consultationMessage, contactInfo } from "@/data/siteData";
 
 export default function ContactPage() {
   const getIcon = (name: string) => {
@@ -134,7 +134,7 @@ export default function ContactPage() {
                 {consultationMessage.tagline}
               </p>
               <p className="text-white/90 text-sm mb-8 leading-relaxed">
-                {consultationMessage.consultationNote || "All consultations require prior appointment booking. Choose your preferred location and timing, and we'll confirm your appointment."}
+                {contactInfo.consultationNote || "All consultations require prior appointment booking. Choose your preferred location and timing, and we'll confirm your appointment."}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a

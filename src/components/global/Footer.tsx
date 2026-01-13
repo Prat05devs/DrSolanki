@@ -6,8 +6,8 @@ export default function Footer() {
     <footer className="bg-[#006D77] text-white border-t border-white/10 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[400px] h-[400px] sm:w-[600px] sm:h-[600px] md:w-[800px] md:h-[800px] bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none opacity-30"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-8 py-10 sm:py-12 md:py-16">
-          <div className="lg:col-span-4 flex flex-col gap-4 sm:gap-6 pr-0 sm:pr-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4 sm:gap-6 lg:gap-6 py-8 sm:py-10 md:py-12">
+          <div className="lg:col-span-4 flex flex-col gap-3 sm:gap-4 pr-0 sm:pr-4">
             <div className="flex flex-col gap-1">
               <h2 className="text-white text-2xl sm:text-3xl font-bold tracking-tight font-[var(--font-playfair)] leading-[1.15] tracking-[-0.01em]">
                 Dr. Smit Bharat Solanki
@@ -52,10 +52,10 @@ export default function Footer() {
             </div>
           </div>
           <div className="lg:col-span-2">
-            <h3 className="text-white font-bold text-lg mb-6 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-0.5 after:bg-[#f4c025]">
+            <h3 className="text-white font-bold text-base sm:text-lg mb-4 sm:mb-5 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-0.5 after:bg-[#f4c025]">
               Quick Links
             </h3>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-2 sm:gap-2.5">
               <li>
                 <Link
                   className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
@@ -136,10 +136,10 @@ export default function Footer() {
             </ul>
           </div>
           <div className="lg:col-span-3">
-            <h3 className="text-white font-bold text-lg mb-6 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-0.5 after:bg-[#f4c025]">
+            <h3 className="text-white font-bold text-base sm:text-lg mb-4 sm:mb-5 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-0.5 after:bg-[#f4c025]">
               Patient Hub
             </h3>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-2 sm:gap-2.5">
               <li>
                 <Link
                   className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
@@ -213,11 +213,11 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="lg:col-span-3 flex flex-col gap-6">
-            <h3 className="text-white font-bold text-lg mb-2 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-0.5 after:bg-[#f4c025]">
+          <div className="lg:col-span-3 flex flex-col gap-4 sm:gap-5">
+            <h3 className="text-white font-bold text-base sm:text-lg mb-2 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-0.5 after:bg-[#f4c025]">
               Connect With Us
             </h3>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-2 sm:gap-2.5">
               <a
                 className="flex items-center gap-3 text-[#edfcf9] hover:text-[#f4c025] transition-colors group"
                 href={`tel:${contactInfo.phone}`}
@@ -271,25 +271,25 @@ export default function Footer() {
         </div>
         
         {/* Interactive Chatbot Feature - Prominently Displayed */}
-        <div className="border-t border-white/10 py-6 sm:py-8">
-          <div className="bg-gradient-to-br from-[#f4c025] via-[#e0b020] to-[#d9a010] rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 relative overflow-hidden shadow-[0_20px_60px_-10px_rgba(244,192,37,0.4)] border-2 border-white/20">
+        <div className="border-t border-white/10 py-4 sm:py-6">
+          <div className="bg-gradient-to-br from-[#f4c025] via-[#e0b020] to-[#d9a010] rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 relative overflow-hidden shadow-[0_20px_60px_-10px_rgba(244,192,37,0.4)] border-2 border-white/20">
             <div className="absolute top-0 right-0 w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 bg-white/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 w-36 h-36 sm:w-56 sm:h-56 md:w-72 md:h-72 bg-white/10 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
             <div className="relative z-10">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
-                <div className="flex flex-col md:flex-row items-center gap-4 sm:gap-6 text-center md:text-left flex-1 w-full">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center shrink-0 border-2 sm:border-4 border-white/30 shadow-lg">
-                    <span className="material-symbols-outlined text-white text-3xl sm:text-4xl md:text-5xl">support_agent</span>
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
+                <div className="flex flex-col md:flex-row items-center gap-3 sm:gap-4 text-center md:text-left flex-1 w-full">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center shrink-0 border-2 sm:border-4 border-white/30 shadow-lg">
+                    <span className="material-symbols-outlined text-white text-2xl sm:text-3xl md:text-4xl">support_agent</span>
                   </div>
                   <div className="max-w-2xl w-full">
                     
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#181611] mb-2 sm:mb-3 leading-[1.15] tracking-[-0.01em] font-[var(--font-playfair)]">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#181611] mb-2 leading-[1.15] tracking-[-0.01em] font-[var(--font-playfair)]">
                       Ask Your Questions Instantly
                     </h2>
-                    <p className="text-[#181611]/90 text-sm sm:text-base md:text-lg lg:text-xl font-medium leading-[1.7] mb-3 sm:mb-4">
+                    <p className="text-[#181611]/90 text-xs sm:text-sm md:text-base font-medium leading-[1.7] mb-2 sm:mb-3">
                       Get instant answers about surgery, recovery, fertility, and more. Our interactive chatbot guides partners and families through common questions—no typing required, just click and explore.
                     </p>
-                    <div className="flex flex-wrap gap-2 sm:gap-3 justify-center md:justify-start mb-3 sm:mb-4">
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2 justify-center md:justify-start mb-2 sm:mb-3">
                       <div className="flex items-center gap-1.5 sm:gap-2 text-[#181611]/80 text-xs sm:text-sm">
                         <span className="material-symbols-outlined text-base sm:text-lg">check_circle</span>
                         <span>Suggested Questions</span>
@@ -307,12 +307,12 @@ export default function Footer() {
                 </div>
                 <Link
                   href="/patient-support/support-circle#ask-your-questions"
-                  className="bg-[#181611] active:bg-[#2D2A26] text-white font-bold text-base sm:text-lg py-3 sm:py-4 px-6 sm:px-8 rounded-lg sm:rounded-xl shadow-xl active:shadow-2xl transition-all duration-300 transform active:-translate-y-1 w-full sm:w-auto flex items-center justify-center gap-2 sm:gap-3 group touch-manipulation"
+                  className="bg-[#181611] active:bg-[#2D2A26] text-white font-bold text-sm sm:text-base py-2.5 sm:py-3 px-5 sm:px-6 rounded-lg shadow-xl active:shadow-2xl transition-all duration-300 transform active:-translate-y-1 w-full sm:w-auto flex items-center justify-center gap-2 group touch-manipulation"
                   scroll={true}
                 >
-                  <span className="material-symbols-outlined text-xl sm:text-2xl group-active:scale-110 transition-transform">chat_bubble</span>
+                  <span className="material-symbols-outlined text-lg sm:text-xl group-active:scale-110 transition-transform">chat_bubble</span>
                   <span className="whitespace-nowrap">Try Interactive Chatbot</span>
-                  <span className="material-symbols-outlined text-lg sm:text-xl group-active:translate-x-1 transition-transform hidden sm:inline">arrow_forward</span>
+                  <span className="material-symbols-outlined text-base sm:text-lg group-active:translate-x-1 transition-transform hidden sm:inline">arrow_forward</span>
                 </Link>
               </div>
             </div>
@@ -320,7 +320,7 @@ export default function Footer() {
         </div>
 
         
-        <div className="border-t border-white/10 py-6 sm:py-8 flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4 text-xs sm:text-sm text-[#faeec8]/80">
+        <div className="border-t border-white/10 py-4 sm:py-5 flex flex-col md:flex-row justify-between items-center gap-2 sm:gap-3 text-xs sm:text-sm text-[#faeec8]/80">
           <p className="text-center md:text-left">© 2024 Dr. Smit Bharat Solanki. All rights reserved.</p>
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
             <a className="hover:text-white active:text-white transition-colors relative group touch-manipulation" href="#">
