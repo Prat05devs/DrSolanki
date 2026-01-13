@@ -38,9 +38,6 @@ export default function TechnologySection() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block px-4 py-2 rounded-full bg-[#8DA399]/10 text-[#8DA399] text-sm font-semibold mb-4">
-              Advanced Technology
-            </span>
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#2D2A26] mb-6">
               Cutting-Edge Surgical Technology
             </h2>

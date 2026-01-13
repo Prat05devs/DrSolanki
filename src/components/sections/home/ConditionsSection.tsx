@@ -34,9 +34,6 @@ export default function ConditionsSection() {
     <section ref={ref} className="min-h-screen flex items-center bg-white">
       <div className="container mx-auto px-6 max-w-7xl w-full py-12">
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 rounded-full bg-[#C07766]/10 text-[#C07766] text-sm font-semibold mb-4">
-            Conditions We Treat
-          </span>
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#2D2A26] mb-4">
             Specialized Care for Complex Conditions
           </h2>
