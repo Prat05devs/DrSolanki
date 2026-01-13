@@ -23,328 +23,191 @@ export default function Navbar() {
 
             {/* 2. Center: Main Navigation */}
             <nav className="hidden xl:flex items-center h-full flex-1 justify-center">
-              <ul className="flex items-center gap-6 h-full">
-                {/* Technology & Care (Mega Menu) */}
+              <ul className="flex items-center gap-1 h-full">
+                {/* About */}
                 <li className="group relative h-full flex items-center">
-                  <button className="flex items-center gap-1.5 text-sm font-medium text-[#2D2A26] hover:text-[#C07766] transition-colors px-2 h-full outline-none">
-                    Technology &amp; Care
-                    <span className="material-symbols-outlined text-[18px] opacity-60 group-hover:rotate-180 transition-transform duration-300">
+                  <button className="flex items-center gap-1.5 text-sm font-medium text-[#2D2A26] hover:text-[#C07766] transition-colors px-4 h-full outline-none">
+                    About
+                    <span className="material-symbols-outlined text-[16px] opacity-60 group-hover:rotate-180 transition-transform duration-300">
                       keyboard_arrow_down
                     </span>
                   </button>
-                  {/* Dropdown */}
-                  <div className="dropdown-menu invisible opacity-0 absolute top-full -left-4 w-72 pt-2 group-hover:visible group-hover:opacity-100 transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                    <div className="bg-[#FDFBF7] border border-[#E6E2D6] rounded-2xl shadow-[0_10px_25px_-5px_rgba(45,42,38,0.1)] p-2 overflow-hidden">
-                      <div className="flex flex-col gap-1">
-                        <Link
-                          href="/technology-care"
-                          className="flex items-start gap-3 p-3 rounded-xl hover:bg-white hover:shadow-sm transition-all group/item"
-                        >
-                          <span className="material-symbols-outlined text-[#8DA399] mt-0.5 group-hover/item:text-[#f4c025] transition-colors">
-                            precision_manufacturing
-                          </span>
-                          <div>
-                            <p className="text-sm font-semibold text-[#2D2A26] group-hover/item:text-[#C07766] transition-colors">
-                              Advanced Technology Overview
-                            </p>
-                            <p className="text-xs text-[#2D2A26]/60 mt-0.5">
-                              State-of-the-art precision care
-                            </p>
-                          </div>
-                        </Link>
-                        <Link
-                          href="/technology-care/hysteroscopy"
-                          className="flex items-start gap-3 p-3 rounded-xl hover:bg-white hover:shadow-sm transition-all group/item"
-                        >
-                          <span className="material-symbols-outlined text-[#8DA399] mt-0.5 group-hover/item:text-[#f4c025] transition-colors">
-                            travel_explore
-                          </span>
-                          <div>
-                            <p className="text-sm font-semibold text-[#2D2A26] group-hover/item:text-[#C07766] transition-colors">
-                              Hysteroscopy
-                            </p>
-                            <p className="text-xs text-[#2D2A26]/60 mt-0.5">
-                              Uterine insights &amp; diagnosis
-                            </p>
-                          </div>
-                        </Link>
-                        <Link
-                          href="/technology-care/laparoscopic"
-                          className="flex items-start gap-3 p-3 rounded-xl hover:bg-white hover:shadow-sm transition-all group/item"
-                        >
-                          <span className="material-symbols-outlined text-[#8DA399] mt-0.5 group-hover/item:text-[#f4c025] transition-colors">
-                            monitor_heart
-                          </span>
-                          <div>
-                            <p className="text-sm font-semibold text-[#2D2A26] group-hover/item:text-[#C07766] transition-colors">
-                              Laparoscopic Procedures
-                            </p>
-                            <p className="text-xs text-[#2D2A26]/60 mt-0.5">
-                              Minimally invasive surgery
-                            </p>
-                          </div>
-                        </Link>
-                      </div>
+                  <div className="dropdown-menu invisible opacity-0 absolute top-full left-0 w-56 pt-2 group-hover:visible group-hover:opacity-100 transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                    <div className="bg-white border border-[#E6E2D6] rounded-lg shadow-xl p-2">
+                      <Link
+                        href="/about"
+                        className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all group/item"
+                      >
+                        <span className="material-symbols-outlined text-[#8DA399] text-lg">person</span>
+                        <span className="text-sm font-medium text-[#2D2A26] group-hover/item:text-[#C07766]">
+                          About Dr. Smit
+                        </span>
+                      </Link>
                     </div>
                   </div>
                 </li>
 
-                {/* Conditions & Solutions */}
+                {/* Services */}
                 <li className="group relative h-full flex items-center">
-                  <button className="flex items-center gap-1.5 text-sm font-medium text-[#2D2A26] hover:text-[#C07766] transition-colors px-2 h-full outline-none">
-                    Conditions &amp; Solutions
-                    <span className="material-symbols-outlined text-[18px] opacity-60 group-hover:rotate-180 transition-transform duration-300">
+                  <button className="flex items-center gap-1.5 text-sm font-medium text-[#2D2A26] hover:text-[#C07766] transition-colors px-4 h-full outline-none">
+                    Services
+                    <span className="material-symbols-outlined text-[16px] opacity-60 group-hover:rotate-180 transition-transform duration-300">
                       keyboard_arrow_down
                     </span>
                   </button>
-                  {/* Dropdown */}
-                  <div className="dropdown-menu invisible opacity-0 absolute top-full -left-12 w-[480px] pt-2 group-hover:visible group-hover:opacity-100 transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                    <div className="bg-[#FDFBF7] border border-[#E6E2D6] rounded-2xl shadow-[0_10px_25px_-5px_rgba(45,42,38,0.1)] p-4 overflow-hidden">
-                      <div className="grid grid-cols-2 gap-2">
-                        <div className="col-span-2 pb-2 mb-2 border-b border-[#E6E2D6]/50">
-                          <span className="text-xs font-bold text-[#C07766] uppercase tracking-wider pl-2">
-                            Common Conditions
-                          </span>
-                        </div>
+                  <div className="dropdown-menu invisible opacity-0 absolute top-full left-0 w-72 pt-2 group-hover:visible group-hover:opacity-100 transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                    <div className="bg-white border border-[#E6E2D6] rounded-lg shadow-xl p-3">
+                      <div className="space-y-1">
                         <Link
-                          href="/conditions/endometriosis"
-                          className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-white hover:shadow-sm transition-all group/item"
+                          href="/fertility"
+                          className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all group/item"
                         >
-                          <div className="w-1.5 h-1.5 rounded-full bg-[#8DA399] group-hover/item:bg-[#f4c025]"></div>
-                          <span className="text-sm text-[#2D2A26] font-medium group-hover/item:text-[#C07766]">
-                            Endometriosis
-                          </span>
+                          <span className="material-symbols-outlined text-[#8DA399] text-lg">science</span>
+                          <div>
+                            <p className="text-sm font-semibold text-[#2D2A26] group-hover/item:text-[#C07766]">Fertility & IVF</p>
+                            <p className="text-xs text-[#2D2A26]/60">IVF, IUI & Fertility Treatments</p>
+                          </div>
                         </Link>
                         <Link
-                          href="/conditions/pcos"
-                          className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-white hover:shadow-sm transition-all group/item"
+                          href="/laparoscopy-robotic-surgery"
+                          className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all group/item"
                         >
-                          <div className="w-1.5 h-1.5 rounded-full bg-[#8DA399] group-hover/item:bg-[#f4c025]"></div>
-                          <span className="text-sm text-[#2D2A26] font-medium group-hover/item:text-[#C07766]">
-                            PCOS
-                          </span>
-                        </Link>
-                        <Link
-                          href="/conditions/fibroids"
-                          className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-white hover:shadow-sm transition-all group/item"
-                        >
-                          <div className="w-1.5 h-1.5 rounded-full bg-[#8DA399] group-hover/item:bg-[#f4c025]"></div>
-                          <span className="text-sm text-[#2D2A26] font-medium group-hover/item:text-[#C07766]">
-                            Fibroids
-                          </span>
-                        </Link>
-                        <div className="col-span-2 mt-2">
-                          <Link
-                            href="/conditions"
-                            className="flex items-center justify-center p-2 rounded-lg bg-[#E8EFED]/50 hover:bg-[#E8EFED] text-xs font-bold text-[#8DA399] hover:text-[#C07766] transition-colors w-full"
-                          >
-                            View All Conditions
-                            <span className="material-symbols-outlined text-[14px] ml-1">
-                              arrow_forward
-                            </span>
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-
-                {/* Our Expertise */}
-                <li className="group relative h-full flex items-center">
-                  <button className="flex items-center gap-1.5 text-sm font-medium text-[#2D2A26] hover:text-[#C07766] transition-colors px-2 h-full outline-none">
-                    Our Expertise
-                    <span className="material-symbols-outlined text-[18px] opacity-60 group-hover:rotate-180 transition-transform duration-300">
-                      keyboard_arrow_down
-                    </span>
-                  </button>
-                  {/* Dropdown */}
-                  <div className="dropdown-menu invisible opacity-0 absolute top-full -left-4 w-64 pt-2 group-hover:visible group-hover:opacity-100 transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                    <div className="bg-[#FDFBF7] border border-[#E6E2D6] rounded-2xl shadow-[0_10px_25px_-5px_rgba(45,42,38,0.1)] p-2 overflow-hidden">
-                      <div className="flex flex-col gap-1">
-                        <Link
-                          href="/expertise/dr-smit"
-                          className="flex items-center gap-3 p-3 rounded-xl hover:bg-white hover:shadow-sm transition-all group/item"
-                        >
-                          <span className="material-symbols-outlined text-[#8DA399] group-hover/item:text-[#f4c025]">
-                            person
-                          </span>
-                          <span className="text-sm font-semibold text-[#2D2A26] group-hover/item:text-[#C07766]">
-                            Meet Dr. Smit Bharat Solanki
-                          </span>
-                        </Link>
-                        <Link
-                          href="/expertise/uterus-transplant"
-                          className="flex items-center gap-3 p-3 rounded-xl hover:bg-white hover:shadow-sm transition-all group/item"
-                        >
-                          <span className="material-symbols-outlined text-[#8DA399] group-hover/item:text-[#f4c025]">
-                            child_care
-                          </span>
-                          <span className="text-sm font-semibold text-[#2D2A26] group-hover/item:text-[#C07766]">
-                            Uterus Transplant
-                          </span>
-                        </Link>
-                        <Link
-                          href="/expertise/ivf-iui"
-                          className="flex items-center gap-3 p-3 rounded-xl hover:bg-white hover:shadow-sm transition-all group/item"
-                        >
-                          <span className="material-symbols-outlined text-[#8DA399] group-hover/item:text-[#f4c025]">
-                            science
-                          </span>
-                          <span className="text-sm font-semibold text-[#2D2A26] group-hover/item:text-[#C07766]">
-                            IVF &amp; IUI Services
-                          </span>
-                        </Link>
-                        <Link
-                          href="/expertise/robotic-surgery"
-                          className="flex items-center gap-3 p-3 rounded-xl hover:bg-white hover:shadow-sm transition-all group/item"
-                        >
-                          <span className="material-symbols-outlined text-[#8DA399] group-hover/item:text-[#f4c025]">
-                            precision_manufacturing
-                          </span>
-                          <span className="text-sm font-semibold text-[#2D2A26] group-hover/item:text-[#C07766]">
-                            Robotic Surgery
-                          </span>
+                          <span className="material-symbols-outlined text-[#8DA399] text-lg">precision_manufacturing</span>
+                          <div>
+                            <p className="text-sm font-semibold text-[#2D2A26] group-hover/item:text-[#C07766]">Laparoscopy & Robotic Surgery</p>
+                            <p className="text-xs text-[#2D2A26]/60">Minimally Invasive Procedures</p>
+                          </div>
                         </Link>
                         <Link
                           href="/expertise/aesthetic-gynecology"
-                          className="flex items-center gap-3 p-3 rounded-xl hover:bg-white hover:shadow-sm transition-all group/item"
+                          className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all group/item"
                         >
-                          <span className="material-symbols-outlined text-[#8DA399] group-hover/item:text-[#f4c025]">
-                            spa
-                          </span>
-                          <span className="text-sm font-semibold text-[#2D2A26] group-hover/item:text-[#C07766]">
-                            Aesthetic Gynecology
-                          </span>
-                        </Link>
-                        <div className="h-px bg-[#E6E2D6] mx-2 my-1"></div>
-                        <Link
-                          href="/research-insights"
-                          className="flex items-center gap-3 p-3 rounded-xl hover:bg-white hover:shadow-sm transition-all group/item"
-                        >
-                          <span className="material-symbols-outlined text-[#8DA399] group-hover/item:text-[#f4c025]">
-                            verified
-                          </span>
-                          <span className="text-sm font-semibold text-[#2D2A26] group-hover/item:text-[#C07766]">
-                            Research &amp; Insights
-                          </span>
+                          <span className="material-symbols-outlined text-[#8DA399] text-lg">spa</span>
+                          <div>
+                            <p className="text-sm font-semibold text-[#2D2A26] group-hover/item:text-[#C07766]">Aesthetic Gynecology</p>
+                            <p className="text-xs text-[#2D2A26]/60">Non-surgical & Surgical Options</p>
+                          </div>
                         </Link>
                         <Link
-                          href="/expertise/office-procedures"
-                          className="flex items-center gap-3 p-3 rounded-xl hover:bg-white hover:shadow-sm transition-all group/item"
+                          href="/urogynecology"
+                          className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all group/item"
                         >
-                          <span className="material-symbols-outlined text-[#8DA399] group-hover/item:text-[#f4c025]">
-                            meeting_room
-                          </span>
-                          <span className="text-sm font-semibold text-[#2D2A26] group-hover/item:text-[#C07766]">
-                            Office Procedures
-                          </span>
+                          <span className="material-symbols-outlined text-[#8DA399] text-lg">healing</span>
+                          <div>
+                            <p className="text-sm font-semibold text-[#2D2A26] group-hover/item:text-[#C07766]">Urogynecology</p>
+                            <p className="text-xs text-[#2D2A26]/60">Pelvic Floor & Urinary Health</p>
+                          </div>
                         </Link>
                       </div>
                     </div>
                   </div>
                 </li>
 
-                {/* Patient Support */}
+                {/* Clinics */}
                 <li className="group relative h-full flex items-center">
-                  <button className="flex items-center gap-1.5 text-sm font-medium text-[#2D2A26] hover:text-[#C07766] transition-colors px-2 h-full outline-none">
-                    Patient Support
-                    <span className="material-symbols-outlined text-[18px] opacity-60 group-hover:rotate-180 transition-transform duration-300">
+                  <button className="flex items-center gap-1.5 text-sm font-medium text-[#2D2A26] hover:text-[#C07766] transition-colors px-4 h-full outline-none">
+                    Clinics
+                    <span className="material-symbols-outlined text-[16px] opacity-60 group-hover:rotate-180 transition-transform duration-300">
                       keyboard_arrow_down
                     </span>
                   </button>
-                  {/* Dropdown */}
-                  <div className="dropdown-menu invisible opacity-0 absolute top-full right-0 w-72 pt-2 group-hover:visible group-hover:opacity-100 transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                    <div className="bg-[#FDFBF7] border border-[#E6E2D6] rounded-2xl shadow-[0_10px_25px_-5px_rgba(45,42,38,0.1)] p-2 overflow-hidden">
-                      <div className="flex flex-col gap-1">
+                  <div className="dropdown-menu invisible opacity-0 absolute top-full left-0 w-64 pt-2 group-hover:visible group-hover:opacity-100 transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                    <div className="bg-white border border-[#E6E2D6] rounded-lg shadow-xl p-3">
+                      <div className="space-y-1">
                         <Link
-                          href="/patient-support/support-circle"
-                          className="block p-3 rounded-xl hover:bg-white hover:shadow-sm transition-all group/item"
+                          href="/clinics"
+                          className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all group/item"
                         >
-                          <div className="flex items-center gap-2 mb-1">
-                            <span className="material-symbols-outlined text-[#8DA399] text-[18px] group-hover/item:text-[#f4c025]">
-                              favorite
-                            </span>
-                            <span className="text-sm font-semibold text-[#2D2A26] group-hover/item:text-[#C07766]">
-                              The Support Circle
-                            </span>
+                          <span className="material-symbols-outlined text-[#8DA399] text-lg">local_hospital</span>
+                          <span className="text-sm font-semibold text-[#2D2A26] group-hover/item:text-[#C07766]">All Clinics</span>
+                        </Link>
+                        <div className="h-px bg-[#E6E2D6] my-2"></div>
+                        <Link
+                          href="/clinics/parul-sevashram"
+                          className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all group/item"
+                        >
+                          <span className="material-symbols-outlined text-[#8DA399] text-lg">favorite</span>
+                          <div>
+                            <p className="text-sm font-medium text-[#2D2A26] group-hover/item:text-[#C07766]">Parul Sevashram Hospital</p>
+                            <p className="text-xs text-[#2D2A26]/60">Vadodara • IVF Services</p>
                           </div>
-                          <p className="text-xs text-[#2D2A26]/60 pl-6">
-                            For husbands &amp; parents
-                          </p>
                         </Link>
                         <Link
-                          href="/patient-support/stories"
-                          className="block p-3 rounded-xl hover:bg-white hover:shadow-sm transition-all group/item"
+                          href="/clinics/parth"
+                          className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all group/item"
                         >
-                          <div className="flex items-center gap-2 mb-1">
-                            <span className="material-symbols-outlined text-[#8DA399] text-[18px] group-hover/item:text-[#f4c025]">
-                              volunteer_activism
-                            </span>
-                            <span className="text-sm font-semibold text-[#2D2A26] group-hover/item:text-[#C07766]">
-                              Stories of Hope
-                            </span>
+                          <span className="material-symbols-outlined text-[#8DA399] text-lg">precision_manufacturing</span>
+                          <div>
+                            <p className="text-sm font-medium text-[#2D2A26] group-hover/item:text-[#C07766]">Parth Hospital</p>
+                            <p className="text-xs text-[#2D2A26]/60">Ahmedabad • Robotic Surgery</p>
                           </div>
-                          <p className="text-xs text-[#2D2A26]/60 pl-6">Patient journeys</p>
-                        </Link>
-                        <div className="h-px bg-[#E6E2D6] mx-2 my-1"></div>
-                        <Link
-                          href="/patient-support/education"
-                          className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white hover:text-[#C07766] transition-colors"
-                        >
-                          <span className="text-sm text-[#2D2A26] font-medium hover:text-[#C07766]">
-                            Education Hub
-                          </span>
                         </Link>
                         <Link
-                          href="/patient-support/faqs"
-                          className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white hover:text-[#C07766] transition-colors"
+                          href="/clinics/satyam"
+                          className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all group/item"
                         >
-                          <span className="text-sm text-[#2D2A26] font-medium hover:text-[#C07766]">
-                            FAQs
-                          </span>
-                        </Link>
-                        <Link
-                          href="/patient-support/international"
-                          className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white hover:text-[#C07766] transition-colors"
-                        >
-                          <span className="text-sm text-[#2D2A26] font-medium hover:text-[#C07766]">
-                            International Patients
-                          </span>
+                          <span className="material-symbols-outlined text-[#8DA399] text-lg">local_hospital</span>
+                          <div>
+                            <p className="text-sm font-medium text-[#2D2A26] group-hover/item:text-[#C07766]">Satyam Hospital</p>
+                            <p className="text-xs text-[#2D2A26]/60">Vadodara • Multi-Specialty</p>
+                          </div>
                         </Link>
                       </div>
                     </div>
                   </div>
                 </li>
 
-                {/* Contact */}
-                <li className="h-full flex items-center">
-                  <Link
-                    href="/contact"
-                    className="h-full flex items-center text-sm font-medium text-[#2D2A26] hover:text-[#C07766] transition-colors px-2"
-                  >
-                    Contact
-                  </Link>
+                {/* Resources */}
+                <li className="group relative h-full flex items-center">
+                  <button className="flex items-center gap-1.5 text-sm font-medium text-[#2D2A26] hover:text-[#C07766] transition-colors px-4 h-full outline-none">
+                    Resources
+                    <span className="material-symbols-outlined text-[16px] opacity-60 group-hover:rotate-180 transition-transform duration-300">
+                      keyboard_arrow_down
+                    </span>
+                  </button>
+                  <div className="dropdown-menu invisible opacity-0 absolute top-full left-0 w-64 pt-2 group-hover:visible group-hover:opacity-100 transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                    <div className="bg-white border border-[#E6E2D6] rounded-lg shadow-xl p-3">
+                      <div className="space-y-1">
+                        <Link
+                          href="/testimonials"
+                          className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all group/item"
+                        >
+                          <span className="material-symbols-outlined text-[#8DA399] text-lg">volunteer_activism</span>
+                          <span className="text-sm font-medium text-[#2D2A26] group-hover/item:text-[#C07766]">Testimonials</span>
+                        </Link>
+                        <Link
+                          href="/faqs"
+                          className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all group/item"
+                        >
+                          <span className="material-symbols-outlined text-[#8DA399] text-lg">help</span>
+                          <span className="text-sm font-medium text-[#2D2A26] group-hover/item:text-[#C07766]">FAQs</span>
+                        </Link>
+                        <Link
+                          href="/papers"
+                          className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all group/item"
+                        >
+                          <span className="material-symbols-outlined text-[#8DA399] text-lg">description</span>
+                          <span className="text-sm font-medium text-[#2D2A26] group-hover/item:text-[#C07766]">Papers & Achievements</span>
+                        </Link>
+                        <Link
+                          href="/patient-support/support-circle"
+                          className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all group/item"
+                        >
+                          <span className="material-symbols-outlined text-[#8DA399] text-lg">chat</span>
+                          <span className="text-sm font-medium text-[#2D2A26] group-hover/item:text-[#C07766]">Support Circle</span>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
                 </li>
+
               </ul>
             </nav>
 
             {/* 3. Right: Actions */}
             <div className="flex items-center gap-4 lg:gap-6">
-              {/* Language Toggle */}
-              <div className="hidden sm:flex items-center bg-[#F5F2EA] border border-[#E6E2D6] rounded-full p-1 h-9">
-                <button className="px-3 h-full rounded-full bg-white shadow-sm text-xs font-bold text-[#C07766] tracking-wide transition-all">
-                  ENG
-                </button>
-                <button className="px-3 h-full rounded-full text-xs font-semibold text-[#2D2A26]/60 hover:text-[#2D2A26] transition-all">
-                  HIN
-                </button>
-                <button className="px-3 h-full rounded-full text-xs font-semibold text-[#2D2A26]/60 hover:text-[#2D2A26] transition-all">
-                  GUJ
-                </button>
-              </div>
-
               {/* CTA Button */}
-              <Link href="/contact">
+              <Link href="/appointment">
                 <button className="group flex items-center gap-2 bg-gradient-to-r from-[#f4c025] to-[#dba915] hover:from-[#dba915] hover:to-[#f4c025] text-white rounded-full h-11 px-6 shadow-md hover:shadow-lg hover:shadow-[#f4c025]/20 transition-all duration-300 transform hover:-translate-y-0.5">
                   <span className="material-symbols-outlined text-[20px]">calendar_month</span>
                   <span className="text-sm font-bold tracking-wide">Book Appointment</span>
@@ -363,8 +226,105 @@ export default function Navbar() {
         </header>
       </div>
 
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="xl:hidden fixed inset-0 top-20 bg-white z-40 overflow-y-auto">
+          <div className="px-4 py-6 space-y-4">
+            {/* About */}
+            <div>
+              <Link
+                href="/about"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all"
+              >
+                <span className="material-symbols-outlined text-[#8DA399]">person</span>
+                <span className="text-base font-medium text-[#2D2A26]">About Dr. Smit</span>
+              </Link>
+            </div>
+
+            {/* Services */}
+            <div>
+              <p className="text-xs font-bold text-[#C07766] uppercase tracking-wider px-3 mb-2">Services</p>
+              <div className="space-y-1">
+                <Link href="/fertility" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all">
+                  <span className="material-symbols-outlined text-[#8DA399] text-lg">science</span>
+                  <span className="text-sm text-[#2D2A26]">Fertility & IVF</span>
+                </Link>
+                <Link href="/laparoscopy-robotic-surgery" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all">
+                  <span className="material-symbols-outlined text-[#8DA399] text-lg">precision_manufacturing</span>
+                  <span className="text-sm text-[#2D2A26]">Laparoscopy & Robotic Surgery</span>
+                </Link>
+                <Link href="/expertise/aesthetic-gynecology" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all">
+                  <span className="material-symbols-outlined text-[#8DA399] text-lg">spa</span>
+                  <span className="text-sm text-[#2D2A26]">Aesthetic Gynecology</span>
+                </Link>
+                <Link href="/urogynecology" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all">
+                  <span className="material-symbols-outlined text-[#8DA399] text-lg">healing</span>
+                  <span className="text-sm text-[#2D2A26]">Urogynecology</span>
+                </Link>
+              </div>
+            </div>
+
+            {/* Clinics */}
+            <div>
+              <p className="text-xs font-bold text-[#C07766] uppercase tracking-wider px-3 mb-2">Clinics</p>
+              <div className="space-y-1">
+                <Link href="/clinics" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all">
+                  <span className="material-symbols-outlined text-[#8DA399] text-lg">local_hospital</span>
+                  <span className="text-sm text-[#2D2A26]">All Clinics</span>
+                </Link>
+                <Link href="/clinics/parul-sevashram" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all">
+                  <span className="text-sm text-[#2D2A26] pl-8">Parul Sevashram Hospital</span>
+                </Link>
+                <Link href="/clinics/parth" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all">
+                  <span className="text-sm text-[#2D2A26] pl-8">Parth Hospital</span>
+                </Link>
+                <Link href="/clinics/satyam" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all">
+                  <span className="text-sm text-[#2D2A26] pl-8">Satyam Hospital</span>
+                </Link>
+              </div>
+            </div>
+
+            {/* Resources */}
+            <div>
+              <p className="text-xs font-bold text-[#C07766] uppercase tracking-wider px-3 mb-2">Resources</p>
+              <div className="space-y-1">
+                <Link href="/testimonials" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all">
+                  <span className="material-symbols-outlined text-[#8DA399] text-lg">volunteer_activism</span>
+                  <span className="text-sm text-[#2D2A26]">Testimonials</span>
+                </Link>
+                <Link href="/faqs" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all">
+                  <span className="material-symbols-outlined text-[#8DA399] text-lg">help</span>
+                  <span className="text-sm text-[#2D2A26]">FAQs</span>
+                </Link>
+                <Link href="/papers" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all">
+                  <span className="material-symbols-outlined text-[#8DA399] text-lg">description</span>
+                  <span className="text-sm text-[#2D2A26]">Papers & Achievements</span>
+                </Link>
+                <Link href="/patient-support/support-circle" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all">
+                  <span className="material-symbols-outlined text-[#8DA399] text-lg">chat</span>
+                  <span className="text-sm text-[#2D2A26]">Support Circle</span>
+                </Link>
+              </div>
+            </div>
+
+            {/* Appointment */}
+            <div className="pt-4 border-t border-[#E6E2D6]">
+              <Link
+                href="/appointment"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-3 p-3 rounded-lg bg-[#F5F2EA] hover:bg-[#E8EFED] transition-all"
+              >
+                <span className="material-symbols-outlined text-[#C07766]">calendar_month</span>
+                <span className="text-base font-semibold text-[#2D2A26]">Book Appointment</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Spacer for fixed navbar */}
-      <div className="h-20"></div>
+      <div className="h-16"></div>
     </>
   );
 }

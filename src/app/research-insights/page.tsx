@@ -2,6 +2,7 @@
 
 import Footer from "@/components/global/Footer";
 import { useState } from "react";
+import { ivfInjectionsInfo } from "@/data/siteData";
 
 interface ResearchPublication {
   id: string;
@@ -51,26 +52,107 @@ The protocol includes pre-operative counseling, optimized anesthesia, minimal fa
     {
       id: "fsh-vs-hmg",
       title: "Comparative Analysis of Recombinant FSH vs. HMG in IVF Cycles",
-      patientTitle: "Understanding Your IVF Injections: FSH vs. HMG",
+      patientTitle: ivfInjectionsInfo.title,
       category: "Fertility Treatment",
       icon: "science",
       color: "from-[#C07766] to-[#8DA399]",
       summary: "A comprehensive look at how different hormones affect embryo quality. We compared recombinant FSH against HMG to see which offers better efficiency.",
-      spotlight: "This helps us choose the exact right medication for your specific fertility profile. The study shows that different patients respond better to different hormone preparations.",
-      whyItMatters: "Not all IVF medications work the same for everyone. This research helps us personalize your treatment protocol to maximize your chances of success while minimizing side effects.",
-      fullExplanation: `When starting IVF, one of the most important decisions is choosing the right medication protocol. Our research compared two commonly used hormone preparations:
+      spotlight: ivfInjectionsInfo.whyItMatters.description,
+      whyItMatters: "IVF is not just medical - it is emotional, physical, and financial. Every failed cycle means more injections, more waiting, more heartbreak, and more expense. Using the right hormone from the start increases the chance that the first cycle works, or you have frozen embryos for future attempts.",
+      fullExplanation: `${ivfInjectionsInfo.introduction}
 
-Recombinant FSH (rFSH): A pure, laboratory-made hormone that stimulates egg development.
+${ivfInjectionsInfo.types.heading}
+1. ${ivfInjectionsInfo.types.options[0].name} – ${ivfInjectionsInfo.types.options[0].description}
+2. ${ivfInjectionsInfo.types.options[1].name} – ${ivfInjectionsInfo.types.options[1].description}
 
-HMG (Human Menopausal Gonadotropin): A natural hormone preparation containing both FSH and LH.
+${ivfInjectionsInfo.types.note}
 
-Key findings from our study:
-- Both medications are effective, but patient response varies
-- Individual factors like age, ovarian reserve, and previous response determine the best choice
-- Personalized protocols based on your profile lead to better outcomes
-- Cost-effectiveness and side effect profiles differ between options
+${ivfInjectionsInfo.studyOverview.heading}
 
-This research allows us to tailor your IVF protocol specifically to your body's needs, increasing your chances of success while minimizing unnecessary medication and costs.`,
+${ivfInjectionsInfo.studyOverview.description}
+• ${ivfInjectionsInfo.studyOverview.comparisons[0]}
+• ${ivfInjectionsInfo.studyOverview.comparisons[1]}
+• ${ivfInjectionsInfo.studyOverview.comparisons[2]}
+• ${ivfInjectionsInfo.studyOverview.comparisons[3]}
+
+${ivfInjectionsInfo.studyOverview.note}
+
+${ivfInjectionsInfo.findings.rFSH.title}
+
+${ivfInjectionsInfo.findings.rFSH.description}
+• ${ivfInjectionsInfo.findings.rFSH.benefits[0]}
+• ${ivfInjectionsInfo.findings.rFSH.benefits[1]}
+
+This means a better chance of:
+• ${ivfInjectionsInfo.findings.rFSH.outcomes[0]}
+• ${ivfInjectionsInfo.findings.rFSH.outcomes[1]}
+• ${ivfInjectionsInfo.findings.rFSH.outcomes[2]}
+
+${ivfInjectionsInfo.findings.efficiency.title}
+
+${ivfInjectionsInfo.findings.efficiency.description}
+
+So instead of:
+• ${ivfInjectionsInfo.findings.efficiency.comparison.insteadOf}
+
+With rFSH:
+• ${ivfInjectionsInfo.findings.efficiency.comparison.with}
+
+This means:
+• ${ivfInjectionsInfo.findings.efficiency.benefits[0]}
+• ${ivfInjectionsInfo.findings.efficiency.benefits[1]}
+• ${ivfInjectionsInfo.findings.efficiency.benefits[2]}
+
+${ivfInjectionsInfo.findings.economy.title}
+
+${ivfInjectionsInfo.findings.economy.description}
+
+${ivfInjectionsInfo.findings.economy.why}
+• ${ivfInjectionsInfo.findings.economy.reasons[0]}
+• ${ivfInjectionsInfo.findings.economy.reasons[1]}
+• ${ivfInjectionsInfo.findings.economy.reasons[2]}
+
+In real life:
+"${ivfInjectionsInfo.findings.economy.quote}"
+
+${ivfInjectionsInfo.whyItMatters.heading}
+
+${ivfInjectionsInfo.whyItMatters.description}
+
+Every failed cycle means:
+• ${ivfInjectionsInfo.whyItMatters.failedCycleCosts[0]}
+• ${ivfInjectionsInfo.whyItMatters.failedCycleCosts[1]}
+• ${ivfInjectionsInfo.whyItMatters.failedCycleCosts[2]}
+• ${ivfInjectionsInfo.whyItMatters.failedCycleCosts[3]}
+
+${ivfInjectionsInfo.whyItMatters.benefits.description}
+• ${ivfInjectionsInfo.whyItMatters.benefits.outcomes[0]}
+• ${ivfInjectionsInfo.whyItMatters.benefits.outcomes[1]}
+
+That saves:
+• ${ivfInjectionsInfo.whyItMatters.benefits.savings[0]}
+• ${ivfInjectionsInfo.whyItMatters.benefits.savings[1]}
+• ${ivfInjectionsInfo.whyItMatters.benefits.savings[2]}
+
+${ivfInjectionsInfo.personalization.heading}
+
+${ivfInjectionsInfo.personalization.answer}
+
+${ivfInjectionsInfo.personalization.description}
+• ${ivfInjectionsInfo.personalization.factors[0]}
+• ${ivfInjectionsInfo.personalization.factors[1]}
+• ${ivfInjectionsInfo.personalization.factors[2]}
+• ${ivfInjectionsInfo.personalization.factors[3]}
+
+${ivfInjectionsInfo.personalization.note}
+
+${ivfInjectionsInfo.takeaway.heading}
+
+${ivfInjectionsInfo.takeaway.wrongQuestion}
+
+${ivfInjectionsInfo.takeaway.rightQuestion}
+
+${ivfInjectionsInfo.takeaway.conclusion}`,
       pdfPath: "/pdfs/procedures/fsh-vs-hmg.pdf",
       pdfName: "FSH vs HMG Study - IVF Efficiency",
       journal: "Fertility and Sterility",
@@ -86,23 +168,25 @@ This research allows us to tailor your IVF protocol specifically to your body's 
       summary: "Our research demonstrates how robotic surgery techniques preserve fertility while effectively removing fibroids, with excellent pregnancy outcomes.",
       spotlight: "This study proves that robotic myomectomy not only removes fibroids effectively but also preserves your ability to conceive naturally. Patients in our study achieved high pregnancy rates after surgery.",
       whyItMatters: "If you're dealing with fibroids but want to preserve your fertility, this research shows that robotic surgery offers the best of both worlds: effective treatment and maintained fertility potential.",
-      fullExplanation: `Fibroids can significantly impact fertility, but the good news is that they can be removed while preserving your uterus and fertility. Our research on robotic-assisted myomectomy shows:
+      fullExplanation: `TODO: Add detailed robotic myomectomy study content from single_source_of_truth.md
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 Fertility Preservation:
-- 85% of patients attempting pregnancy conceived within 18 months
-- Natural conception rates comparable to women without fibroids
-- Minimal impact on uterine integrity
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit
+- Sed do eiusmod tempor incididunt ut labore et dolore
+- Ut enim ad minim veniam, quis nostrud exercitation
 
 Surgical Advantages:
-- Precise removal of even large or multiple fibroids
-- Minimal blood loss and scarring
-- Faster recovery compared to traditional open surgery
-- Lower risk of complications
+- Duis aute irure dolor in reprehenderit in voluptate
+- Velit esse cillum dolore eu fugiat nulla pariatur
+- Excepteur sint occaecat cupidatat non proident
 
 Patient Outcomes:
-- Significant improvement in symptoms (heavy bleeding, pain)
-- High patient satisfaction scores
-- Successful pregnancies and deliveries
+- Sunt in culpa qui officia deserunt mollit anim id est laborum
+- Sed ut perspiciatis unde omnis iste natus error
+- Sit voluptatem accusantium doloremque laudantium
 
 This research gives you confidence that choosing robotic myomectomy means choosing both effective treatment and preserved fertility options.`,
       pdfPath: "/pdfs/procedures/robotic-myomectomy.pdf",
@@ -119,7 +203,7 @@ This research gives you confidence that choosing robotic myomectomy means choosi
   return (
     <main className="flex flex-col w-full bg-[#f8f8f5] dark:bg-[#221e10] min-h-screen">
       {/* Hero Section */}
-      <section className="relative w-full py-20 px-4 sm:px-10 bg-gradient-to-br from-[#C07766] via-[#8DA399] to-[#f4c025]">
+      <section className="relative w-full py-16 px-4 sm:px-10 bg-gradient-to-br from-[#C07766] via-[#8DA399] to-[#f4c025]">
         <div className="absolute inset-0 bg-[url('/images/homePageBg.jpeg')] opacity-10 mix-blend-overlay"></div>
         <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto relative z-10">
           <div className="text-center max-w-4xl mx-auto">
@@ -162,7 +246,7 @@ This research gives you confidence that choosing robotic myomectomy means choosi
       </section>
 
       {/* Research Publications Grid */}
-      <section className="py-20 px-4 sm:px-10 bg-[#f8f8f5] dark:bg-[#221e10]">
+      <section className="py-16 px-4 sm:px-10 bg-[#f8f8f5] dark:bg-[#221e10]">
         <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
           <div className="text-center mb-16">
             <span className="text-[#C07766] dark:text-[#C07766] font-bold tracking-widest uppercase text-sm">
@@ -272,7 +356,7 @@ This research gives you confidence that choosing robotic myomectomy means choosi
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 px-4 sm:px-10 bg-white dark:bg-white/5">
+      <section className="py-16 px-4 sm:px-10 bg-white dark:bg-white/5">
         <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
           <div className="bg-gradient-to-br from-[#C07766] to-[#8DA399] rounded-3xl p-8 md:p-12 text-white shadow-2xl text-center">
             <div className="max-w-3xl mx-auto">

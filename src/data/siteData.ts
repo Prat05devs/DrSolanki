@@ -56,6 +56,7 @@ export interface ClinicalExperience {
 
 export interface Hospital {
   name: string;
+  slug: string;
   city: string;
   description: string;
   features: string[];
@@ -86,6 +87,16 @@ export interface ContactInfo {
   email: string;
   locations: string[];
   consultationNote: string;
+}
+
+export interface Testimonial {
+  name: string;
+  age: number;
+  treatment: string;
+  quote: string;
+  fullStory: string;
+  rating?: number;
+  image?: string;
 }
 
 // ============================================================================
@@ -253,6 +264,7 @@ export const consultationMessage = {
 export const hospitals: Hospital[] = [
   {
     name: "Parth Hospital",
+    slug: "parth",
     city: "Ahmedabad",
     description: "Parth Hospital is committed to providing accessible, advanced, and compassionate gynaecological care for women—today and for the future. Services at Parth Hospital combine modern surgical techniques which includes DaVinci robotic surgical system with a woman-centric approach, ensuring personalized treatment plans, Minimally invasive surgical options and privacy, comfort, and continuity of care. With cutting-edge technology, experienced clinicians, and a patient-first philosophy, Parth Hospital continues to set new benchmarks in surgical excellence. Parth Hospital, Ahmedabad believes in precision in surgery & compassion in care is dedicated to delivering carefree healing, faster recovery, and better quality of life for every patient.",
     features: [
@@ -270,6 +282,7 @@ export const hospitals: Hospital[] = [
   },
   {
     name: "Parul Sevashram Hospital",
+    slug: "parul-sevashram",
     city: "Vadodara",
     description: "Parul Sevashram Hospital is a 1100 bed NABH, NABL and NABH Digital accredited multi-specialty & super specialty hospital affiliated to Parul Institute of Medical Sciences & Research. Parul Sevashram Hospital is a leading & established comprehensive fertility and reproductive medicine services in Central Gujarat. Parul Sevashram Hospital believes in patient-centric care with a vision of ethical and evidence-based diagnosis. Managed by Parul University, the state-of-the-art IVF laboratory at Parul Sevashram Hospital offers cutting-edge surgical and medical techniques to deliver outstanding outcomes.",
     features: [
@@ -286,6 +299,7 @@ export const hospitals: Hospital[] = [
   },
   {
     name: "Satyam Hospital",
+    slug: "satyam",
     city: "Vadodara",
     description: "Satyam Hospital, Chhani, Vadodara. The 50-Bedded multi-speciality Hospital in Vadodara bring together essential medical services under one roof advanced diagnostic systems, and doctors across core specialties and result-oriented treatment. The multi-speciality hospital is focussed on delivering personal attention and medical support that works. Satyam Multi-speciality Hospital operates as a unit of Parul Sevashram Hospital- a trusted name in Gujarat's healthcare landscape. This affiliation brings credibility, ethical practice, and clinical strength to Satyam Hospital.",
     features: [
@@ -435,6 +449,185 @@ export const hysterectomyContent = {
 };
 
 // ============================================================================
+// TESTIMONIALS
+// ============================================================================
+
+export const testimonials: Testimonial[] = [
+  {
+    name: "Shobhna",
+    age: 36,
+    treatment: "Infertility & IVF Success",
+    quote: "If you have been trying for years and losing hope, please don't give up.",
+    fullStory: "After seven years of infertility and three failed IVF cycles elsewhere, I was emotionally exhausted when I reached Dr. Smit Bharat Solanki. Instead of rushing into another IVF, he took time to find the real cause. My fibroid was identified and removed through laparoscopic surgery with great precision.\n\nWhat touched me most was not just his skill, but his clarity and confidence. After my recovery, I underwent IVF again under his guidance and this time, it worked.\n\nToday, I look back at that phase with gratitude instead of pain. If you are struggling with infertility, Dr. Smit gives you not just treatment, but renewed belief.",
+    rating: 5
+  },
+  {
+    name: "Shatakshi",
+    age: 21,
+    treatment: "Hysteroscopic Fibroid Surgery",
+    quote: "I was terrified of surgery until I met Dr. Smit.",
+    fullStory: "At just 21, I was suffering from extremely heavy periods due to a large fibroid. Many doctors advised open or laparoscopic surgery, which scared me deeply.\n\nDr. Smit Bharat Solanki gave me a different option hysteroscopic surgery, done without any cut on my abdomen. The procedure was completed as a day-care surgery, and I was back to normal life very quickly.\n\nMy periods became normal, my confidence returned, and today I am settled in the USA, living a healthy and happy life. I will always be grateful to Dr. Smit for choosing the safest and least invasive path for me.",
+    rating: 5
+  },
+  {
+    name: "Pushpa",
+    age: 56,
+    treatment: "Urinary Incontinence (Urogynecology)",
+    quote: "Dr. Smit didn't just treat my problem he gave me my life back.",
+    fullStory: "After two failed surgeries elsewhere, I had almost accepted that urinary leakage was something I had to live with. It affected my confidence, my social life, and even simple daily activities.\n\nDr. Smit Bharat Solanki listened patiently and carefully evaluated my condition. He performed laparoscopic Burch colposuspension, and the change was remarkable.\n\nToday, I live freely without fear or embarrassment. If you are silently suffering from urinary problems, I truly believe Dr. Smit can help you the way he helped me.",
+    rating: 5
+  },
+  {
+    name: "Roma",
+    age: 38,
+    treatment: "Robotic Hysterectomy (Cashless & Fast Recovery)",
+    quote: "I was home in 24 hours and pain free.",
+    fullStory: "I was dealing with heavy bleeding due to adenomyosis, and since my family was complete, Dr. Smit advised robotic hysterectomy. He explained everything clearly, including my cashless insurance coverage.\n\nThe surgery was smooth, the recovery was comfortable, and I was discharged within 24 hours. Today, my quality of life has completely changed.\n\nIf you are considering advanced surgery and want the best care with minimum discomfort, Dr. Smit Bharat Solanki is someone you can trust completely.",
+    rating: 5
+  },
+  {
+    name: "Harini",
+    age: 30,
+    treatment: "Endometriosis, Pain & Infertility",
+    quote: "For the first time in years, I am pain-free and hopeful again.",
+    fullStory: "I had been living with chronic pelvic pain and infertility due to chocolate cysts. Dr. Smit explained my condition clearly and performed fertility-enhancing laparoscopic surgery.\n\nThe surgery was minimally invasive, my recovery was smooth, and my pain reduced drastically. Most importantly, I now feel confident about my chances of becoming a mother.\n\nIf you are dealing with endometriosis or infertility, Dr. Smit offers not just expertise—but real compassion.",
+    rating: 5
+  },
+  {
+    name: "Jayshree",
+    age: 45,
+    treatment: "Non-Surgical Vaginal Rejuvenation",
+    quote: "A gentle solution that truly worked.",
+    fullStory: "I was troubled by urine leakage during coughing and exercise but didn't want surgery. Dr. Smit suggested laser vaginal rejuvenation. The sessions were short, painless, and easy to fit into my routine.\n\nAfter completing the treatment, my symptoms improved significantly. I feel confident and comfortable again.\n\nIf you are looking for a modern, non-surgical solution, I highly recommend consulting Dr. Smit Bharat Solanki.",
+    rating: 5
+  },
+  {
+    name: "Rupa",
+    age: 41,
+    treatment: "Advanced Laparoscopic Surgery for Adenomyosis",
+    quote: "What I feared became one of the smoothest surgeries of my life.",
+    fullStory: "I was told that my hysterectomy might require an abdominal cut and even a gastro surgeon on standby. I was terrified.\n\nDr. Smit Bharat Solanki reassured me and planned a completely laparoscopic approach. My uterus was removed vaginally without any abdominal incision. My recovery was smooth and stress-free.\n\nIf you want expert hands, calm guidance, and the most advanced minimally invasive care, Dr. Smit is the doctor to trust.",
+    rating: 5
+  }
+];
+
+export const testimonialsNote = "All patient identities have been anonymized to maintain confidentiality";
+
+// ============================================================================
+// IVF INJECTIONS INFORMATION
+// ============================================================================
+
+export const ivfInjectionsInfo = {
+  title: "Understanding IVF Injections – What Couples Really Need to Know",
+  introduction: "When you start IVF, one of the first things you notice is the number of injections. These injections are not just routine - they decide how many eggs are produced and how healthy those eggs are.\n\nThink of these injections as fuel for the ovaries. Better fuel helps the ovaries produce more eggs and better-quality eggs.",
+  types: {
+    heading: "There are two main types of this fuel:",
+    options: [
+      {
+        name: "rFSH",
+        description: "a modern, highly purified hormone"
+      },
+      {
+        name: "hMG",
+        description: "an older, mixed hormone preparation"
+      }
+    ],
+    note: "Both are used worldwide. The big question is: Which one gives better results for the effort, cost, and emotional strain you go through?"
+  },
+  studyOverview: {
+    heading: "What did the study really look at?",
+    description: "Doctors studied 300 women with similar age and fertility potential and compared:",
+    comparisons: [
+      "How many eggs were produced",
+      "How many good-quality embryos were formed",
+      "How much medicine was needed",
+      "How much money was spent for each usable embryo"
+    ],
+    note: "This is important because one good embryo is what ultimately leads to pregnancy not just more injections or more eggs."
+  },
+  findings: {
+    heading: "What did the study find?",
+    rFSH: {
+      title: "rFSH produced better results",
+      description: "Women who received rFSH:",
+      benefits: [
+        "Produced more eggs",
+        "Made more top-quality embryos"
+      ],
+      outcomes: [
+        "A successful transfer",
+        "Extra embryos for freezing",
+        "Avoiding repeat IVF cycles"
+      ]
+    },
+    efficiency: {
+      title: "rFSH needed fewer injections to get results",
+      description: "Even though rFSH costs more per injection, it works more efficiently.",
+      comparison: {
+        insteadOf: "Taking many injections to get one good embryo",
+        with: "Fewer injections were needed to make each good embryo"
+      },
+      benefits: [
+        "Less discomfort",
+        "Less emotional stress",
+        "Less risk of side effects"
+      ]
+    },
+    economy: {
+      title: "rFSH was actually more economical",
+      description: "This is the most important part for couples.\n\nEven though one rFSH injection costs more, the cost per good embryo was lower.",
+      why: "Because:",
+      reasons: [
+        "More high-quality embryos were created",
+        "Fewer cycles were needed",
+        "Fewer repeat treatments were required"
+      ],
+      quote: "A cheaper injection that gives poor embryos can end up being far more expensive."
+    }
+  },
+  whyItMatters: {
+    heading: "Why this matters to you as a couple",
+    description: "IVF is not just medical - it is emotional, physical, and financial.\n\nEvery failed cycle means:",
+    failedCycleCosts: [
+      "More injections",
+      "More waiting",
+      "More heartbreak",
+      "More expense"
+    ],
+    benefits: {
+      description: "Using the right hormone from the start increases the chance that:",
+      outcomes: [
+        "The first cycle works",
+        "Or you have frozen embryos for future attempts"
+      ],
+      savings: [
+        "Time",
+        "Money",
+        "Emotional energy"
+      ]
+    }
+  },
+  personalization: {
+    heading: "Does this mean rFSH is right for everyone?",
+    answer: "Not always.",
+    description: "Some women respond well to hMG. Others need rFSH.\nYour doctor looks at:",
+    factors: [
+      "Age",
+      "Ovarian reserve",
+      "Past IVF response",
+      "Hormone levels"
+    ],
+    note: "The best IVF plan is personalized, not one-size-fits-all."
+  },
+  takeaway: {
+    heading: "The simple takeaway for couples",
+    wrongQuestion: "When choosing IVF injections, do not ask: \"Which is cheaper per vial?\"",
+    rightQuestion: "Please ask: \"Which gives me the best chance to get a healthy embryo and a baby?\"",
+    conclusion: "Because in IVF:\nThe goal is not fewer injections - it is fewer failed cycles.\n\nAnd that is what this study helps doctors choose more wisely for you."
+  }
+};
+
+// ============================================================================
 // EXPORT ALL DATA
 // ============================================================================
 
@@ -450,7 +643,10 @@ export const siteData = {
   hospitalDescriptions,
   services,
   faqs,
-  hysterectomyContent
+  hysterectomyContent,
+  testimonials,
+  testimonialsNote,
+  ivfInjectionsInfo
 };
 
 export default siteData;

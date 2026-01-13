@@ -1,12 +1,13 @@
 import Footer from "@/components/global/Footer";
+import { faqs, hysterectomyContent } from "@/data/siteData";
 
 export default function FAQPage() {
   return (
-    <div className="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden font-[var(--font-lexend)]">
+    <div className="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
       {/* Main Content */}
       <main className="flex-1 flex flex-col">
         {/* Hero Section */}
-        <section className="relative w-full px-4 py-12 lg:px-20 lg:py-16 xl:py-20 flex justify-center bg-gradient-to-b from-white to-[#f8f6f6]">
+        <section className="relative w-full px-4 py-12 lg:px-20 lg:py-16 xl:py-16 flex justify-center bg-gradient-to-b from-white to-[#f8f6f6]">
           <div className="container max-w-6xl">
             <div className="flex flex-col-reverse lg:flex-row gap-10 items-center">
               <div className="flex flex-col gap-6 lg:w-1/2 lg:pr-10 text-center lg:text-left">
@@ -16,7 +17,7 @@ export default function FAQPage() {
                     A Resource Hub for Your Peace of Mind.
                   </span>
                 </h1>
-                <h2 className="text-[#685850] text-lg font-[var(--font-noto-sans)] font-light leading-relaxed">
+                <h2 className="text-[#685850] text-lg font-light leading-relaxed">
                   Find clear, compassionate answers to common queries and essential resources for your health
                   journey with Dr. Smit Bharat Solanki's Sanctuary.
                 </h2>
@@ -94,72 +95,32 @@ export default function FAQPage() {
               </p>
             </div>
 
-            {/* Accordion Item 1 */}
-            <details className="group bg-white rounded-2xl shadow-sm border border-[#f0ebe9] overflow-hidden">
-              <summary className="flex items-center justify-between p-6 cursor-pointer select-none text-lg font-medium text-[#181311] hover:bg-[#fdf1ec]/30 transition-colors">
-                <span>How do I know if Robotic Surgery is right for me?</span>
-                <span className="material-symbols-outlined text-[#ee5b2b] transition-transform duration-300 accordion-icon">
-                  expand_more
-                </span>
-              </summary>
-              <div className="accordion-content bg-[#fdf1ec]/20 px-6 pb-6 pt-2 text-[#685850] leading-relaxed">
-                Robotic surgery is often recommended for complex gynecological procedures requiring high precision.
-                Dr. Smit Bharat Solanki evaluates each patient individually. Generally, if you are a candidate for minimally
-                invasive surgery, robotic assistance may offer faster recovery and less scarring. We will discuss
-                all your options during your initial consultation.
-              </div>
-            </details>
+            {/* Hysterectomy Introduction */}
+            <div className="bg-gradient-to-br from-[#ee5b2b]/10 to-[#fdf1ec] rounded-2xl p-8 mb-8 border border-[#ee5b2b]/20">
+              <h3 className="text-2xl font-bold text-[#181311] mb-4">{hysterectomyContent.heading}</h3>
+              <p className="text-xl font-semibold text-[#ee5b2b] mb-4">{hysterectomyContent.tagline}</p>
+              <p className="text-[#685850] leading-relaxed">{hysterectomyContent.introduction}</p>
+            </div>
 
-            {/* Accordion Item 2 */}
-            <details className="group bg-white rounded-2xl shadow-sm border border-[#f0ebe9] overflow-hidden">
-              <summary className="flex items-center justify-between p-6 cursor-pointer select-none text-lg font-medium text-[#181311] hover:bg-[#fdf1ec]/30 transition-colors">
-                <span>What is the "Golden Hour Healing" concept?</span>
-                <span className="material-symbols-outlined text-[#ee5b2b] transition-transform duration-300 accordion-icon">
-                  expand_more
-                </span>
-              </summary>
-              <div className="accordion-content bg-[#fdf1ec]/20 px-6 pb-6 pt-2 text-[#685850] leading-relaxed">
-                Golden Hour Healing is our philosophy of prioritizing the critical moments immediately following
-                diagnosis and procedure. We focus on rapid recovery protocols, immediate emotional support, and
-                precise medical intervention to ensure the best long-term outcomes for your physical and mental
-                well-being.
-              </div>
-            </details>
-
-            {/* Accordion Item 3 */}
-            <details className="group bg-white rounded-2xl shadow-sm border border-[#f0ebe9] overflow-hidden">
-              <summary className="flex items-center justify-between p-6 cursor-pointer select-none text-lg font-medium text-[#181311] hover:bg-[#fdf1ec]/30 transition-colors">
-                <span>Is Uterus Transplant covered by insurance?</span>
-                <span className="material-symbols-outlined text-[#ee5b2b] transition-transform duration-300 accordion-icon">
-                  expand_more
-                </span>
-              </summary>
-              <div className="accordion-content bg-[#fdf1ec]/20 px-6 pb-6 pt-2 text-[#685850] leading-relaxed">
-                Coverage for Uterus Transplants varies significantly by provider and plan as it is a specialized
-                procedure. Our dedicated billing team works closely with insurance companies to maximize your
-                benefits and provide a clear, transparent cost estimate before you begin your journey.
-              </div>
-            </details>
-
-            {/* Accordion Item 4 */}
-            <details className="group bg-white rounded-2xl shadow-sm border border-[#f0ebe9] overflow-hidden">
-              <summary className="flex items-center justify-between p-6 cursor-pointer select-none text-lg font-medium text-[#181311] hover:bg-[#fdf1ec]/30 transition-colors">
-                <span>What should I bring to my first appointment?</span>
-                <span className="material-symbols-outlined text-[#ee5b2b] transition-transform duration-300 accordion-icon">
-                  expand_more
-                </span>
-              </summary>
-              <div className="accordion-content bg-[#fdf1ec]/20 px-6 pb-6 pt-2 text-[#685850] leading-relaxed">
-                Please bring your ID, insurance card, and any relevant medical records or previous test results. It
-                is also helpful to write down a list of questions or symptoms you've been experiencing so we can
-                address everything during your visit.
-              </div>
-            </details>
+            {/* FAQs from siteData */}
+            {faqs.map((faq, idx) => (
+              <details key={idx} className="group bg-white rounded-2xl shadow-sm border border-[#f0ebe9] overflow-hidden">
+                <summary className="flex items-center justify-between p-6 cursor-pointer select-none text-lg font-medium text-[#181311] hover:bg-[#fdf1ec]/30 transition-colors">
+                  <span>{faq.question}</span>
+                  <span className="material-symbols-outlined text-[#ee5b2b] transition-transform duration-300 accordion-icon">
+                    expand_more
+                  </span>
+                </summary>
+                <div className="accordion-content bg-[#fdf1ec]/20 px-6 pb-6 pt-2 text-[#685850] leading-relaxed whitespace-pre-line">
+                  {faq.answer}
+                </div>
+              </details>
+            ))}
           </div>
         </section>
 
         {/* Patient Guides Section */}
-        <section className="w-full px-4 py-20 bg-[#eef3f0]">
+        <section className="w-full px-4 py-16 bg-[#eef3f0]">
           <div className="container max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
               <div className="max-w-2xl">
@@ -229,7 +190,7 @@ export default function FAQPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="w-full px-4 py-20 flex justify-center bg-white">
+        <section className="w-full px-4 py-16 flex justify-center bg-white">
           <div className="container max-w-4xl bg-[#fdf1ec] rounded-[3rem] p-10 lg:p-16 text-center">
             <div className="flex flex-col items-center gap-6">
               <div className="size-16 rounded-full bg-white flex items-center justify-center text-[#ee5b2b] shadow-sm mb-2">

@@ -93,8 +93,9 @@ export default function ProceduresSection() {
             Robotic Procedures We Perform
           </h2>
           <p className="text-[#8a8060] dark:text-gray-300 text-lg max-w-3xl mx-auto">
-            Dr. Smit Bharat Solanki specializes in a comprehensive range of robotic gynecological procedures, 
-            each performed with the highest level of precision and care.
+            {/* TODO: Add comprehensive robotic procedures overview from single_source_of_truth.md */}
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
         </div>
 

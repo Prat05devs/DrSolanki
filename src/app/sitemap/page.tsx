@@ -12,7 +12,7 @@ interface SitemapSection {
 export default function SitemapPage() {
   const sitemapSections: SitemapSection[] = [
     {
-      title: "Home",
+      title: "1. Home / First Page",
       links: [
         {
           path: "/",
@@ -21,124 +21,137 @@ export default function SitemapPage() {
       ]
     },
     {
-      title: "Conditions & Solutions",
+      title: "2. About Dr. Smit Bharat Solanki",
       links: [
         {
-          path: "/conditions",
-          label: "All Conditions"
-        },
-        {
-          path: "/conditions/fibroids",
-          label: "Uterine Fibroids"
-        },
-        {
-          path: "/conditions/endometriosis",
-          label: "Endometriosis"
-        },
-        {
-          path: "/conditions/pcos",
-          label: "PCOS"
-        }
-      ]
-    },
-    {
-      title: "Our Expertise",
-      links: [
-        {
-          path: "/expertise",
-          label: "All Expertise"
+          path: "/about",
+          label: "About Dr. Smit Bharat Solanki"
         },
         {
           path: "/expertise/dr-smit",
-          label: "Meet Dr. Smit Bharat Solanki"
+          label: "Detailed Profile (Alternative Link)"
+        }
+      ]
+    },
+    {
+      title: "3. Clinics / Hospitals",
+      links: [
+        {
+          path: "/clinics",
+          label: "All Clinics & Hospitals"
         },
         {
-          path: "/expertise/robotic-surgery",
-          label: "Robotic Surgery"
+          path: "/clinics/parul-sevashram",
+          label: "Parul Sevashram Hospital (IVF)"
+        },
+        {
+          path: "/clinics/parth",
+          label: "Parth Hospital (Robotic)"
+        },
+        {
+          path: "/clinics/satyam",
+          label: "Satyam Hospital"
+        }
+      ]
+    },
+    {
+      title: "4. Fertility Page",
+      links: [
+        {
+          path: "/fertility",
+          label: "Fertility Treatments Overview"
         },
         {
           path: "/expertise/ivf-iui",
-          label: "IVF & IUI Services"
-        },
+          label: "IVF & IUI Services (Detailed)"
+        }
+      ]
+    },
+    {
+      title: "5. Laparoscopy & Robotic Surgery",
+      links: [
         {
-          path: "/expertise/uterus-transplant",
-          label: "Uterus Transplant"
-        },
+          path: "/laparoscopy-robotic-surgery",
+          label: "Laparoscopy & Robotic Surgery Overview"
+        }
+      ]
+    },
+    {
+      title: "6. Aesthetic Gynecology",
+      links: [
         {
           path: "/expertise/aesthetic-gynecology",
           label: "Aesthetic Gynecology"
-        },
-        {
-          path: "/expertise/office-procedures",
-          label: "Office Procedures"
         }
       ]
     },
     {
-      title: "Technology & Care",
+      title: "7. Urogynecology",
       links: [
         {
-          path: "/technology-care",
-          label: "Technology Overview"
-        },
-        {
-          path: "/technology-care/hysteroscopy",
-          label: "Hysteroscopy"
-        },
-        {
-          path: "/technology-care/laparoscopic",
-          label: "Laparoscopic Procedures"
+          path: "/urogynecology",
+          label: "Urogynecology"
         }
       ]
     },
     {
-      title: "Patient Support",
+      title: "8. Testimonials",
       links: [
         {
-          path: "/patient-support",
-          label: "Patient Support Hub"
-        },
-        {
-          path: "/patient-support/support-circle",
-          label: "The Support Circle"
+          path: "/testimonials",
+          label: "Patient Testimonials"
         },
         {
           path: "/patient-support/stories",
-          label: "Stories of Hope"
+          label: "Stories of Hope (Alternative Link)"
+        }
+      ]
+    },
+    {
+      title: "Support Circle",
+      links: [
+        {
+          path: "/patient-support/support-circle",
+          label: "The Support Circle - Direct Doctor Communication"
+        }
+      ]
+    },
+    {
+      title: "9. FAQs",
+      links: [
+        {
+          path: "/faqs",
+          label: "Frequently Asked Questions"
         },
         {
           path: "/patient-support/faqs",
-          label: "FAQs"
-        },
-        {
-          path: "/patient-support/international",
-          label: "International Patients"
-        },
-        {
-          path: "/patient-support/education",
-          label: "Education Hub"
+          label: "FAQs (Alternative Link)"
         }
       ]
     },
     {
-      title: "Research & Insights",
+      title: "10. Papers / Achievements",
       links: [
         {
+          path: "/papers",
+          label: "Papers & Achievements"
+        },
+        {
           path: "/research-insights",
-          label: "Research & Insights"
+          label: "Research & Insights (Alternative Link)"
         }
       ]
     },
     {
-      title: "Contact",
+      title: "Contact & Appointment",
       links: [
         {
           path: "/contact",
           label: "Contact Us"
         },
         {
-          path: "/contact/international",
-          label: "International Contact"
+          path: "/appointment",
+          label: "Book Appointment"
         }
       ]
     }

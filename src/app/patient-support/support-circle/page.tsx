@@ -7,7 +7,7 @@ export default function SupportCirclePage() {
     <div className="overflow-x-hidden">
       {/* Main Content */}
       <main className="flex flex-col min-h-screen">
-        <section className="relative w-full bg-[#F5F2EB] py-20 px-4 md:px-10 lg:px-20 overflow-hidden">
+        <section className="relative w-full bg-[#F5F2EB] py-16 px-4 md:px-10 lg:px-20 overflow-hidden">
           {/* Background Blurs */}
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#E8DCC5]/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
           <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#D9CBAE]/20 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4 pointer-events-none"></div>
@@ -51,7 +51,10 @@ export default function SupportCirclePage() {
                 <div className="flex flex-col flex-1 p-8">
                   <h3 className="text-[#2D241E] text-2xl font-bold mb-3">Her Partner in Healing</h3>
                   <p className="text-[#4A4036] mb-6 leading-relaxed">
-                    Your support is her strongest medicine. From bringing her tea to understanding her silence, discover simple ways to be the rock she needs during recovery.
+                    {/* TODO: Add partner support guide content from single_source_of_truth.md */}
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                   </p>
                   <div className="h-px w-full bg-[#E6DCCA] mb-6"></div>
                   <ul className="flex flex-col gap-3 mb-8 flex-1">
@@ -99,7 +102,10 @@ export default function SupportCirclePage() {
                 <div className="flex flex-col flex-1 p-8">
                   <h3 className="text-[#2D241E] text-2xl font-bold mb-3">Peace of Mind for the Family</h3>
                   <p className="text-[#4A4036] mb-6 leading-relaxed">
-                    Rest easy knowing she is in safe hands. We bridge the gap between modern precision and traditional care, ensuring safety and lineage for generations.
+                    {/* TODO: Add family support guide content from single_source_of_truth.md */}
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                   </p>
                   <div className="h-px w-full bg-[#E6DCCA] mb-6"></div>
                   <ul className="flex flex-col gap-3 mb-8 flex-1">

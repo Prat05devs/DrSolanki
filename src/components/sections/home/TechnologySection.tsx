@@ -45,9 +45,10 @@ export default function TechnologySection() {
               Cutting-Edge Surgical Technology
             </h2>
             <p className="text-lg text-[#2D2A26]/70 leading-relaxed mb-8">
-              Dr. Smit Bharat Solanki utilizes the Da Vinci® Robotic Surgical System, the gold standard in minimally 
-              invasive surgery. This advanced technology enables procedures with unprecedented precision, 
-              resulting in smaller incisions, reduced pain, and significantly faster recovery times.
+              {/* TODO: Add detailed technology description from single_source_of_truth.md */}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
             </p>
 
             <div className="space-y-4 mb-8">
@@ -70,7 +71,7 @@ export default function TechnologySection() {
               ))}
             </div>
 
-            <Link href="/technology-care" className="inline-flex items-center gap-2 px-6 py-3 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-semibold rounded-xl transition-colors">
+            <Link href="/laparoscopy-robotic-surgery" className="inline-flex items-center gap-2 px-6 py-3 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-semibold rounded-xl transition-colors">
               Learn About Our Technology
               <ArrowRight className="w-4 h-4" />
             </Link>

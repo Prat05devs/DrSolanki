@@ -1,10 +1,11 @@
 import Footer from "@/components/global/Footer";
+import { ivfInjectionsInfo } from "@/data/siteData";
 
 export default function InfertilityPage() {
   return (
     <main className="flex flex-col w-full bg-[#f8f8f5] dark:bg-[#221e10]">
       {/* Hero Section */}
-      <section className="relative w-full min-h-[600px] flex items-center justify-center py-20 px-4 sm:px-10 overflow-hidden">
+      <section className="relative w-full min-h-[600px] flex items-center justify-center py-16 px-4 sm:px-10 overflow-hidden">
         {/* Background Image with Overlay */}
         <div
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
@@ -44,7 +45,7 @@ export default function InfertilityPage() {
       </section>
 
       {/* Understanding Infertility */}
-      <section className="py-20 px-4 sm:px-10 bg-white dark:bg-white/5">
+      <section className="py-16 px-4 sm:px-10 bg-white dark:bg-white/5">
         <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 relative rounded-[3rem] overflow-hidden aspect-[4/3] shadow-2xl ring-8 ring-[#f8f8f5] dark:ring-white/10">
@@ -94,7 +95,7 @@ export default function InfertilityPage() {
       </section>
 
       {/* Treatment Options */}
-      <section className="py-20 px-4 sm:px-10 bg-[#f8f8f5] dark:bg-[#221e10]">
+      <section className="py-16 px-4 sm:px-10 bg-[#f8f8f5] dark:bg-[#221e10]">
         <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
           <div className="text-center mb-16">
             <span className="text-[#C07766] dark:text-[#C07766] font-bold tracking-widest uppercase text-sm">
@@ -294,7 +295,7 @@ export default function InfertilityPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 px-4 sm:px-10 bg-white dark:bg-white/5">
+      <section className="py-16 px-4 sm:px-10 bg-white dark:bg-white/5">
         <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
           <div className="text-center mb-16">
             <span className="text-[#C07766] dark:text-[#C07766] font-bold tracking-widest uppercase text-sm">
@@ -362,7 +363,7 @@ export default function InfertilityPage() {
       </section>
 
       {/* The IVF Process */}
-      <section className="py-20 px-4 sm:px-10 bg-[#f8f8f5] dark:bg-[#221e10]">
+      <section className="py-16 px-4 sm:px-10 bg-[#f8f8f5] dark:bg-[#221e10]">
         <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
           <div className="text-center mb-16">
             <span className="text-[#C07766] dark:text-[#C07766] font-bold tracking-widest uppercase text-sm">
@@ -435,8 +436,157 @@ export default function InfertilityPage() {
         </div>
       </section>
 
+      {/* IVF Injections Information Section */}
+      <section className="py-16 px-4 sm:px-10 bg-white dark:bg-white/5">
+        <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-[#C07766] dark:text-[#C07766] font-bold tracking-widest uppercase text-sm">
+              Understanding IVF
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#181611] dark:text-white mt-4 mb-6">
+              {ivfInjectionsInfo.title}
+            </h2>
+            <p className="text-[#8a8060] dark:text-gray-300 text-lg max-w-3xl mx-auto whitespace-pre-line">
+              {ivfInjectionsInfo.introduction}
+            </p>
+          </div>
+
+          <div className="space-y-12">
+            {/* Types of Injections */}
+            <div className="bg-gradient-to-br from-[#C07766]/10 to-transparent rounded-2xl p-8 border border-[#C07766]/20">
+              <h3 className="text-2xl font-bold text-[#181611] dark:text-white mb-4">
+                {ivfInjectionsInfo.types.heading}
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6 mb-4">
+                {ivfInjectionsInfo.types.options.map((option, idx) => (
+                  <div key={idx} className="bg-white dark:bg-white/5 rounded-xl p-6">
+                    <h4 className="text-xl font-bold text-[#C07766] mb-2">{option.name}</h4>
+                    <p className="text-[#8a8060] dark:text-gray-300">{option.description}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-[#8a8060] dark:text-gray-300 italic">{ivfInjectionsInfo.types.note}</p>
+            </div>
+
+            {/* Study Overview */}
+            <div className="bg-white dark:bg-white/5 rounded-2xl p-8 shadow-xl border border-[#e5dddc]">
+              <h3 className="text-2xl font-bold text-[#181611] dark:text-white mb-4">
+                {ivfInjectionsInfo.studyOverview.heading}
+              </h3>
+              <p className="text-[#8a8060] dark:text-gray-300 text-lg mb-4">
+                {ivfInjectionsInfo.studyOverview.description}
+              </p>
+              <ul className="space-y-2 mb-4">
+                {ivfInjectionsInfo.studyOverview.comparisons.map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <span className="material-symbols-outlined text-[#8F9E8B] mt-0.5">check_circle</span>
+                    <span className="text-[#8a8060] dark:text-gray-300">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-[#8a8060] dark:text-gray-300 italic">{ivfInjectionsInfo.studyOverview.note}</p>
+            </div>
+
+            {/* Findings */}
+            <div className="space-y-6">
+              <h3 className="text-3xl font-bold text-[#181611] dark:text-white text-center">
+                {ivfInjectionsInfo.findings.heading}
+              </h3>
+              
+              {/* rFSH Benefits */}
+              <div className="bg-gradient-to-br from-[#8DA399]/10 to-transparent rounded-2xl p-8 border border-[#8DA399]/20">
+                <h4 className="text-xl font-bold text-[#181611] dark:text-white mb-3">
+                  {ivfInjectionsInfo.findings.rFSH.title}
+                </h4>
+                <p className="text-[#8a8060] dark:text-gray-300 mb-4">
+                  {ivfInjectionsInfo.findings.rFSH.description}
+                </p>
+                <ul className="space-y-2 mb-4">
+                  {ivfInjectionsInfo.findings.rFSH.benefits.map((benefit, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <span className="material-symbols-outlined text-[#8F9E8B] mt-0.5">check</span>
+                      <span className="text-[#8a8060] dark:text-gray-300">{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-[#8a8060] dark:text-gray-300 font-semibold mb-2">This means a better chance of:</p>
+                <ul className="space-y-2">
+                  {ivfInjectionsInfo.findings.rFSH.outcomes.map((outcome, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <span className="material-symbols-outlined text-[#C07766] mt-0.5">arrow_forward</span>
+                      <span className="text-[#8a8060] dark:text-gray-300">{outcome}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Efficiency */}
+              <div className="bg-white dark:bg-white/5 rounded-2xl p-8 shadow-xl border border-[#e5dddc]">
+                <h4 className="text-xl font-bold text-[#181611] dark:text-white mb-3">
+                  {ivfInjectionsInfo.findings.efficiency.title}
+                </h4>
+                <p className="text-[#8a8060] dark:text-gray-300 mb-4">
+                  {ivfInjectionsInfo.findings.efficiency.description}
+                </p>
+                <div className="grid md:grid-cols-2 gap-4 mb-4">
+                  <div className="bg-[#fdf1ec] rounded-xl p-4">
+                    <p className="text-sm font-semibold text-[#8a8060] mb-2">Instead of:</p>
+                    <p className="text-[#181611] dark:text-white">{ivfInjectionsInfo.findings.efficiency.comparison.insteadOf}</p>
+                  </div>
+                  <div className="bg-[#e4efe9] rounded-xl p-4">
+                    <p className="text-sm font-semibold text-[#8a8060] mb-2">With rFSH:</p>
+                    <p className="text-[#181611] dark:text-white">{ivfInjectionsInfo.findings.efficiency.comparison.with}</p>
+                  </div>
+                </div>
+                <p className="text-[#8a8060] dark:text-gray-300 font-semibold mb-2">This means:</p>
+                <ul className="space-y-2">
+                  {ivfInjectionsInfo.findings.efficiency.benefits.map((benefit, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <span className="material-symbols-outlined text-[#8F9E8B] mt-0.5">check</span>
+                      <span className="text-[#8a8060] dark:text-gray-300">{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Economy */}
+              <div className="bg-gradient-to-br from-[#f4c025]/10 to-transparent rounded-2xl p-8 border border-[#f4c025]/20">
+                <h4 className="text-xl font-bold text-[#181611] dark:text-white mb-3">
+                  {ivfInjectionsInfo.findings.economy.title}
+                </h4>
+                <p className="text-[#8a8060] dark:text-gray-300 mb-4 whitespace-pre-line">
+                  {ivfInjectionsInfo.findings.economy.description}
+                </p>
+                <p className="text-[#8a8060] dark:text-gray-300 font-semibold mb-2">
+                  {ivfInjectionsInfo.findings.economy.why}
+                </p>
+                <ul className="space-y-2 mb-4">
+                  {ivfInjectionsInfo.findings.economy.reasons.map((reason, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <span className="material-symbols-outlined text-[#8F9E8B] mt-0.5">check</span>
+                      <span className="text-[#8a8060] dark:text-gray-300">{reason}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-[#C07766] dark:text-[#C07766] font-semibold italic text-lg">
+                  "{ivfInjectionsInfo.findings.economy.quote}"
+                </p>
+              </div>
+            </div>
+
+            {/* Takeaway */}
+            <div className="bg-gradient-to-br from-[#C07766] to-[#8DA399] rounded-2xl p-8 text-white">
+              <h3 className="text-2xl font-bold mb-4">{ivfInjectionsInfo.takeaway.heading}</h3>
+              <p className="mb-4 opacity-90">{ivfInjectionsInfo.takeaway.wrongQuestion}</p>
+              <p className="mb-4 font-semibold text-lg">{ivfInjectionsInfo.takeaway.rightQuestion}</p>
+              <p className="opacity-90 whitespace-pre-line">{ivfInjectionsInfo.takeaway.conclusion}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-[#C07766] to-[#8DA399] relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-[#C07766] to-[#8DA399] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
         <div className="layout-container flex h-full grow flex-col relative z-10">
           <div className="px-5 md:px-10 lg:px-40 flex flex-1 justify-center">

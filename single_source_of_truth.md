@@ -287,3 +287,322 @@ Care That Is Accessible, Safe, and Future-Ready
 With cutting-edge technology, experienced clinicians, and a patient-first philosophy, 
 Parth Hospital continues to set new benchmarks in surgical excellence. We are dedicated to delivering carefree healing, faster recovery, and better quality of life for every patient.
 Parth Hospital, Ahmedabad Precision in Surgery. Compassion in Care
+
+
+testimonials -
+Shobhna, 36 – Infertility & IVF Success
+
+“If you have been trying for years and losing hope, please don’t give up.”
+
+After seven years of infertility and three failed IVF cycles elsewhere, I was emotionally exhausted when I reached Dr. Smit Bharat Solanki. Instead of rushing into another IVF, he took time to find the real cause. My fibroid was identified and removed through laparoscopic surgery with great precision.
+
+What touched me most was not just his skill, but his clarity and confidence. After my recovery, I underwent IVF again under his guidance and this time, it worked.
+
+Today, I look back at that phase with gratitude instead of pain. If you are struggling with infertility, Dr. Smit gives you not just treatment, but renewed belief.
+
+Shatakshi, 21 – Hysteroscopic Fibroid Surgery
+
+“I was terrified of surgery until I met Dr. Smit.”
+
+At just 21, I was suffering from extremely heavy periods due to a large fibroid. Many doctors advised open or laparoscopic surgery, which scared me deeply.
+
+Dr. Smit Bharat Solanki gave me a different option hysteroscopic surgery, done without any cut on my abdomen. The procedure was completed as a day-care surgery, and I was back to normal life very quickly.
+
+My periods became normal, my confidence returned, and today I am settled in the USA, living a healthy and happy life. I will always be grateful to Dr. Smit for choosing the safest and least invasive path for me.
+
+Pushpa, 56 – Urinary Incontinence (Urogynecology)
+
+“Dr. Smit didn’t just treat my problem he gave me my life back.”
+
+After two failed surgeries elsewhere, I had almost accepted that urinary leakage was something I had to live with. It affected my confidence, my social life, and even simple daily activities.
+
+Dr. Smit Bharat Solanki listened patiently and carefully evaluated my condition. He performed laparoscopic Burch colposuspension, and the change was remarkable.
+
+Today, I live freely without fear or embarrassment. If you are silently suffering from urinary problems, I truly believe Dr. Smit can help you the way he helped me.
+
+Roma, 38 – Robotic Hysterectomy (Cashless & Fast Recovery)
+
+“I was home in 24 hours and pain free.”
+
+I was dealing with heavy bleeding due to adenomyosis, and since my family was complete, Dr. Smit advised robotic hysterectomy. He explained everything clearly, including my cashless insurance coverage.
+
+The surgery was smooth, the recovery was comfortable, and I was discharged within 24 hours. Today, my quality of life has completely changed.
+
+If you are considering advanced surgery and want the best care with minimum discomfort, Dr. Smit Bharat Solanki is someone you can trust completely.
+
+Harini, 30 – Endometriosis, Pain & Infertility
+
+“For the first time in years, I am pain-free and hopeful again.”
+
+I had been living with chronic pelvic pain and infertility due to chocolate cysts. Dr. Smit explained my condition clearly and performed fertility-enhancing laparoscopic surgery.
+
+The surgery was minimally invasive, my recovery was smooth, and my pain reduced drastically. Most importantly, I now feel confident about my chances of becoming a mother.
+
+If you are dealing with endometriosis or infertility, Dr. Smit offers not just expertise—but real compassion.
+
+Jayshree, 45 – Non-Surgical Vaginal Rejuvenation
+
+“A gentle solution that truly worked.”
+
+I was troubled by urine leakage during coughing and exercise but didn’t want surgery. Dr. Smit suggested laser vaginal rejuvenation. The sessions were short, painless, and easy to fit into my routine.
+
+After completing the treatment, my symptoms improved significantly. I feel confident and comfortable again.
+
+If you are looking for a modern, non-surgical solution, I highly recommend consulting Dr. Smit Bharat Solanki.
+
+Rupa, 41 – Advanced Laparoscopic Surgery for Adenomyosis
+
+“What I feared became one of the smoothest surgeries of my life.”
+
+I was told that my hysterectomy might require an abdominal cut and even a gastro surgeon on standby. I was terrified.
+
+Dr. Smit Bharat Solanki reassured me and planned a completely laparoscopic approach. My uterus was removed vaginally without any abdominal incision. My recovery was smooth and stress-free.
+
+If you want expert hands, calm guidance, and the most advanced minimally invasive care, Dr. Smit is the doctor to trust.
+
+(All patient identities have been anonymized to maintain confidentiality)
+
+//information about IVF injections - 
+
+Understanding IVF Injections – What Couples Really Need to Know
+
+When you start IVF, one of the first things you notice is the number of injections. These injections are not just routine - they decide how many eggs are produced and how healthy those eggs are.
+
+Think of these injections as fuel for the ovaries. Better fuel helps the ovaries produce more eggs and better-quality eggs.
+
+There are two main types of this fuel: 
+	1.	rFSH – a modern, highly purified hormone
+	2.	hMG – an older, mixed hormone preparation
+
+Both are used worldwide. The big question is:
+Which one gives better results for the effort, cost, and emotional strain you go through?
+
+What did the study really look at?
+
+Doctors studied 300 women with similar age and fertility potential and compared:
+	•	How many eggs were produced
+	•	How many good-quality embryos were formed
+	•	How much medicine was needed
+	•	How much money was spent for each usable embryo
+
+This is important because one good embryo is what ultimately leads to pregnancy not just more injections or more eggs.
+
+What did the study find?
+
+1.⁠ ⁠rFSH produced better results
+
+Women who received rFSH:
+	•	Produced more eggs
+	•	Made more top-quality embryos
+
+This means a better chance of:
+	•	A successful transfer
+	•	Extra embryos for freezing
+	•	Avoiding repeat IVF cycles
+
+2.⁠ ⁠rFSH needed fewer injections to get results
+
+Even though rFSH costs more per injection, it works more efficiently.
+
+So instead of:
+	•	Taking many injections to get one good embryo
+
+With rFSH:
+	•	Fewer injections were needed to make each good embryo
+
+This means:
+	•	Less discomfort
+	•	Less emotional stress
+	•	Less risk of side effects
+
+3.⁠ ⁠rFSH was actually more economical
+
+This is the most important part for couples.
+
+Even though one rFSH injection costs more, the cost per good embryo was lower.
+
+Why?
+Because:
+	•	More high-quality embryos were created
+	•	Fewer cycles were needed
+	•	Fewer repeat treatments were required
+
+In real life:
+
+“A cheaper injection that gives poor embryos can end up being far more expensive.”
+
+Why this matters to you as a couple
+
+IVF is not just medical - it is emotional, physical, and financial.
+
+Every failed cycle means:
+	•	More injections
+	•	More waiting
+	•	More heartbreak
+	•	More expense
+
+Using the right hormone from the start increases the chance that:
+	•	The first cycle works
+	•	Or you have frozen embryos for future attempts
+
+That saves:
+	•	Time
+	•	Money
+	•	Emotional energy
+
+Does this mean rFSH is right for everyone?
+
+Not always.
+
+Some women respond well to hMG. Others need rFSH.
+Your doctor looks at:
+	•	Age
+	•	Ovarian reserve
+	•	Past IVF response
+	•	Hormone levels
+
+The best IVF plan is personalized, not one-size-fits-all.
+
+The simple takeaway for couples
+
+When choosing IVF injections, do not ask:
+
+“Which is cheaper per vial?”
+
+Please ask:
+
+“Which gives me the best chance to get a healthy embryo and a baby?”
+
+Because in IVF:
+The goal is not fewer injections - it is fewer failed cycles.
+
+And that is what this study helps doctors choose more wisely for you.
+
+
+//IVF Injections: Quick Patient FAQs
+
+Q1. Why are hormone injections needed in IVF?
+They help the ovaries produce eggs for fertilization.
+Q2. Are all IVF injections the same?
+No. Different injections work differently in different women.
+Q3. What is “gonadotropin efficiency”?
+It means how much medicine is needed to make one good-quality embryo.
+Q4. Why is better efficiency important?
+Better efficiency = fewer injections, less medicine, and better value.
+Q5. What did this study show?
+Some injections (like rFSH) can produce good-quality embryos using less total medicine.
+Q6. Does age matter?
+Yes. Younger age usually needs less medicine.
+Q7. Does ovarian reserve matter?
+Yes. Better ovarian reserve responds more efficiently.
+Q8. Is the cheapest injection always best?
+Not always. The right injection may reduce overall treatment burden.
+Q9. Will this guarantee pregnancy?
+No. It improves planning, not guarantees success.
+Q10. How is my treatment decided?
+Based on your age, ovarian reserve, safety, and past response.
+Our goal:
+Best embryo quality with the least necessary medication.
+ 
+ Making an Informed Choice About IVF, Together!
+
+When a couple steps into the world of IVF, the first questions are almost always the same:
+Why so many injections? Are they all the same? Will this really help us?
+The answers matter because IVF is not just a medical process, it is a shared emotional and financial journey.
+
+Here is what every couple should know, in simple, honest terms.
+
+Why are hormone injections needed?
+
+In a natural cycle, a woman usually produces one egg. In IVF, we gently stimulate the ovaries so they can produce several eggs at once. This gives the doctor more chances to create healthy embryos and choose the best one.
+
+Are all injections the same?
+
+No. Different hormone injections act differently in different women. Just as two people do not respond the same to the same diet or medicine, ovaries also respond differently. What works beautifully for one woman may not be ideal for another.
+
+What does “gonadotropin efficiency” mean?
+
+It simply means:
+How much medicine is needed to create one good-quality embryo.
+Higher efficiency = less medicine required to achieve the same or better result.
+
+Why does this matter for you?
+
+Better efficiency means:
+	•	Fewer injections
+	•	Lower total hormone exposure
+	•	Less physical and emotional stress
+	•	Better value for the money you invest
+
+The goal is not to use more medicine, but to use the right medicine.
+
+What did recent studies show?
+
+Some types of injections (such as rFSH) can produce high-quality embryos with less total medication in many women. That means a more comfortable and often more cost-effective IVF cycle.
+
+Does age matter?
+
+Yes. Younger ovaries usually respond more easily, so they often need less medication. As age increases, ovaries may need more support to respond well.
+
+Does ovarian reserve matter?
+
+Absolutely. Women with a better ovarian reserve (measured by AMH, AFC, etc.) typically respond more efficiently to stimulation. This helps doctors tailor the treatment more precisely.
+
+Is the cheapest injection always the best?
+
+Not necessarily. A cheaper drug may require higher doses or longer use, which can actually increase the overall burden. The best option is the one that gives the best embryo outcome with the least necessary medication.
+
+
+Will this guarantee pregnancy?
+
+No treatment can guarantee pregnancy. IVF improves your chances but biology still plays a role. What this approach does guarantee is better planning, smarter dosing, and safer treatment.
+
+How is your IVF plan decided?
+
+Your doctor designs your protocol based on:
+	•	Your age
+	•	Your ovarian reserve
+	•	Your safety
+	•	Your past response (if any)
+
+There is no “one-size-fits-all” in IVF. Your treatment should fit you.
+
+Our goal for every couple
+
+The best possible embryo quality with the least necessary medication.
+
+Because IVF should not be about how much medicine you take, it should be about how wisely it is chosen, for both of you, on your journey to parenthood.
+
+Patient Spotlight: Choosing the Right Injections in IVF
+What was this study about?
+During IVF treatment, hormone injections are used to help the ovaries produce eggs. Two commonly used medicines are:
+• Recombinant FSH (rFSH)
+• Human menopausal gonadotropin (hMG)
+This study compared these two medicines to see which produces better-quality embryos, uses fewer injections, and offers better value for patients.
+👩‍ What did we study?
+We reviewed IVF cycles of 300 women with similar age and ovarian reserve and compared:
+• Number of eggs retrieved
+• Number of good-quality (Grade A) embryos
+• Total hormone dose required
+• Overall cost per good-quality embryo
+⭐ What were the key findings?
+• Women receiving rFSH produced more eggs and more top-quality embryos
+• Fewer hormone units were needed with rFSH to make each good-quality embryo
+• Even though rFSH costs more per injection, the cost per high-quality embryo was lower
+• This means better efficiency and better value for many patients
+💰 Why does this matter to patients?
+IVF treatment can be emotionally and financially demanding. This study shows that:
+• The cheapest injection is not always the most cost-effective
+• Choosing the right medicine can reduce the number of injections needed
+• Better embryo quality can improve future chances of pregnancy
+🧬 Does this mean rFSH is best for everyone?
+Not necessarily.
+Every patient is different. Factors like age, ovarian reserve, and previous IVF response matter. The best protocol is always individualized after detailed consultation.
+Our commitment to you
+Our goal is to use science-backed, patient-focused IVF protocols that aim to:
+• Maximize embryo quality
+• Minimize unnecessary medication
+• Optimize treatment cost
+• Improve overall chances of success
+📄 The full scientific study is available for those who wish to explore the details.
+ 

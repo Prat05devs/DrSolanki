@@ -1,44 +1,27 @@
 import Footer from "@/components/global/Footer";
 import Link from "next/link";
+import { hospitals, consultationMessage } from "@/data/siteData";
 
 export default function ContactPage() {
-  const locations = [
-    {
-      name: "Parth Hospital",
-      description: "Evening OPDs",
-      timing: "6:00 PM - 8:00 PM",
-      schedule: "Evening appointments",
-      availability: "Available on Appointment in Ahmedabad",
-      mapLink: "https://maps.app.goo.gl/B5Q8pyjJwgajL5zY8",
-      icon: "schedule",
-      color: "from-[#df4320] to-[#b93518]"
-    },
-    {
-      name: "Parul Sevashram Hospital",
-      description: "Daily Day OPDs",
-      timing: "Day appointments",
-      schedule: "Daily",
-      availability: "Available on Appointment",
-      mapLink: "https://maps.app.goo.gl/ErunpD3mjQmR9mnQ7",
-      icon: "calendar_today",
-      color: "from-[#8DA399] to-[#6B8E7A]"
-    },
-    {
-      name: "Satyam Hospital",
-      description: "Alternate Day OPDs",
-      timing: "Alternate days",
-      schedule: "Alternate days",
-      availability: "Available on Appointment for Ahmedabad",
-      mapLink: "https://maps.app.goo.gl/QXr9YgMurJym8A9s5",
-      icon: "event_repeat",
-      color: "from-[#f4c025] to-[#dba915]"
-    }
-  ];
+  const getIcon = (name: string) => {
+    if (name.includes("Parth")) return "schedule";
+    if (name.includes("Parul")) return "calendar_today";
+    return "event_repeat";
+  };
+
+  const getColor = (idx: number) => {
+    const colors = [
+      "from-[#df4320] to-[#b93518]",
+      "from-[#8DA399] to-[#6B8E7A]",
+      "from-[#f4c025] to-[#dba915]"
+    ];
+    return colors[idx % colors.length];
+  };
 
   return (
     <main className="flex flex-col w-full bg-[#f8f8f5] dark:bg-[#221e10] min-h-screen">
       {/* Hero Section */}
-      <section className="relative w-full py-20 px-4 sm:px-10 bg-gradient-to-br from-[#C07766] to-[#8DA399]">
+      <section className="relative w-full py-16 px-4 sm:px-10 bg-gradient-to-br from-[#C07766] to-[#8DA399]">
         <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
           <div className="text-center max-w-3xl mx-auto">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium w-fit border border-white/30 mb-6">
@@ -49,15 +32,14 @@ export default function ContactPage() {
               Visit Dr. Smit Bharat Solanki
             </h1>
             <p className="text-white/90 text-lg sm:text-xl font-normal leading-relaxed">
-              Dr. Smit Bharat Solanki is available at multiple locations in Ahmedabad for your convenience. 
-              Book your appointment at any of our practice locations.
+              {consultationMessage.description}
             </p>
           </div>
         </div>
       </section>
 
       {/* Locations Section */}
-      <section className="py-20 px-4 sm:px-10 bg-white dark:bg-white/5">
+      <section className="py-16 px-4 sm:px-10 bg-white dark:bg-white/5">
         <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
           <div className="text-center mb-16">
             <span className="text-[#C07766] dark:text-[#C07766] font-bold tracking-widest uppercase text-sm">
@@ -72,20 +54,20 @@ export default function ContactPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {locations.map((location, idx) => (
+            {hospitals.map((hospital, idx) => (
               <div
                 key={idx}
                 className="bg-white dark:bg-white/5 rounded-2xl shadow-xl border border-[#e5dddc] hover:shadow-2xl transition-all duration-300 overflow-hidden"
               >
                 {/* Header with gradient */}
-                <div className={`bg-gradient-to-br ${location.color} p-6 text-white`}>
+                <div className={`bg-gradient-to-br ${getColor(idx)} p-6 text-white`}>
                   <div className="flex items-center gap-4 mb-3">
                     <div className="size-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                      <span className="material-symbols-outlined text-3xl">{location.icon}</span>
+                      <span className="material-symbols-outlined text-3xl">{getIcon(hospital.name)}</span>
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold">{location.name}</h3>
-                      <p className="text-white/90 text-sm mt-1">{location.description}</p>
+                      <h3 className="text-2xl font-bold">{hospital.name}</h3>
+                      <p className="text-white/90 text-sm mt-1">{hospital.city}</p>
                     </div>
                   </div>
                 </div>
@@ -97,30 +79,34 @@ export default function ContactPage() {
                       <span className="material-symbols-outlined text-[#C07766] text-xl mt-0.5">schedule</span>
                       <div>
                         <p className="font-semibold text-[#181611] dark:text-white">Timing</p>
-                        <p className="text-[#8a8060] dark:text-gray-300">{location.timing}</p>
-                        <p className="text-sm text-[#8a8060] dark:text-gray-300 mt-1">{location.schedule}</p>
+                        <p className="text-[#8a8060] dark:text-gray-300">{hospital.timing}</p>
+                        {hospital.schedule && (
+                          <p className="text-sm text-[#8a8060] dark:text-gray-300 mt-1">{hospital.schedule}</p>
+                        )}
                       </div>
                     </div>
 
                     <div className="flex items-start gap-3">
                       <span className="material-symbols-outlined text-[#8DA399] text-xl mt-0.5">info</span>
                       <div>
-                        <p className="font-semibold text-[#181611] dark:text-white">Availability</p>
-                        <p className="text-[#8a8060] dark:text-gray-300 text-sm">{location.availability}</p>
+                        <p className="font-semibold text-[#181611] dark:text-white">Location</p>
+                        <p className="text-[#8a8060] dark:text-gray-300 text-sm">{hospital.city}</p>
                       </div>
                     </div>
 
                     <div className="pt-4 border-t border-[#e5dddc]">
-                      <a
-                        href={location.mapLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group flex items-center justify-center gap-2 w-full px-6 py-3 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
-                      >
-                        <span className="material-symbols-outlined">map</span>
-                        <span>View on Google Maps</span>
-                        <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                      </a>
+                      {hospital.mapLink && (
+                        <a
+                          href={hospital.mapLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group flex items-center justify-center gap-2 w-full px-6 py-3 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
+                        >
+                          <span className="material-symbols-outlined">map</span>
+                          <span>View on Google Maps</span>
+                          <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -131,7 +117,7 @@ export default function ContactPage() {
       </section>
 
       {/* Appointment Booking Section */}
-      <section className="py-20 px-4 sm:px-10 bg-[#f8f8f5] dark:bg-[#221e10]">
+      <section className="py-16 px-4 sm:px-10 bg-[#f8f8f5] dark:bg-[#221e10]">
         <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
           <div className="bg-gradient-to-br from-[#C07766] to-[#8DA399] rounded-3xl p-8 md:p-12 text-white shadow-2xl">
             <div className="max-w-3xl mx-auto text-center">
@@ -141,9 +127,14 @@ export default function ContactPage() {
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 Book Your Appointment
               </h2>
-              <p className="text-white/90 text-lg mb-8 leading-relaxed">
-                All consultations require prior appointment booking. Choose your preferred location 
-                and timing, and we'll confirm your appointment.
+              <p className="text-white/90 text-lg mb-4 leading-relaxed">
+                {consultationMessage.philosophy}
+              </p>
+              <p className="text-white/80 text-base mb-8 leading-relaxed italic">
+                {consultationMessage.tagline}
+              </p>
+              <p className="text-white/90 text-sm mb-8 leading-relaxed">
+                {consultationMessage.consultationNote || "All consultations require prior appointment booking. Choose your preferred location and timing, and we'll confirm your appointment."}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
@@ -169,7 +160,7 @@ export default function ContactPage() {
       </section>
 
       {/* Important Information Section */}
-      <section className="py-20 px-4 sm:px-10 bg-white dark:bg-white/5">
+      <section className="py-16 px-4 sm:px-10 bg-white dark:bg-white/5">
         <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-[#f8f8f5] dark:bg-[#221e10] rounded-2xl p-8 border border-[#e5dddc]">
@@ -234,7 +225,7 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 px-4 sm:px-10 bg-[#f8f8f5] dark:bg-[#221e10]">
+      <section className="py-16 px-4 sm:px-10 bg-[#f8f8f5] dark:bg-[#221e10]">
         <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#181611] dark:text-white mb-4">

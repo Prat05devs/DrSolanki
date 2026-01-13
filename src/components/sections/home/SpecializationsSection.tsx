@@ -11,40 +11,40 @@ export default function SpecializationsSection() {
 
   const specializations = [
     {
-      title: "Robotic Myomectomy",
-      description: "Fibroid removal while preserving your uterus and fertility",
+      title: "Robotic & Laparoscopic Surgery",
+      description: "Minimally invasive procedures for fibroids, endometriosis, and more",
       icon: "🤖",
-      link: "/conditions/fibroids"
-    },
-    {
-      title: "Endometriosis Surgery",
-      description: "Advanced excision techniques for complete endometriosis removal",
-      icon: "💚",
-      link: "/conditions/endometriosis"
+      link: "/laparoscopy-robotic-surgery"
     },
     {
       title: "IVF & Fertility",
       description: "Comprehensive fertility treatments with high success rates",
       icon: "👶",
-      link: "/expertise/ivf-iui"
+      link: "/fertility"
     },
     {
-      title: "Hysterectomy",
-      description: "Minimally invasive options with faster recovery",
+      title: "Aesthetic Gynecology",
+      description: "Non-surgical and surgical options for intimate wellness",
+      icon: "✨",
+      link: "/expertise/aesthetic-gynecology"
+    },
+    {
+      title: "Urogynecology",
+      description: "Treatment for pelvic floor disorders and urinary incontinence",
       icon: "🏥",
-      link: "/technology-care/hysteroscopy"
+      link: "/urogynecology"
     },
     {
       title: "PCOS Management",
       description: "Holistic treatment approach for hormonal balance",
       icon: "⚖️",
-      link: "/conditions/pcos"
+      link: "/fertility"
     },
     {
-      title: "Uterus Transplant",
-      description: "Advanced reproductive options for absolute uterine factor infertility",
+      title: "About Dr. Smit",
+      description: "Learn about our expert surgeon and his approach to care",
       icon: "🌟",
-      link: "/expertise/uterus-transplant"
+      link: "/about"
     }
   ];
 
@@ -59,7 +59,9 @@ export default function SpecializationsSection() {
             Specialized Treatments
           </h2>
           <p className="text-lg text-[#2D2A26]/60 max-w-2xl mx-auto">
-            Comprehensive care for all aspects of women's reproductive health
+            {/* TODO: Add specializations overview from single_source_of_truth.md */}
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
         </div>
 

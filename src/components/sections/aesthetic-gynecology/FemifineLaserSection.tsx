@@ -10,8 +10,10 @@ export default function FemifineLaserSection() {
             Femifine™ Laser System: Revolutionary Non-Surgical Treatment
           </h2>
           <p className="text-[#8a8060] dark:text-gray-300 text-lg max-w-3xl mx-auto">
-            The Femifine™ laser system represents a breakthrough in non-surgical intimate wellness, 
-            using focused thermal energy to stimulate natural healing and tissue rejuvenation.
+            {/* TODO: Add Femifine Laser detailed description from single_source_of_truth.md */}
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
           </p>
         </div>
 
@@ -21,14 +23,14 @@ export default function FemifineLaserSection() {
               How Femifine™ Works
             </h3>
             <p className="text-[#8a8060] dark:text-gray-300 text-lg leading-relaxed mb-6">
-              The Femifine™ system uses fractional CO2 laser technology to deliver controlled thermal 
-              energy to the vaginal tissue. This gentle heating process stimulates the body's natural 
-              collagen production, improves blood circulation, and promotes tissue regeneration.
+              {/* TODO: Add detailed Femifine Laser how it works content from single_source_of_truth.md */}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
             <p className="text-[#8a8060] dark:text-gray-300 text-lg leading-relaxed mb-6">
-              The treatment is performed in-office, requires no anesthesia, and takes approximately 
-              15-30 minutes. Most patients describe the sensation as warm and comfortable, with 
-              minimal to no discomfort.
+              {/* TODO: Add Femifine Laser treatment experience details from single_source_of_truth.md */}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
             </p>
             <div className="bg-white dark:bg-white/5 rounded-xl p-6 border border-[#8FA392]/20">
               <h4 className="font-bold text-[#181611] dark:text-white mb-3 text-lg">Key Benefits:</h4>

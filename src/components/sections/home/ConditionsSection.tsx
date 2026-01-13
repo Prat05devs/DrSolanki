@@ -14,19 +14,19 @@ export default function ConditionsSection() {
       name: "Uterine Fibroids",
       description: "Non-cancerous growths causing heavy bleeding and pelvic pain",
       symptoms: ["Heavy periods", "Pelvic pressure", "Frequent urination"],
-      link: "/conditions/fibroids"
+      link: "/laparoscopy-robotic-surgery"
     },
     {
       name: "Endometriosis",
       description: "Tissue similar to uterine lining grows outside the uterus",
       symptoms: ["Painful periods", "Chronic pelvic pain", "Infertility"],
-      link: "/conditions/endometriosis"
+      link: "/laparoscopy-robotic-surgery"
     },
     {
       name: "PCOS",
       description: "Hormonal disorder affecting ovaries and menstrual cycles",
       symptoms: ["Irregular periods", "Weight gain", "Excess hair growth"],
-      link: "/conditions/pcos"
+      link: "/fertility"
     }
   ];
 
@@ -41,7 +41,9 @@ export default function ConditionsSection() {
             Specialized Care for Complex Conditions
           </h2>
           <p className="text-lg text-[#2D2A26]/60 max-w-2xl mx-auto">
-            Expert diagnosis and treatment for a wide range of gynecological conditions
+            {/* TODO: Add conditions overview from single_source_of_truth.md */}
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
         </div>
 
@@ -81,9 +83,9 @@ export default function ConditionsSection() {
         </div>
 
         <div className="text-center">
-          <Link href="/conditions" className="inline-flex items-center gap-2 px-8 py-4 bg-white hover:bg-gray-50 text-[#2D2A26] font-semibold rounded-xl border-2 border-[#2D2A26]/10 hover:border-[#C07766]/30 transition-all">
+          <Link href="/laparoscopy-robotic-surgery" className="inline-flex items-center gap-2 px-8 py-4 bg-white hover:bg-gray-50 text-[#2D2A26] font-semibold rounded-xl border-2 border-[#2D2A26]/10 hover:border-[#C07766]/30 transition-all">
             <Stethoscope className="w-5 h-5 text-[#C07766]" />
-            View All Conditions
+            Learn About Treatment Options
           </Link>
         </div>
       </div>

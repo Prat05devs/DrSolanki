@@ -12,12 +12,13 @@ export default function HeroSection() {
           {/* Left Content */}
           <div>
             <h1 className="font-serif text-5xl md:text-6xl font-bold text-[#2D2A26] leading-tight mb-6">
-              Advanced Women's Health Care with a Gentle Touch
+              Where Compassion Meets Advanced Women's Care
             </h1>
 
             <p className="text-xl text-[#2D2A26]/70 leading-relaxed mb-8">
-              Dr. Smit Bharat Solanki specializes in minimally invasive robotic surgery for fibroids, endometriosis, 
-              and complex gynecological conditions. Experience faster recovery with precision care.
+              With a gentle heart and a surgeon's precision, a space where healing begins for women of substance. 
+              Trusted by thousands of women in Gujarat and globally, Dr. Smit Bharat Solanki is committed to restoring 
+              health, confidence, and quality of life—one woman at a time.
             </p>
 
             {/* Quick Stats */}

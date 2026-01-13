@@ -1,18 +1,23 @@
+import { Source_Sans_3, Playfair_Display } from "next/font/google";
 import type { Metadata } from "next";
-import { Lexend, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/global/Navbar";
 
-const lexend = Lexend({
-  variable: "--font-lexend",
+// Body Font: Source Sans 3 (Regular, Medium, SemiBold)
+// Note: Source Sans Pro was deprecated in favor of Source Sans 3
+// Typography guidelines: weights 400-600, line-height 1.6-1.75
+const sourceSansPro = Source_Sans_3({
+  variable: "--font-source-sans-pro",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
 });
 
+// Title Font: Playfair Display (Bold, ExtraBold, Black)
+// Typography guidelines: weights 700-900, line-height 1.1-1.2, letter-spacing 0 to -0.01em
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["700", "800", "900"],
   style: ["normal", "italic"],
 });
 
@@ -35,7 +40,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${lexend.variable} ${playfair.variable} font-display antialiased overflow-x-hidden selection:bg-sage-light selection:text-text-dark bg-white`}
+        className={`${sourceSansPro.variable} ${playfair.variable} font-sans antialiased overflow-x-hidden selection:bg-sage-light selection:text-text-dark bg-white`}
       >
         <Navbar />
         {children}

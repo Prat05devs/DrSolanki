@@ -2,54 +2,71 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Stethoscope, Activity, Search, GraduationCap, BookOpen } from "lucide-react";
+import { Stethoscope, Activity, Search, GraduationCap, BookOpen, Award } from "lucide-react";
+import { clinicalExperience, education, certifications } from "@/data/siteData";
 
 export default function CredentialsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const credentials = [
-    {
-      year: "Present",
-      title: "Robotic & Reproductive Surgeon",
-      institution: "Multiple Hospitals, Ahmedabad",
-      description: "Leading robotic surgery programs and advanced fertility treatments",
-      icon: Stethoscope,
-      color: "from-[#C07766] to-[#8DA399]"
-    },
-    {
-      year: "2020",
-      title: "Fellowship in Da Vinci Robotic Surgery",
-      institution: "International Training Program",
-      description: "Advanced certification in minimally invasive robotic procedures",
-      icon: Activity,
-      color: "from-[#df4320] to-[#b93518]"
-    },
-    {
-      year: "2018",
-      title: "Fellowship in Reproductive Medicine",
-      institution: "Leading Fertility Institute",
-      description: "Specialized training in IVF, IUI, and advanced fertility techniques",
-      icon: Search,
-      color: "from-[#8DA399] to-[#6B8E7A]"
-    },
-    {
-      year: "2015",
-      title: "MD (Obstetrics & Gynecology)",
-      institution: "Medical University",
-      description: "Post-graduate specialization in women's health and surgery",
-      icon: GraduationCap,
-      color: "from-[#f4c025] to-[#dba915]"
-    },
-    {
-      year: "2010",
-      title: "MBBS",
-      institution: "Medical College",
-      description: "Bachelor of Medicine, Bachelor of Surgery",
-      icon: BookOpen,
-      color: "from-[#C07766] to-[#8DA399]"
+  // Map icon based on position type
+  const getIcon = (position: string) => {
+    if (position.toLowerCase().includes("director") || position.toLowerCase().includes("lead")) {
+      return Stethoscope;
     }
-  ];
+    if (position.toLowerCase().includes("professor") || position.toLowerCase().includes("resident") || position.toLowerCase().includes("fellow")) {
+      return GraduationCap;
+    }
+    return Activity;
+  };
+
+  // Map color based on index
+  const getColor = (idx: number) => {
+    const colors = [
+      "from-[#C07766] to-[#8DA399]",
+      "from-[#df4320] to-[#b93518]",
+      "from-[#8DA399] to-[#6B8E7A]",
+      "from-[#f4c025] to-[#dba915]",
+      "from-[#C07766] to-[#8DA399]"
+    ];
+    return colors[idx % colors.length];
+  };
+
+  // Combine education, certifications, and clinical experience
+  const allCredentials = [
+    ...clinicalExperience.map((exp, idx) => ({
+      year: exp.period.split("–")[1] || exp.period.split("-")[1] || "Present",
+      title: `${exp.position}${exp.department ? ` - ${exp.department}` : ""}`,
+      institution: exp.institution,
+      location: exp.location,
+      description: exp.focus ? exp.focus.join(", ") : "",
+      icon: getIcon(exp.position),
+      color: getColor(idx)
+    })),
+    ...education.map((edu, idx) => ({
+      year: edu.period.split("–")[1] || edu.period.split("-")[1] || "",
+      title: edu.degree,
+      institution: edu.institution,
+      location: edu.location,
+      description: edu.description || edu.thesis?.description || "",
+      icon: GraduationCap,
+      color: getColor(clinicalExperience.length + idx)
+    })),
+    ...certifications.map((cert, idx) => ({
+      year: cert.year,
+      title: cert.title,
+      institution: cert.institution,
+      location: cert.location,
+      description: "",
+      icon: Award,
+      color: getColor(clinicalExperience.length + education.length + idx)
+    }))
+  ].sort((a, b) => {
+    // Sort by year, with "Present" at the top
+    if (a.year === "Present") return -1;
+    if (b.year === "Present") return 1;
+    return parseInt(b.year) - parseInt(a.year);
+  });
 
   return (
     <section ref={ref} className="min-h-screen flex items-center px-4 sm:px-10 bg-[#f8f8f5] dark:bg-[#221e10] relative overflow-hidden">
@@ -77,7 +94,7 @@ export default function CredentialsSection() {
           <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#C07766] via-[#8DA399] to-[#f4c025] transform md:-translate-x-1/2"></div>
 
           <div className="space-y-12">
-            {credentials.map((cred, idx) => (
+            {allCredentials.map((cred, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
@@ -107,8 +124,12 @@ export default function CredentialsSection() {
                         <h3 className="text-2xl font-black text-[#181611] dark:text-white mb-2">
                           {cred.title}
                         </h3>
-                        <p className="text-[#8DA399] font-semibold mb-2">{cred.institution}</p>
-                        <p className="text-[#8a8060] dark:text-gray-300">{cred.description}</p>
+                        <p className="text-[#8DA399] font-semibold mb-2">
+                          {cred.institution}{cred.location ? `, ${cred.location}` : ""}
+                        </p>
+                        {cred.description && (
+                          <p className="text-[#8a8060] dark:text-gray-300">{cred.description}</p>
+                        )}
                       </div>
                     </div>
                   </motion.div>

@@ -43,8 +43,9 @@ export default function JourneySection() {
             Your Robotic Surgery Journey
           </h2>
           <p className="text-[#8a8060] dark:text-gray-300 text-lg max-w-3xl mx-auto">
-            Understanding the process helps reduce anxiety and prepares you for a smooth surgical experience 
-            and recovery.
+            {/* TODO: Add detailed robotic surgery journey description from single_source_of_truth.md */}
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
         </div>
 

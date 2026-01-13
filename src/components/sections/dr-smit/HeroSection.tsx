@@ -73,7 +73,7 @@ export default function HeroSection() {
       })}
 
       {/* Content */}
-      <div className="relative z-10 layout-content-container flex flex-col max-w-[1280px] mx-auto px-4 sm:px-10 py-20">
+      <div className="relative z-10 layout-content-container flex flex-col max-w-[1280px] mx-auto px-4 sm:px-10 py-16">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
