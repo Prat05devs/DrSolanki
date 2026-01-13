@@ -1,5 +1,6 @@
 import Footer from "@/components/global/Footer";
 import Link from "next/link";
+import Image from "next/image";
 import { ivfInjectionsInfo } from "@/data/siteData";
 
 export default function InfertilityPage() {
@@ -51,10 +52,12 @@ export default function InfertilityPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 relative rounded-[3rem] overflow-hidden aspect-[4/3] shadow-2xl ring-8 ring-[#f8f8f5] dark:ring-white/10">
               <div className="absolute inset-0 bg-gradient-to-tr from-[#C07766]/20 to-transparent z-10"></div>
-              <img
+              <Image
                 alt="Compassionate fertility care and IVF treatment"
                 className="w-full h-full object-cover"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcvSoqbbQ5awBRU8-QPBeZK3nKP3ZbFXCblGQZ6WS_T10XfCzD3Zl8IAhsM0bctpvQ9sJ_c_zin0aca2RJoDQSsGTFesT8TWiiXxyubCTAFfzDhj0qdsBK1xGCHdyapdT9VZ-WBw3PSs_bog66o27U-e1yyCkG2NbxSiWYgH__MDzZgB-UM6U5zuUgq1PMWjFinHMWf2pEe0SKTNIviMbWcV_X-kqGEbWrjXuZPeylf77YnI4H_R0J1x9G38ITYdy-VqEiAF643Q"
+                width={800}
+                height={600}
               />
             </div>
 
@@ -67,14 +70,14 @@ export default function InfertilityPage() {
               </h2>
               <div className="w-20 h-1.5 bg-[#C07766] rounded-full"></div>
               <p className="text-[#8a8060] dark:text-gray-300 text-lg leading-relaxed">
-                Infertility affects millions of couples worldwide. At Dr. Smit Bharat Solanki's practice, we understand that 
+                Infertility affects millions of couples worldwide. At Dr. Smit Bharat Solanki&apos;s practice, we understand that 
                 the journey to parenthood can be challenging, both emotionally and physically. Our comprehensive 
                 fertility program offers state-of-the-art diagnostic tools and treatment options tailored to your unique situation.
               </p>
               <p className="text-[#8a8060] dark:text-gray-300 text-lg leading-relaxed">
                 We combine advanced reproductive technologies with personalized care, ensuring you receive the 
                 most effective treatment while feeling supported every step of the way. From initial evaluation 
-                to successful pregnancy, we're here to guide you through your fertility journey.
+                to successful pregnancy, we&apos;re here to guide you through your fertility journey.
               </p>
               <div className="flex flex-wrap gap-4 mt-2">
                 <div className="flex items-center gap-2 text-[#181611] dark:text-white font-medium">
@@ -375,7 +378,7 @@ export default function InfertilityPage() {
             </h2>
             <p className="text-[#8a8060] dark:text-gray-300 text-lg max-w-3xl mx-auto">
               Understanding the IVF process helps reduce anxiety and sets realistic expectations. 
-              Here's what to expect during your treatment cycle.
+              Here&apos;s what to expect during your treatment cycle.
             </p>
           </div>
 
@@ -570,7 +573,7 @@ export default function InfertilityPage() {
                   ))}
                 </ul>
                 <p className="text-[#C07766] dark:text-[#C07766] font-semibold italic text-lg">
-                  "{ivfInjectionsInfo.findings.economy.quote}"
+                  &quot;{ivfInjectionsInfo.findings.economy.quote}&quot;
                 </p>
               </div>
             </div>

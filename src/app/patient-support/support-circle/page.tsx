@@ -38,7 +38,7 @@ export default function SupportCirclePage() {
                 The Support Circle
               </h1>
               <p className="text-[#4A4036] text-base sm:text-lg md:text-xl max-w-2xl font-medium leading-relaxed px-4">
-                Healing starts at home. We've created a sanctuary of resources to guide partners and families through the journey of care.
+                Healing starts at home. We&apos;ve created a sanctuary of resources to guide partners and families through the journey of care.
               </p>
             </div>
 
@@ -132,7 +132,7 @@ export default function SupportCirclePage() {
                   Ask Your Questions
                 </h2>
                 <p className="text-[#4A4036] text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-4">
-                  Whether you're a partner, parent, or family member, get instant answers to common questions about care, recovery, and support.
+                  Whether you&apos;re a partner, parent, or family member, get instant answers to common questions about care, recovery, and support.
                 </p>
               </div>
               <Chatbot />

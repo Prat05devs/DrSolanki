@@ -61,7 +61,7 @@ export default function LaparoscopyRoboticSurgeryPage() {
               </div>
               <h3 className="text-2xl font-bold text-[#181611] dark:text-white mb-4">Laparoscopic Surgery</h3>
               <p className="text-[#8a8060] dark:text-gray-300 mb-6 leading-relaxed">
-                Also known as "keyhole surgery," laparoscopic procedures use small incisions and a camera-equipped 
+                Also known as &quot;keyhole surgery,&quot; laparoscopic procedures use small incisions and a camera-equipped 
                 laparoscope to perform surgery with minimal tissue trauma.
               </p>
               <ul className="space-y-2 mb-6">

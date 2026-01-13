@@ -1,5 +1,6 @@
 import Footer from "@/components/global/Footer";
 import Link from "next/link";
+import Image from "next/image";
 import {
   FemifineLaserSection,
   TreatmentOptionsSection,
@@ -56,10 +57,12 @@ export default function AestheticGynecologyPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 relative rounded-[3rem] overflow-hidden aspect-[4/3] shadow-2xl ring-8 ring-[#f8f8f5] dark:ring-white/10">
               <div className="absolute inset-0 bg-gradient-to-tr from-[#8FA392]/20 to-transparent z-10"></div>
-              <img
+              <Image
                 alt="Aesthetic gynecology and intimate wellness treatments"
                 className="w-full h-full object-cover"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOMPk_Dd6bT5pLuAMKxbOOHCE8SjJmz-oshaqjHxL6yQZKGDQ4PMtCxZ4QLhPIUmULcMzxUiaPNnGNx7dU3zuaPiZ64-th7EBoPVunr9AHbeViSm_ZsYq8mOIAKWUA3La84LRqLwgi95M328YXXSHCOD5xjmB3bnjvfoRgeOPt2_ToX95joRuj4BPdIeeUGOEQCGvVw-zMRFR7f6gOXBxsRszEdlUCah3f8EjxhReUAdDYxsTIzE8FEqis9t3I2kwbUXfqEMfrYQ"
+                width={800}
+                height={600}
               />
             </div>
 

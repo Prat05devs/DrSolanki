@@ -1,4 +1,5 @@
 import Footer from "@/components/global/Footer";
+import Image from "next/image";
 import { faqs, hysterectomyContent } from "@/data/siteData";
 
 export default function FAQPage() {
@@ -19,7 +20,7 @@ export default function FAQPage() {
                 </h1>
                 <h2 className="text-[#685850] text-lg font-light leading-relaxed">
                   Find clear, compassionate answers to common queries and essential resources for your health
-                  journey with Dr. Smit Bharat Solanki's Sanctuary.
+                  journey with Dr. Smit Bharat Solanki&apos;s Sanctuary.
                 </h2>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
                   <button className="flex items-center justify-center rounded-full h-12 px-8 bg-[#ee5b2b] text-white text-base font-medium hover:bg-[#ee5b2b]/90 transition-colors shadow-lg shadow-[#ee5b2b]/20">
@@ -33,10 +34,12 @@ export default function FAQPage() {
               <div className="w-full lg:w-1/2">
                 <div className="aspect-[4/3] w-full rounded-[2rem] overflow-hidden shadow-xl relative group">
                   <div className="absolute inset-0 bg-[#ee5b2b]/10 group-hover:bg-[#ee5b2b]/0 transition-colors duration-500 z-10"></div>
-                  <img
+                  <Image
                     alt="Diverse group of women smiling together in warm golden hour lighting"
                     className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq9817q0mw3aSoc5R4hZYmVMnwT0ntjyEJNzzGUbhVPbpW9IH4Oz07hkTEclHObRZcbB9vI7ClJ3GJP36wVyxLB05dMUsTO-k55ge_zE8wkfFszaW93pQrMZv85hnalKNepDUQFn0x9kURksFG4gUnbWp2JXLco0gVaEZQUWfbuIoEuXLY7bCrdx-wJRxHT5jcsjxKaCUO_XTeNv6oc2LndBklP_R6bRHwl0nu3aO_oh8eL1VyIrrAr57YdFZLKQZjenNWS9pZAQ"
+                    width={800}
+                    height={600}
                   />
                 </div>
               </div>
@@ -71,9 +74,6 @@ export default function FAQPage() {
               </button>
               <button className="px-5 py-2 rounded-full bg-[#fdf1ec] text-[#181311] text-sm font-medium hover:bg-[#ee5b2b]/20 transition-colors">
                 Endometriosis
-              </button>
-              <button className="px-5 py-2 rounded-full bg-[#fdf1ec] text-[#181311] text-sm font-medium hover:bg-[#ee5b2b]/20 transition-colors">
-                Uterus Transplant
               </button>
               <button className="px-5 py-2 rounded-full bg-[#fdf1ec] text-[#181311] text-sm font-medium hover:bg-[#ee5b2b]/20 transition-colors">
                 Pre-Op
@@ -197,7 +197,7 @@ export default function FAQPage() {
                 <span className="material-symbols-outlined text-4xl">support_agent</span>
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold text-[#181311]">
-                Can't find what you're looking for?
+                Can&apos;t find what you&apos;re looking for?
               </h2>
               <p className="text-[#685850] text-lg max-w-lg">
                 Our compassionate team is here to listen and help you find the answers you need for your peace of

@@ -216,7 +216,7 @@ This research gives you confidence that choosing robotic myomectomy means choosi
               <span className="text-[#f4c025]">Research & Patient Insights</span>
             </h1>
             <p className="text-white/95 text-lg sm:text-xl font-normal leading-relaxed max-w-3xl mx-auto drop-shadow-md">
-              We believe in transparency. Here, you'll find our published research translated into 
+              We believe in transparency. Here, you&apos;ll find our published research translated into 
               language you can understand, so you can see the science behind your care.
             </p>
           </div>
@@ -237,9 +237,9 @@ This research gives you confidence that choosing robotic myomectomy means choosi
               </div>
             </div>
             <blockquote className="text-lg text-[#8a8060] dark:text-gray-300 italic leading-relaxed border-l-4 border-[#C07766] pl-6">
-              "I wrote these studies and their summaries simply so my patients can understand exactly 
-              what is happening to their bodies. Science shouldn't be intimidating—it should empower you 
-              to make informed decisions about your health."
+              &quot;I wrote these studies and their summaries simply so my patients can understand exactly 
+              what is happening to their bodies. Science shouldn&apos;t be intimidating—it should empower you 
+              to make informed decisions about your health.&quot;
             </blockquote>
           </div>
         </div>
@@ -367,7 +367,7 @@ This research gives you confidence that choosing robotic myomectomy means choosi
                 Questions About Our Research?
               </h2>
               <p className="text-white/90 text-lg mb-8 leading-relaxed">
-                We're here to explain any study in detail. Book a consultation to discuss how this 
+                We&apos;re here to explain any study in detail. Book a consultation to discuss how this 
                 research applies to your specific situation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

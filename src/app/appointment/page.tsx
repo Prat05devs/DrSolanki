@@ -33,7 +33,7 @@ export default function AppointmentPage() {
             </h1>
             <p className="text-white/90 text-lg sm:text-xl font-normal leading-relaxed">
               Book a consultation with Dr. Smit Bharat Solanki at any of our clinic locations. 
-              We're here to help you on your journey to better health.
+              We&apos;re here to help you on your journey to better health.
             </p>
           </div>
         </div>
@@ -97,7 +97,7 @@ export default function AppointmentPage() {
               </div>
               <h3 className="text-2xl font-bold text-[#181611] dark:text-white mb-4">Email Us</h3>
               <p className="text-[#8a8060] dark:text-gray-300 mb-6">
-                Send us an email and we'll get back to you promptly
+                Send us an email and we&apos;ll get back to you promptly
               </p>
               <a
                 href={`mailto:${contactInfo.email}`}

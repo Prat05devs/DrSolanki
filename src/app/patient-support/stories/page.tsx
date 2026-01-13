@@ -22,9 +22,6 @@ export default function StoriesPage() {
     if (lowerTreatment.includes("fibroid")) {
       return "Fibroid Freedom";
     }
-    if (lowerTreatment.includes("uterus") && lowerTreatment.includes("transplant")) {
-      return "Uterus Transplant";
-    }
     return "All Stories";
   };
 
@@ -120,7 +117,7 @@ export default function StoriesPage() {
                         
                         <blockquote className="mb-3 sm:mb-4">
                           <h3 className="font-[var(--font-playfair)] text-lg sm:text-xl md:text-2xl text-[#4a4036] mb-2 sm:mb-4 leading-[1.15] tracking-[-0.01em]">
-                            "{testimonial.quote}"
+                            &quot;{testimonial.quote}&quot;
                           </h3>
                         </blockquote>
                         
