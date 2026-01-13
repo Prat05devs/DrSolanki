@@ -128,7 +128,7 @@ export default function AppointmentPage() {
                     <span className="font-semibold">Timing:</span> {hospital.timing}
                   </p>
                   <Link
-                    href={`/clinics/${hospital.name.toLowerCase().replace(/\s+/g, "-")}`}
+                    href={`/clinics/${hospital.slug}`}
                     className="text-[#C07766] font-semibold text-sm hover:underline"
                   >
                     View Details →

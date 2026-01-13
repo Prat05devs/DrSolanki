@@ -1,4 +1,5 @@
 import Footer from "@/components/global/Footer";
+import Link from "next/link";
 import { ivfInjectionsInfo } from "@/data/siteData";
 
 export default function InfertilityPage() {
@@ -31,14 +32,14 @@ export default function InfertilityPage() {
               High success rates, compassionate support, and cutting-edge IVF techniques to help you achieve your dream of parenthood.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-4">
-              <button className="flex items-center justify-center gap-2 bg-[#C07766] hover:bg-[#C07766]/90 transition-all text-white h-12 px-8 rounded-full text-base font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+              <Link href="/appointment" className="flex items-center justify-center gap-2 bg-[#C07766] hover:bg-[#C07766]/90 transition-all text-white h-12 px-8 rounded-full text-base font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5">
                 <span className="material-symbols-outlined">calendar_month</span>
                 Book Fertility Consultation
-              </button>
-              <button className="flex items-center justify-center gap-2 bg-white dark:bg-white/10 border border-[#C07766]/50 text-[#181611] dark:text-white hover:bg-[#C07766]/10 transition-all h-12 px-8 rounded-full text-base font-medium backdrop-blur-sm">
+              </Link>
+              <Link href="tel:+919712982198" className="flex items-center justify-center gap-2 bg-white dark:bg-white/10 border border-[#C07766]/50 text-[#181611] dark:text-white hover:bg-[#C07766]/10 transition-all h-12 px-8 rounded-full text-base font-medium backdrop-blur-sm">
                 <span className="material-symbols-outlined">call</span>
                 Speak to Our Team
-              </button>
+              </Link>
             </div>
           </div>
         </div>

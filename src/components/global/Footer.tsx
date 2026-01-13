@@ -4,23 +4,23 @@ import { contactInfo, hospitals } from "@/data/siteData";
 export default function Footer() {
   return (
     <footer className="bg-[#006D77] text-white border-t border-white/10 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none opacity-30"></div>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 py-16">
-          <div className="lg:col-span-4 flex flex-col gap-6 pr-4">
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] sm:w-[600px] sm:h-[600px] md:w-[800px] md:h-[800px] bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none opacity-30"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-8 py-10 sm:py-12 md:py-16">
+          <div className="lg:col-span-4 flex flex-col gap-4 sm:gap-6 pr-0 sm:pr-4">
             <div className="flex flex-col gap-1">
-              <h2 className="text-white text-3xl font-bold tracking-tight font-[var(--font-playfair)]">
+              <h2 className="text-white text-2xl sm:text-3xl font-bold tracking-tight font-[var(--font-playfair)] leading-[1.15] tracking-[-0.01em]">
                 Dr. Smit Bharat Solanki
               </h2>
-              <p className="text-sm font-medium text-[#f4c025] uppercase tracking-wider">
+              <p className="text-xs sm:text-sm font-medium text-[#f4c025] uppercase tracking-wider leading-[1.7]">
                 Compassion. Precision. Results.
               </p>
             </div>
-            <p className="text-base leading-relaxed text-[#edfcf9]/90 font-light">
+            <p className="text-sm sm:text-base leading-[1.7] text-[#edfcf9]/90 font-light">
               Restoring hope, redefining women's health with advanced robotics and heartfelt care. A sanctuary for
               your healing journey.
             </p>
-            <div className="flex gap-4 mt-2">
+            <div className="flex gap-3 sm:gap-4 mt-2">
               <a
                 aria-label="Facebook"
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-[#faeec8] hover:bg-[#f4c025] hover:text-[#006D77] transition-all duration-300 transform hover:-translate-y-1 backdrop-blur-sm"
@@ -192,7 +192,7 @@ export default function Footer() {
               <li>
                 <Link
                   className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
-                  href="/papers"
+                  href="/research-insights"
                 >
                   <span className="w-0 overflow-hidden group-hover:w-2 group-hover:mr-1 transition-all duration-300 text-[#f4c025]">
                     •
@@ -203,7 +203,7 @@ export default function Footer() {
               <li>
                 <Link
                   className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
-                  href="/testimonials"
+                  href="/patient-support/stories"
                 >
                   <span className="w-0 overflow-hidden group-hover:w-2 group-hover:mr-1 transition-all duration-300 text-[#f4c025]">
                     •
@@ -271,35 +271,35 @@ export default function Footer() {
         </div>
         
         {/* Interactive Chatbot Feature - Prominently Displayed */}
-        <div className="border-t border-white/10 py-8">
-          <div className="bg-gradient-to-br from-[#f4c025] via-[#e0b020] to-[#d9a010] rounded-2xl p-6 md:p-8 relative overflow-hidden shadow-[0_20px_60px_-10px_rgba(244,192,37,0.4)] border-2 border-white/20">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-white/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-            <div className="absolute bottom-0 left-0 w-72 h-72 bg-white/10 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+        <div className="border-t border-white/10 py-6 sm:py-8">
+          <div className="bg-gradient-to-br from-[#f4c025] via-[#e0b020] to-[#d9a010] rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 relative overflow-hidden shadow-[0_20px_60px_-10px_rgba(244,192,37,0.4)] border-2 border-white/20">
+            <div className="absolute top-0 right-0 w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 bg-white/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 w-36 h-36 sm:w-56 sm:h-56 md:w-72 md:h-72 bg-white/10 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
             <div className="relative z-10">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-                <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left flex-1">
-                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center shrink-0 border-4 border-white/30 shadow-lg">
-                    <span className="material-symbols-outlined text-white text-4xl md:text-5xl">support_agent</span>
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
+                <div className="flex flex-col md:flex-row items-center gap-4 sm:gap-6 text-center md:text-left flex-1 w-full">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center shrink-0 border-2 sm:border-4 border-white/30 shadow-lg">
+                    <span className="material-symbols-outlined text-white text-3xl sm:text-4xl md:text-5xl">support_agent</span>
                   </div>
-                  <div className="max-w-2xl">
+                  <div className="max-w-2xl w-full">
                     
-                    <h2 className="text-3xl md:text-4xl font-bold text-[#181611] mb-3 leading-tight font-[var(--font-playfair)]">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#181611] mb-2 sm:mb-3 leading-[1.15] tracking-[-0.01em] font-[var(--font-playfair)]">
                       Ask Your Questions Instantly
                     </h2>
-                    <p className="text-[#181611]/90 text-lg md:text-xl font-medium leading-relaxed mb-4">
+                    <p className="text-[#181611]/90 text-sm sm:text-base md:text-lg lg:text-xl font-medium leading-[1.7] mb-3 sm:mb-4">
                       Get instant answers about surgery, recovery, fertility, and more. Our interactive chatbot guides partners and families through common questions—no typing required, just click and explore.
                     </p>
-                    <div className="flex flex-wrap gap-3 justify-center md:justify-start mb-4">
-                      <div className="flex items-center gap-2 text-[#181611]/80 text-sm">
-                        <span className="material-symbols-outlined text-lg">check_circle</span>
+                    <div className="flex flex-wrap gap-2 sm:gap-3 justify-center md:justify-start mb-3 sm:mb-4">
+                      <div className="flex items-center gap-1.5 sm:gap-2 text-[#181611]/80 text-xs sm:text-sm">
+                        <span className="material-symbols-outlined text-base sm:text-lg">check_circle</span>
                         <span>Suggested Questions</span>
                       </div>
-                      <div className="flex items-center gap-2 text-[#181611]/80 text-sm">
-                        <span className="material-symbols-outlined text-lg">check_circle</span>
+                      <div className="flex items-center gap-1.5 sm:gap-2 text-[#181611]/80 text-xs sm:text-sm">
+                        <span className="material-symbols-outlined text-base sm:text-lg">check_circle</span>
                         <span>Instant Answers</span>
                       </div>
-                      <div className="flex items-center gap-2 text-[#181611]/80 text-sm">
-                        <span className="material-symbols-outlined text-lg">check_circle</span>
+                      <div className="flex items-center gap-1.5 sm:gap-2 text-[#181611]/80 text-xs sm:text-sm">
+                        <span className="material-symbols-outlined text-base sm:text-lg">check_circle</span>
                         <span>24/7 Available</span>
                       </div>
                     </div>
@@ -307,12 +307,12 @@ export default function Footer() {
                 </div>
                 <Link
                   href="/patient-support/support-circle#ask-your-questions"
-                  className="bg-[#181611] hover:bg-[#2D2A26] text-white font-bold text-lg py-4 px-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 whitespace-nowrap flex items-center gap-3 group"
+                  className="bg-[#181611] active:bg-[#2D2A26] text-white font-bold text-base sm:text-lg py-3 sm:py-4 px-6 sm:px-8 rounded-lg sm:rounded-xl shadow-xl active:shadow-2xl transition-all duration-300 transform active:-translate-y-1 w-full sm:w-auto flex items-center justify-center gap-2 sm:gap-3 group touch-manipulation"
                   scroll={true}
                 >
-                  <span className="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">chat_bubble</span>
-                  <span>Try Interactive Chatbot</span>
-                  <span className="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                  <span className="material-symbols-outlined text-xl sm:text-2xl group-active:scale-110 transition-transform">chat_bubble</span>
+                  <span className="whitespace-nowrap">Try Interactive Chatbot</span>
+                  <span className="material-symbols-outlined text-lg sm:text-xl group-active:translate-x-1 transition-transform hidden sm:inline">arrow_forward</span>
                 </Link>
               </div>
             </div>
@@ -320,26 +320,26 @@ export default function Footer() {
         </div>
 
         
-        <div className="border-t border-white/10 py-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#faeec8]/80">
-          <p>© 2024 Dr. Smit Bharat Solanki. All rights reserved.</p>
-          <div className="flex flex-wrap justify-center gap-6">
-            <a className="hover:text-white transition-colors relative group" href="#">
+        <div className="border-t border-white/10 py-6 sm:py-8 flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4 text-xs sm:text-sm text-[#faeec8]/80">
+          <p className="text-center md:text-left">© 2024 Dr. Smit Bharat Solanki. All rights reserved.</p>
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+            <a className="hover:text-white active:text-white transition-colors relative group touch-manipulation" href="#">
               Privacy Policy
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all group-hover:w-full"></span>
             </a>
-            <a className="hover:text-white transition-colors relative group" href="#">
+            <a className="hover:text-white active:text-white transition-colors relative group touch-manipulation" href="#">
               Terms &amp; Conditions
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all group-hover:w-full"></span>
             </a>
             <Link
               href="/sitemap"
-              className="hover:text-white transition-colors relative group"
+              className="hover:text-white active:text-white transition-colors relative group touch-manipulation"
             >
               Sitemap
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all group-hover:w-full"></span>
             </Link>
           </div>
-          <p className="opacity-60 text-xs">Website Designed &amp; Developed by Prateek @BasicTech</p>
+          <p className="opacity-60 text-[10px] sm:text-xs text-center md:text-right">Website Designed &amp; Developed by Prateek @BasicTech</p>
         </div>
       </div>
     </footer>

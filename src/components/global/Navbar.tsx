@@ -11,11 +11,11 @@ export default function Navbar() {
       {/* Global Navigation Bar */}
       <div className="fixed top-0 left-0 w-full z-50">
         <header className="bg-[#FDFBF7] shadow-[0_4px_20px_-2px_rgba(45,42,38,0.05)] border-b border-[#E6E2D6] transition-all duration-300">
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 h-20 flex items-center justify-between gap-4">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 h-16 sm:h-20 flex items-center justify-between gap-3 sm:gap-4">
             {/* 1. Left: Logo */}
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 min-w-0">
               <Link href="/" className="flex items-center group">
-                <h1 className="font-serif text-lg font-bold text-[#2D2A26] tracking-tight group-hover:text-[#C07766] transition-colors">
+                <h1 className="font-serif text-sm sm:text-base md:text-lg font-bold text-[#2D2A26] tracking-tight group-hover:text-[#C07766] transition-colors truncate">
                   Dr. Smit Bharat Solanki
                 </h1>
               </Link>
@@ -205,21 +205,22 @@ export default function Navbar() {
             </nav>
 
             {/* 3. Right: Actions */}
-            <div className="flex items-center gap-4 lg:gap-6">
+            <div className="flex items-center gap-2 sm:gap-4 lg:gap-6">
               {/* CTA Button */}
-              <Link href="/appointment">
-                <button className="group flex items-center gap-2 bg-gradient-to-r from-[#f4c025] to-[#dba915] hover:from-[#dba915] hover:to-[#f4c025] text-white rounded-full h-11 px-6 shadow-md hover:shadow-lg hover:shadow-[#f4c025]/20 transition-all duration-300 transform hover:-translate-y-0.5">
-                  <span className="material-symbols-outlined text-[20px]">calendar_month</span>
-                  <span className="text-sm font-bold tracking-wide">Book Appointment</span>
+              <Link href="/appointment" className="hidden sm:block">
+                <button className="group flex items-center gap-2 bg-gradient-to-r from-[#f4c025] to-[#dba915] hover:from-[#dba915] hover:to-[#f4c025] text-white rounded-full h-9 sm:h-11 px-4 sm:px-6 shadow-md hover:shadow-lg hover:shadow-[#f4c025]/20 transition-all duration-300 transform hover:-translate-y-0.5 touch-manipulation">
+                  <span className="material-symbols-outlined text-base sm:text-[20px]">calendar_month</span>
+                  <span className="text-xs sm:text-sm font-bold tracking-wide">Book Appointment</span>
                 </button>
               </Link>
 
               {/* Mobile Menu Button (Visible on small screens) */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="xl:hidden flex items-center justify-center size-10 rounded-full bg-[#F5F2EA] text-[#2D2A26] hover:bg-[#C07766] hover:text-white transition-colors"
+                className="xl:hidden flex items-center justify-center size-9 sm:size-10 rounded-full bg-[#F5F2EA] text-[#2D2A26] active:bg-[#C07766] active:text-white transition-colors touch-manipulation"
+                aria-label="Toggle menu"
               >
-                <span className="material-symbols-outlined">menu</span>
+                <span className="material-symbols-outlined text-xl sm:text-2xl">{mobileMenuOpen ? 'close' : 'menu'}</span>
               </button>
             </div>
           </div>
@@ -228,8 +229,8 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="xl:hidden fixed inset-0 top-20 bg-white z-40 overflow-y-auto">
-          <div className="px-4 py-6 space-y-4">
+        <div className="xl:hidden fixed inset-0 top-16 sm:top-20 bg-white z-40 overflow-y-auto">
+          <div className="px-4 py-4 sm:py-6 space-y-3 sm:space-y-4">
             {/* About */}
             <div>
               <Link

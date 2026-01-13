@@ -41,10 +41,10 @@ export default function AestheticGynecologyPage() {
                 <span className="material-symbols-outlined">calendar_month</span>
                 Schedule Consultation
               </Link>
-              <button className="flex items-center justify-center gap-2 bg-white/10 border border-white/30 text-white hover:bg-white/20 transition-all h-12 px-8 rounded-full text-base font-medium backdrop-blur-sm">
+              <a href="#treatment-options" className="flex items-center justify-center gap-2 bg-white/10 border border-white/30 text-white hover:bg-white/20 transition-all h-12 px-8 rounded-full text-base font-medium backdrop-blur-sm">
                 <span className="material-symbols-outlined">info</span>
                 Learn More
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -105,7 +105,9 @@ export default function AestheticGynecologyPage() {
       <FemifineLaserSection />
 
       {/* Treatment Options */}
-      <TreatmentOptionsSection />
+      <div id="treatment-options">
+        <TreatmentOptionsSection />
+      </div>
 
       {/* Who Can Benefit */}
       <WhoCanBenefitSection />

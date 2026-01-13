@@ -8,7 +8,7 @@ export default function HeroSection() {
   return (
     <section className="relative bg-gradient-to-br from-[#FDFBF7] via-white to-[#E4EFE9]/30 min-h-screen flex items-center">
       <div className="container mx-auto px-6 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto py-12">
+        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto pt-6 pb-12">
           {/* Left Content */}
           <div>
             <h1 className="font-serif text-5xl md:text-6xl font-bold text-[#2D2A26] leading-tight mb-6">
@@ -22,7 +22,7 @@ export default function HeroSection() {
             </p>
 
             {/* Quick Stats */}
-            <div className="grid grid-cols-3 gap-6 mb-8 p-6 bg-white rounded-2xl shadow-sm border border-[#2D2A26]/5">
+            <div className="grid grid-cols-3 gap-4 mb-8 p-4 bg-white rounded-2xl shadow-sm border border-[#2D2A26]/5">
               <div className="text-center">
                 <p className="text-3xl font-bold text-[#C07766] mb-1">15,000+</p>
                 <p className="text-xs text-[#2D2A26]/60 font-medium">Patients Treated</p>
@@ -71,7 +71,7 @@ export default function HeroSection() {
           <div className="relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
               <Image
-                src="/images/homePageBg.jpeg"
+                src="/dr3.webp"
                 alt="Dr. Smit Bharat Solanki - Gynecological Surgeon"
                 width={600}
                 height={700}

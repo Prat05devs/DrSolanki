@@ -7,9 +7,7 @@ import CredentialsSection from "@/components/sections/dr-smit/CredentialsSection
 import ExpertiseShowcase from "@/components/sections/dr-smit/ExpertiseShowcase";
 import AchievementsSection from "@/components/sections/dr-smit/AchievementsSection";
 import GallerySection from "@/components/sections/dr-smit/GallerySection";
-import ApproachSection from "@/components/sections/dr-smit/ApproachSection";
 import StatsSection from "@/components/sections/dr-smit/StatsSection";
-import CTASection from "@/components/sections/dr-smit/CTASection";
 
 export default function DrSmitPage() {
   return (
@@ -20,9 +18,7 @@ export default function DrSmitPage() {
       <ExpertiseShowcase />
       <AchievementsSection />
       <GallerySection />
-      <ApproachSection />
       <StatsSection />
-      <CTASection />
       <Footer />
     </main>
   );

@@ -33,13 +33,10 @@ export default function GallerySection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 rounded-full bg-[#C07766]/10 text-[#C07766] text-sm font-bold mb-6">
-            Professional Gallery
-          </span>
-          <h2 className="text-4xl md:text-5xl font-black text-[#181611] dark:text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-[var(--font-playfair)] font-black text-[#181611] dark:text-white mb-6 leading-[1.15] tracking-[-0.01em]">
             A Glimpse Into Practice
           </h2>
-          <p className="text-lg text-[#8a8060] dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-[#8a8060] dark:text-gray-300 max-w-2xl mx-auto leading-[1.7]">
             See Dr. Smit Bharat Solanki in action, bringing expertise and compassion to every patient interaction.
           </p>
         </motion.div>
@@ -64,12 +61,9 @@ export default function GallerySection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#2D2A26] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-2xl font-black text-white mb-2">{image.title}</h3>
-                  <p className="text-white/90">{image.description}</p>
+                  <h3 className="text-2xl font-[var(--font-playfair)] font-black text-white mb-2 leading-[1.15] tracking-[-0.01em]">{image.title}</h3>
+                  <p className="text-white/90 leading-[1.7]">{image.description}</p>
                 </div>
-              </div>
-              <div className="absolute top-4 right-4 size-12 bg-[#C07766] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <ArrowRight className="w-6 h-6 text-white" />
               </div>
             </motion.div>
           ))}

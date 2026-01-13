@@ -241,35 +241,35 @@ export default function Chatbot() {
   };
 
   return (
-    <div className="flex flex-col h-[600px] bg-white rounded-2xl shadow-xl border border-[#E6DCCA] overflow-hidden">
+    <div className="flex flex-col h-[500px] sm:h-[550px] md:h-[600px] bg-white rounded-xl sm:rounded-2xl shadow-xl border border-[#E6DCCA] overflow-hidden w-full">
       {/* Chat Header */}
-      <div className="bg-gradient-to-r from-[#D98E5F] to-[#c57d4f] px-6 py-4 flex items-center gap-3">
-        <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-          <span className="material-symbols-outlined text-white text-xl">support_agent</span>
+      <div className="bg-gradient-to-r from-[#D98E5F] to-[#c57d4f] px-4 sm:px-6 py-3 sm:py-4 flex items-center gap-2 sm:gap-3">
+        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+          <span className="material-symbols-outlined text-white text-lg sm:text-xl">support_agent</span>
         </div>
-        <div>
-          <h3 className="text-white font-bold text-sm">Support Assistant</h3>
-          <p className="text-white/80 text-xs">Here to help with your questions</p>
+        <div className="min-w-0">
+          <h3 className="text-white font-bold text-xs sm:text-sm truncate">Support Assistant</h3>
+          <p className="text-white/80 text-[10px] sm:text-xs truncate">Here to help with your questions</p>
         </div>
       </div>
 
       {/* Messages Container */}
-      <div className="flex-1 overflow-y-auto p-6 space-y-4 bg-[#FDFBF7]">
+      <div className="flex-1 overflow-y-auto p-3 sm:p-4 md:p-6 space-y-3 sm:space-y-4 bg-[#FDFBF7]">
         {messages.map((message) => (
           <div
             key={message.id}
             className={`flex ${message.isBot ? "justify-start" : "justify-end"}`}
           >
             <div
-              className={`max-w-[80%] rounded-2xl px-4 py-3 ${
+              className={`max-w-[85%] sm:max-w-[80%] rounded-xl sm:rounded-2xl px-3 py-2 sm:px-4 sm:py-3 ${
                 message.isBot
                   ? "bg-white border border-[#E6DCCA] text-[#2D241E]"
                   : "bg-[#D98E5F] text-white"
               }`}
             >
-              <p className="text-sm leading-relaxed whitespace-pre-line">{message.text}</p>
+              <p className="text-xs sm:text-sm leading-relaxed whitespace-pre-line break-words">{message.text}</p>
               {message.suggestedQuestions && message.suggestedQuestions.length > 0 && (
-                <div className="mt-4 space-y-2">
+                <div className="mt-3 sm:mt-4 space-y-1.5 sm:space-y-2">
                   {message.suggestedQuestions.map((question, idx) => (
                     <button
                       key={idx}
@@ -280,7 +280,7 @@ export default function Chatbot() {
                           handleQuestionClick(question);
                         }
                       }}
-                      className="w-full text-left px-4 py-2.5 bg-[#F5F2EB] hover:bg-[#E6DCCA] border border-[#E6DCCA] rounded-xl text-xs font-medium text-[#2D241E] transition-all hover:shadow-sm"
+                      className="w-full text-left px-3 py-2 sm:px-4 sm:py-2.5 bg-[#F5F2EB] hover:bg-[#E6DCCA] active:bg-[#E6DCCA] border border-[#E6DCCA] rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-medium text-[#2D241E] transition-all hover:shadow-sm touch-manipulation"
                     >
                       {question}
                     </button>
@@ -293,11 +293,11 @@ export default function Chatbot() {
         
         {isTyping && (
           <div className="flex justify-start">
-            <div className="bg-white border border-[#E6DCCA] rounded-2xl px-4 py-3">
+            <div className="bg-white border border-[#E6DCCA] rounded-xl sm:rounded-2xl px-3 py-2 sm:px-4 sm:py-3">
               <div className="flex gap-1">
-                <div className="w-2 h-2 bg-[#D98E5F] rounded-full animate-bounce" style={{ animationDelay: "0ms" }}></div>
-                <div className="w-2 h-2 bg-[#D98E5F] rounded-full animate-bounce" style={{ animationDelay: "150ms" }}></div>
-                <div className="w-2 h-2 bg-[#D98E5F] rounded-full animate-bounce" style={{ animationDelay: "300ms" }}></div>
+                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#D98E5F] rounded-full animate-bounce" style={{ animationDelay: "0ms" }}></div>
+                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#D98E5F] rounded-full animate-bounce" style={{ animationDelay: "150ms" }}></div>
+                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#D98E5F] rounded-full animate-bounce" style={{ animationDelay: "300ms" }}></div>
               </div>
             </div>
           </div>
@@ -305,9 +305,9 @@ export default function Chatbot() {
       </div>
 
       {/* Footer */}
-      <div className="px-6 py-3 bg-[#F5F2EB] border-t border-[#E6DCCA] text-center">
-        <p className="text-xs text-[#8C8479]">
-          Need more help? <button onClick={() => window.open(`https://wa.me/919712982198`, "_blank")} className="text-[#D98E5F] font-semibold hover:underline">Contact us on WhatsApp</button>
+      <div className="px-4 sm:px-6 py-2 sm:py-3 bg-[#F5F2EB] border-t border-[#E6DCCA] text-center">
+        <p className="text-[10px] sm:text-xs text-[#8C8479]">
+          Need more help? <button onClick={() => window.open(`https://wa.me/919712982198`, "_blank")} className="text-[#D98E5F] font-semibold hover:underline active:underline">Contact us on WhatsApp</button>
         </p>
       </div>
     </div>
