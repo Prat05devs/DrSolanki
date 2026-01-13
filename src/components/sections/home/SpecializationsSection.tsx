@@ -78,16 +78,16 @@ export default function SpecializationsSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl font-serif font-medium text-[#2D2A26] mb-6"
+            className="text-4xl md:text-6xl font-[var(--font-playfair)] font-bold text-[#2D2A26] leading-[1.15] tracking-[-0.01em] mb-6"
           >
             Specialized Care for <br />
-            <span className="italic font-light">Every Stage of Life</span>
+            <span className="italic">Every Stage of Life</span>
           </motion.h2>
           <motion.p 
              initial={{ opacity: 0 }}
              animate={isInView ? { opacity: 1 } : {}}
              transition={{ delay: 0.2 }}
-             className="text-lg text-[#2D2A26]/60 leading-relaxed"
+             className="text-lg text-[#2D2A26]/60 leading-[1.7]"
           >
             From revolutionary robotic-assisted surgeries to personalized fertility journeys, we provide a full spectrum of advanced gynecological care.
           </motion.p>
@@ -111,15 +111,15 @@ export default function SpecializationsSection() {
                   <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-6 group-hover:bg-[#C07766] transition-colors duration-500">
                     <spec.icon className="w-6 h-6 text-[#C07766] group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className="text-2xl font-semibold text-[#2D2A26] mb-3 group-hover:text-[#C07766] transition-colors">
+                  <h3 className="text-2xl font-[var(--font-playfair)] font-bold text-[#2D2A26] mb-3 group-hover:text-[#C07766] transition-colors leading-[1.15] tracking-[-0.01em]">
                     {spec.title}
                   </h3>
-                  <p className="text-[#2D2A26]/50 mb-6 leading-relaxed">
+                  <p className="text-[#2D2A26]/50 mb-6 leading-[1.7]">
                     {spec.description}
                   </p>
                 </div>
 
-                <div className="flex items-center gap-2 text-[#C07766] font-bold text-sm uppercase tracking-wider">
+                <div className="flex items-center gap-2 text-[#C07766] font-semibold text-sm tracking-[0.01em]">
                   Explore Service
                   <div className="w-8 h-8 rounded-full border border-[#C07766]/20 flex items-center justify-center group-hover:bg-[#C07766] group-hover:text-white transition-all">
                     <ArrowRight className="w-4 h-4" />

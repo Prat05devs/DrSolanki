@@ -20,23 +20,23 @@ export default function AppointmentCTA() {
             viewport={{ once: true }}
           >
             
-            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-[var(--font-playfair)] font-black mb-6 leading-[1.15] tracking-[-0.01em]">
               Ready to Take the Next Step?
             </h2>
             
-            <p className="text-xl text-white/90 mb-10 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-xl text-white/90 mb-10 leading-[1.7] max-w-2xl mx-auto">
               Schedule your consultation with Dr. Smit Bharat Solanki and discover how advanced robotic surgery 
               can provide gentle, effective solutions for your health concerns.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link href="/contact" className="group inline-flex items-center gap-2 px-8 py-4 bg-white hover:bg-gray-50 text-[#C07766] font-bold rounded-xl shadow-2xl hover:shadow-3xl transition-all">
+              <Link href="/contact" className="group inline-flex items-center gap-2 px-8 py-4 bg-white hover:bg-gray-50 text-[#C07766] font-semibold tracking-[0.01em] rounded-xl shadow-2xl hover:shadow-3xl transition-all">
                 <Calendar className="w-5 h-5" />
                 Schedule Appointment
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               
-              <Link href="tel:+919712982198" className="inline-flex items-center gap-2 px-8 py-4 bg-transparent hover:bg-white/10 text-white font-semibold rounded-xl border-2 border-white/30 hover:border-white/50 backdrop-blur-sm transition-all">
+              <Link href="tel:+919712982198" className="inline-flex items-center gap-2 px-8 py-4 bg-transparent hover:bg-white/10 text-white font-semibold tracking-[0.01em] rounded-xl border-2 border-white/30 hover:border-white/50 backdrop-blur-sm transition-all">
                 <Phone className="w-5 h-5" />
                 Call Us: +91 97129 82198
               </Link>

@@ -38,10 +38,10 @@ export default function TechnologySection() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#2D2A26] mb-6">
+            <h2 className="text-4xl md:text-5xl font-[var(--font-playfair)] font-black text-[#2D2A26] mb-6 leading-[1.15] tracking-[-0.01em]">
               Cutting-Edge Surgical Technology
             </h2>
-            <p className="text-lg text-[#2D2A26]/70 leading-relaxed mb-8">
+            <p className="text-lg text-[#2D2A26]/70 leading-[1.7] mb-8">
               {/* TODO: Add detailed technology description from single_source_of_truth.md */}
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
@@ -61,14 +61,14 @@ export default function TechnologySection() {
                     <tech.icon className="w-6 h-6 text-[#C07766]" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-[#2D2A26] mb-1">{tech.title}</h3>
-                    <p className="text-[#2D2A26]/60 text-sm">{tech.description}</p>
+                    <h3 className="font-[var(--font-playfair)] font-bold text-[#2D2A26] mb-1 leading-[1.15] tracking-[-0.01em]">{tech.title}</h3>
+                    <p className="text-[#2D2A26]/60 text-sm leading-[1.7]">{tech.description}</p>
                   </div>
                 </motion.div>
               ))}
             </div>
 
-            <Link href="/laparoscopy-robotic-surgery" className="inline-flex items-center gap-2 px-6 py-3 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-semibold rounded-xl transition-colors">
+            <Link href="/laparoscopy-robotic-surgery" className="inline-flex items-center gap-2 px-6 py-3 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-semibold tracking-[0.01em] rounded-xl transition-colors">
               Learn About Our Technology
               <ArrowRight className="w-4 h-4" />
             </Link>

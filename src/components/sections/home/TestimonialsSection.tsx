@@ -63,8 +63,8 @@ export default function TestimonialsSection() {
               )}
 
               {/* Quote */}
-              <p className="text-[#2D2A26] leading-relaxed mb-6 italic">
-                "{testimonial.quote}"
+              <p className="text-[#2D2A26] leading-[1.7] mb-6 italic">
+                &quot;{testimonial.quote}&quot;
               </p>
 
               {/* Patient Info */}
@@ -94,7 +94,7 @@ export default function TestimonialsSection() {
         </div>
 
         <div className="text-center mt-10 sm:mt-12">
-          <Link href="/patient-support/stories" className="inline-flex items-center gap-2 text-white font-semibold hover:gap-3 transition-all bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20 hover:bg-white/20">
+          <Link href="/patient-support/stories" className="inline-flex items-center gap-2 text-white font-semibold tracking-[0.01em] hover:gap-3 transition-all bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20 hover:bg-white/20">
             Read More Patient Stories
             <ArrowRight className="w-5 h-5" />
           </Link>

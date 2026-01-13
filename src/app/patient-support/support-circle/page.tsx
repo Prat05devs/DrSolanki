@@ -9,23 +9,51 @@ export default function SupportCirclePage() {
     // Handle smooth scroll to chatbot section when hash is present
     if (typeof window !== "undefined") {
       const hash = window.location.hash;
+      
       if (hash === "#ask-your-questions") {
-        // Small delay to ensure page is fully rendered
-        setTimeout(() => {
+        // Wait for page to be fully rendered and then scroll
+        const scrollToChatbot = () => {
           const element = document.getElementById("ask-your-questions");
           if (element) {
-            element.scrollIntoView({ behavior: "smooth", block: "start" });
+            // Calculate position accounting for navbar height
+            const navbarHeight = 80; // Approximate navbar height
+            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = Math.max(0, elementPosition - navbarHeight);
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth"
+            });
           }
-        }, 300);
+        };
+        
+        // Use requestAnimationFrame to ensure DOM is ready
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            scrollToChatbot();
+          });
+        });
       }
+      
+      // Always ensure page is scrollable
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
     }
+    
+    // Cleanup
+    return () => {
+      if (typeof window !== "undefined") {
+        document.body.style.overflow = "";
+        document.documentElement.style.overflow = "";
+      }
+    };
   }, []);
 
   return (
     <div className="overflow-x-hidden">
       {/* Main Content */}
-      <main className="flex flex-col min-h-screen">
-        <section className="relative w-full bg-[#F5F2EB] py-12 sm:py-16 px-4 sm:px-6 md:px-10 lg:px-20 overflow-hidden">
+      <main className="flex flex-col">
+        <section className="relative w-full bg-[#F5F2EB] py-12 sm:py-16 px-4 sm:px-6 md:px-10 lg:px-20">
           {/* Background Blurs */}
           <div className="absolute top-0 right-0 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[600px] md:h-[600px] bg-[#E8DCC5]/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
           <div className="absolute bottom-0 left-0 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] md:w-[500px] md:h-[500px] bg-[#D9CBAE]/20 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4 pointer-events-none"></div>
@@ -126,7 +154,7 @@ export default function SupportCirclePage() {
             </div>
 
             {/* Interactive Chatbot Section */}
-            <div id="ask-your-questions" className="w-full max-w-4xl mx-auto mb-12 sm:mb-16 md:mb-20 scroll-mt-20 sm:scroll-mt-24 px-2 sm:px-0">
+            <div id="ask-your-questions" className="w-full max-w-4xl mx-auto mb-12 sm:mb-16 md:mb-20 scroll-mt-20 sm:scroll-mt-24 md:scroll-mt-28 px-2 sm:px-0">
               <div className="text-center mb-6 sm:mb-8">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl text-[#2D241E] font-bold mb-3 sm:mb-4 px-2">
                   Ask Your Questions
