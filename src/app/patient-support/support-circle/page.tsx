@@ -1,8 +1,26 @@
 "use client";
 
+import { useEffect } from "react";
 import Footer from "@/components/global/Footer";
+import Chatbot from "@/components/sections/support-circle/Chatbot";
 
 export default function SupportCirclePage() {
+  useEffect(() => {
+    // Handle smooth scroll to chatbot section when hash is present
+    if (typeof window !== "undefined") {
+      const hash = window.location.hash;
+      if (hash === "#ask-your-questions") {
+        // Small delay to ensure page is fully rendered
+        setTimeout(() => {
+          const element = document.getElementById("ask-your-questions");
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }, 300);
+      }
+    }
+  }, []);
+
   return (
     <div className="overflow-x-hidden">
       {/* Main Content */}
@@ -15,12 +33,7 @@ export default function SupportCirclePage() {
           <div className="max-w-[1100px] mx-auto relative z-10">
             {/* Header */}
             <div className="flex flex-col items-center text-center mb-14">
-              <div className="flex items-center gap-2 mb-4 bg-white/60 border border-white px-4 py-1.5 rounded-full shadow-sm backdrop-blur-sm">
-                <span className="material-symbols-outlined text-[#D98E5F] text-lg">home_health</span>
-                <span className="text-[#2D241E]/80 text-xs font-bold uppercase tracking-wider">
-                  A Safe Haven for Healing
-                </span>
-              </div>
+              
               <h1 className="text-[#2D241E] text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight mb-6">
                 The Support Circle
               </h1>
@@ -50,12 +63,6 @@ export default function SupportCirclePage() {
                 </div>
                 <div className="flex flex-col flex-1 p-8">
                   <h3 className="text-[#2D241E] text-2xl font-bold mb-3">Her Partner in Healing</h3>
-                  <p className="text-[#4A4036] mb-6 leading-relaxed">
-                    {/* TODO: Add partner support guide content from single_source_of_truth.md */}
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                  </p>
                   <div className="h-px w-full bg-[#E6DCCA] mb-6"></div>
                   <ul className="flex flex-col gap-3 mb-8 flex-1">
                     <li className="flex items-start gap-3">
@@ -73,12 +80,6 @@ export default function SupportCirclePage() {
                       </span>
                     </li>
                   </ul>
-                  <button className="w-full flex items-center justify-center gap-2 bg-[#2D241E] text-white h-12 px-6 rounded-full font-bold text-sm hover:bg-[#D98E5F] transition-colors group/btn">
-                    <span>Read the Husband's Guide</span>
-                    <span className="material-symbols-outlined text-lg group-hover/btn:translate-x-1 transition-transform">
-                      arrow_forward
-                    </span>
-                  </button>
                 </div>
               </div>
 
@@ -101,12 +102,6 @@ export default function SupportCirclePage() {
                 </div>
                 <div className="flex flex-col flex-1 p-8">
                   <h3 className="text-[#2D241E] text-2xl font-bold mb-3">Peace of Mind for the Family</h3>
-                  <p className="text-[#4A4036] mb-6 leading-relaxed">
-                    {/* TODO: Add family support guide content from single_source_of_truth.md */}
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                  </p>
                   <div className="h-px w-full bg-[#E6DCCA] mb-6"></div>
                   <ul className="flex flex-col gap-3 mb-8 flex-1">
                     <li className="flex items-start gap-3">
@@ -126,63 +121,21 @@ export default function SupportCirclePage() {
                       </span>
                     </li>
                   </ul>
-                  <button className="w-full flex items-center justify-center gap-2 bg-[#2D241E] text-white h-12 px-6 rounded-full font-bold text-sm hover:bg-[#D98E5F] transition-colors group/btn">
-                    <span>Watch Family Video</span>
-                    <span className="material-symbols-outlined text-lg group-hover/btn:translate-x-1 transition-transform">
-                      play_circle
-                    </span>
-                  </button>
                 </div>
               </div>
             </div>
 
-            {/* Write a Note Section */}
-            <div className="w-full max-w-2xl mx-auto">
-              <div className="relative bg-[#FDFBF7] rounded-xl p-8 md:p-12 paper-shadow border border-[#E6DCCA] rotate-1 hover:rotate-0 transition-transform duration-500 origin-center">
-                <div className="absolute inset-0 opacity-10 paper-lines pointer-events-none rounded-xl"></div>
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-32 h-8 bg-[#F0E6D2]/80 rotate-1 shadow-sm backdrop-blur-sm z-20"></div>
-                <div className="relative z-10">
-                  <div className="flex flex-col items-center text-center mb-8">
-                    <h3 className="text-3xl text-[#2D241E] font-serif font-medium mb-3 italic">
-                      Write a note to Dr. Smit
-                    </h3>
-                    <p className="text-[#4A4036] text-sm">
-                      Have a quiet worry or a personal question? Write it down here. Dr. Smit Bharat Solanki reads every note personally.
-                    </p>
-                  </div>
-                  <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
-                    <div className="space-y-4">
-                      <div className="relative group">
-                        <textarea
-                          className="w-full bg-transparent border-b-2 border-[#E6DCCA] text-[#2D241E] placeholder-[#A89F91] focus:outline-none focus:border-[#D98E5F] transition-colors resize-none py-2 text-lg leading-loose"
-                          placeholder="Dear Doctor..."
-                          rows={3}
-                        ></textarea>
-                      </div>
-                      <div className="relative group">
-                        <input
-                          className="w-full bg-transparent border-b-2 border-[#E6DCCA] text-[#2D241E] placeholder-[#A89F91] focus:outline-none focus:border-[#D98E5F] transition-colors py-2 text-sm"
-                          placeholder="Your email (optional, for reply)"
-                          type="email"
-                        />
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between mt-2">
-                      <div className="flex items-center gap-1.5 text-xs text-[#8C8479]">
-                        <span className="material-symbols-outlined text-sm">lock</span>
-                        <span>Private &amp; Secure</span>
-                      </div>
-                      <button
-                        className="bg-[#D98E5F] hover:bg-[#c57d4f] text-white rounded-lg px-6 py-2.5 font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center gap-2"
-                        type="submit"
-                      >
-                        <span>Send Note</span>
-                        <span className="material-symbols-outlined text-lg">mail</span>
-                      </button>
-                    </div>
-                  </form>
-                </div>
+            {/* Interactive Chatbot Section */}
+            <div id="ask-your-questions" className="w-full max-w-4xl mx-auto mb-20 scroll-mt-24">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl md:text-4xl text-[#2D241E] font-bold mb-4">
+                  Ask Your Questions
+                </h2>
+                <p className="text-[#4A4036] text-lg max-w-2xl mx-auto">
+                  Whether you're a partner, parent, or family member, get instant answers to common questions about care, recovery, and support.
+                </p>
               </div>
+              <Chatbot />
             </div>
           </div>
         </section>

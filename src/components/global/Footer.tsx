@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { contactInfo, hospitals } from "@/data/siteData";
+
 export default function Footer() {
   return (
     <footer className="bg-[#006D77] text-white border-t border-white/10 relative overflow-hidden">
@@ -54,81 +57,81 @@ export default function Footer() {
             </h3>
             <ul className="flex flex-col gap-3">
               <li>
-                <a
+                <Link
                   className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
-                  href="#"
+                  href="/"
                 >
                   <span className="w-0 overflow-hidden group-hover:w-2 group-hover:mr-1 transition-all duration-300 text-[#f4c025]">
                     •
                   </span>{" "}
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
-                  href="#"
+                  href="/expertise/dr-smit"
                 >
                   <span className="w-0 overflow-hidden group-hover:w-2 group-hover:mr-1 transition-all duration-300 text-[#f4c025]">
                     •
                   </span>{" "}
-                  Technology
-                </a>
+                  About Dr. Smit
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
-                  href="#"
+                  href="/laparoscopy-robotic-surgery"
                 >
                   <span className="w-0 overflow-hidden group-hover:w-2 group-hover:mr-1 transition-all duration-300 text-[#f4c025]">
                     •
                   </span>{" "}
-                  Conditions
-                </a>
+                  Robotic Surgery
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
-                  href="#"
+                  href="/fertility"
                 >
                   <span className="w-0 overflow-hidden group-hover:w-2 group-hover:mr-1 transition-all duration-300 text-[#f4c025]">
                     •
                   </span>{" "}
-                  Treatments
-                </a>
+                  Fertility & IVF
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
-                  href="#"
+                  href="/expertise/aesthetic-gynecology"
                 >
                   <span className="w-0 overflow-hidden group-hover:w-2 group-hover:mr-1 transition-all duration-300 text-[#f4c025]">
                     •
                   </span>{" "}
-                  Dr. Smit Bharat Solanki's Profile
-                </a>
+                  Aesthetic Gynecology
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
-                  href="#"
+                  href="/urogynecology"
                 >
                   <span className="w-0 overflow-hidden group-hover:w-2 group-hover:mr-1 transition-all duration-300 text-[#f4c025]">
                     •
                   </span>{" "}
-                  International
-                </a>
+                  Urogynecology
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
-                  href="#"
+                  href="/clinics"
                 >
                   <span className="w-0 overflow-hidden group-hover:w-2 group-hover:mr-1 transition-all duration-300 text-[#f4c025]">
                     •
                   </span>{" "}
-                  Stories of Hope
-                </a>
+                  Our Clinics
+                </Link>
               </li>
             </ul>
           </div>
@@ -138,59 +141,75 @@ export default function Footer() {
             </h3>
             <ul className="flex flex-col gap-3">
               <li>
-                <a
+                <Link
                   className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
-                  href="#"
+                  href="/patient-support/support-circle#ask-your-questions"
+                  scroll={true}
                 >
                   <span className="w-0 overflow-hidden group-hover:w-2 group-hover:mr-1 transition-all duration-300 text-[#f4c025]">
                     •
                   </span>{" "}
-                  Education Hub
-                </a>
+                  <span className="flex items-center gap-2">
+                    <span className="material-symbols-outlined text-lg text-[#f4c025]">support_agent</span>
+                    <span className="font-semibold">Interactive Chatbot</span>
+                    <span className="px-1.5 py-0.5 bg-[#f4c025]/20 text-[#f4c025] text-[10px] font-bold uppercase rounded">New</span>
+                  </span>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
-                  href="#"
+                  href="/patient-support/stories"
+                >
+                  <span className="w-0 overflow-hidden group-hover:w-2 group-hover:mr-1 transition-all duration-300 text-[#f4c025]">
+                    •
+                  </span>{" "}
+                  Patient Stories
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
+                  href="/patient-support/faqs"
                 >
                   <span className="w-0 overflow-hidden group-hover:w-2 group-hover:mr-1 transition-all duration-300 text-[#f4c025]">
                     •
                   </span>{" "}
                   FAQs
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
-                  href="#"
+                  href="/research-insights"
                 >
                   <span className="w-0 overflow-hidden group-hover:w-2 group-hover:mr-1 transition-all duration-300 text-[#f4c025]">
                     •
                   </span>{" "}
-                  Pre/Post-Op Guide
-                </a>
+                  Research & Insights
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
-                  href="#"
+                  href="/papers"
                 >
                   <span className="w-0 overflow-hidden group-hover:w-2 group-hover:mr-1 transition-all duration-300 text-[#f4c025]">
                     •
                   </span>{" "}
-                  Share Your Story
-                </a>
+                  Papers & Achievements
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
-                  href="#"
+                  href="/testimonials"
                 >
                   <span className="w-0 overflow-hidden group-hover:w-2 group-hover:mr-1 transition-all duration-300 text-[#f4c025]">
                     •
                   </span>{" "}
-                  Your Private Replies
-                </a>
+                  Testimonials
+                </Link>
               </li>
             </ul>
           </div>
@@ -201,83 +220,106 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               <a
                 className="flex items-center gap-3 text-[#edfcf9] hover:text-[#f4c025] transition-colors group"
-                href="tel:+919876543210"
+                href={`tel:${contactInfo.phone}`}
               >
                 <span className="material-symbols-outlined text-[#f4c025] group-hover:text-white transition-colors">
                   call
                 </span>
-                <span className="font-medium tracking-wide">+91-98765 43210</span>
+                <span className="font-medium tracking-wide">{contactInfo.phone}</span>
               </a>
               <a
                 className="flex items-center gap-3 text-[#edfcf9] hover:text-[#f4c025] transition-colors group"
-                href="mailto:info@drsmitsolanki.com"
+                href={`mailto:${contactInfo.email}`}
               >
                 <span className="material-symbols-outlined text-[#f4c025] group-hover:text-white transition-colors">
                   mail
                 </span>
-                <span className="font-medium tracking-wide">info@drsmitsolanki.com</span>
+                <span className="font-medium tracking-wide">{contactInfo.email}</span>
               </a>
             </div>
-            <button className="flex items-center justify-center gap-2 bg-[#dcfce7] hover:bg-white text-[#166534] py-3 px-4 rounded-xl transition-all duration-300 w-full md:w-auto font-bold shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+            <a
+              href="https://wa.me/919712982198"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 bg-[#dcfce7] hover:bg-white text-[#166534] py-3 px-4 rounded-xl transition-all duration-300 w-full md:w-auto font-bold shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
+            >
               <span className="material-symbols-outlined text-xl">chat</span>
               <span>Chat Now on WhatsApp</span>
-            </button>
+            </a>
             <div className="flex flex-col gap-4 mt-2 border-l-2 border-white/20 pl-4">
-              <div className="flex gap-2 items-start">
-                <div>
-                  <p className="font-bold text-white text-sm">Parth Hospital</p>
-                  <p className="text-xs text-[#edfcf9]/70 mt-0.5">Evening OPDs: 6-8 PM</p>
+              {hospitals.map((hospital, idx) => (
+                <div key={idx} className="flex gap-2 items-start">
+                  <div>
+                    <Link
+                      href={`/clinics/${hospital.slug}`}
+                      className="font-bold text-white text-sm hover:text-[#f4c025] transition-colors"
+                    >
+                      {hospital.name}
+                    </Link>
+                    <p className="text-xs text-[#edfcf9]/70 mt-0.5">{hospital.timing}</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex gap-2 items-start">
-                <div>
-                  <p className="font-bold text-white text-sm">Parul Sevashram Hospital</p>
-                  <p className="text-xs text-[#edfcf9]/70 mt-0.5">Daily Day OPDs</p>
-                </div>
-              </div>
-              <div className="flex gap-2 items-start">
-                <div>
-                  <p className="font-bold text-white text-sm">Satyam Hospital</p>
-                  <p className="text-xs text-[#edfcf9]/70 mt-0.5">Alternate Day OPDs</p>
-                </div>
-              </div>
-              <a
+              ))}
+              <Link
                 className="text-xs font-bold text-[#f4c025] hover:text-white transition-colors uppercase tracking-wide"
                 href="/contact"
               >
                 View Full Contact Page →
-              </a>
+              </Link>
             </div>
           </div>
         </div>
-        <div className="border-t border-white/10 py-12">
-          <div className="bg-[#005a63] rounded-xl p-8 md:p-10 relative overflow-hidden shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] border border-white/10">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-[#f4c025]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-              <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
-                <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden shrink-0 border-4 border-[#006D77] shadow-md">
-                  <img
-                    alt="Comforting hands gesture"
-                    className="w-full h-full object-cover"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxUfb5-OF4jGIxg8MmCAoAOZ8h_aMhwaFLs4WR3eAxGOXU0ffmnw2O30pSwzzVO-_UoeElMSezTl-ex1sYKIASxU6VCr6Px7ie7L3rNDJVqbbrpLSj1jcXD4NvXWSK7m2JBsPybt-ulK3W26-awGpvF33GivWcFH1dAkxJfUje_zgDunA-WqPIzjD66M-2ccjQPT2JGejVY7GzfU4SOTeAB2_D7Kgflvf3i76q10VnXPr38Yj8S8HApy3_dRBv5imHZ84HQfB5yA"
-                  />
+        
+        {/* Interactive Chatbot Feature - Prominently Displayed */}
+        <div className="border-t border-white/10 py-8">
+          <div className="bg-gradient-to-br from-[#f4c025] via-[#e0b020] to-[#d9a010] rounded-2xl p-6 md:p-8 relative overflow-hidden shadow-[0_20px_60px_-10px_rgba(244,192,37,0.4)] border-2 border-white/20">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-white/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 w-72 h-72 bg-white/10 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+            <div className="relative z-10">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+                <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left flex-1">
+                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center shrink-0 border-4 border-white/30 shadow-lg">
+                    <span className="material-symbols-outlined text-white text-4xl md:text-5xl">support_agent</span>
+                  </div>
+                  <div className="max-w-2xl">
+                    
+                    <h2 className="text-3xl md:text-4xl font-bold text-[#181611] mb-3 leading-tight font-[var(--font-playfair)]">
+                      Ask Your Questions Instantly
+                    </h2>
+                    <p className="text-[#181611]/90 text-lg md:text-xl font-medium leading-relaxed mb-4">
+                      Get instant answers about surgery, recovery, fertility, and more. Our interactive chatbot guides partners and families through common questions—no typing required, just click and explore.
+                    </p>
+                    <div className="flex flex-wrap gap-3 justify-center md:justify-start mb-4">
+                      <div className="flex items-center gap-2 text-[#181611]/80 text-sm">
+                        <span className="material-symbols-outlined text-lg">check_circle</span>
+                        <span>Suggested Questions</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-[#181611]/80 text-sm">
+                        <span className="material-symbols-outlined text-lg">check_circle</span>
+                        <span>Instant Answers</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-[#181611]/80 text-sm">
+                        <span className="material-symbols-outlined text-lg">check_circle</span>
+                        <span>24/7 Available</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="max-w-xl">
-                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-2 leading-tight">
-                    Ready to Begin Your Healing Journey?
-                  </h2>
-                  <p className="text-[#edfcf9]/80 text-base">
-                    Book a confidential consultation today. Experience care tailored to your needs.
-                  </p>
-                </div>
+                <Link
+                  href="/patient-support/support-circle#ask-your-questions"
+                  className="bg-[#181611] hover:bg-[#2D2A26] text-white font-bold text-lg py-4 px-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 whitespace-nowrap flex items-center gap-3 group"
+                  scroll={true}
+                >
+                  <span className="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">chat_bubble</span>
+                  <span>Try Interactive Chatbot</span>
+                  <span className="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </Link>
               </div>
-              <button className="bg-gradient-to-r from-[#f4c025] to-[#e0b020] hover:to-[#d9a010] text-[#181611] font-bold text-base py-3.5 px-8 rounded-xl shadow-lg shadow-[#f4c025]/20 transition-all duration-300 transform hover:-translate-y-0.5 whitespace-nowrap flex items-center gap-2">
-                <span className="material-symbols-outlined text-[20px]">calendar_month</span>
-                <span>Book Appointment</span>
-              </button>
             </div>
           </div>
         </div>
+
+        
         <div className="border-t border-white/10 py-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#faeec8]/80">
           <p>© 2024 Dr. Smit Bharat Solanki. All rights reserved.</p>
           <div className="flex flex-wrap justify-center gap-6">
@@ -289,15 +331,15 @@ export default function Footer() {
               Terms &amp; Conditions
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all group-hover:w-full"></span>
             </a>
-            <a 
+            <Link
               href="/sitemap"
               className="hover:text-white transition-colors relative group"
             >
               Sitemap
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all group-hover:w-full"></span>
-            </a>
+            </Link>
           </div>
-          <p className="opacity-60 text-xs">Website Designed &amp; Developed by DesignStudio</p>
+          <p className="opacity-60 text-xs">Website Designed &amp; Developed by Prateek @BasicTech</p>
         </div>
       </div>
     </footer>

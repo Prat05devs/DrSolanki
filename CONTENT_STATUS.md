@@ -103,11 +103,8 @@ Based on the Lorem Ipsum placeholders found:
 - Detailed Da Vinci system components description
 - Detailed robotic surgery procedures overview
 - Detailed robotic surgery journey/process
-- Partner support guide content
-- Family support guide content
 - Detailed aesthetic gynecology descriptions
 - Robotic myomectomy study details
-- Home page section overviews
 
 ## 🎯 Next Steps
 
