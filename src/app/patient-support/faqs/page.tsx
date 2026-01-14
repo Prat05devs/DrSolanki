@@ -11,6 +11,7 @@ import {
   thinEndometriumFaqContent,
   hysterectomyContent
 } from "@/data/siteData";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 interface FAQTopic {
   id: string;

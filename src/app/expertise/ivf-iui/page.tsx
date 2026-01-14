@@ -1,7 +1,7 @@
 import Footer from "@/components/global/Footer";
 import Link from "next/link";
 import Image from "next/image";
-import { ivfInjectionsInfo, thinEndometriumFaqContent } from "@/data/siteData";
+import { ivfInjectionsInfo, thinEndometriumFaqContent, contactInfo } from "@/data/siteData";
 
 export default function InfertilityPage() {
   return (
