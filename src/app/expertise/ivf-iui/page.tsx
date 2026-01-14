@@ -1,7 +1,7 @@
 import Footer from "@/components/global/Footer";
 import Link from "next/link";
 import Image from "next/image";
-import { ivfInjectionsInfo } from "@/data/siteData";
+import { ivfInjectionsInfo, thinEndometriumFaqContent } from "@/data/siteData";
 
 export default function InfertilityPage() {
   return (
@@ -584,6 +584,94 @@ export default function InfertilityPage() {
               <p className="mb-4 opacity-90">{ivfInjectionsInfo.takeaway.wrongQuestion}</p>
               <p className="mb-4 font-semibold text-lg">{ivfInjectionsInfo.takeaway.rightQuestion}</p>
               <p className="opacity-90 whitespace-pre-line">{ivfInjectionsInfo.takeaway.conclusion}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Thin Endometrium Section */}
+      <section className="py-16 px-4 sm:px-10 bg-[#f8f8f5] dark:bg-[#221e10]">
+        <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-[#C07766] dark:text-[#C07766] font-bold tracking-widest uppercase text-sm">
+              Understanding IVF Challenges
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#181611] dark:text-white mt-4 mb-6">
+              {thinEndometriumFaqContent.title}
+            </h2>
+            <p className="text-[#8a8060] dark:text-gray-300 text-lg max-w-3xl mx-auto">
+              {thinEndometriumFaqContent.introduction}
+            </p>
+          </div>
+
+          <div className="space-y-8">
+            {/* What is Thin Endometrium */}
+            <div className="bg-white dark:bg-white/5 rounded-2xl p-8 shadow-xl border border-[#e5dddc]">
+              <h3 className="text-2xl font-bold text-[#181611] dark:text-white mb-4">
+                What is Thin Endometrium?
+              </h3>
+              <p className="text-[#8a8060] dark:text-gray-300 text-lg leading-relaxed">
+                {thinEndometriumFaqContent.whatIs}
+              </p>
+            </div>
+
+            {/* Why It Matters */}
+            <div className="bg-gradient-to-br from-[#C07766]/10 to-transparent rounded-2xl p-8 border border-[#C07766]/20">
+              <h3 className="text-2xl font-bold text-[#181611] dark:text-white mb-4">
+                Why It Affects IVF Success
+              </h3>
+              <p className="text-[#8a8060] dark:text-gray-300 text-lg leading-relaxed mb-4">
+                {thinEndometriumFaqContent.whyAffects}
+              </p>
+              <div className="bg-white dark:bg-white/5 rounded-xl p-6 mt-4">
+                <h4 className="font-bold text-[#181611] dark:text-white mb-3">Common Causes:</h4>
+                <p className="text-[#8a8060] dark:text-gray-300">
+                  {thinEndometriumFaqContent.whyThin}
+                </p>
+              </div>
+            </div>
+
+            {/* New Approach */}
+            <div className="bg-white dark:bg-white/5 rounded-2xl p-8 shadow-xl border border-[#e5dddc]">
+              <h3 className="text-2xl font-bold text-[#181611] dark:text-white mb-4">
+                A New Approach to Thin Endometrium
+              </h3>
+              <p className="text-[#8a8060] dark:text-gray-300 text-lg leading-relaxed mb-4">
+                {thinEndometriumFaqContent.newApproach}
+              </p>
+              <p className="text-[#8a8060] dark:text-gray-300 text-lg leading-relaxed mb-4">
+                {thinEndometriumFaqContent.shift}
+              </p>
+              <div className="bg-gradient-to-br from-[#8DA399]/10 to-transparent rounded-xl p-6 mt-4">
+                <h4 className="font-bold text-[#181611] dark:text-white mb-3">Improvements Observed:</h4>
+                <p className="text-[#8a8060] dark:text-gray-300">
+                  {thinEndometriumFaqContent.improvements}
+                </p>
+              </div>
+            </div>
+
+            {/* Who Benefits */}
+            <div className="bg-gradient-to-br from-[#C07766]/10 to-transparent rounded-2xl p-8 border border-[#C07766]/20">
+              <h3 className="text-2xl font-bold text-[#181611] dark:text-white mb-4">
+                Who Can Benefit
+              </h3>
+              <p className="text-[#8a8060] dark:text-gray-300 text-lg leading-relaxed">
+                {thinEndometriumFaqContent.whoBenefits}
+              </p>
+            </div>
+
+            {/* Important Message */}
+            <div className="bg-gradient-to-br from-[#C07766] to-[#8DA399] rounded-2xl p-8 text-white">
+              <h3 className="text-2xl font-bold mb-4">Important to Remember</h3>
+              <p className="mb-4 opacity-90 text-lg leading-relaxed">
+                {thinEndometriumFaqContent.whatMeans}
+              </p>
+              <p className="mb-4 font-semibold text-lg">
+                {thinEndometriumFaqContent.emotionalMessage}
+              </p>
+              <p className="opacity-90 text-lg leading-relaxed">
+                {thinEndometriumFaqContent.finalMessage}
+              </p>
             </div>
           </div>
         </div>

@@ -1,353 +1,222 @@
 "use client";
 
 import Footer from "@/components/global/Footer";
-import { useState } from "react";
-import { ivfInjectionsInfo } from "@/data/siteData";
+import Link from "next/link";
 
-interface ResearchPublication {
-  id: string;
+interface Publication {
+  id: number;
   title: string;
-  patientTitle: string;
-  category: string;
-  icon: string;
-  color: string;
-  summary: string;
-  spotlight: string;
-  whyItMatters: string;
-  fullExplanation: string;
-  pdfPath: string;
-  pdfName: string;
+  author: string;
   journal?: string;
-  year?: number;
+  pdfPath: string;
+}
+
+interface Presentation {
+  year: number;
+  items: string[];
 }
 
 export default function ResearchInsightsPage() {
-  const [expandedId, setExpandedId] = useState<string | null>(null);
-
-  const publications: ResearchPublication[] = [
+  const publications: Publication[] = [
     {
-      id: "eras-hysterectomy",
-      title: "Enhanced Recovery After Surgery (ERAS) in Laparoscopic Hysterectomy",
-      patientTitle: "Recovering Faster After Surgery: What is ERAS?",
-      category: "Surgical Recovery",
-      icon: "healing",
-      color: "from-[#df4320] to-[#b93518]",
-      summary: "We published a study on how specific protocols help patients leave the hospital sooner after Laparoscopic Hysterectomy.",
-      spotlight: "This study shows that with the right technique, recovery time is significantly reduced. Patients following ERAS protocols experience less pain, shorter hospital stays, and return to normal activities faster.",
-      whyItMatters: "This research directly impacts your recovery journey. By following evidence-based protocols, we can help you get back to your life faster with less discomfort.",
-      fullExplanation: `Enhanced Recovery After Surgery (ERAS) is a comprehensive approach that combines multiple evidence-based strategies to optimize your recovery after laparoscopic hysterectomy. 
-
-Our study demonstrated that patients following ERAS protocols experienced:
-- 30% reduction in average hospital stay
-- Significantly less post-operative pain
-- Faster return to normal activities
-- Higher patient satisfaction scores
-
-The protocol includes pre-operative counseling, optimized anesthesia, minimal fasting, early mobilization, and personalized pain management. This isn't just about getting you out of the hospital faster—it's about ensuring your entire recovery process is smoother and more comfortable.`,
-      pdfPath: "/pdfs/procedures/eras.pdf",
-      pdfName: "ERAS Study - Laparoscopic Hysterectomy",
-      journal: "Journal of Minimally Invasive Gynecology",
-      year: 2024
+      id: 1,
+      title: "Regenerative Synergy: Combining Platelet‑rich Plasma with Transcutaneous Temperature‑controlled Radiofrequency for Enhanced Treatment of Stress Urinary Incontinence in Peri‑ and Postmenopausal Women",
+      author: "Smit Bharat Solanki",
+      pdfPath: "/pdfs/article1.pdf"
     },
     {
-      id: "fsh-vs-hmg",
-      title: "Comparative Analysis of Recombinant FSH vs. HMG in IVF Cycles",
-      patientTitle: ivfInjectionsInfo.title,
-      category: "Fertility Treatment",
-      icon: "science",
-      color: "from-[#C07766] to-[#8DA399]",
-      summary: "A comprehensive look at how different hormones affect embryo quality. We compared recombinant FSH against HMG to see which offers better efficiency.",
-      spotlight: ivfInjectionsInfo.whyItMatters.description,
-      whyItMatters: "IVF is not just medical - it is emotional, physical, and financial. Every failed cycle means more injections, more waiting, more heartbreak, and more expense. Using the right hormone from the start increases the chance that the first cycle works, or you have frozen embryos for future attempts.",
-      fullExplanation: `${ivfInjectionsInfo.introduction}
-
-${ivfInjectionsInfo.types.heading}
-1. ${ivfInjectionsInfo.types.options[0].name} – ${ivfInjectionsInfo.types.options[0].description}
-2. ${ivfInjectionsInfo.types.options[1].name} – ${ivfInjectionsInfo.types.options[1].description}
-
-${ivfInjectionsInfo.types.note}
-
-${ivfInjectionsInfo.studyOverview.heading}
-
-${ivfInjectionsInfo.studyOverview.description}
-• ${ivfInjectionsInfo.studyOverview.comparisons[0]}
-• ${ivfInjectionsInfo.studyOverview.comparisons[1]}
-• ${ivfInjectionsInfo.studyOverview.comparisons[2]}
-• ${ivfInjectionsInfo.studyOverview.comparisons[3]}
-
-${ivfInjectionsInfo.studyOverview.note}
-
-${ivfInjectionsInfo.findings.rFSH.title}
-
-${ivfInjectionsInfo.findings.rFSH.description}
-• ${ivfInjectionsInfo.findings.rFSH.benefits[0]}
-• ${ivfInjectionsInfo.findings.rFSH.benefits[1]}
-
-This means a better chance of:
-• ${ivfInjectionsInfo.findings.rFSH.outcomes[0]}
-• ${ivfInjectionsInfo.findings.rFSH.outcomes[1]}
-• ${ivfInjectionsInfo.findings.rFSH.outcomes[2]}
-
-${ivfInjectionsInfo.findings.efficiency.title}
-
-${ivfInjectionsInfo.findings.efficiency.description}
-
-So instead of:
-• ${ivfInjectionsInfo.findings.efficiency.comparison.insteadOf}
-
-With rFSH:
-• ${ivfInjectionsInfo.findings.efficiency.comparison.with}
-
-This means:
-• ${ivfInjectionsInfo.findings.efficiency.benefits[0]}
-• ${ivfInjectionsInfo.findings.efficiency.benefits[1]}
-• ${ivfInjectionsInfo.findings.efficiency.benefits[2]}
-
-${ivfInjectionsInfo.findings.economy.title}
-
-${ivfInjectionsInfo.findings.economy.description}
-
-${ivfInjectionsInfo.findings.economy.why}
-• ${ivfInjectionsInfo.findings.economy.reasons[0]}
-• ${ivfInjectionsInfo.findings.economy.reasons[1]}
-• ${ivfInjectionsInfo.findings.economy.reasons[2]}
-
-In real life:
-"${ivfInjectionsInfo.findings.economy.quote}"
-
-${ivfInjectionsInfo.whyItMatters.heading}
-
-${ivfInjectionsInfo.whyItMatters.description}
-
-Every failed cycle means:
-• ${ivfInjectionsInfo.whyItMatters.failedCycleCosts[0]}
-• ${ivfInjectionsInfo.whyItMatters.failedCycleCosts[1]}
-• ${ivfInjectionsInfo.whyItMatters.failedCycleCosts[2]}
-• ${ivfInjectionsInfo.whyItMatters.failedCycleCosts[3]}
-
-${ivfInjectionsInfo.whyItMatters.benefits.description}
-• ${ivfInjectionsInfo.whyItMatters.benefits.outcomes[0]}
-• ${ivfInjectionsInfo.whyItMatters.benefits.outcomes[1]}
-
-That saves:
-• ${ivfInjectionsInfo.whyItMatters.benefits.savings[0]}
-• ${ivfInjectionsInfo.whyItMatters.benefits.savings[1]}
-• ${ivfInjectionsInfo.whyItMatters.benefits.savings[2]}
-
-${ivfInjectionsInfo.personalization.heading}
-
-${ivfInjectionsInfo.personalization.answer}
-
-${ivfInjectionsInfo.personalization.description}
-• ${ivfInjectionsInfo.personalization.factors[0]}
-• ${ivfInjectionsInfo.personalization.factors[1]}
-• ${ivfInjectionsInfo.personalization.factors[2]}
-• ${ivfInjectionsInfo.personalization.factors[3]}
-
-${ivfInjectionsInfo.personalization.note}
-
-${ivfInjectionsInfo.takeaway.heading}
-
-${ivfInjectionsInfo.takeaway.wrongQuestion}
-
-${ivfInjectionsInfo.takeaway.rightQuestion}
-
-${ivfInjectionsInfo.takeaway.conclusion}`,
-      pdfPath: "/pdfs/procedures/fsh-vs-hmg.pdf",
-      pdfName: "FSH vs HMG Study - IVF Efficiency",
-      journal: "Fertility and Sterility",
-      year: 2024
+      id: 2,
+      title: "Impact of 3D high-definition laparoscopy on total laparoscopic hysterectomy: a body mass index-stratified retrospective analysis",
+      author: "Smit Bharat Solanki",
+      pdfPath: "/pdfs/article2.pdf"
     },
     {
-      id: "robotic-myomectomy",
-      title: "Robotic-Assisted Myomectomy: Fertility Preservation Outcomes",
-      patientTitle: "Preserving Your Fertility: Robotic Fibroid Removal",
-      category: "Robotic Surgery",
-      icon: "precision_manufacturing",
-      color: "from-[#8DA399] to-[#6B8E7A]",
-      summary: "Our research demonstrates how robotic surgery techniques preserve fertility while effectively removing fibroids, with excellent pregnancy outcomes.",
-      spotlight: "This study proves that robotic myomectomy not only removes fibroids effectively but also preserves your ability to conceive naturally. Patients in our study achieved high pregnancy rates after surgery.",
-      whyItMatters: "If you're dealing with fibroids but want to preserve your fertility, this research shows that robotic surgery offers the best of both worlds: effective treatment and maintained fertility potential.",
-      fullExplanation: `TODO: Add detailed robotic myomectomy study content from single_source_of_truth.md
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Fertility Preservation:
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit
-- Sed do eiusmod tempor incididunt ut labore et dolore
-- Ut enim ad minim veniam, quis nostrud exercitation
-
-Surgical Advantages:
-- Duis aute irure dolor in reprehenderit in voluptate
-- Velit esse cillum dolore eu fugiat nulla pariatur
-- Excepteur sint occaecat cupidatat non proident
-
-Patient Outcomes:
-- Sunt in culpa qui officia deserunt mollit anim id est laborum
-- Sed ut perspiciatis unde omnis iste natus error
-- Sit voluptatem accusantium doloremque laudantium
-
-This research gives you confidence that choosing robotic myomectomy means choosing both effective treatment and preserved fertility options.`,
-      pdfPath: "/pdfs/procedures/robotic-myomectomy.pdf",
-      pdfName: "Robotic Myomectomy - Fertility Outcomes",
-      journal: "Journal of Robotic Surgery",
-      year: 2024
+      id: 3,
+      title: "MECHANISMS AND OUTCOMES OF 1470NM LASER THERAPY FOR VAGINAL REJUVENATION: A MULTI-OMICS OBSERVATIONAL STUDY",
+      author: "Smit Bharat Solanki",
+      journal: "JRE : Jurnal Rekonstruksi dan Estetik",
+      pdfPath: "/pdfs/article3.pdf"
+    },
+    {
+      id: 4,
+      title: "Comparative efficacy of granulocyte colony stimulating factor and platelet-rich plasma on clinical pregnancy rates and endometrial outcomes in women undergoing frozen embryo transfer: a randomized controlled trial with 560 subjects",
+      author: "Dr. Smit Bharat Solanki",
+      journal: "Gynecology",
+      pdfPath: "/pdfs/article4.pdf"
+    },
+    {
+      id: 5,
+      title: "Predictors of Gonadotropin Efficiency Index (GEI): a regression-based model using patient and stimulation parameters in controlled ovarian stimulation cycles",
+      author: "Dr. Smit Bharat Solanki, Deepa Shah",
+      pdfPath: "/pdfs/article5.pdf"
     }
   ];
 
-  const toggleExpand = (id: string) => {
-    setExpandedId(expandedId === id ? null : id);
-  };
+  const presentations: Presentation[] = [
+    {
+      year: 2023,
+      items: [
+        "Jan 2023- Faculty in AICOG 2023 Kolkata- Panel discussion on male subfertility",
+        "June 2023- Delegate at 18th AAGL International congress on \"unravelling uterine issues and beyond\" along with IAGE supported by FOGSI, Mumbai. Presented video of \"Laparoscopic excision of rudimentary uterine horn\"",
+        "June 2023- Presented a poster at IUGA Annual meeting 2023, at the Hague, Netherlands on TTCRF: Groundbreaking Technology - Female SUI Can Be Treated Non-Invasively and with Vulvovaginal Rejuvenation? 14 ECMEC points",
+        "August 2023- Moderator in panel discussion on \"Complications of urogynecological surgeries\" in IMS West Zonal Conference",
+        "October 2023- Talk on \"Current status, challenges and future of uterus transplant in India\"- Chairperson was Dr Stefan G. Tullius at ISOT 2023",
+        "October 2023- Video Presentation in YAG category at APAGE Annual Congress 2023 in Singapore \"Laparoscopic uterine rudimentary horn excision in fertility\"",
+        "Contributor for Uterus transplant Chapter in NOTTO transplant manual 2023 released by NOTTO. Directorate General of Health Services, MOHFW, Government of INDIA",
+        "December 2023- Podium Presentation at ESAG 2023 on TTCRF on OAB, London 2023"
+      ]
+    },
+    {
+      year: 2024,
+      items: [
+        "April 2024- Invited as faculty for Case discussion in Hiding under the sheets: Sexual Pain in 1st Annual Conference of FEFFA at Medanta, Gurugram",
+        "June 2024- Abstract poster presentation on \"Efficacy of Transcutaneous Temperature-Controlled Radiofrequency for Overactive Bladder \"at IUGA annual meeting 2024, Singapore",
+        "Sept 2024- Successfully completed the BCME (Basic Course in Medical Education) course conducted by the NMC at Pramukh Swami Medical College, Karamsad",
+        "Sept 2024- Delivered a lecture on TTCRF in Overactive bladder at Baroda, FOGSI national conference WWWCON 2024",
+        "Sept 2024- Podium presentation on \"Empowering maternal health- Preventing GDM from becoming chronic\" in colloboration with Vcare Denmark at DiaCare Con 2024, Ahmedabad",
+        "Oct 2024- Chaired a session on Uterine Transplant development worldwide by Dr. Stefan G. Tullius, at ISOT 2024, Ahmedabad",
+        "Oct 2024- Faculty in training workshop Registration for Day-3 during 44th Congress of the Société Internationale d&apos;Urologie (SIU) 2024, New Delhi",
+        "Dec 2024- Faculty presentation on \"Alternative Therapy for Stress Urinary Incontinence\" at WZ- IMSCON 2024, Udaipur",
+        "Dec 2024- Attended workshop on Cosmetic gynecology on 12th Dec at Oracle Clinic, Nagpur by Dr Sejal Ajmera and Dr Parul Saoji"
+      ]
+    },
+    {
+      year: 2025,
+      items: [
+        "April 2025- Guest speaker at 112th AMASI Skill Course and FMAS Examination on 25th, 26th & 27th, April 2025 at Parul Institute of Medical Sciences & Research, Baroda \" Laparoscopic rudimentary uterine horn excision\" and \" Uterine Transplant\"",
+        "June 2025- Oral presentation on \"Evaluating the Efficacy of Pelvic Floor Muscle Training Enhanced by Biofeedback in Postpartum Women with Pelvic Organ Prolapse Symptoms\" at IUGA- EUGA 2025 Annual meeting in Barcelona, Spain",
+        "June 2025- E poster presentation on \"Assessment of Bladder Neck Mobility in Stress Urinary Incontinence Using Rotational Angles and Pubourethral Distance: A Transperineal Ultrasonography Study\" at IUGA- EUGA 2025 Annual Meeting in Barcelona, Spain (7 ECMEC points)",
+        "Aug 2025- Session on \"Endometrial Microbiome in fertility- New frontiers in reproductive medicine\" at fertility update organized by BOGS",
+        "Sept 2025- E poster presentation with discussion on \"Efficacy and Safety of Diode Laser Therapy for Vaginal Rejuvenation: A Prospective Clinical Study\" at ICS- EUS 2025 in Abu Dhabi",
+        "Sept 2025- Oral presentation on Botulinum Toxin for Refractory Vaginismus: A Prospective, Randomized, Controlled Trial at ICS- EUS 2025 in Abu Dhabi (Awarded best in category award – female sexual dysfunction, 28.5 CME points accredited by EACCME and 23.5 CME points accredited by EHS)",
+        "October 2025- 2 Oral presentation and 4 Poster presentation at 5th Annual Meeting of ISUTx, Antalya, Turkey: Establishing a uterus transplant program in India: regulatory roadmap, institutional readiness, and early experience from a nationally authorized center (Poster), Dual laparoscopic-assisted uterus retrieval from living donors for uterine transplantation: surgical technique and perioperative outcomes (Poster), Implementation of a comprehensive perioperative protocol for uterus transplantation: clinical outcomes from a dual living donor cohort in India (Poster), Immunosuppressive therapy in uterus transplantation: drug-specific strategy for rejection prevention and fertility preservation in a dual living donor experience (Poster), Early recipient outcomes after dual uterus transplantation from living donors retrieved laparoscopically: challenges and lessons learned (Oral), Navigating ethical challenges in living donor uterus transplantation in India: insights from the NOTTO framework (Oral)"
+      ]
+    }
+  ];
 
   return (
-    <main className="flex flex-col w-full bg-[#f8f8f5] dark:bg-[#221e10] min-h-screen">
+    <main className="flex flex-col w-full bg-gradient-to-br from-[#f8f8f5] via-white to-[#f8f8f5] dark:from-[#221e10] dark:via-[#1a1710] dark:to-[#221e10] min-h-screen">
       {/* Hero Section */}
-      <section className="relative w-full py-16 px-4 sm:px-10 bg-gradient-to-br from-[#C07766] via-[#8DA399] to-[#f4c025]">
-        <div className="absolute inset-0 bg-[url('/images/homePageBg.jpeg')] opacity-10 mix-blend-overlay"></div>
+      <section className="relative w-full py-20 px-4 sm:px-10 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#C07766]/5 via-[#8DA399]/5 to-[#f4c025]/5"></div>
         <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium w-fit border border-white/30 mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 dark:bg-white/10 backdrop-blur-md text-[#181611] dark:text-white text-sm font-semibold border border-white/50 dark:border-white/20 shadow-lg mb-8">
               <span className="material-symbols-outlined text-[18px]">verified</span>
-              Published Research
-            </span>
-            <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-black leading-[1.1] tracking-tight mb-6 drop-shadow-lg">
+              Published Research & Achievements
+            </div>
+            <h1 className="text-[#181611] dark:text-white text-4xl sm:text-5xl md:text-6xl font-[var(--font-playfair)] font-bold leading-[1.15] tracking-[-0.01em] mb-6">
               Science in Practice:<br />
-              <span className="text-[#f4c025]">Research & Patient Insights</span>
+              <span className="text-[#C07766]">Research & Achievements</span>
             </h1>
-            <p className="text-white/95 text-lg sm:text-xl font-normal leading-relaxed max-w-3xl mx-auto drop-shadow-md">
-              We believe in transparency. Here, you&apos;ll find our published research translated into 
-              language you can understand, so you can see the science behind your care.
+            <p className="text-[#8a8060] dark:text-gray-300 text-lg sm:text-xl font-normal leading-relaxed max-w-3xl mx-auto">
+              We believe in transparency. Here, you&apos;ll find our published research and academic presentations, 
+              showcasing our commitment to advancing women&apos;s health care.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Doctor's Introduction */}
-      <section className="py-12 px-4 sm:px-10 bg-white dark:bg-white/5 border-b border-[#e5dddc]">
-        <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <div className="size-16 rounded-full bg-gradient-to-br from-[#C07766] to-[#8DA399] flex items-center justify-center text-white shadow-lg">
-                <span className="material-symbols-outlined text-3xl">person</span>
-              </div>
-              <div className="text-left">
-                <p className="font-bold text-[#181611] dark:text-white text-lg">Dr. Smit Bharat Solanki</p>
-                <p className="text-sm text-[#8a8060] dark:text-gray-300">Lead Researcher & Surgeon</p>
-              </div>
-            </div>
-            <blockquote className="text-lg text-[#8a8060] dark:text-gray-300 italic leading-relaxed border-l-4 border-[#C07766] pl-6">
-              &quot;I wrote these studies and their summaries simply so my patients can understand exactly 
-              what is happening to their bodies. Science shouldn&apos;t be intimidating—it should empower you 
-              to make informed decisions about your health.&quot;
-            </blockquote>
-          </div>
-        </div>
-      </section>
-
-      {/* Research Publications Grid */}
-      <section className="py-16 px-4 sm:px-10 bg-[#f8f8f5] dark:bg-[#221e10]">
+      {/* Publications Section */}
+      <section className="py-16 px-4 sm:px-10">
         <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
           <div className="text-center mb-16">
             <span className="text-[#C07766] dark:text-[#C07766] font-bold tracking-widest uppercase text-sm">
-              Our Research
+              Published Research
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#181611] dark:text-white mt-4 mb-6">
-              How We Get You Better Results
+            <h2 className="text-3xl md:text-4xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white mt-4 mb-6 leading-[1.15] tracking-[-0.01em]">
+              Research Publications
             </h2>
             <p className="text-[#8a8060] dark:text-gray-300 text-lg max-w-3xl mx-auto">
-              Each study below is presented in two ways: a simple explanation for you, and the full 
-              scientific paper for those who want the details.
+              Our peer-reviewed research published in leading medical journals, advancing the field of gynecology and women&apos;s health.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-6">
             {publications.map((pub) => (
               <div
                 key={pub.id}
-                className="bg-white dark:bg-white/5 rounded-2xl shadow-xl border border-[#e5dddc] hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col"
+                className="group relative bg-white/40 dark:bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/50 dark:border-white/10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
               >
-                {/* Visual Header */}
-                <div className={`bg-gradient-to-br ${pub.color} p-6 text-white relative overflow-hidden`}>
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#C07766]/5 via-transparent to-[#8DA399]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative z-10">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="size-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
-                        <span className="material-symbols-outlined text-4xl">{pub.icon}</span>
-                      </div>
+                  <div className="flex items-start justify-between gap-4 mb-4">
                       <div className="flex-1">
-                        <span className="inline-block px-2 py-1 bg-white/20 backdrop-blur-sm rounded-lg text-xs font-bold mb-2">
-                          {pub.category}
-                        </span>
-                        {pub.journal && (
-                          <p className="text-xs text-white/80 mt-1">Published Research</p>
-                        )}
-                      </div>
-                    </div>
-                    <h3 className="text-2xl font-bold leading-tight">{pub.patientTitle}</h3>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6 flex-1 flex flex-col">
-                  {/* Summary */}
-                  <div className="mb-4">
-                    <p className="text-[#8a8060] dark:text-gray-300 leading-relaxed">
-                      {pub.summary}
-                    </p>
-                  </div>
-
-                  {/* Spotlight/Why It Matters */}
-                  <div className="bg-gradient-to-br from-[#f8f8f5] to-white dark:from-[#221e10] dark:to-white/5 rounded-xl p-4 mb-4 border border-[#e5dddc]">
-                    <div className="flex items-start gap-2 mb-2">
-                      <span className="material-symbols-outlined text-[#C07766] text-xl">lightbulb</span>
-                      <p className="font-bold text-[#181611] dark:text-white text-sm">Why This Matters</p>
-                    </div>
-                    <p className="text-sm text-[#8a8060] dark:text-gray-300 leading-relaxed">
-                      {pub.whyItMatters}
-                    </p>
-                  </div>
-
-                  {/* Expandable Full Explanation */}
-                  <div className="mb-4">
-                    <button
-                      onClick={() => toggleExpand(pub.id)}
-                      className="flex items-center gap-2 text-[#C07766] hover:text-[#C07766]/80 font-semibold text-sm transition-colors group"
-                    >
-                      <span className="material-symbols-outlined text-lg transition-transform duration-300"
-                        style={{ transform: expandedId === pub.id ? 'rotate(180deg)' : 'rotate(0deg)' }}>
-                        expand_more
-                      </span>
-                      <span>{expandedId === pub.id ? 'Show Less' : 'Read Full Explanation'}</span>
-                    </button>
-                    
-                    {expandedId === pub.id && (
-                      <div className="mt-4 p-4 bg-[#f8f8f5] dark:bg-[#221e10] rounded-xl border border-[#e5dddc] animate-in fade-in slide-in-from-top-2 duration-300">
-                        <p className="text-[#8a8060] dark:text-gray-300 leading-relaxed whitespace-pre-line">
-                          {pub.fullExplanation}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* PDF Link - The "Nerd Button" */}
-                  <div className="mt-auto pt-4 border-t border-[#e5dddc]">
-                    <a
-                      href={pub.pdfPath}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-center justify-center gap-2 w-full px-4 py-3 bg-transparent border-2 border-[#C07766] text-[#C07766] hover:bg-[#C07766] hover:text-white font-bold rounded-xl transition-all duration-300"
-                    >
-                      <span className="material-symbols-outlined">description</span>
-                      <span>View Official Scientific Study (PDF)</span>
-                      <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">open_in_new</span>
-                    </a>
-                    {pub.journal && pub.year && (
-                      <p className="text-xs text-[#8a8060] dark:text-gray-300 text-center mt-2">
-                        {pub.journal} • {pub.year}
+                      <h3 className="text-xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white mb-3 leading-[1.3] tracking-[-0.01em]">
+                        {pub.title}
+                      </h3>
+                      <p className="text-[#8a8060] dark:text-gray-300 text-sm font-medium mb-2">
+                        {pub.author}
                       </p>
-                    )}
+                        {pub.journal && (
+                        <p className="text-[#8a8060] dark:text-gray-400 text-sm italic">
+                          {pub.journal}
+                        </p>
+                        )}
+                    </div>
                   </div>
+                  <a
+                    href={pub.pdfPath}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group/btn"
+                  >
+                    <span className="material-symbols-outlined text-xl">article</span>
+                    <span>View Publication (PDF)</span>
+                    <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">open_in_new</span>
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Presentations Section */}
+      <section className="py-16 px-4 sm:px-10 bg-gradient-to-br from-[#f8f8f5]/50 to-transparent dark:from-[#221e10]/50">
+        <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-[#8DA399] dark:text-[#8DA399] font-bold tracking-widest uppercase text-sm">
+              Academic Presentations
+            </span>
+            <h2 className="text-3xl md:text-4xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white mt-4 mb-6 leading-[1.15] tracking-[-0.01em]">
+              Last 3 Years of Presentations
+            </h2>
+            <p className="text-[#8a8060] dark:text-gray-300 text-lg max-w-3xl mx-auto">
+              Our contributions to national and international conferences, sharing knowledge and advancing the field.
+                    </p>
+                  </div>
+
+          <div className="space-y-12">
+            {presentations.map((presentation) => (
+              <div
+                key={presentation.year}
+                className="relative"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="flex-shrink-0 size-16 bg-[#8DA399] rounded-2xl flex items-center justify-center text-white font-bold text-2xl">
+                    {presentation.year}
+                    </div>
+                  <div>
+                    <h3 className="text-2xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white leading-[1.15] tracking-[-0.01em]">
+                      {presentation.year}
+                    </h3>
+                    <p className="text-[#8a8060] dark:text-gray-400 text-sm">
+                      {presentation.items.length} presentations & activities
+                    </p>
+                  </div>
+                      </div>
+                <div className="space-y-4 pl-20">
+                  {presentation.items.map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="relative"
+                    >
+                      <p className="text-[#8a8060] dark:text-gray-300 leading-relaxed">
+                        {item}
+                      </p>
+                  </div>
+                  ))}
                 </div>
               </div>
             ))}
@@ -356,14 +225,15 @@ This research gives you confidence that choosing robotic myomectomy means choosi
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 px-4 sm:px-10 bg-white dark:bg-white/5">
+      <section className="py-16 px-4 sm:px-10">
         <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
-          <div className="bg-gradient-to-br from-[#C07766] to-[#8DA399] rounded-3xl p-8 md:p-12 text-white shadow-2xl text-center">
-            <div className="max-w-3xl mx-auto">
-              <div className="size-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="relative bg-gradient-to-br from-[#C07766] to-[#8DA399] rounded-3xl p-8 md:p-12 text-white shadow-2xl text-center overflow-hidden">
+            <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+            <div className="relative z-10 max-w-3xl mx-auto">
+              <div className="inline-flex items-center justify-center size-20 bg-white/20 backdrop-blur-md rounded-full mb-6 shadow-xl">
                 <span className="material-symbols-outlined text-5xl">chat</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-3xl md:text-4xl font-[var(--font-playfair)] font-bold mb-4 leading-[1.15] tracking-[-0.01em]">
                 Questions About Our Research?
               </h2>
               <p className="text-white/90 text-lg mb-8 leading-relaxed">
@@ -371,18 +241,18 @@ This research gives you confidence that choosing robotic myomectomy means choosi
                 research applies to your specific situation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
+                <Link
                   href="/contact"
-                  className="group flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#C07766] font-bold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+                  className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#C07766] font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
                 >
                   <span className="material-symbols-outlined">calendar_month</span>
                   <span>Book Consultation</span>
-                </a>
+                </Link>
                 <a
                   href="https://wa.me/919712982198"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-center gap-2 px-8 py-4 bg-white/10 border-2 border-white/30 text-white font-bold rounded-xl hover:bg-white/20 transition-all duration-300 backdrop-blur-sm"
+                  className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-md border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/20 transition-all duration-300"
                 >
                   <span className="material-symbols-outlined">chat</span>
                   <span>Ask on WhatsApp</span>
@@ -393,43 +263,7 @@ This research gives you confidence that choosing robotic myomectomy means choosi
         </div>
       </section>
 
-      {/* Trust Indicators */}
-      <section className="py-16 px-4 sm:px-10 bg-[#f8f8f5] dark:bg-[#221e10]">
-        <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
-          <div className="grid md:grid-cols-3 gap-6 text-center">
-            <div className="bg-white dark:bg-white/5 rounded-xl p-6 border border-[#e5dddc]">
-              <div className="size-12 bg-[#C07766]/10 text-[#C07766] rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="material-symbols-outlined text-3xl">verified</span>
-              </div>
-              <h3 className="font-bold text-[#181611] dark:text-white mb-2">Peer-Reviewed</h3>
-              <p className="text-sm text-[#8a8060] dark:text-gray-300">
-                All research published in respected medical journals
-              </p>
-            </div>
-            <div className="bg-white dark:bg-white/5 rounded-xl p-6 border border-[#e5dddc]">
-              <div className="size-12 bg-[#8DA399]/10 text-[#8DA399] rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="material-symbols-outlined text-3xl">translate</span>
-              </div>
-              <h3 className="font-bold text-[#181611] dark:text-white mb-2">Patient-Friendly</h3>
-              <p className="text-sm text-[#8a8060] dark:text-gray-300">
-                Complex science explained in simple, understandable terms
-              </p>
-            </div>
-            <div className="bg-white dark:bg-white/5 rounded-xl p-6 border border-[#e5dddc]">
-              <div className="size-12 bg-[#f4c025]/10 text-[#f4c025] rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="material-symbols-outlined text-3xl">trending_up</span>
-              </div>
-              <h3 className="font-bold text-[#181611] dark:text-white mb-2">Evidence-Based</h3>
-              <p className="text-sm text-[#8a8060] dark:text-gray-300">
-                Real data from real patients, improving real outcomes
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <Footer />
     </main>
   );
 }
-

@@ -71,7 +71,7 @@ export default function HeroSection() {
           <div className="relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
               <Image
-                src="/dr3.webp"
+                src="/images/homePageBg.jpeg"
                 alt="Dr. Smit Bharat Solanki - Gynecological Surgeon"
                 width={600}
                 height={700}

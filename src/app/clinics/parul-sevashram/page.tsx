@@ -12,17 +12,24 @@ export default function ParulSevashramPage() {
   return (
     <main className="flex flex-col w-full bg-[#f8f8f5] dark:bg-[#221e10] min-h-screen">
       {/* Hero Section */}
-      <section className="relative w-full py-16 px-4 sm:px-10 bg-gradient-to-br from-[#C07766] to-[#8DA399]">
-        <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
+      <section className="relative w-full h-[50vh] min-h-[400px] flex items-center justify-center px-4 sm:px-10 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url("/images/parulSeva.png")',
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto relative z-10">
           <div className="text-center max-w-3xl mx-auto">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium w-fit border border-white/30 mb-6">
               <span className="material-symbols-outlined text-[18px]">local_hospital</span>
               IVF Services
             </span>
-            <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-black leading-[1.1] tracking-tight mb-6">
+            <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-[var(--font-playfair)] font-bold leading-[1.15] tracking-[-0.01em] mb-6 drop-shadow-lg">
               {hospital.name}
             </h1>
-            <p className="text-white/90 text-lg sm:text-xl font-normal leading-relaxed">
+            <p className="text-white/95 text-lg sm:text-xl font-normal leading-relaxed drop-shadow-md">
               {hospital.city} • {hospital.timing}
             </p>
           </div>

@@ -448,6 +448,130 @@ export const hysterectomyContent = {
   introduction: "For many women, the word hysterectomy brings worry: Will it be painful? Will I be in the hospital for many days? How long will recovery take? These concerns are completely natural. The good news is, surgery has evolved. With modern laparoscopic (keyhole) surgery and a carefully planned recovery program, hysterectomy today can be much safer, gentler, and faster to recover from. If you are considering hysterectomy and have fears or questions, know that you are not alone- and modern, gentle options are available."
 };
 
+// PRP/TTCRF FAQ for Aesthetic Gynecology
+export const prpTTCRFFaqs: FAQ[] = [
+  {
+    category: "Aesthetic Gynecology - PRP/TTCRF",
+    question: "What is stress urinary incontinence?",
+    answer: "It is leakage of urine during physical pressure such as coughing, sneezing, laughing, or exercise."
+  },
+  {
+    category: "Aesthetic Gynecology - PRP/TTCRF",
+    question: "Why does it worsen after menopause?",
+    answer: "Loss of estrogen weakens pelvic floor muscles and supporting tissues."
+  },
+  {
+    category: "Aesthetic Gynecology - PRP/TTCRF",
+    question: "What is radiofrequency treatment?",
+    answer: "It is a non-surgical therapy using controlled heat to tighten and strengthen vaginal and peri-urethral tissues."
+  },
+  {
+    category: "Aesthetic Gynecology - PRP/TTCRF",
+    question: "What is PRP?",
+    answer: "PRP is prepared from your own blood and contains growth factors that help tissue healing and regeneration."
+  },
+  {
+    category: "Aesthetic Gynecology - PRP/TTCRF",
+    question: "Why combine PRP with radiofrequency?",
+    answer: "Radiofrequency tightens tissues, while PRP helps them heal and regenerate."
+  },
+  {
+    category: "Aesthetic Gynecology - PRP/TTCRF",
+    question: "What benefits were seen in the study?",
+    answer: "Better bladder control, improved test results, better quality of life, and higher patient satisfaction."
+  },
+  {
+    category: "Aesthetic Gynecology - PRP/TTCRF",
+    question: "Is the treatment safe?",
+    answer: "Yes. Complication rates were very low and similar in both groups."
+  },
+  {
+    category: "Aesthetic Gynecology - PRP/TTCRF",
+    question: "Is it a surgery?",
+    answer: "No. It is a minimally invasive outpatient procedure."
+  },
+  {
+    category: "Aesthetic Gynecology - PRP/TTCRF",
+    question: "Who can benefit from this?",
+    answer: "Peri- and postmenopausal women with stress urinary incontinence who did not improve with exercises."
+  },
+  {
+    category: "Aesthetic Gynecology - PRP/TTCRF",
+    question: "Can it replace surgery?",
+    answer: "In many women with mild to moderate symptoms, it may delay or avoid surgery."
+  },
+  {
+    category: "Aesthetic Gynecology - PRP/TTCRF",
+    question: "Does age matter?",
+    answer: "Benefits were seen in women both below and above 60 years of age."
+  },
+  {
+    category: "Aesthetic Gynecology - PRP/TTCRF",
+    question: "How long do results last?",
+    answer: "The study showed benefits lasting at least 12 months."
+  }
+];
+
+export const prpTTCRFContent = {
+  title: "NEW HOPE FOR STRESS URINARY INCONTINENCE",
+  subtitle: "Patient FAQ & Study Spotlight",
+  studyTitle: "Regenerative Synergy: Combining Platelet-rich Plasma with Transcutaneous Temperature-controlled Radiofrequency for Enhanced Treatment of Stress Urinary Incontinence in Peri- and Postmenopausal Women.",
+  summary: "Stress urinary incontinence (SUI) is leakage of urine during coughing, laughing, sneezing, or physical activity. It affects many peri- and postmenopausal women and significantly reduces quality of life. This randomized clinical study compared: 1. Radiofrequency treatment alone, 2. Radiofrequency combined with Platelet-Rich Plasma (PRP). Women who received PRP with radiofrequency experienced significantly better bladder control, stronger urethral support, better quality of life, and higher satisfaction, without increased complications.",
+  meaning: "Stress urinary incontinence is not a normal part of aging. Modern regenerative treatments can restore comfort, confidence, and quality of life."
+};
+
+// 3D Laparoscopy FAQ
+export const laparoscopy3DFaqContent = {
+  title: "Is 3D Laparoscopic Surgery Better for Hysterectomy?",
+  subtitle: "What Women Should Know Before Surgery",
+  introduction: "Hysterectomy is one of the most common gynecological surgeries performed worldwide. Today, most hysterectomies are done using laparoscopy, which allows surgery through small keyhole incisions with faster recovery and less pain. But did you know that laparoscopy itself has evolved? A recent clinical study published in Annals of Saudi Medicine (2025) evaluated whether 3D high-definition laparoscopy offers better results than conventional 2D laparoscopy — especially in women with higher body weight. The results are encouraging.",
+  whatIs3D: "Traditional laparoscopy shows surgeons a flat 2D image. 3D laparoscopy provides: Depth perception, Better hand-eye coordination, Clearer visualization of tissues, More accurate suturing and bleeding control. It is similar to the difference between watching a movie in 2D versus 3D.",
+  whyWeightMatters: "Women with higher BMI often face: Reduced surgical visibility, More bleeding risk, Longer operating time, Greater technical difficulty. This makes surgical precision extremely important.",
+  studyFindings: "We compared 60 women undergoing total laparoscopic hysterectomy: 30 with 3D HD laparoscopy, 30 with conventional 2D laparoscopy. Women were grouped by body mass index. Key Findings: Women operated with 3D laparoscopy had: Shorter surgery time, Faster vaginal vault suturing, Less blood loss, Smaller drop in hemoglobin, Fewer trocar (port) incisions, Similar or lower complication rates. These benefits were most pronounced in overweight and obese women.",
+  patientBenefits: "1. Less Blood Loss - Better visualization allows surgeons to identify and control bleeding earlier. 2. Shorter Surgery - Less anesthesia time means safer surgery and quicker recovery. 3. Smaller Incisions - Fewer ports may mean less pain and better cosmetic outcome. 4. Better Precision - Suturing is more accurate with 3D depth perception. 5. Safer for Higher BMI Patients - 3D technology helps overcome visualization challenges in obese patients.",
+  safety: "Yes. The study showed no increase in complications compared to 2D laparoscopy. Complication rates were low in both groups.",
+  vsRobotic: "3D laparoscopy offers many visual advantages of robotic systems without the high cost, making it more accessible in many hospitals.",
+  whoBenefits: "3D laparoscopy is especially useful for: Overweight and obese women, Complex hysterectomies, Patients desiring minimally invasive surgery, Hospitals without robotic platforms",
+  recovery: "While recovery still depends on individual healing, improved surgical precision often supports: Less pain, Faster mobilization, Lower risk of bleeding complications",
+  message: "Technology does not replace surgeon skill — but it enhances it. 3D laparoscopy allows surgeons to operate with greater confidence, accuracy, and safety.",
+  limitations: "This study was retrospective and had a modest sample size. Larger multicenter studies are needed. However, results strongly support the benefit of 3D laparoscopy.",
+  finalMessage: "If you are planning a hysterectomy, ask your surgeon: What laparoscopic system will be used? Is 3D laparoscopy available? What is best for my body type and condition? Your awareness empowers your care.",
+  doctorsNote: "Modern gynecological surgery is not just about removing disease — it is about restoring comfort, confidence, and quality of life with the safest technology available."
+};
+
+// 1470-nm Laser FAQ for Aesthetic Gynecology
+export const laser1470FaqContent = {
+  title: "VAGINAL REJUVENATION WITH 1470-NM LASER",
+  subtitle: "What Every Woman Should Know",
+  introduction: "Many women experience vaginal dryness, looseness, discomfort, or reduced sexual satisfaction after childbirth, with aging, or after menopause. These changes are common — but they are not something you must silently accept. Modern medical science now offers safe, non-surgical solutions to restore vaginal health and confidence. One such solution is 1470-nm laser vaginal therapy, which was scientifically studied in our recent clinical research.",
+  whyChanges: "Vaginal tissues change due to: Childbirth, Hormonal changes, Menopause, Aging, Reduced collagen and blood supply. These changes can cause vaginal laxity, dryness, burning, pain during intimacy, and reduced sexual satisfaction.",
+  whatIsTreatment: "This treatment uses a special medical laser that gently delivers controlled heat to vaginal tissues. This heat stimulates collagen production, improves blood circulation, strengthens tissue structure, and restores elasticity and thickness. The procedure is: Non-surgical, Outpatient, Quick (15–20 minutes), No anesthesia, Minimal discomfort",
+  studyFindings: "In a study of 120 women aged 25–65 years: Physical Improvements: Vaginal wall thickness increased by 35%, Collagen density improved by 42%, Blood vessel formation increased by 50%. Sexual Health Improvements: 28% improvement in sexual function scores, Better lubrication, Better comfort, Better satisfaction, Reduced pain. 92% of women reported improved sexual satisfaction.",
+  safety: "95% of women had no side effects. Only mild temporary discomfort was reported in a few patients. No serious complications were observed.",
+  howItWorks: "The laser activates natural healing pathways that increase collagen genes, improve blood vessel growth, and trigger tissue regeneration. This means the laser does not only improve symptoms — it repairs vaginal tissue.",
+  whoBenefits: "Women with vaginal looseness, dryness, discomfort, reduced sexual satisfaction, post-menopausal changes, or post-childbirth changes may benefit. It is especially useful for women who want non-surgical and hormone-free options.",
+  sessions: "Most women require 3 to 5 sessions spaced 3 to 4 weeks apart.",
+  finalMessage: "Vaginal health is part of overall women's health. Feeling comfortable, confident, and pain-free is not a luxury — it is your right."
+};
+
+// Thin Endometrium FAQ for IVF
+export const thinEndometriumFaqContent = {
+  title: "Thin Endometrium in IVF: Why It Matters and What New Research Brings",
+  introduction: "For many women undergoing IVF, hearing the words \"your endometrium is thin\" can be deeply stressful. You may wonder: Will my embryo implant? Does this mean IVF will fail? Are there any solutions? The good news is — thin endometrium is not the end of your IVF journey. Modern research is opening new possibilities for women who previously had limited options.",
+  whatIs: "The endometrium is the inner lining of the uterus where the embryo implants. For successful implantation, it should usually be: At least 7–8 mm thick, with good blood supply. When it remains thin despite treatment, implantation becomes difficult.",
+  whyThin: "Common causes include: Previous uterine surgeries or curettage, Infections (endometritis, tuberculosis), Poor blood flow, Hormonal imbalance, Repeated IVF failures, Long-term estrogen resistance. In many women, the lining simply does not respond well to routine hormone therapy.",
+  whyAffects: "A thin lining means: Poor blood supply to the embryo, Less nourishment, Reduced implantation signals, Higher chances of implantation failure. Even good-quality embryos may fail to implant if the uterine lining is not receptive.",
+  studyFocus: "Our study focused on women with: Repeated IVF failures, Persistently thin endometrium, Poor response to conventional hormonal treatment. These are women who often feel hopeless after multiple unsuccessful cycles.",
+  newApproach: "Instead of only increasing hormones, the study focused on improving the uterine environment itself by enhancing: Blood flow, Tissue regeneration, Endometrial receptivity, Cellular healing. The goal was not just thickness — but endometrial quality.",
+  improvements: "Women in the study showed: Increase in endometrial thickness, Better blood flow on Doppler scans, Improved endometrial pattern, Higher implantation potential, Better pregnancy outcomes compared to previous failed cycles. This suggests that thin endometrium can be treated, not just measured.",
+  whatMeans: "If you have thin endometrium, it does NOT mean: Your uterus is useless, Pregnancy is impossible, IVF will never work. It simply means your uterus needs regenerative support, not just hormones.",
+  shift: "Old approach: Only increase estrogen dose. New approach: Improve tissue health, blood supply, and regeneration. This is a major shift in reproductive medicine.",
+  whoBenefits: "This research is especially helpful for: Women with repeated implantation failure, Women with thin endometrium <7 mm, Women with poor Doppler blood flow, Women with scarred or damaged lining, Women preparing for embryo transfer",
+  emotionalMessage: "Thin endometrium is not a failure of your body. It is simply a signal that your uterus needs healing, not punishment with more hormones.",
+  patientQuestions: "If you have thin endometrium, ask your fertility specialist: Why is my lining thin? Is blood flow adequate? Are regenerative treatments suitable for me? Should we focus on quality, not only thickness?",
+  finalMessage: "Modern fertility treatment is moving from forcing the uterus to healing the uterus. Thin endometrium is no longer a dead end — it is a treatable challenge."
+};
+
 // ============================================================================
 // TESTIMONIALS
 // ============================================================================
@@ -644,6 +768,11 @@ export const siteData = {
   services,
   faqs,
   hysterectomyContent,
+  prpTTCRFFaqs,
+  prpTTCRFContent,
+  laparoscopy3DFaqContent,
+  laser1470FaqContent,
+  thinEndometriumFaqContent,
   testimonials,
   testimonialsNote,
   ivfInjectionsInfo

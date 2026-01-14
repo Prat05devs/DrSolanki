@@ -1,225 +1,576 @@
+"use client";
+
 import Footer from "@/components/global/Footer";
-import Image from "next/image";
-import { faqs, hysterectomyContent } from "@/data/siteData";
+import { useState, useEffect } from "react";
+import { 
+  ivfInjectionsInfo, 
+  prpTTCRFContent, 
+  prpTTCRFFaqs,
+  laparoscopy3DFaqContent,
+  laser1470FaqContent,
+  thinEndometriumFaqContent,
+  hysterectomyContent
+} from "@/data/siteData";
+
+interface FAQTopic {
+  id: string;
+  title: string;
+  category: string;
+  icon: string;
+  color: string;
+  summary: string;
+  whyItMatters: string;
+  fullContent: {
+    introduction?: string;
+    sections: { heading: string; content: string }[];
+    faqs?: { question: string; answer: string }[];
+    conclusion?: string;
+  };
+  pdfPath?: string;
+  journal?: string;
+  year?: number;
+}
 
 export default function FAQPage() {
+  const [selectedTopic, setSelectedTopic] = useState<FAQTopic | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const faqTopics: FAQTopic[] = [
+    {
+      id: "laparoscopic-hysterectomy",
+      title: "Laparoscopic Hysterectomy: Faster Recovery, Less Pain",
+      category: "Surgical Recovery",
+      icon: "healing",
+      color: "bg-[#df4320]",
+      summary: hysterectomyContent.introduction,
+      whyItMatters: "Understanding your recovery options helps reduce anxiety and sets realistic expectations. Modern laparoscopic techniques mean faster healing and less discomfort.",
+      fullContent: {
+        introduction: hysterectomyContent.introduction,
+        sections: [
+          {
+            heading: "What Is Laparoscopic Hysterectomy?",
+            content: "Laparoscopic hysterectomy is a minimally invasive surgery done through very small incisions. Compared to open surgery, it usually means:\n• Less pain\n• Smaller scars\n• Faster healing\n• Quicker return to normal life"
+          },
+          {
+            heading: "Enhanced Recovery After Surgery (ERAS)",
+            content: "Dr. Smit Bharat Solanki routinely follows a modern approach called Enhanced Recovery After Surgery (ERAS).\n\nInstead of:\n• Long hours of fasting\n• Strong pain injections\n• Staying in bed for days\n\nWe focus on:\n• Better pain control\n• Early walking\n• Early eating\n• Short and safe hospital stay\n\nThe goal is simple: help your body recover naturally and faster - without increasing risk."
+          },
+          {
+            heading: "Is This Approach Safe and Proven?",
+            content: "Yes. Dr. Smit Bharat Solanki published a medical study involving 56 women who underwent laparoscopic hysterectomy under care across different hospitals.\n\nThe results were reassuring:\n• All patients walked within 6 hours\n• All started eating within 6 hours\n• All went home within 24 hours\n• No complications were observed"
+          },
+          {
+            heading: "Who Can Benefit?",
+            content: "Women undergoing laparoscopic hysterectomy for:\n• Fibroids\n• Heavy or irregular bleeding\n• Adenomyosis\n• Chronic pelvic pain"
+          }
+        ]
+      }
+    },
+    {
+      id: "3d-laparoscopy",
+      title: "3D Laparoscopic Surgery: Better Precision for Hysterectomy",
+      category: "Advanced Surgery",
+      icon: "precision_manufacturing",
+      color: "bg-[#8DA399]",
+      summary: laparoscopy3DFaqContent.introduction,
+      whyItMatters: "3D laparoscopy offers better visualization and precision, especially important for women with higher body weight. This means safer surgery and faster recovery.",
+      fullContent: {
+        introduction: laparoscopy3DFaqContent.introduction,
+        sections: [
+          {
+            heading: "What is 3D Laparoscopic Surgery?",
+            content: laparoscopy3DFaqContent.whatIs3D
+          },
+          {
+            heading: "Why Body Weight Matters",
+            content: laparoscopy3DFaqContent.whyWeightMatters
+          },
+          {
+            heading: "Study Findings",
+            content: laparoscopy3DFaqContent.studyFindings
+          },
+          {
+            heading: "Patient Benefits",
+            content: laparoscopy3DFaqContent.patientBenefits
+          },
+          {
+            heading: "Who Benefits Most?",
+            content: laparoscopy3DFaqContent.whoBenefits
+          },
+          {
+            heading: "Important Questions to Ask",
+            content: laparoscopy3DFaqContent.finalMessage
+          }
+        ],
+        conclusion: laparoscopy3DFaqContent.doctorsNote
+      }
+    },
+    {
+      id: "prp-ttcrf",
+      title: "PRP & TTCRF: New Hope for Stress Urinary Incontinence",
+      category: "Aesthetic Gynecology",
+      icon: "water_drop",
+      color: "bg-[#C07766]",
+      summary: prpTTCRFContent.summary,
+      whyItMatters: prpTTCRFContent.meaning,
+      fullContent: {
+        introduction: prpTTCRFContent.summary,
+        sections: [
+          {
+            heading: "What is Stress Urinary Incontinence?",
+            content: "It is leakage of urine during physical pressure such as coughing, sneezing, laughing, or exercise."
+          },
+          {
+            heading: "Why Does It Worsen After Menopause?",
+            content: "Loss of estrogen weakens pelvic floor muscles and supporting tissues."
+          },
+          {
+            heading: "What is the Treatment?",
+            content: "This treatment combines:\n\n1. Radiofrequency (TTCRF): A non-surgical therapy using controlled heat to tighten and strengthen vaginal and peri-urethral tissues.\n\n2. Platelet-Rich Plasma (PRP): Prepared from your own blood and contains growth factors that help tissue healing and regeneration.\n\nRadiofrequency tightens tissues, while PRP helps them heal and regenerate."
+          },
+          {
+            heading: "Study Results",
+            content: "Women who received PRP with radiofrequency experienced:\n• Significantly better bladder control\n• Stronger urethral support\n• Better quality of life\n• Higher patient satisfaction\n• No increase in complications"
+          },
+          {
+            heading: "Who Can Benefit?",
+            content: "Peri- and postmenopausal women with stress urinary incontinence who did not improve with exercises. Benefits were seen in women both below and above 60 years of age."
+          },
+          {
+            heading: "How Long Do Results Last?",
+            content: "The study showed benefits lasting at least 12 months."
+          }
+        ],
+        faqs: prpTTCRFFaqs.map(faq => ({ question: faq.question, answer: faq.answer }))
+      }
+    },
+    {
+      id: "ivf-injections",
+      title: "IVF Injections: Understanding Your Options",
+      category: "Fertility Treatment",
+      icon: "science",
+      color: "bg-[#C07766]",
+      summary: ivfInjectionsInfo.introduction,
+      whyItMatters: ivfInjectionsInfo.whyItMatters.description,
+      fullContent: {
+        introduction: ivfInjectionsInfo.introduction,
+        sections: [
+          {
+            heading: ivfInjectionsInfo.types.heading,
+            content: `${ivfInjectionsInfo.types.options[0].name} – ${ivfInjectionsInfo.types.options[0].description}\n\n${ivfInjectionsInfo.types.options[1].name} – ${ivfInjectionsInfo.types.options[1].description}\n\n${ivfInjectionsInfo.types.note}`
+          },
+          {
+            heading: ivfInjectionsInfo.studyOverview.heading,
+            content: `${ivfInjectionsInfo.studyOverview.description}\n\n${ivfInjectionsInfo.studyOverview.comparisons.join('\n• ')}\n\n${ivfInjectionsInfo.studyOverview.note}`
+          },
+          {
+            heading: ivfInjectionsInfo.findings.rFSH.title,
+            content: `${ivfInjectionsInfo.findings.rFSH.description}\n\nBenefits:\n• ${ivfInjectionsInfo.findings.rFSH.benefits.join('\n• ')}\n\nThis means a better chance of:\n• ${ivfInjectionsInfo.findings.rFSH.outcomes.join('\n• ')}`
+          },
+          {
+            heading: ivfInjectionsInfo.findings.efficiency.title,
+            content: `${ivfInjectionsInfo.findings.efficiency.description}\n\nInstead of:\n• ${ivfInjectionsInfo.findings.efficiency.comparison.insteadOf}\n\nWith rFSH:\n• ${ivfInjectionsInfo.findings.efficiency.comparison.with}\n\nThis means:\n• ${ivfInjectionsInfo.findings.efficiency.benefits.join('\n• ')}`
+          },
+          {
+            heading: ivfInjectionsInfo.whyItMatters.heading,
+            content: `${ivfInjectionsInfo.whyItMatters.description}\n\nEvery failed cycle means:\n• ${ivfInjectionsInfo.whyItMatters.failedCycleCosts.join('\n• ')}`
+          },
+          {
+            heading: "Takeaway",
+            content: `${ivfInjectionsInfo.takeaway.wrongQuestion}\n\n${ivfInjectionsInfo.takeaway.rightQuestion}\n\n${ivfInjectionsInfo.takeaway.conclusion}`
+          }
+        ]
+      }
+    },
+    {
+      id: "vaginal-rejuvenation",
+      title: "1470-nm Laser: Vaginal Rejuvenation Treatment",
+      category: "Aesthetic Gynecology",
+      icon: "spa",
+      color: "bg-[#8FA392]",
+      summary: laser1470FaqContent.introduction,
+      whyItMatters: laser1470FaqContent.finalMessage,
+      fullContent: {
+        introduction: laser1470FaqContent.introduction,
+        sections: [
+          {
+            heading: "Why Do These Changes Occur?",
+            content: laser1470FaqContent.whyChanges
+          },
+          {
+            heading: "What Is This Treatment?",
+            content: laser1470FaqContent.whatIsTreatment
+          },
+          {
+            heading: "How Does It Work?",
+            content: laser1470FaqContent.howItWorks
+          },
+          {
+            heading: "Study Findings",
+            content: laser1470FaqContent.studyFindings
+          },
+          {
+            heading: "Safety",
+            content: laser1470FaqContent.safety
+          },
+          {
+            heading: "Who Can Benefit?",
+            content: laser1470FaqContent.whoBenefits
+          },
+          {
+            heading: "How Many Sessions Are Needed?",
+            content: laser1470FaqContent.sessions
+          }
+        ],
+        conclusion: laser1470FaqContent.finalMessage
+      }
+    },
+    {
+      id: "thin-endometrium",
+      title: "Thin Endometrium in IVF: New Hope for Better Outcomes",
+      category: "Fertility Treatment",
+      icon: "favorite",
+      color: "bg-[#C07766]",
+      summary: thinEndometriumFaqContent.introduction,
+      whyItMatters: thinEndometriumFaqContent.emotionalMessage,
+      fullContent: {
+        introduction: thinEndometriumFaqContent.introduction,
+        sections: [
+          {
+            heading: "What Is Thin Endometrium?",
+            content: thinEndometriumFaqContent.whatIs
+          },
+          {
+            heading: "Why Does Endometrium Become Thin?",
+            content: thinEndometriumFaqContent.whyThin
+          },
+          {
+            heading: "Why It Affects IVF Success",
+            content: thinEndometriumFaqContent.whyAffects
+          },
+          {
+            heading: "New Approach to Treatment",
+            content: `${thinEndometriumFaqContent.newApproach}\n\n${thinEndometriumFaqContent.shift}`
+          },
+          {
+            heading: "Improvements Observed",
+            content: thinEndometriumFaqContent.improvements
+          },
+          {
+            heading: "Who Can Benefit?",
+            content: thinEndometriumFaqContent.whoBenefits
+          }
+        ],
+        conclusion: thinEndometriumFaqContent.finalMessage
+      }
+    }
+  ];
+
+  const openModal = (topic: FAQTopic) => {
+    setSelectedTopic(topic);
+    setIsModalOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedTopic(null);
+    document.body.style.overflow = 'unset';
+  };
+
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, []);
+
   return (
-    <div className="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
-      {/* Main Content */}
-      <main className="flex-1 flex flex-col">
+    <main className="flex flex-col w-full bg-[#f8f8f5] dark:bg-[#221e10] min-h-screen">
         {/* Hero Section */}
-        <section className="relative w-full px-4 py-12 lg:px-20 lg:py-16 xl:py-16 flex justify-center bg-gradient-to-b from-white to-[#f8f6f6]">
-          <div className="container max-w-6xl">
-            <div className="flex flex-col-reverse lg:flex-row gap-10 items-center">
-              <div className="flex flex-col gap-6 lg:w-1/2 lg:pr-10 text-center lg:text-left">
-                <h1 className="text-[#181311] text-4xl lg:text-5xl font-light leading-[1.15] tracking-tight">
-                  Your Questions, Our Answers:{' '}
-                  <span className="font-medium text-[#ee5b2b] block mt-2">
-                    A Resource Hub for Your Peace of Mind.
+      <section className="relative w-full py-20 px-4 sm:px-10 min-h-[500px] flex items-center overflow-hidden">
+        <div 
+          className="absolute top-0 left-0 right-0 w-full h-[200%] bg-cover bg-top bg-no-repeat"
+          style={{
+            backgroundImage: 'url("/images/homePageBg.jpeg")',
+            backgroundPosition: 'center top',
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto relative z-10">
+          <div className="text-center max-w-4xl mx-auto">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-semibold w-fit border border-white/30 mb-6">
+              <span className="material-symbols-outlined text-[18px]">help</span>
+              Frequently Asked Questions
                   </span>
+            <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-[var(--font-playfair)] font-bold leading-[1.15] tracking-[-0.01em] mb-6 drop-shadow-lg">
+              Your Questions,<br />
+              <span className="text-[#f4c025]">Answered</span>
                 </h1>
-                <h2 className="text-[#685850] text-lg font-light leading-relaxed">
-                  Find clear, compassionate answers to common queries and essential resources for your health
-                  journey with Dr. Smit Bharat Solanki&apos;s Sanctuary.
-                </h2>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
-                  <button className="flex items-center justify-center rounded-full h-12 px-8 bg-[#ee5b2b] text-white text-base font-medium hover:bg-[#ee5b2b]/90 transition-colors shadow-lg shadow-[#ee5b2b]/20">
-                    Browse FAQs
-                  </button>
-                  <button className="flex items-center justify-center rounded-full h-12 px-8 bg-white border border-[#8ba898] text-[#8ba898] text-base font-medium hover:bg-[#eef3f0] transition-colors">
-                    View Guides
-                  </button>
+            <p className="text-white/95 text-lg sm:text-xl font-normal leading-relaxed max-w-3xl mx-auto drop-shadow-md">
+              Find answers to common questions about our treatments, procedures, and research. 
+              Clear, honest information to help you make informed decisions about your care.
+            </p>
+          </div>
                 </div>
+      </section>
+
+      {/* Doctor's Introduction */}
+      <section className="py-12 px-4 sm:px-10 bg-white dark:bg-white/5 border-b border-[#e5dddc]">
+        <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <div className="size-16 rounded-full bg-[#C07766] flex items-center justify-center text-white shadow-lg">
+                <span className="material-symbols-outlined text-3xl">person</span>
               </div>
-              <div className="w-full lg:w-1/2">
-                <div className="aspect-[4/3] w-full rounded-[2rem] overflow-hidden shadow-xl relative group">
-                  <div className="absolute inset-0 bg-[#ee5b2b]/10 group-hover:bg-[#ee5b2b]/0 transition-colors duration-500 z-10"></div>
-                  <Image
-                    alt="Diverse group of women smiling together in warm golden hour lighting"
-                    className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq9817q0mw3aSoc5R4hZYmVMnwT0ntjyEJNzzGUbhVPbpW9IH4Oz07hkTEclHObRZcbB9vI7ClJ3GJP36wVyxLB05dMUsTO-k55ge_zE8wkfFszaW93pQrMZv85hnalKNepDUQFn0x9kURksFG4gUnbWp2JXLco0gVaEZQUWfbuIoEuXLY7bCrdx-wJRxHT5jcsjxKaCUO_XTeNv6oc2LndBklP_R6bRHwl0nu3aO_oh8eL1VyIrrAr57YdFZLKQZjenNWS9pZAQ"
-                    width={800}
-                    height={600}
-                  />
-                </div>
+              <div className="text-left">
+                <p className="font-bold text-[#181611] dark:text-white text-lg">Dr. Smit Bharat Solanki</p>
+                <p className="text-sm text-[#8a8060] dark:text-gray-300">Your Trusted Gynecologist</p>
               </div>
+            </div>
+            <blockquote className="text-lg text-[#8a8060] dark:text-gray-300 italic leading-relaxed border-l-4 border-[#C07766] pl-6">
+              &quot;I believe in empowering my patients with knowledge. Understanding your condition and treatment options 
+              helps you make informed decisions. Here are answers to questions many patients ask—I hope they help you too.&quot;
+            </blockquote>
             </div>
           </div>
         </section>
 
-        {/* Search & Filter Section */}
-        <section className="w-full px-4 py-8 flex justify-center -mt-10 relative z-20">
-          <div className="container max-w-4xl bg-white rounded-[2.5rem] shadow-xl p-6 lg:p-10 border border-[#f0ebe9]">
-            {/* Search Bar */}
-            <div className="relative w-full mb-8">
-              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                <span className="material-symbols-outlined text-[#ee5b2b] text-2xl">search</span>
-              </div>
-              <input
-                className="block w-full h-14 pl-12 pr-4 rounded-full bg-[#f8f6f6] border-transparent focus:border-[#ee5b2b] focus:bg-white focus:ring-0 text-base text-[#181311] placeholder-[#896b61] transition-all"
-                placeholder="Search for specific questions, treatments, or guides..."
-                type="text"
-              />
-            </div>
-            {/* Filter Chips */}
-            <div className="flex flex-wrap gap-3 justify-center">
-              <button className="px-5 py-2 rounded-full bg-[#ee5b2b] text-white text-sm font-medium shadow-md shadow-[#ee5b2b]/20 hover:shadow-lg transition-all transform hover:-translate-y-0.5">
-                All
-              </button>
-              <button className="px-5 py-2 rounded-full bg-[#fdf1ec] text-[#181311] text-sm font-medium hover:bg-[#ee5b2b]/20 transition-colors">
-                Robotic Surgery
-              </button>
-              <button className="px-5 py-2 rounded-full bg-[#fdf1ec] text-[#181311] text-sm font-medium hover:bg-[#ee5b2b]/20 transition-colors">
-                Fertility
-              </button>
-              <button className="px-5 py-2 rounded-full bg-[#fdf1ec] text-[#181311] text-sm font-medium hover:bg-[#ee5b2b]/20 transition-colors">
-                Endometriosis
-              </button>
-              <button className="px-5 py-2 rounded-full bg-[#fdf1ec] text-[#181311] text-sm font-medium hover:bg-[#ee5b2b]/20 transition-colors">
-                Pre-Op
-              </button>
-              <button className="px-5 py-2 rounded-full bg-[#fdf1ec] text-[#181311] text-sm font-medium hover:bg-[#ee5b2b]/20 transition-colors">
-                Billing &amp; Insurance
-              </button>
-            </div>
+      {/* FAQ Topics Grid */}
+      <section className="py-16 px-4 sm:px-10 bg-[#f8f8f5] dark:bg-[#221e10]">
+        <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-[#C07766] dark:text-[#C07766] font-bold tracking-widest uppercase text-sm">
+              Common Questions
+            </span>
+            <h2 className="text-3xl md:text-4xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white mt-4 mb-6 leading-[1.15] tracking-[-0.01em]">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-[#8a8060] dark:text-gray-300 text-lg max-w-3xl mx-auto">
+              Explore answers to common questions about treatments, procedures, and research. 
+              Click on any topic to learn more.
+            </p>
           </div>
-        </section>
 
-        {/* FAQ Section */}
-        <section className="w-full px-4 py-16 flex justify-center bg-[#f8f6f6]">
-          <div className="container max-w-3xl flex flex-col gap-8">
-            <div className="text-center mb-4">
-              <h2 className="text-3xl font-bold text-[#181311] mb-3">Common Questions, Clear Answers.</h2>
-              <p className="text-[#685850] max-w-xl mx-auto">
-                We believe in transparent care. Here are the most frequent topics discussed by our patients.
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {faqTopics.map((topic) => (
+              <div
+                key={topic.id}
+                className="bg-white dark:bg-white/5 rounded-2xl shadow-xl border border-[#e5dddc] hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col"
+              >
+                {/* Visual Header */}
+                <div className={`${topic.color} p-6 text-white relative overflow-hidden`}>
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="size-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+                        <span className="material-symbols-outlined text-4xl">{topic.icon}</span>
+                      </div>
+                      <div className="flex-1">
+                        <span className="inline-block px-2 py-1 bg-white/20 backdrop-blur-sm rounded-lg text-xs font-bold mb-2">
+                          {topic.category}
+                        </span>
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold leading-tight">{topic.title}</h3>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-6 flex-1 flex flex-col">
+                  {/* Summary */}
+                  <div className="mb-4">
+                    <p className="text-[#8a8060] dark:text-gray-300 leading-relaxed text-sm line-clamp-4">
+                      {topic.summary}
               </p>
             </div>
 
-            {/* Hysterectomy Introduction */}
-            <div className="bg-gradient-to-br from-[#ee5b2b]/10 to-[#fdf1ec] rounded-2xl p-8 mb-8 border border-[#ee5b2b]/20">
-              <h3 className="text-2xl font-bold text-[#181311] mb-4">{hysterectomyContent.heading}</h3>
-              <p className="text-xl font-semibold text-[#ee5b2b] mb-4">{hysterectomyContent.tagline}</p>
-              <p className="text-[#685850] leading-relaxed">{hysterectomyContent.introduction}</p>
-            </div>
+                  {/* Why It Matters */}
+                  <div className="bg-white/60 dark:bg-white/5 backdrop-blur-md rounded-xl p-4 mb-4 border border-white/50 dark:border-white/10 shadow-sm">
+                    <div className="flex items-start gap-2 mb-2">
+                      <span className="material-symbols-outlined text-[#C07766] text-xl">lightbulb</span>
+                      <p className="font-bold text-[#181611] dark:text-white text-sm">Why This Matters</p>
+                    </div>
+                    <p className="text-sm text-[#8a8060] dark:text-gray-300 leading-relaxed line-clamp-2">
+                      {topic.whyItMatters}
+                    </p>
+              </div>
 
-            {/* FAQs from siteData */}
-            {faqs.map((faq, idx) => (
-              <details key={idx} className="group bg-white rounded-2xl shadow-sm border border-[#f0ebe9] overflow-hidden">
-                <summary className="flex items-center justify-between p-6 cursor-pointer select-none text-lg font-medium text-[#181311] hover:bg-[#fdf1ec]/30 transition-colors">
-                  <span>{faq.question}</span>
-                  <span className="material-symbols-outlined text-[#ee5b2b] transition-transform duration-300 accordion-icon">
-                    expand_more
-                  </span>
-                </summary>
-                <div className="accordion-content bg-[#fdf1ec]/20 px-6 pb-6 pt-2 text-[#685850] leading-relaxed whitespace-pre-line">
-                  {faq.answer}
+                  {/* Learn More Button */}
+                  <div className="mt-auto pt-4">
+                    <button
+                      onClick={() => openModal(topic)}
+                      className="group flex items-center justify-center gap-2 w-full px-4 py-3 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
+                    >
+                      <span className="material-symbols-outlined">info</span>
+                      <span>Learn More</span>
+                      <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </button>
+                  </div>
                 </div>
-              </details>
+              </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Patient Guides Section */}
-        <section className="w-full px-4 py-16 bg-[#eef3f0]">
-          <div className="container max-w-6xl mx-auto">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-              <div className="max-w-2xl">
-                <h2 className="text-3xl font-bold text-[#181311] mb-4">Essential Guides for Your Journey.</h2>
-                <p className="text-[#685850] text-lg">
-                  Access downloadable guides and instructions to prepare for your procedure, understand your
-                  recovery, and manage your health effectively.
-                </p>
+      {/* Call to Action */}
+      <section className="py-16 px-4 sm:px-10 bg-[#f8f8f5] dark:bg-[#221e10]">
+        <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
+          <div className="bg-[#C07766] rounded-3xl p-8 md:p-12 text-white shadow-2xl text-center relative overflow-hidden">
+            <div className="absolute inset-0 bg-white/5 backdrop-blur-sm"></div>
+            <div className="relative z-10 max-w-3xl mx-auto">
+              <div className="size-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center mx-auto mb-6 border border-white/30">
+                <span className="material-symbols-outlined text-5xl">chat</span>
               </div>
-              <a className="hidden md:flex items-center text-[#8ba898] font-bold hover:underline" href="#">
-                View All Resources
-                <span className="material-symbols-outlined text-sm ml-1">arrow_forward</span>
-              </a>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Guide Card 1 */}
-              <div className="bg-white p-8 rounded-[2rem] shadow-sm hover:shadow-xl transition-shadow border border-white flex flex-col items-start gap-4">
-                <div className="size-14 rounded-2xl bg-[#fdf1ec] flex items-center justify-center text-[#ee5b2b]">
-                  <span className="material-symbols-outlined text-3xl">checklist</span>
-                </div>
-                <h3 className="text-xl font-bold text-[#181311] mt-2">
-                  Pre-Operative Checklist for Robotic Surgery
-                </h3>
-                <p className="text-sm text-[#685850] flex-1">
-                  A step-by-step guide on diet, medication, and arrival times before your procedure.
-                </p>
-                <button className="w-full mt-4 flex items-center justify-center gap-2 rounded-full border border-[#8ba898] text-[#8ba898] font-bold py-3 px-6 hover:bg-[#8ba898] hover:text-white transition-colors">
-                  <span className="material-symbols-outlined text-xl">download</span> Download Guide
-                </button>
-              </div>
-
-              {/* Guide Card 2 */}
-              <div className="bg-white p-8 rounded-[2rem] shadow-sm hover:shadow-xl transition-shadow border border-white flex flex-col items-start gap-4">
-                <div className="size-14 rounded-2xl bg-[#eef3f0] flex items-center justify-center text-[#8ba898]">
-                  <span className="material-symbols-outlined text-3xl">volunteer_activism</span>
-                </div>
-                <h3 className="text-xl font-bold text-[#181311] mt-2">Post-IVF Care &amp; Wellness Guide</h3>
-                <p className="text-sm text-[#685850] flex-1">
-                  Understanding your body after treatment, managing stress, and what to expect next.
-                </p>
-                <button className="w-full mt-4 flex items-center justify-center gap-2 rounded-full border border-[#8ba898] text-[#8ba898] font-bold py-3 px-6 hover:bg-[#8ba898] hover:text-white transition-colors">
-                  <span className="material-symbols-outlined text-xl">download</span> Download Guide
-                </button>
-              </div>
-
-              {/* Guide Card 3 */}
-              <div className="bg-white p-8 rounded-[2rem] shadow-sm hover:shadow-xl transition-shadow border border-white flex flex-col items-start gap-4">
-                <div className="size-14 rounded-2xl bg-orange-50 flex items-center justify-center text-orange-400">
-                  <span className="material-symbols-outlined text-3xl">home_health</span>
-                </div>
-                <h3 className="text-xl font-bold text-[#181311] mt-2">Managing Pelvic Pain at Home</h3>
-                <p className="text-sm text-[#685850] flex-1">
-                  Safe exercises, dietary tips, and pain management strategies for daily comfort.
-                </p>
-                <button className="w-full mt-4 flex items-center justify-center gap-2 rounded-full border border-[#8ba898] text-[#8ba898] font-bold py-3 px-6 hover:bg-[#8ba898] hover:text-white transition-colors">
-                  <span className="material-symbols-outlined text-xl">download</span> Download Guide
-                </button>
-              </div>
-            </div>
-            <div className="md:hidden mt-8 flex justify-center">
-              <a className="flex items-center text-[#8ba898] font-bold hover:underline" href="#">
-                View All Resources
-                <span className="material-symbols-outlined text-sm ml-1">arrow_forward</span>
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="w-full px-4 py-16 flex justify-center bg-white">
-          <div className="container max-w-4xl bg-[#fdf1ec] rounded-[3rem] p-10 lg:p-16 text-center">
-            <div className="flex flex-col items-center gap-6">
-              <div className="size-16 rounded-full bg-white flex items-center justify-center text-[#ee5b2b] shadow-sm mb-2">
-                <span className="material-symbols-outlined text-4xl">support_agent</span>
-              </div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-[#181311]">
-                Can&apos;t find what you&apos;re looking for?
+              <h2 className="text-3xl md:text-4xl font-[var(--font-playfair)] font-bold mb-4 leading-[1.15] tracking-[-0.01em]">
+                Still Have Questions?
               </h2>
-              <p className="text-[#685850] text-lg max-w-lg">
-                Our compassionate team is here to listen and help you find the answers you need for your peace of
-                mind.
+              <p className="text-white/90 text-lg mb-8 leading-relaxed">
+                Can&apos;t find what you&apos;re looking for? We&apos;re here to help. Book a consultation 
+                to discuss your specific questions and concerns.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 w-full justify-center mt-4">
-                <button className="flex items-center justify-center gap-2 rounded-full h-14 px-8 bg-[#ee5b2b] text-white text-base font-bold shadow-lg shadow-[#ee5b2b]/20 hover:bg-[#ee5b2b]/90 transition-transform hover:-translate-y-1">
-                  <span className="material-symbols-outlined">call</span> Contact Our Team Directly
-                </button>
-                <button className="flex items-center justify-center gap-2 rounded-full h-14 px-8 bg-[#25D366] text-white text-base font-bold shadow-lg shadow-green-500/20 hover:bg-[#20bd5a] transition-transform hover:-translate-y-1">
-                  <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
-                  </svg>
-                  Chat on WhatsApp
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="/contact"
+                  className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#C07766] font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+                >
+                  <span className="material-symbols-outlined">calendar_month</span>
+                  <span>Book Consultation</span>
+                </a>
+                <a
+                  href="https://wa.me/919712982198"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/20 backdrop-blur-md border-2 border-white/40 text-white font-semibold rounded-xl hover:bg-white/30 transition-all duration-300"
+                >
+                  <span className="material-symbols-outlined">chat</span>
+                  <span>Ask on WhatsApp</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          </div>
+        </section>
+
+      {/* Modal */}
+      {isModalOpen && selectedTopic && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+          onClick={closeModal}
+        >
+          <div 
+            className="relative bg-white dark:bg-[#221e10] rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className={`${selectedTopic.color} p-6 text-white relative overflow-hidden`}>
+              <div className="relative z-10">
+                <div className="flex items-start justify-between gap-4 mb-4">
+                  <div className="flex items-center gap-4 flex-1">
+                    <div className="size-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+                      <span className="material-symbols-outlined text-4xl">{selectedTopic.icon}</span>
+                    </div>
+                    <div className="flex-1">
+                      <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-lg text-xs font-bold mb-2">
+                        {selectedTopic.category}
+                      </span>
+                      <h2 className="text-2xl md:text-3xl font-[var(--font-playfair)] font-bold leading-tight">
+                        {selectedTopic.title}
+                      </h2>
+                    </div>
+                  </div>
+                  <button
+                    onClick={closeModal}
+                    className="flex-shrink-0 size-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                  >
+                    <span className="material-symbols-outlined">close</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Modal Content */}
+            <div className="flex-1 overflow-y-auto p-6 md:p-8">
+              {selectedTopic.fullContent.introduction && (
+                <div className="mb-6">
+                  <p className="text-[#8a8060] dark:text-gray-300 text-lg leading-relaxed">
+                    {selectedTopic.fullContent.introduction}
+                  </p>
+                </div>
+              )}
+
+              <div className="space-y-6">
+                {selectedTopic.fullContent.sections.map((section, idx) => (
+                  <div key={idx} className="border-l-4 border-[#C07766] pl-6">
+                    <h3 className="text-xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white mb-3 leading-[1.15] tracking-[-0.01em]">
+                      {section.heading}
+                </h3>
+                    <p className="text-[#8a8060] dark:text-gray-300 leading-relaxed whitespace-pre-line">
+                      {section.content}
+                </p>
+              </div>
+                ))}
+
+                {selectedTopic.fullContent.faqs && selectedTopic.fullContent.faqs.length > 0 && (
+                  <div className="mt-8 pt-6 border-t border-[#e5dddc]">
+                    <h3 className="text-xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white mb-4 leading-[1.15] tracking-[-0.01em]">
+                      Frequently Asked Questions
+                    </h3>
+                    <div className="space-y-4">
+                      {selectedTopic.fullContent.faqs.map((faq, idx) => (
+                        <div key={idx} className="bg-[#f8f8f5] dark:bg-white/5 rounded-xl p-4 border border-[#e5dddc]">
+                          <h4 className="font-semibold text-[#181611] dark:text-white mb-2">
+                            {faq.question}
+                          </h4>
+                          <p className="text-[#8a8060] dark:text-gray-300 text-sm leading-relaxed">
+                            {faq.answer}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                </div>
+                )}
+
+                {selectedTopic.fullContent.conclusion && (
+                  <div className="mt-8 pt-6 border-t border-[#e5dddc]">
+                    <div className="bg-[#C07766]/10 dark:bg-[#C07766]/20 backdrop-blur-sm rounded-xl p-6 border border-[#C07766]/30">
+                      <p className="text-[#181611] dark:text-white font-semibold leading-relaxed">
+                        {selectedTopic.fullContent.conclusion}
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {selectedTopic.pdfPath && (
+                <div className="mt-8 pt-6 border-t border-[#e5dddc]">
+                  <a
+                    href={selectedTopic.pdfPath}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    <span className="material-symbols-outlined">description</span>
+                    <span>View Full Research Paper (PDF)</span>
+                    <span className="material-symbols-outlined text-sm">open_in_new</span>
+                  </a>
+                </div>
+              )}
+            </div>
+
+            {/* Modal Footer */}
+            <div className="border-t border-[#e5dddc] p-4 bg-[#f8f8f5] dark:bg-white/5">
+              <button
+                onClick={closeModal}
+                className="w-full px-6 py-3 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-semibold rounded-xl transition-colors"
+              >
+                Close
                 </button>
               </div>
             </div>
           </div>
-        </section>
-      </main>
+      )}
 
       <Footer />
-    </div>
+    </main>
   );
 }

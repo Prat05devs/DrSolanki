@@ -6,17 +6,24 @@ export default function ClinicsPage() {
   return (
     <main className="flex flex-col w-full bg-[#f8f8f5] dark:bg-[#221e10] min-h-screen">
       {/* Hero Section */}
-      <section className="relative w-full py-12 sm:py-16 px-4 sm:px-6 md:px-10 bg-gradient-to-br from-[#C07766] to-[#8DA399]">
-        <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
+      <section className="relative w-full h-[50vh] min-h-[400px] flex items-center justify-center px-4 sm:px-6 md:px-10 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url("https://images.unsplash.com/photo-1567745566980-4378a3db17fc?q=80&w=3174&auto=format&fit=crop")',
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto relative z-10">
           <div className="text-center max-w-3xl mx-auto">
             <span className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs sm:text-sm font-medium w-fit border border-white/30 mb-4 sm:mb-6">
               <span className="material-symbols-outlined text-base sm:text-[18px]">local_hospital</span>
               Our Clinics & Hospitals
             </span>
-            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[var(--font-playfair)] font-black leading-[1.15] tracking-[-0.01em] mb-4 sm:mb-6 px-2">
+            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[var(--font-playfair)] font-black leading-[1.15] tracking-[-0.01em] mb-4 sm:mb-6 px-2 drop-shadow-lg">
               Where We Provide Care
             </h1>
-            <p className="text-white/90 text-base sm:text-lg md:text-xl font-normal leading-[1.7] px-2">
+            <p className="text-white/95 text-base sm:text-lg md:text-xl font-normal leading-[1.7] px-2 drop-shadow-md">
               Dr. Smit Bharat Solanki provides expert gynecological and fertility care at multiple locations 
               across Gujarat, ensuring accessible, world-class treatment for all patients.
             </p>

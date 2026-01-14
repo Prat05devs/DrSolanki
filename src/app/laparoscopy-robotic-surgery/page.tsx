@@ -1,6 +1,7 @@
 import Footer from "@/components/global/Footer";
 import Link from "next/link";
 import { DaVinciComponentsSection, ProceduresSection, JourneySection } from "@/components/sections/robotic-surgery";
+import { laparoscopy3DFaqContent } from "@/data/siteData";
 
 export default function LaparoscopyRoboticSurgeryPage() {
   return (
@@ -47,9 +48,7 @@ export default function LaparoscopyRoboticSurgeryPage() {
               Two Advanced Approaches to Minimally Invasive Surgery
             </h2>
             <p className="text-[#8a8060] dark:text-gray-300 text-lg max-w-3xl mx-auto">
-              {/* TODO: Add detailed comparison content from single_source_of_truth.md */}
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              {laparoscopy3DFaqContent.introduction}
             </p>
           </div>
 
@@ -61,8 +60,7 @@ export default function LaparoscopyRoboticSurgeryPage() {
               </div>
               <h3 className="text-2xl font-bold text-[#181611] dark:text-white mb-4">Laparoscopic Surgery</h3>
               <p className="text-[#8a8060] dark:text-gray-300 mb-6 leading-relaxed">
-                Also known as &quot;keyhole surgery,&quot; laparoscopic procedures use small incisions and a camera-equipped 
-                laparoscope to perform surgery with minimal tissue trauma.
+                {laparoscopy3DFaqContent.whatIs3D}
               </p>
               <ul className="space-y-2 mb-6">
                 <li className="flex items-start gap-3">
