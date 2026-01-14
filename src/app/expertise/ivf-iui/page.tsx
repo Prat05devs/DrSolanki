@@ -37,7 +37,7 @@ export default function InfertilityPage() {
                 <span className="material-symbols-outlined">calendar_month</span>
                 Book Fertility Consultation
               </Link>
-              <Link href="tel:+919712982198" className="flex items-center justify-center gap-2 bg-white dark:bg-white/10 border border-[#C07766]/50 text-[#181611] dark:text-white hover:bg-[#C07766]/10 transition-all h-12 px-8 rounded-full text-base font-medium backdrop-blur-sm">
+              <Link href={`tel:${contactInfo.phone}`} className="flex items-center justify-center gap-2 bg-white dark:bg-white/10 border border-[#C07766]/50 text-[#181611] dark:text-white hover:bg-[#C07766]/10 transition-all h-12 px-8 rounded-full text-base font-medium backdrop-blur-sm">
                 <span className="material-symbols-outlined">call</span>
                 Speak to Our Team
               </Link>

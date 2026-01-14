@@ -2,6 +2,7 @@
 
 import Footer from "@/components/global/Footer";
 import Link from "next/link";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 interface Publication {
   id: number;
@@ -97,19 +98,20 @@ export default function ResearchInsightsPage() {
   return (
     <main className="flex flex-col w-full bg-gradient-to-br from-[#f8f8f5] via-white to-[#f8f8f5] dark:from-[#221e10] dark:via-[#1a1710] dark:to-[#221e10] min-h-screen">
       {/* Hero Section */}
-      <section className="relative w-full py-20 px-4 sm:px-10 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#C07766]/5 via-[#8DA399]/5 to-[#f4c025]/5"></div>
+      <section className="relative w-full py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-10 overflow-hidden">
+        <div className="absolute inset-0 bg-[#C07766]/5"></div>
         <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 dark:bg-white/10 backdrop-blur-md text-[#181611] dark:text-white text-sm font-semibold border border-white/50 dark:border-white/20 shadow-lg mb-8">
-              <span className="material-symbols-outlined text-[18px]">verified</span>
-              Published Research & Achievements
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/60 dark:bg-white/10 backdrop-blur-md text-[#181611] dark:text-white text-xs sm:text-sm font-semibold border border-white/50 dark:border-white/20 shadow-lg mb-6 sm:mb-8">
+              <span className="material-symbols-outlined text-base sm:text-[18px]">verified</span>
+              <span className="hidden sm:inline">Published Research & Achievements</span>
+              <span className="sm:hidden">Research</span>
             </div>
-            <h1 className="text-[#181611] dark:text-white text-4xl sm:text-5xl md:text-6xl font-[var(--font-playfair)] font-bold leading-[1.15] tracking-[-0.01em] mb-6">
+            <h1 className="text-[#181611] dark:text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[var(--font-playfair)] font-bold leading-[1.15] tracking-[-0.01em] mb-4 sm:mb-6 px-2">
               Science in Practice:<br />
               <span className="text-[#C07766]">Research & Achievements</span>
             </h1>
-            <p className="text-[#8a8060] dark:text-gray-300 text-lg sm:text-xl font-normal leading-relaxed max-w-3xl mx-auto">
+            <p className="text-[#8a8060] dark:text-gray-300 text-base sm:text-lg md:text-xl font-normal leading-relaxed max-w-3xl mx-auto px-2">
               We believe in transparency. Here, you&apos;ll find our published research and academic presentations, 
               showcasing our commitment to advancing women&apos;s health care.
             </p>
@@ -118,38 +120,38 @@ export default function ResearchInsightsPage() {
       </section>
 
       {/* Publications Section */}
-      <section className="py-16 px-4 sm:px-10">
+      <section className="py-12 sm:py-16 px-4 sm:px-6 md:px-10">
         <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-[#C07766] dark:text-[#C07766] font-bold tracking-widest uppercase text-sm">
+          <div className="text-center mb-12 sm:mb-16">
+            <span className="text-[#C07766] dark:text-[#C07766] font-bold tracking-widest uppercase text-xs sm:text-sm">
               Published Research
             </span>
-            <h2 className="text-3xl md:text-4xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white mt-4 mb-6 leading-[1.15] tracking-[-0.01em]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white mt-3 sm:mt-4 mb-4 sm:mb-6 leading-[1.15] tracking-[-0.01em] px-2">
               Research Publications
             </h2>
-            <p className="text-[#8a8060] dark:text-gray-300 text-lg max-w-3xl mx-auto">
+            <p className="text-[#8a8060] dark:text-gray-300 text-base sm:text-lg max-w-3xl mx-auto px-2">
               Our peer-reviewed research published in leading medical journals, advancing the field of gynecology and women&apos;s health.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {publications.map((pub) => (
               <div
                 key={pub.id}
-                className="group relative bg-white/40 dark:bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/50 dark:border-white/10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+                className="group relative bg-white/40 dark:bg-white/5 backdrop-blur-xl rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 border border-white/50 dark:border-white/10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#C07766]/5 via-transparent to-[#8DA399]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-[#C07766]/5 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative z-10">
-                  <div className="flex items-start justify-between gap-4 mb-4">
-                      <div className="flex-1">
-                      <h3 className="text-xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white mb-3 leading-[1.3] tracking-[-0.01em]">
+                  <div className="flex items-start justify-between gap-3 sm:gap-4 mb-3 sm:mb-4">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-base sm:text-lg md:text-xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white mb-2 sm:mb-3 leading-[1.3] tracking-[-0.01em] break-words">
                         {pub.title}
                       </h3>
-                      <p className="text-[#8a8060] dark:text-gray-300 text-sm font-medium mb-2">
+                      <p className="text-[#8a8060] dark:text-gray-300 text-xs sm:text-sm font-medium mb-1 sm:mb-2">
                         {pub.author}
                       </p>
                         {pub.journal && (
-                        <p className="text-[#8a8060] dark:text-gray-400 text-sm italic">
+                        <p className="text-[#8a8060] dark:text-gray-400 text-xs sm:text-sm italic">
                           {pub.journal}
                         </p>
                         )}
@@ -159,10 +161,10 @@ export default function ResearchInsightsPage() {
                     href={pub.pdfPath}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group/btn"
+                    className="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-semibold rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group/btn text-sm sm:text-base touch-manipulation w-full sm:w-auto justify-center"
                   >
-                    <span className="material-symbols-outlined text-xl">article</span>
-                    <span>View Publication (PDF)</span>
+                    <span className="material-symbols-outlined text-lg sm:text-xl">article</span>
+                    <span className="text-xs sm:text-base">View Publication (PDF)</span>
                     <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">open_in_new</span>
                   </a>
                 </div>
@@ -173,46 +175,46 @@ export default function ResearchInsightsPage() {
       </section>
 
       {/* Presentations Section */}
-      <section className="py-16 px-4 sm:px-10 bg-gradient-to-br from-[#f8f8f5]/50 to-transparent dark:from-[#221e10]/50">
+      <section className="py-12 sm:py-16 px-4 sm:px-6 md:px-10 bg-[#f8f8f5]/50 dark:bg-[#221e10]/50">
         <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-[#8DA399] dark:text-[#8DA399] font-bold tracking-widest uppercase text-sm">
+          <div className="text-center mb-12 sm:mb-16">
+            <span className="text-[#8DA399] dark:text-[#8DA399] font-bold tracking-widest uppercase text-xs sm:text-sm">
               Academic Presentations
             </span>
-            <h2 className="text-3xl md:text-4xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white mt-4 mb-6 leading-[1.15] tracking-[-0.01em]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white mt-3 sm:mt-4 mb-4 sm:mb-6 leading-[1.15] tracking-[-0.01em] px-2">
               Last 3 Years of Presentations
             </h2>
-            <p className="text-[#8a8060] dark:text-gray-300 text-lg max-w-3xl mx-auto">
+            <p className="text-[#8a8060] dark:text-gray-300 text-base sm:text-lg max-w-3xl mx-auto px-2">
               Our contributions to national and international conferences, sharing knowledge and advancing the field.
                     </p>
                   </div>
 
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {presentations.map((presentation) => (
               <div
                 key={presentation.year}
                 className="relative"
               >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="flex-shrink-0 size-16 bg-[#8DA399] rounded-2xl flex items-center justify-center text-white font-bold text-2xl">
+                <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                  <div className="flex-shrink-0 size-12 sm:size-16 bg-[#8DA399] rounded-xl sm:rounded-2xl flex items-center justify-center text-white font-bold text-xl sm:text-2xl">
                     {presentation.year}
                     </div>
                   <div>
-                    <h3 className="text-2xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white leading-[1.15] tracking-[-0.01em]">
+                    <h3 className="text-xl sm:text-2xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white leading-[1.15] tracking-[-0.01em]">
                       {presentation.year}
                     </h3>
-                    <p className="text-[#8a8060] dark:text-gray-400 text-sm">
+                    <p className="text-[#8a8060] dark:text-gray-400 text-xs sm:text-sm">
                       {presentation.items.length} presentations & activities
                     </p>
                   </div>
                       </div>
-                <div className="space-y-4 pl-20">
+                <div className="space-y-3 sm:space-y-4 pl-0 sm:pl-16 md:pl-20">
                   {presentation.items.map((item, idx) => (
                     <div
                       key={idx}
                       className="relative"
                     >
-                      <p className="text-[#8a8060] dark:text-gray-300 leading-relaxed">
+                      <p className="text-[#8a8060] dark:text-gray-300 text-sm sm:text-base leading-relaxed">
                         {item}
                       </p>
                   </div>
@@ -225,36 +227,36 @@ export default function ResearchInsightsPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 px-4 sm:px-10">
+      <section className="py-12 sm:py-16 px-4 sm:px-6 md:px-10">
         <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
-          <div className="relative bg-gradient-to-br from-[#C07766] to-[#8DA399] rounded-3xl p-8 md:p-12 text-white shadow-2xl text-center overflow-hidden">
-            <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+          <div className="relative bg-[#C07766] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 text-white shadow-2xl text-center overflow-hidden">
+            <div className="absolute inset-0 bg-white/5 backdrop-blur-sm"></div>
             <div className="relative z-10 max-w-3xl mx-auto">
-              <div className="inline-flex items-center justify-center size-20 bg-white/20 backdrop-blur-md rounded-full mb-6 shadow-xl">
-                <span className="material-symbols-outlined text-5xl">chat</span>
+              <div className="inline-flex items-center justify-center size-16 sm:size-20 bg-white/20 backdrop-blur-md rounded-full mb-4 sm:mb-6 shadow-xl border border-white/30">
+                <span className="material-symbols-outlined text-3xl sm:text-5xl">chat</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-[var(--font-playfair)] font-bold mb-4 leading-[1.15] tracking-[-0.01em]">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-[var(--font-playfair)] font-bold mb-3 sm:mb-4 leading-[1.15] tracking-[-0.01em] px-2">
                 Questions About Our Research?
               </h2>
-              <p className="text-white/90 text-lg mb-8 leading-relaxed">
+              <p className="text-white/90 text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed px-2">
                 We&apos;re here to explain any study in detail. Book a consultation to discuss how this 
                 research applies to your specific situation.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-2">
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#C07766] font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+                  className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white text-[#C07766] font-semibold rounded-lg sm:rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 text-sm sm:text-base touch-manipulation"
                 >
-                  <span className="material-symbols-outlined">calendar_month</span>
+                  <span className="material-symbols-outlined text-lg sm:text-xl">calendar_month</span>
                   <span>Book Consultation</span>
                 </Link>
                 <a
-                  href="https://wa.me/919712982198"
+                  href={getWhatsAppUrl("researchQuestions")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-md border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/20 transition-all duration-300"
+                  className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white/20 backdrop-blur-md border-2 border-white/40 text-white font-semibold rounded-lg sm:rounded-xl hover:bg-white/30 transition-all duration-300 text-sm sm:text-base touch-manipulation"
                 >
-                  <span className="material-symbols-outlined">chat</span>
+                  <span className="material-symbols-outlined text-lg sm:text-xl">chat</span>
                   <span>Ask on WhatsApp</span>
                 </a>
               </div>

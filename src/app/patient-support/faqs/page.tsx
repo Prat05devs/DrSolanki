@@ -287,7 +287,7 @@ export default function FAQPage() {
   return (
     <main className="flex flex-col w-full bg-[#f8f8f5] dark:bg-[#221e10] min-h-screen">
         {/* Hero Section */}
-      <section className="relative w-full py-20 px-4 sm:px-10 min-h-[500px] flex items-center overflow-hidden">
+      <section className="relative w-full py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-10 min-h-[400px] sm:min-h-[500px] flex items-center overflow-hidden">
         <div 
           className="absolute top-0 left-0 right-0 w-full h-[200%] bg-cover bg-top bg-no-repeat"
           style={{
@@ -298,20 +298,21 @@ export default function FAQPage() {
         <div className="absolute inset-0 bg-black/60"></div>
         <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-semibold w-fit border border-white/30 mb-6">
-              <span className="material-symbols-outlined text-[18px]">help</span>
-              Frequently Asked Questions
+            <span className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs sm:text-sm font-semibold w-fit border border-white/30 mb-4 sm:mb-6">
+              <span className="material-symbols-outlined text-base sm:text-[18px]">help</span>
+              <span className="hidden sm:inline">Frequently Asked Questions</span>
+              <span className="sm:hidden">FAQs</span>
                   </span>
-            <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-[var(--font-playfair)] font-bold leading-[1.15] tracking-[-0.01em] mb-6 drop-shadow-lg">
+            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[var(--font-playfair)] font-bold leading-[1.15] tracking-[-0.01em] mb-4 sm:mb-6 drop-shadow-lg px-2">
               Your Questions,<br />
               <span className="text-[#f4c025]">Answered</span>
                 </h1>
-            <p className="text-white/95 text-lg sm:text-xl font-normal leading-relaxed max-w-3xl mx-auto drop-shadow-md">
+            <p className="text-white/95 text-base sm:text-lg md:text-xl font-normal leading-relaxed max-w-3xl mx-auto drop-shadow-md px-2">
               Find answers to common questions about our treatments, procedures, and research. 
               Clear, honest information to help you make informed decisions about your care.
             </p>
-          </div>
                 </div>
+              </div>
       </section>
 
       {/* Doctor's Introduction */}
@@ -348,59 +349,59 @@ export default function FAQPage() {
             <p className="text-[#8a8060] dark:text-gray-300 text-lg max-w-3xl mx-auto">
               Explore answers to common questions about treatments, procedures, and research. 
               Click on any topic to learn more.
-            </p>
-          </div>
+              </p>
+            </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {faqTopics.map((topic) => (
               <div
                 key={topic.id}
-                className="bg-white dark:bg-white/5 rounded-2xl shadow-xl border border-[#e5dddc] hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col"
+                className="bg-white dark:bg-white/5 rounded-xl sm:rounded-2xl shadow-xl border border-[#e5dddc] hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col"
               >
                 {/* Visual Header */}
-                <div className={`${topic.color} p-6 text-white relative overflow-hidden`}>
+                <div className={`${topic.color} p-4 sm:p-6 text-white relative overflow-hidden`}>
                   <div className="relative z-10">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="size-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
-                        <span className="material-symbols-outlined text-4xl">{topic.icon}</span>
+                    <div className="flex items-center gap-2 sm:gap-4 mb-3 sm:mb-4">
+                      <div className="flex-shrink-0 size-12 sm:size-16 bg-white/20 backdrop-blur-sm rounded-xl sm:rounded-2xl flex items-center justify-center">
+                        <span className="material-symbols-outlined text-2xl sm:text-4xl">{topic.icon}</span>
                       </div>
-                      <div className="flex-1">
-                        <span className="inline-block px-2 py-1 bg-white/20 backdrop-blur-sm rounded-lg text-xs font-bold mb-2">
+                      <div className="flex-1 min-w-0">
+                        <span className="inline-block px-2 py-1 bg-white/20 backdrop-blur-sm rounded-lg text-xs font-bold mb-1 sm:mb-2">
                           {topic.category}
-                        </span>
+                </span>
                       </div>
                     </div>
-                    <h3 className="text-xl font-bold leading-tight">{topic.title}</h3>
+                    <h3 className="text-base sm:text-lg lg:text-xl font-bold leading-tight">{topic.title}</h3>
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-6 flex-1 flex flex-col">
+                <div className="p-4 sm:p-6 flex-1 flex flex-col">
                   {/* Summary */}
-                  <div className="mb-4">
-                    <p className="text-[#8a8060] dark:text-gray-300 leading-relaxed text-sm line-clamp-4">
+                  <div className="mb-3 sm:mb-4">
+                    <p className="text-[#8a8060] dark:text-gray-300 leading-relaxed text-xs sm:text-sm line-clamp-4">
                       {topic.summary}
-              </p>
-            </div>
+                    </p>
+                  </div>
 
                   {/* Why It Matters */}
-                  <div className="bg-white/60 dark:bg-white/5 backdrop-blur-md rounded-xl p-4 mb-4 border border-white/50 dark:border-white/10 shadow-sm">
-                    <div className="flex items-start gap-2 mb-2">
-                      <span className="material-symbols-outlined text-[#C07766] text-xl">lightbulb</span>
-                      <p className="font-bold text-[#181611] dark:text-white text-sm">Why This Matters</p>
+                  <div className="bg-white/60 dark:bg-white/5 backdrop-blur-md rounded-lg sm:rounded-xl p-3 sm:p-4 mb-3 sm:mb-4 border border-white/50 dark:border-white/10 shadow-sm">
+                    <div className="flex items-start gap-2 mb-1 sm:mb-2">
+                      <span className="material-symbols-outlined text-[#C07766] text-lg sm:text-xl flex-shrink-0">lightbulb</span>
+                      <p className="font-bold text-[#181611] dark:text-white text-xs sm:text-sm">Why This Matters</p>
                     </div>
-                    <p className="text-sm text-[#8a8060] dark:text-gray-300 leading-relaxed line-clamp-2">
+                    <p className="text-xs sm:text-sm text-[#8a8060] dark:text-gray-300 leading-relaxed line-clamp-2">
                       {topic.whyItMatters}
                     </p>
               </div>
 
                   {/* Learn More Button */}
-                  <div className="mt-auto pt-4">
+                  <div className="mt-auto pt-3 sm:pt-4">
                     <button
                       onClick={() => openModal(topic)}
-                      className="group flex items-center justify-center gap-2 w-full px-4 py-3 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
+                      className="group flex items-center justify-center gap-2 w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-semibold rounded-lg sm:rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base touch-manipulation"
                     >
-                      <span className="material-symbols-outlined">info</span>
+                      <span className="material-symbols-outlined text-lg sm:text-xl">info</span>
                       <span>Learn More</span>
                       <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
                     </button>
@@ -413,36 +414,36 @@ export default function FAQPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 px-4 sm:px-10 bg-[#f8f8f5] dark:bg-[#221e10]">
+      <section className="py-12 sm:py-16 px-4 sm:px-6 md:px-10 bg-[#f8f8f5] dark:bg-[#221e10]">
         <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
-          <div className="bg-[#C07766] rounded-3xl p-8 md:p-12 text-white shadow-2xl text-center relative overflow-hidden">
+          <div className="bg-[#C07766] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 text-white shadow-2xl text-center relative overflow-hidden">
             <div className="absolute inset-0 bg-white/5 backdrop-blur-sm"></div>
             <div className="relative z-10 max-w-3xl mx-auto">
-              <div className="size-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center mx-auto mb-6 border border-white/30">
-                <span className="material-symbols-outlined text-5xl">chat</span>
+              <div className="size-16 sm:size-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 border border-white/30">
+                <span className="material-symbols-outlined text-3xl sm:text-5xl">chat</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-[var(--font-playfair)] font-bold mb-4 leading-[1.15] tracking-[-0.01em]">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-[var(--font-playfair)] font-bold mb-3 sm:mb-4 leading-[1.15] tracking-[-0.01em] px-2">
                 Still Have Questions?
               </h2>
-              <p className="text-white/90 text-lg mb-8 leading-relaxed">
+              <p className="text-white/90 text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed px-2">
                 Can&apos;t find what you&apos;re looking for? We&apos;re here to help. Book a consultation 
                 to discuss your specific questions and concerns.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-2">
                 <a
                   href="/contact"
-                  className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#C07766] font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+                  className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white text-[#C07766] font-semibold rounded-lg sm:rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 text-sm sm:text-base touch-manipulation"
                 >
-                  <span className="material-symbols-outlined">calendar_month</span>
+                  <span className="material-symbols-outlined text-lg sm:text-xl">calendar_month</span>
                   <span>Book Consultation</span>
                 </a>
                 <a
-                  href="https://wa.me/919712982198"
+                  href={getWhatsAppUrl("faqQuestions")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/20 backdrop-blur-md border-2 border-white/40 text-white font-semibold rounded-xl hover:bg-white/30 transition-all duration-300"
+                  className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white/20 backdrop-blur-md border-2 border-white/40 text-white font-semibold rounded-lg sm:rounded-xl hover:bg-white/30 transition-all duration-300 text-sm sm:text-base touch-manipulation"
                 >
-                  <span className="material-symbols-outlined">chat</span>
+                  <span className="material-symbols-outlined text-lg sm:text-xl">chat</span>
                   <span>Ask on WhatsApp</span>
                 </a>
               </div>
@@ -454,74 +455,75 @@ export default function FAQPage() {
       {/* Modal */}
       {isModalOpen && selectedTopic && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/60 backdrop-blur-sm"
           onClick={closeModal}
         >
           <div 
-            className="relative bg-white dark:bg-[#221e10] rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col"
+            className="relative bg-white dark:bg-[#221e10] rounded-xl sm:rounded-2xl shadow-2xl max-w-4xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-hidden flex flex-col m-2 sm:m-0"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className={`${selectedTopic.color} p-6 text-white relative overflow-hidden`}>
+            <div className={`${selectedTopic.color} p-4 sm:p-6 text-white relative overflow-hidden`}>
               <div className="relative z-10">
-                <div className="flex items-start justify-between gap-4 mb-4">
-                  <div className="flex items-center gap-4 flex-1">
-                    <div className="size-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
-                      <span className="material-symbols-outlined text-4xl">{selectedTopic.icon}</span>
+                <div className="flex items-start justify-between gap-2 sm:gap-4 mb-3 sm:mb-4">
+                  <div className="flex items-center gap-2 sm:gap-4 flex-1 min-w-0">
+                    <div className="flex-shrink-0 size-12 sm:size-16 bg-white/20 backdrop-blur-sm rounded-xl sm:rounded-2xl flex items-center justify-center">
+                      <span className="material-symbols-outlined text-2xl sm:text-4xl">{selectedTopic.icon}</span>
                     </div>
-                    <div className="flex-1">
-                      <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-lg text-xs font-bold mb-2">
+                    <div className="flex-1 min-w-0">
+                      <span className="inline-block px-2 sm:px-3 py-1 bg-white/20 backdrop-blur-sm rounded-lg text-xs font-bold mb-1 sm:mb-2">
                         {selectedTopic.category}
                       </span>
-                      <h2 className="text-2xl md:text-3xl font-[var(--font-playfair)] font-bold leading-tight">
+                      <h2 className="text-lg sm:text-2xl md:text-3xl font-[var(--font-playfair)] font-bold leading-tight break-words">
                         {selectedTopic.title}
                       </h2>
                     </div>
                   </div>
                   <button
                     onClick={closeModal}
-                    className="flex-shrink-0 size-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                    className="flex-shrink-0 size-8 sm:size-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors touch-manipulation"
+                    aria-label="Close modal"
                   >
-                    <span className="material-symbols-outlined">close</span>
+                    <span className="material-symbols-outlined text-lg sm:text-xl">close</span>
                   </button>
                 </div>
               </div>
             </div>
 
             {/* Modal Content */}
-            <div className="flex-1 overflow-y-auto p-6 md:p-8">
+            <div className="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8">
               {selectedTopic.fullContent.introduction && (
-                <div className="mb-6">
-                  <p className="text-[#8a8060] dark:text-gray-300 text-lg leading-relaxed">
+                <div className="mb-4 sm:mb-6">
+                  <p className="text-[#8a8060] dark:text-gray-300 text-base sm:text-lg leading-relaxed">
                     {selectedTopic.fullContent.introduction}
                   </p>
                 </div>
               )}
 
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {selectedTopic.fullContent.sections.map((section, idx) => (
-                  <div key={idx} className="border-l-4 border-[#C07766] pl-6">
-                    <h3 className="text-xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white mb-3 leading-[1.15] tracking-[-0.01em]">
+                  <div key={idx} className="border-l-4 border-[#C07766] pl-3 sm:pl-6">
+                    <h3 className="text-lg sm:text-xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white mb-2 sm:mb-3 leading-[1.15] tracking-[-0.01em]">
                       {section.heading}
                 </h3>
-                    <p className="text-[#8a8060] dark:text-gray-300 leading-relaxed whitespace-pre-line">
+                    <p className="text-[#8a8060] dark:text-gray-300 text-sm sm:text-base leading-relaxed whitespace-pre-line">
                       {section.content}
                 </p>
               </div>
                 ))}
 
                 {selectedTopic.fullContent.faqs && selectedTopic.fullContent.faqs.length > 0 && (
-                  <div className="mt-8 pt-6 border-t border-[#e5dddc]">
-                    <h3 className="text-xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white mb-4 leading-[1.15] tracking-[-0.01em]">
+                  <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-[#e5dddc]">
+                    <h3 className="text-lg sm:text-xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white mb-3 sm:mb-4 leading-[1.15] tracking-[-0.01em]">
                       Frequently Asked Questions
                     </h3>
-                    <div className="space-y-4">
+                    <div className="space-y-3 sm:space-y-4">
                       {selectedTopic.fullContent.faqs.map((faq, idx) => (
-                        <div key={idx} className="bg-[#f8f8f5] dark:bg-white/5 rounded-xl p-4 border border-[#e5dddc]">
-                          <h4 className="font-semibold text-[#181611] dark:text-white mb-2">
+                        <div key={idx} className="bg-[#f8f8f5] dark:bg-white/5 rounded-lg sm:rounded-xl p-3 sm:p-4 border border-[#e5dddc]">
+                          <h4 className="font-semibold text-sm sm:text-base text-[#181611] dark:text-white mb-1 sm:mb-2">
                             {faq.question}
                           </h4>
-                          <p className="text-[#8a8060] dark:text-gray-300 text-sm leading-relaxed">
+                          <p className="text-[#8a8060] dark:text-gray-300 text-xs sm:text-sm leading-relaxed">
                             {faq.answer}
                           </p>
                         </div>
@@ -531,9 +533,9 @@ export default function FAQPage() {
                 )}
 
                 {selectedTopic.fullContent.conclusion && (
-                  <div className="mt-8 pt-6 border-t border-[#e5dddc]">
-                    <div className="bg-[#C07766]/10 dark:bg-[#C07766]/20 backdrop-blur-sm rounded-xl p-6 border border-[#C07766]/30">
-                      <p className="text-[#181611] dark:text-white font-semibold leading-relaxed">
+                  <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-[#e5dddc]">
+                    <div className="bg-[#C07766]/10 dark:bg-[#C07766]/20 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-6 border border-[#C07766]/30">
+                      <p className="text-[#181611] dark:text-white font-semibold text-sm sm:text-base leading-relaxed">
                         {selectedTopic.fullContent.conclusion}
                       </p>
                     </div>
@@ -542,15 +544,15 @@ export default function FAQPage() {
               </div>
 
               {selectedTopic.pdfPath && (
-                <div className="mt-8 pt-6 border-t border-[#e5dddc]">
+                <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-[#e5dddc]">
                   <a
                     href={selectedTopic.pdfPath}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-semibold rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base touch-manipulation w-full sm:w-auto justify-center"
                   >
-                    <span className="material-symbols-outlined">description</span>
-                    <span>View Full Research Paper (PDF)</span>
+                    <span className="material-symbols-outlined text-lg sm:text-xl">description</span>
+                    <span className="text-xs sm:text-base">View Full Research Paper (PDF)</span>
                     <span className="material-symbols-outlined text-sm">open_in_new</span>
                   </a>
                 </div>
@@ -558,13 +560,13 @@ export default function FAQPage() {
             </div>
 
             {/* Modal Footer */}
-            <div className="border-t border-[#e5dddc] p-4 bg-[#f8f8f5] dark:bg-white/5">
+            <div className="border-t border-[#e5dddc] p-3 sm:p-4 bg-[#f8f8f5] dark:bg-white/5">
               <button
                 onClick={closeModal}
-                className="w-full px-6 py-3 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-semibold rounded-xl transition-colors"
+                className="w-full px-4 sm:px-6 py-2.5 sm:py-3 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-semibold rounded-lg sm:rounded-xl transition-colors text-sm sm:text-base touch-manipulation"
               >
                 Close
-                </button>
+              </button>
               </div>
             </div>
           </div>

@@ -244,8 +244,8 @@ export const professionalSummary = "Dr. Smit Bharat Solanki brings together rigo
 // ============================================================================
 
 export const contactInfo: ContactInfo = {
-  phone: "98XXXXXXX", // TODO: Update with actual phone number
-  email: "abc@gmail.com", // TODO: Update with actual email
+  phone: "+919712982198",
+  email: "drsmitbharat@gmail.com",
   locations: ["Ahmedabad", "Vadodara"],
   consultationNote: "For Consultations at Vadodara & Ahmedabad schedule your appointments now!"
 };

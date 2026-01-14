@@ -1,6 +1,7 @@
 import Footer from "@/components/global/Footer";
 import Link from "next/link";
 import { hospitals, contactInfo } from "@/data/siteData";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 export default function AppointmentPage() {
   return (
@@ -80,7 +81,7 @@ export default function AppointmentPage() {
                 Message us on WhatsApp for quick appointment booking
               </p>
               <a
-                href={`https://wa.me/919712982198`}
+                href={getWhatsAppUrl("appointmentPage")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-[#25D366] font-semibold hover:gap-3 transition-all"

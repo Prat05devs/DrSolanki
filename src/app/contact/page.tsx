@@ -1,5 +1,6 @@
 import Footer from "@/components/global/Footer";
 import { hospitals, consultationMessage, contactInfo } from "@/data/siteData";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 export default function ContactPage() {
   const getIcon = (name: string) => {
@@ -137,7 +138,7 @@ export default function ContactPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="https://wa.me/919712982198"
+                  href={getWhatsAppUrl("contactPageBooking")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#C07766] font-bold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
@@ -146,11 +147,11 @@ export default function ContactPage() {
                   <span>Book via WhatsApp</span>
                 </a>
                 <a
-                  href="tel:+919712982198"
+                  href={`tel:${contactInfo.phone}`}
                   className="group flex items-center justify-center gap-2 px-8 py-4 bg-white/10 border-2 border-white/30 text-white font-bold rounded-xl hover:bg-white/20 transition-all duration-300 backdrop-blur-sm"
                 >
                   <span className="material-symbols-outlined">call</span>
-                  <span>Call: +91 97129 82198</span>
+                  <span>Call: {contactInfo.phone}</span>
                 </a>
               </div>
             </div>

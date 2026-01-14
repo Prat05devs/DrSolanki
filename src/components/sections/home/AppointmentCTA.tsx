@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Calendar, Phone, Clock, MapPin, Shield, ArrowRight } from "lucide-react";
+import { contactInfo } from "@/data/siteData";
 
 export default function AppointmentCTA() {
   return (
@@ -36,7 +37,7 @@ export default function AppointmentCTA() {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               
-              <Link href="tel:+919712982198" className="inline-flex items-center gap-2 px-8 py-4 bg-transparent hover:bg-white/10 text-white font-semibold tracking-[0.01em] rounded-xl border-2 border-white/30 hover:border-white/50 backdrop-blur-sm transition-all">
+              <Link href={`tel:${contactInfo.phone}`} className="inline-flex items-center gap-2 px-8 py-4 bg-transparent hover:bg-white/10 text-white font-semibold tracking-[0.01em] rounded-xl border-2 border-white/30 hover:border-white/50 backdrop-blur-sm transition-all">
                 <Phone className="w-5 h-5" />
                 Call Us: +91 97129 82198
               </Link>

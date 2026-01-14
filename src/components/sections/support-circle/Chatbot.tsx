@@ -20,6 +20,7 @@
 
 import { useState } from "react";
 import { faqs, services, hysterectomyContent, ivfInjectionsInfo, contactInfo } from "@/data/siteData";
+import { openWhatsApp } from "@/lib/whatsapp";
 
 interface Message {
   id: string;
@@ -232,7 +233,7 @@ export default function Chatbot() {
     if (action === "Book an appointment") {
       window.location.href = "/appointment";
     } else if (action === "Contact via WhatsApp") {
-      window.open(`https://wa.me/919712982198`, "_blank");
+      openWhatsApp("chatbotHelp");
     } else if (action === "Send an email") {
       window.location.href = `mailto:${contactInfo.email}`;
     } else if (action === "Ask another question") {
@@ -307,7 +308,7 @@ export default function Chatbot() {
       {/* Footer */}
       <div className="px-4 sm:px-6 py-2 sm:py-3 bg-[#F5F2EB] border-t border-[#E6DCCA] text-center">
         <p className="text-[10px] sm:text-xs text-[#8C8479]">
-          Need more help? <button onClick={() => window.open(`https://wa.me/919712982198`, "_blank")} className="text-[#D98E5F] font-semibold hover:underline active:underline">Contact us on WhatsApp</button>
+          Need more help? <button onClick={() => openWhatsApp("chatbotHelp")} className="text-[#D98E5F] font-semibold hover:underline active:underline">Contact us on WhatsApp</button>
         </p>
       </div>
     </div>

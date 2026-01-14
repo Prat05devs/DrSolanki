@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { contactInfo } from "@/data/siteData";
 
 export default function CTASection() {
   return (
@@ -19,7 +20,7 @@ export default function CTASection() {
                 <span className="material-symbols-outlined mr-2 text-2xl">calendar_month</span>
                 Schedule Consultation
               </Link>
-              <Link href="tel:+919712982198" className="flex min-w-[220px] cursor-pointer items-center justify-center rounded-xl h-14 px-8 border-2 border-white text-white text-lg font-bold hover:bg-white/10 transition-all duration-300">
+              <Link href={`tel:${contactInfo.phone}`} className="flex min-w-[220px] cursor-pointer items-center justify-center rounded-xl h-14 px-8 border-2 border-white text-white text-lg font-bold hover:bg-white/10 transition-all duration-300">
                 <span className="material-symbols-outlined mr-2 text-2xl">call</span>
                 Call Us Today
               </Link>

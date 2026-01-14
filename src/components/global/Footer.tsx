@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { contactInfo, hospitals } from "@/data/siteData";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 export default function Footer() {
   return (
@@ -238,7 +239,7 @@ export default function Footer() {
               </a>
             </div>
             <a
-              href="https://wa.me/919712982198"
+              href={getWhatsAppUrl("generalContact")}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 bg-[#dcfce7] hover:bg-white text-[#166534] py-3 px-4 rounded-xl transition-all duration-300 w-full md:w-auto font-bold shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
