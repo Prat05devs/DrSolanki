@@ -456,87 +456,90 @@ export default function FAQPage() {
       {/* Modal */}
       {isModalOpen && selectedTopic && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/60 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 bg-black/70 backdrop-blur-md"
           onClick={closeModal}
         >
           <div 
-            className="relative bg-white dark:bg-[#221e10] rounded-xl sm:rounded-2xl shadow-2xl max-w-4xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-hidden flex flex-col m-2 sm:m-0"
+            className="relative bg-white/90 dark:bg-[#221e10]/90 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl max-w-4xl w-full max-h-[96vh] sm:max-h-[92vh] md:max-h-[90vh] overflow-hidden flex flex-col m-2 sm:m-0 border border-white/50 dark:border-white/10"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className={`${selectedTopic.color} p-4 sm:p-6 text-white relative overflow-hidden`}>
+            <div className={`${selectedTopic.color} p-5 sm:p-6 md:p-8 text-white relative overflow-hidden`}>
+              <div className="absolute inset-0 bg-black/10 backdrop-blur-sm"></div>
               <div className="relative z-10">
-                <div className="flex items-start justify-between gap-2 sm:gap-4 mb-3 sm:mb-4">
-                  <div className="flex items-center gap-2 sm:gap-4 flex-1 min-w-0">
-                    <div className="flex-shrink-0 size-12 sm:size-16 bg-white/20 backdrop-blur-sm rounded-xl sm:rounded-2xl flex items-center justify-center">
-                      <span className="material-symbols-outlined text-2xl sm:text-4xl">{selectedTopic.icon}</span>
+                <div className="flex items-start justify-between gap-3 sm:gap-4 md:gap-6 mb-4 sm:mb-5 md:mb-6">
+                  <div className="flex items-center gap-3 sm:gap-4 md:gap-5 flex-1 min-w-0">
+                    <div className="flex-shrink-0 size-14 sm:size-16 md:size-20 bg-white/25 backdrop-blur-md rounded-xl sm:rounded-2xl flex items-center justify-center border border-white/30 shadow-lg">
+                      <span className="material-symbols-outlined text-3xl sm:text-4xl md:text-5xl">{selectedTopic.icon}</span>
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <span className="inline-block px-2 sm:px-3 py-1 bg-white/20 backdrop-blur-sm rounded-lg text-xs font-bold mb-1 sm:mb-2">
+                    <div className="flex-1 min-w-0 space-y-2 sm:space-y-3">
+                      <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-white/25 backdrop-blur-md rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold border border-white/30 shadow-sm">
                         {selectedTopic.category}
                       </span>
-                      <h2 className="text-lg sm:text-2xl md:text-3xl font-[var(--font-playfair)] font-bold leading-tight break-words">
+                      <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[var(--font-playfair)] font-bold leading-tight break-words">
                         {selectedTopic.title}
                       </h2>
                     </div>
                   </div>
                   <button
                     onClick={closeModal}
-                    className="flex-shrink-0 size-8 sm:size-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors touch-manipulation"
+                    className="flex-shrink-0 size-9 sm:size-10 md:size-12 bg-white/25 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/35 transition-all touch-manipulation border border-white/30 shadow-lg hover:shadow-xl"
                     aria-label="Close modal"
                   >
-                    <span className="material-symbols-outlined text-lg sm:text-xl">close</span>
+                    <span className="material-symbols-outlined text-xl sm:text-2xl">close</span>
                   </button>
                 </div>
               </div>
             </div>
 
             {/* Modal Content */}
-            <div className="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8">
+            <div className="flex-1 overflow-y-auto p-5 sm:p-6 md:p-8 lg:p-10">
               {selectedTopic.fullContent.introduction && (
-                <div className="mb-4 sm:mb-6">
-                  <p className="text-[#8a8060] dark:text-gray-300 text-base sm:text-lg leading-relaxed">
-                    {selectedTopic.fullContent.introduction}
-                  </p>
+                <div className="mb-6 sm:mb-8 md:mb-10">
+                  <div className="bg-white/60 dark:bg-white/5 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border border-white/50 dark:border-white/10 shadow-sm">
+                    <p className="text-[#8a8060] dark:text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed">
+                      {selectedTopic.fullContent.introduction}
+                    </p>
+                  </div>
                 </div>
               )}
 
-              <div className="space-y-4 sm:space-y-6">
+              <div className="space-y-5 sm:space-y-6 md:space-y-8">
                 {selectedTopic.fullContent.sections.map((section, idx) => (
-                  <div key={idx} className="border-l-4 border-[#C07766] pl-3 sm:pl-6">
-                    <h3 className="text-lg sm:text-xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white mb-2 sm:mb-3 leading-[1.15] tracking-[-0.01em]">
+                  <div key={idx} className="bg-white/50 dark:bg-white/5 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border-l-4 border-[#C07766] border-r border-white/50 dark:border-white/10 shadow-sm">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white mb-3 sm:mb-4 md:mb-5 leading-[1.15] tracking-[-0.01em]">
                       {section.heading}
-                </h3>
-                    <p className="text-[#8a8060] dark:text-gray-300 text-sm sm:text-base leading-relaxed whitespace-pre-line">
+                    </h3>
+                    <p className="text-[#8a8060] dark:text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed whitespace-pre-line">
                       {section.content}
-                </p>
-              </div>
+                    </p>
+                  </div>
                 ))}
 
                 {selectedTopic.fullContent.faqs && selectedTopic.fullContent.faqs.length > 0 && (
-                  <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-[#e5dddc]">
-                    <h3 className="text-lg sm:text-xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white mb-3 sm:mb-4 leading-[1.15] tracking-[-0.01em]">
+                  <div className="mt-8 sm:mt-10 md:mt-12 pt-6 sm:pt-8 border-t-2 border-white/50 dark:border-white/10">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white mb-4 sm:mb-5 md:mb-6 leading-[1.15] tracking-[-0.01em]">
                       Frequently Asked Questions
                     </h3>
-                    <div className="space-y-3 sm:space-y-4">
+                    <div className="space-y-4 sm:space-y-5 md:space-y-6">
                       {selectedTopic.fullContent.faqs.map((faq, idx) => (
-                        <div key={idx} className="bg-[#f8f8f5] dark:bg-white/5 rounded-lg sm:rounded-xl p-3 sm:p-4 border border-[#e5dddc]">
-                          <h4 className="font-semibold text-sm sm:text-base text-[#181611] dark:text-white mb-1 sm:mb-2">
+                        <div key={idx} className="bg-white/60 dark:bg-white/5 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border border-white/50 dark:border-white/10 shadow-sm hover:shadow-md transition-shadow">
+                          <h4 className="font-semibold text-base sm:text-lg md:text-xl text-[#181611] dark:text-white mb-2 sm:mb-3">
                             {faq.question}
                           </h4>
-                          <p className="text-[#8a8060] dark:text-gray-300 text-xs sm:text-sm leading-relaxed">
+                          <p className="text-[#8a8060] dark:text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed">
                             {faq.answer}
                           </p>
                         </div>
                       ))}
                     </div>
-                </div>
+                  </div>
                 )}
 
                 {selectedTopic.fullContent.conclusion && (
-                  <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-[#e5dddc]">
-                    <div className="bg-[#C07766]/10 dark:bg-[#C07766]/20 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-6 border border-[#C07766]/30">
-                      <p className="text-[#181611] dark:text-white font-semibold text-sm sm:text-base leading-relaxed">
+                  <div className="mt-8 sm:mt-10 md:mt-12 pt-6 sm:pt-8 border-t-2 border-white/50 dark:border-white/10">
+                    <div className="bg-[#C07766]/15 dark:bg-[#C07766]/25 backdrop-blur-md rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 border border-[#C07766]/40 shadow-lg">
+                      <p className="text-[#181611] dark:text-white font-semibold text-base sm:text-lg md:text-xl leading-relaxed">
                         {selectedTopic.fullContent.conclusion}
                       </p>
                     </div>
@@ -545,32 +548,32 @@ export default function FAQPage() {
               </div>
 
               {selectedTopic.pdfPath && (
-                <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-[#e5dddc]">
+                <div className="mt-8 sm:mt-10 md:mt-12 pt-6 sm:pt-8 border-t-2 border-white/50 dark:border-white/10">
                   <a
                     href={selectedTopic.pdfPath}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-semibold rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base touch-manipulation w-full sm:w-auto justify-center"
+                    className="inline-flex items-center justify-center gap-2 sm:gap-3 px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-semibold rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base md:text-lg touch-manipulation w-full sm:w-auto"
                   >
-                    <span className="material-symbols-outlined text-lg sm:text-xl">description</span>
-                    <span className="text-xs sm:text-base">View Full Research Paper (PDF)</span>
-                    <span className="material-symbols-outlined text-sm">open_in_new</span>
+                    <span className="material-symbols-outlined text-xl sm:text-2xl">description</span>
+                    <span>View Full Research Paper (PDF)</span>
+                    <span className="material-symbols-outlined text-base sm:text-lg">open_in_new</span>
                   </a>
                 </div>
               )}
             </div>
 
             {/* Modal Footer */}
-            <div className="border-t border-[#e5dddc] p-3 sm:p-4 bg-[#f8f8f5] dark:bg-white/5">
+            <div className="border-t-2 border-white/50 dark:border-white/10 p-4 sm:p-5 md:p-6 bg-white/60 dark:bg-white/5 backdrop-blur-md">
               <button
                 onClick={closeModal}
-                className="w-full px-4 sm:px-6 py-2.5 sm:py-3 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-semibold rounded-lg sm:rounded-xl transition-colors text-sm sm:text-base touch-manipulation"
+                className="w-full px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-semibold rounded-xl sm:rounded-2xl transition-all duration-300 text-sm sm:text-base md:text-lg touch-manipulation shadow-lg hover:shadow-xl"
               >
                 Close
               </button>
-              </div>
             </div>
           </div>
+        </div>
       )}
 
       <Footer />
