@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Footer from "@/components/global/Footer";
 import Link from "next/link";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
@@ -21,6 +22,33 @@ interface Presentation {
 }
 
 export default function ResearchInsightsPage() {
+  const [activeTab, setActiveTab] = useState<number>(1);
+
+  // Helper function to highlight month and year in presentation items
+  const formatPresentationItem = (item: string) => {
+    // Match patterns like "Jan 2023-", "June 2023-", "Sept 2024-", etc.
+    const monthYearPattern = /^([A-Za-z]+)\s+(\d{4})(\s*-\s*)/;
+    const match = item.match(monthYearPattern);
+    
+    if (match) {
+      const month = match[1];
+      const year = match[2];
+      const separator = match[3];
+      const rest = item.substring(match[0].length);
+      
+      return (
+        <>
+          <span className="font-bold text-[#181611] dark:text-gray-100">{month} {year}</span>
+          {separator}
+          {rest}
+        </>
+      );
+    }
+    
+    // If no match, return as is
+    return item;
+  };
+
   const publications: Publication[] = [
     // 2024 Publications
     {
@@ -242,6 +270,11 @@ export default function ResearchInsightsPage() {
     }
   ];
 
+  // Split publications into two tabs (13 in first tab, 12 in second)
+  const publicationsTab1 = publications.slice(0, 13);
+  const publicationsTab2 = publications.slice(13);
+  const currentPublications = activeTab === 1 ? publicationsTab1 : publicationsTab2;
+
   const presentations: Presentation[] = [
     {
       year: 2023,
@@ -285,92 +318,108 @@ export default function ResearchInsightsPage() {
   ];
 
   return (
-    <main className="flex flex-col w-full bg-gradient-to-br from-[#f8f8f5] via-white to-[#f8f8f5] dark:from-[#221e10] dark:via-[#1a1710] dark:to-[#221e10] min-h-screen">
+    <main className="flex flex-col w-full bg-white dark:bg-[#1a1710] min-h-screen">
       {/* Hero Section */}
-      <section className="relative w-full py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-10 overflow-hidden">
-        <div className="absolute inset-0 bg-[#C07766]/5"></div>
-        <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/60 dark:bg-white/10 backdrop-blur-md text-[#181611] dark:text-white text-xs sm:text-sm font-semibold border border-white/50 dark:border-white/20 shadow-lg mb-6 sm:mb-8">
-              <span className="material-symbols-outlined text-base sm:text-[18px]">verified</span>
-              <span className="hidden sm:inline">Published Research & Achievements</span>
-              <span className="sm:hidden">Research</span>
-            </div>
-            <h1 className="text-[#181611] dark:text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[var(--font-playfair)] font-bold leading-[1.15] tracking-[-0.01em] mb-4 sm:mb-6 px-2">
-              Science in Practice:<br />
-              <span className="text-[#C07766]">Research & Achievements</span>
+      <section className="relative w-full py-12 sm:py-16 md:py-20 px-6 sm:px-8 md:px-12 lg:px-16 overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(https://images.unsplash.com/photo-1597955942443-5a61862792aa?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)'
+          }}
+        />
+        {/* Black Fade Overlay */}
+        <div className="absolute inset-0 bg-black/60 dark:bg-black/30"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto">
+          <div className="max-w-5xl mx-auto text-center">
+            <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-[var(--font-playfair)] font-bold leading-[1.1] tracking-tight mb-6 drop-shadow-lg">
+              Research Publications &<br />
+              <span className="text-[#C07766]">Academic Contributions</span>
             </h1>
-            <p className="text-[#8a8060] dark:text-gray-300 text-base sm:text-lg md:text-xl font-normal leading-relaxed max-w-3xl mx-auto px-2">
-              We believe in transparency. Here, you&apos;ll find our published research and academic presentations, 
-              showcasing our commitment to advancing women&apos;s health care.
+            <p className="text-white/90 text-lg sm:text-xl md:text-2xl font-light leading-relaxed max-w-3xl mx-auto mb-8 drop-shadow-md">
+              Evidence-based research published in leading medical journals, advancing the field of gynecology and women&apos;s health through rigorous scientific inquiry.
             </p>
+            <div className="flex flex-wrap items-center justify-center gap-6 text-sm sm:text-base text-white/90">
+              <div className="flex items-center gap-2">
+                <span className="material-symbols-outlined text-[#C07766]">article</span>
+                <span className="font-semibold">{publications.length}</span>
+                <span>Publications</span>
+          </div>
+              <div className="flex items-center gap-2">
+                <span className="material-symbols-outlined text-[#8DA399]">event</span>
+                <span className="font-semibold">{presentations.reduce((acc, p) => acc + p.items.length, 0)}</span>
+                <span>Presentations</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="material-symbols-outlined text-[#C07766]">calendar_today</span>
+                <span>2024-2025</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Publications Section */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 md:px-10">
-        <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
-            <span className="text-[#C07766] dark:text-[#C07766] font-bold tracking-widest uppercase text-xs sm:text-sm">
-              Published Research
+      <section className="py-12 sm:py-16 md:py-20 px-6 sm:px-8 md:px-12 lg:px-16 bg-[#fafafa] dark:bg-[#221e10]">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-8 sm:mb-12">
+            <div className="mb-6">
+              <span className="text-[#C07766] dark:text-[#C07766] font-bold tracking-widest uppercase text-xs sm:text-sm mb-2 block">
+                Published Research
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white mt-3 sm:mt-4 mb-4 sm:mb-6 leading-[1.15] tracking-[-0.01em] px-2">
-              Research Publications (2024-2025)
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white leading-tight mb-4">
+                Research Publications
             </h2>
-            <p className="text-[#8a8060] dark:text-gray-300 text-base sm:text-lg max-w-3xl mx-auto px-2">
-              Our peer-reviewed research published in leading medical journals over the last two years, advancing the field of gynecology and women&apos;s health.
+              <p className="text-[#4a4a4a] dark:text-gray-400 text-base sm:text-lg leading-relaxed">
+                Peer-reviewed research published in leading medical journals, contributing to evidence-based practice in gynecology and women&apos;s health.
             </p>
+            </div>
           </div>
 
-          <div className="max-w-4xl mx-auto">
+          <div>
             <ol className="space-y-0">
-              {publications.map((pub, index) => (
+              {currentPublications.map((pub, index) => (
                 <li
-                  key={pub.id}
-                  className="py-6 sm:py-8 border-b border-[#e5dddc] dark:border-white/10 last:border-b-0"
+                key={pub.id}
+                  className="py-6 sm:py-8"
                 >
-                  <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-                    {/* Number */}
-                    <div className="flex-shrink-0">
-                      <div className="flex items-center gap-3 sm:gap-4">
-                        <span className="flex-shrink-0 size-8 sm:size-10 bg-[#C07766]/10 dark:bg-[#C07766]/20 text-[#C07766] dark:text-[#C07766] font-bold rounded-full flex items-center justify-center text-sm sm:text-base">
-                          {index + 1}
-                        </span>
-                        {pub.year && (
-                          <span className="px-2.5 sm:px-3 py-1 bg-[#8DA399]/10 dark:bg-[#8DA399]/20 text-[#8DA399] dark:text-[#8DA399] text-xs font-semibold rounded">
-                            {pub.year}
-                          </span>
-                        )}
-                      </div>
-                    </div>
+                  <div className="flex gap-4 sm:gap-6">
 
                     {/* Content */}
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-base sm:text-lg md:text-xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white mb-2 sm:mb-3 leading-[1.4] tracking-[-0.01em]">
+                      <h3 className="text-base sm:text-lg md:text-xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white mb-3 leading-[1.4]">
                         {pub.title}
                       </h3>
                       
-                      <div className="space-y-1.5 sm:space-y-2 mb-3 sm:mb-4">
-                        <p className="text-[#8a8060] dark:text-gray-300 text-sm sm:text-base font-medium">
+                      <div className="space-y-2 mb-4 text-sm sm:text-base text-[#4a4a4a] dark:text-gray-300 leading-relaxed">
+                        <p>
                           <span className="font-semibold">Authors:</span> {pub.author}
                         </p>
                         
                         {pub.journal && (
-                          <p className="text-[#8a8060] dark:text-gray-400 text-sm sm:text-base">
+                          <p>
                             <span className="font-semibold">Journal:</span> <span className="italic">{pub.journal}</span>
                           </p>
                         )}
                         
                         {pub.citation && (
-                          <p className="text-[#8a8060] dark:text-gray-500 text-sm sm:text-base">
+                          <p>
                             <span className="font-semibold">Citation:</span> {pub.citation}
                           </p>
                         )}
                         
                         {pub.doi && (
-                          <p className="text-[#8DA399] dark:text-[#8DA399] text-sm sm:text-base font-medium">
-                            <span className="font-semibold">DOI:</span> {pub.doi}
+                          <p>
+                            <span className="font-semibold">DOI:</span>{" "}
+                            <a 
+                              href={`https://doi.org/${pub.doi}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[#8DA399] dark:text-[#8DA399] hover:underline"
+                            >
+                              {pub.doi}
+                            </a>
                           </p>
                         )}
                       </div>
@@ -380,9 +429,9 @@ export default function ResearchInsightsPage() {
                           href={pub.pdfPath}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-medium rounded-lg transition-colors text-sm sm:text-base touch-manipulation"
+                          className="inline-flex items-center gap-2 px-4 py-2 bg-[#181611] dark:bg-white text-white dark:text-[#181611] font-medium rounded hover:bg-[#2a2a2a] dark:hover:bg-gray-100 transition-colors text-sm"
                         >
-                          <span className="material-symbols-outlined text-base sm:text-lg">article</span>
+                          <span className="material-symbols-outlined text-base">description</span>
                           <span>View PDF</span>
                           <span className="material-symbols-outlined text-xs">open_in_new</span>
                         </a>
@@ -392,50 +441,72 @@ export default function ResearchInsightsPage() {
                 </li>
               ))}
             </ol>
-          </div>
-        </div>
+                </div>
+
+          {/* Tabs */}
+          <div className="mt-8 sm:mt-12">
+            <div className="flex items-center gap-1 bg-white dark:bg-[#1a1710] border border-[#e5dddc] dark:border-white/10 rounded-lg p-1 shadow-sm">
+              <button
+                onClick={() => setActiveTab(1)}
+                className={`flex-1 px-6 sm:px-8 py-3 sm:py-4 rounded-md font-semibold text-sm sm:text-base transition-all duration-200 touch-manipulation ${
+                  activeTab === 1
+                    ? "bg-[#181611] dark:bg-white text-white dark:text-[#181611] shadow-sm"
+                    : "text-[#6a6a6a] dark:text-gray-400 hover:text-[#181611] dark:hover:text-white"
+                }`}
+              >
+                Publications 1-13
+              </button>
+              <button
+                onClick={() => setActiveTab(2)}
+                className={`flex-1 px-6 sm:px-8 py-3 sm:py-4 rounded-md font-semibold text-sm sm:text-base transition-all duration-200 touch-manipulation ${
+                  activeTab === 2
+                    ? "bg-[#181611] dark:bg-white text-white dark:text-[#181611] shadow-sm"
+                    : "text-[#6a6a6a] dark:text-gray-400 hover:text-[#181611] dark:hover:text-white"
+                }`}
+              >
+                Publications 14-25
+              </button>
+            </div>
+                  </div>
+                    </div>
       </section>
 
       {/* Presentations Section */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 md:px-10 bg-[#f8f8f5]/50 dark:bg-[#221e10]/50">
-        <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
-            <span className="text-[#8DA399] dark:text-[#8DA399] font-bold tracking-widest uppercase text-xs sm:text-sm">
+      <section className="py-12 sm:py-16 md:py-20 px-6 sm:px-8 md:px-12 lg:px-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-8 sm:mb-12">
+            <span className="text-[#8DA399] dark:text-[#8DA399] font-bold tracking-widest uppercase text-xs sm:text-sm mb-2 block">
               Academic Presentations
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white mt-3 sm:mt-4 mb-4 sm:mb-6 leading-[1.15] tracking-[-0.01em] px-2">
-              Last 3 Years of Presentations
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white leading-tight mb-4">
+              Conference Presentations
             </h2>
-            <p className="text-[#8a8060] dark:text-gray-300 text-base sm:text-lg max-w-3xl mx-auto px-2">
-              Our contributions to national and international conferences, sharing knowledge and advancing the field.
+            <p className="text-[#4a4a4a] dark:text-gray-400 text-base sm:text-lg leading-relaxed">
+              Contributions to national and international conferences, sharing research findings and advancing clinical practice through knowledge dissemination.
                     </p>
                   </div>
 
-          <div className="space-y-8 sm:space-y-12">
+          <div className="space-y-10 sm:space-y-12">
             {presentations.map((presentation) => (
               <div
                 key={presentation.year}
-                className="relative"
+                className="pb-8 last:pb-0"
               >
-                <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-                  
-                  <div>
-                    <h3 className="text-xl sm:text-2xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white leading-[1.15] tracking-[-0.01em]">
-                      {presentation.year}
-                    </h3>
-                    <p className="text-[#8a8060] dark:text-gray-400 text-xs sm:text-sm">
-                      {presentation.items.length} presentations & activities
-                    </p>
-                  </div>
+                <div className="mb-6">
+                  <h3 className="text-2xl sm:text-3xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white leading-tight">
+                    {presentation.year}
+                  </h3>
+                  <p className="text-[#6a6a6a] dark:text-gray-500 text-sm font-semibold uppercase tracking-wide mt-1">
+                    {presentation.items.length} Presentations & Activities
+                        </p>
                       </div>
-                <div className="space-y-3 sm:space-y-4 pl-0 sm:pl-16 md:pl-20">
+                <div className="space-y-4 sm:space-y-5">
                   {presentation.items.map((item, idx) => (
                     <div
                       key={idx}
-                      className="relative"
                     >
-                      <p className="text-[#8a8060] dark:text-gray-300 text-sm sm:text-base leading-relaxed">
-                        {item}
+                      <p className="text-[#181611] dark:text-gray-100 text-base sm:text-lg leading-relaxed">
+                        {formatPresentationItem(item)}
                       </p>
                   </div>
                   ))}
@@ -446,44 +517,7 @@ export default function ResearchInsightsPage() {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 md:px-10">
-        <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto">
-          <div className="relative bg-[#C07766] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 text-white shadow-2xl text-center overflow-hidden">
-            <div className="absolute inset-0 bg-white/5 backdrop-blur-sm"></div>
-            <div className="relative z-10 max-w-3xl mx-auto">
-              <div className="inline-flex items-center justify-center size-16 sm:size-20 bg-white/20 backdrop-blur-md rounded-full mb-4 sm:mb-6 shadow-xl border border-white/30">
-                <span className="material-symbols-outlined text-3xl sm:text-5xl">chat</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-[var(--font-playfair)] font-bold mb-3 sm:mb-4 leading-[1.15] tracking-[-0.01em] px-2">
-                Questions About Our Research?
-              </h2>
-              <p className="text-white/90 text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed px-2">
-                We&apos;re here to explain any study in detail. Book a consultation to discuss how this 
-                research applies to your specific situation.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-2">
-                <Link
-                  href="/contact"
-                  className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white text-[#C07766] font-semibold rounded-lg sm:rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 text-sm sm:text-base touch-manipulation"
-                >
-                  <span className="material-symbols-outlined text-lg sm:text-xl">calendar_month</span>
-                  <span>Book Consultation</span>
-                </Link>
-                <a
-                  href={getWhatsAppUrl("researchQuestions")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white/20 backdrop-blur-md border-2 border-white/40 text-white font-semibold rounded-lg sm:rounded-xl hover:bg-white/30 transition-all duration-300 text-sm sm:text-base touch-manipulation"
-                >
-                  <span className="material-symbols-outlined text-lg sm:text-xl">chat</span>
-                  <span>Ask on WhatsApp</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       <Footer />
     </main>
