@@ -464,29 +464,29 @@ export default function FAQPage() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className={`${selectedTopic.color} p-5 sm:p-6 md:p-8 text-white relative overflow-hidden`}>
+            <div className={`${selectedTopic.color} p-4 sm:p-5 md:p-6 lg:p-8 text-white relative overflow-hidden flex-shrink-0`}>
               <div className="absolute inset-0 bg-black/10 backdrop-blur-sm"></div>
-              <div className="relative z-10">
-                <div className="flex items-start justify-between gap-3 sm:gap-4 md:gap-6 mb-4 sm:mb-5 md:mb-6">
-                  <div className="flex items-center gap-3 sm:gap-4 md:gap-5 flex-1 min-w-0">
-                    <div className="flex-shrink-0 size-14 sm:size-16 md:size-20 bg-white/25 backdrop-blur-md rounded-xl sm:rounded-2xl flex items-center justify-center border border-white/30 shadow-lg">
-                      <span className="material-symbols-outlined text-3xl sm:text-4xl md:text-5xl">{selectedTopic.icon}</span>
+              <div className="relative z-10 w-full">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
+                  <div className="flex items-start sm:items-center gap-3 sm:gap-4 flex-1 min-w-0 w-full sm:w-auto">
+                    <div className="flex-shrink-0 size-12 sm:size-14 md:size-16 lg:size-20 bg-white/25 backdrop-blur-md rounded-xl sm:rounded-2xl flex items-center justify-center border border-white/30 shadow-lg">
+                      <span className="material-symbols-outlined text-2xl sm:text-3xl md:text-4xl lg:text-5xl">{selectedTopic.icon}</span>
                     </div>
-                    <div className="flex-1 min-w-0 space-y-2 sm:space-y-3">
-                      <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-white/25 backdrop-blur-md rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold border border-white/30 shadow-sm">
+                    <div className="flex-1 min-w-0 space-y-1.5 sm:space-y-2">
+                      <span className="inline-block px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 bg-white/25 backdrop-blur-md rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold border border-white/30 shadow-sm">
                         {selectedTopic.category}
                       </span>
-                      <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[var(--font-playfair)] font-bold leading-tight break-words">
+                      <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-[var(--font-playfair)] font-bold leading-[1.2] break-words pr-8 sm:pr-0">
                         {selectedTopic.title}
                       </h2>
                     </div>
                   </div>
                   <button
                     onClick={closeModal}
-                    className="flex-shrink-0 size-9 sm:size-10 md:size-12 bg-white/25 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/35 transition-all touch-manipulation border border-white/30 shadow-lg hover:shadow-xl"
+                    className="absolute top-4 right-4 sm:relative sm:top-auto sm:right-auto flex-shrink-0 size-8 sm:size-9 md:size-10 lg:size-12 bg-white/25 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/35 transition-all touch-manipulation border border-white/30 shadow-lg hover:shadow-xl"
                     aria-label="Close modal"
                   >
-                    <span className="material-symbols-outlined text-xl sm:text-2xl">close</span>
+                    <span className="material-symbols-outlined text-lg sm:text-xl md:text-2xl">close</span>
                   </button>
                 </div>
               </div>
