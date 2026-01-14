@@ -21,21 +21,6 @@ export default function HeroSection() {
               health, confidence, and quality of life—one woman at a time.
             </p>
 
-            {/* Quick Stats */}
-            <div className="grid grid-cols-3 gap-4 mb-8 p-4 bg-white rounded-2xl shadow-sm border border-[#2D2A26]/5">
-              <div className="text-center">
-                <p className="text-3xl font-bold text-[#C07766] mb-1">15,000+</p>
-                <p className="text-xs text-[#2D2A26]/60 font-medium leading-[1.7]">Patients Treated</p>
-              </div>
-              <div className="text-center border-x border-[#2D2A26]/10">
-                <p className="text-3xl font-bold text-[#8DA399] mb-1">24hrs</p>
-                <p className="text-xs text-[#2D2A26]/60 font-medium leading-[1.7]">Avg Recovery</p>
-              </div>
-              <div className="text-center">
-                <p className="text-3xl font-bold text-[#f4c025] mb-1">98.5%</p>
-                <p className="text-xs text-[#2D2A26]/60 font-medium leading-[1.7]">Success Rate</p>
-              </div>
-            </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
