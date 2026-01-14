@@ -109,7 +109,7 @@ export default function AestheticGynecologyPage() {
 
       {/* Treatment Options */}
       <div id="treatment-options">
-        <TreatmentOptionsSection />
+      <TreatmentOptionsSection />
       </div>
 
       {/* Who Can Benefit */}

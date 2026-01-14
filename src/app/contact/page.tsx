@@ -96,16 +96,16 @@ export default function ContactPage() {
 
                     <div className="pt-4 border-t border-[#e5dddc]">
                       {hospital.mapLink && (
-                        <a
+                      <a
                           href={hospital.mapLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="group flex items-center justify-center gap-2 w-full px-6 py-3 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
-                        >
-                          <span className="material-symbols-outlined">map</span>
-                          <span>View on Google Maps</span>
-                          <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                        </a>
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center justify-center gap-2 w-full px-6 py-3 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
+                      >
+                        <span className="material-symbols-outlined">map</span>
+                        <span>View on Google Maps</span>
+                        <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                      </a>
                       )}
                     </div>
                   </div>

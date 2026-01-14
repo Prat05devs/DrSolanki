@@ -112,8 +112,8 @@ export default function SpecializationsSection() {
                     <spec.icon className="w-6 h-6 text-[#C07766] group-hover:text-white transition-colors" />
                   </div>
                   <h3 className="text-2xl font-[var(--font-playfair)] font-bold text-[#2D2A26] mb-3 group-hover:text-[#C07766] transition-colors leading-[1.15] tracking-[-0.01em]">
-                    {spec.title}
-                  </h3>
+                  {spec.title}
+                </h3>
                   <p className="text-[#2D2A26]/50 mb-6 leading-[1.7]">
                     {spec.description}
                   </p>

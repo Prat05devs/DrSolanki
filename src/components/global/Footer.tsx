@@ -250,7 +250,7 @@ export default function Footer() {
             <div className="flex flex-col gap-4 mt-2 border-l-2 border-white/20 pl-4">
               {hospitals.map((hospital, idx) => (
                 <div key={idx} className="flex gap-2 items-start">
-                  <div>
+                <div>
                     <Link
                       href={`/clinics/${hospital.slug}`}
                       className="font-bold text-white text-sm hover:text-[#f4c025] transition-colors"
@@ -258,7 +258,7 @@ export default function Footer() {
                       {hospital.name}
                     </Link>
                     <p className="text-xs text-[#edfcf9]/70 mt-0.5">{hospital.timing}</p>
-                  </div>
+              </div>
                 </div>
               ))}
               <Link
@@ -281,12 +281,12 @@ export default function Footer() {
                 <div className="flex flex-col md:flex-row items-center gap-3 sm:gap-4 text-center md:text-left flex-1 w-full">
                   <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center shrink-0 border-2 sm:border-4 border-white/30 shadow-lg">
                     <span className="material-symbols-outlined text-white text-2xl sm:text-3xl md:text-4xl">support_agent</span>
-                  </div>
+                </div>
                   <div className="max-w-2xl w-full">
                     
                     <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#181611] mb-2 leading-[1.15] tracking-[-0.01em] font-[var(--font-playfair)]">
                       Ask Your Questions Instantly
-                    </h2>
+                  </h2>
                     <p className="text-[#181611]/90 text-xs sm:text-sm md:text-base font-medium leading-[1.7] mb-2 sm:mb-3">
                       Get instant answers about surgery, recovery, fertility, and more. Our interactive chatbot guides partners and families through common questions—no typing required, just click and explore.
                     </p>

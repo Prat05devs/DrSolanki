@@ -8,7 +8,7 @@ import { clinicalExperience, education, certifications } from "@/data/siteData";
 export default function CredentialsSection() {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
-  
+
   // Progress bar for the timeline
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -106,7 +106,7 @@ export default function CredentialsSection() {
 
                 {/* Content Card */}
                 <div className={`w-full md:w-1/2 ${idx % 2 === 0 ? "md:text-right" : "md:text-left pl-8 sm:pl-10 md:pl-16"}`}>
-                   <motion.div
+                  <motion.div
                     whileHover={{ y: -5, scale: 1.01 }}
                     className="group relative p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-white/20 dark:border-white/10 bg-white/40 dark:bg-white/5 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(31,38,135,0.07)]"
                   >
@@ -125,8 +125,8 @@ export default function CredentialsSection() {
                         </div>
                         <div className="min-w-0">
                           <h3 className="text-lg sm:text-xl md:text-2xl font-[var(--font-playfair)] font-bold text-slate-900 dark:text-white mb-1 leading-[1.15] tracking-[-0.01em]">
-                            {cred.title}
-                          </h3>
+                          {cred.title}
+                        </h3>
                           <p className="text-[#8DA399] font-medium flex items-center gap-2 leading-[1.7] text-sm sm:text-base">
                              <span className="opacity-70 truncate">{cred.subtitle}</span>
                           </p>

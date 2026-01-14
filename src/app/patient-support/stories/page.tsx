@@ -59,13 +59,23 @@ export default function StoriesPage() {
   return (
     <div className="antialiased overflow-x-hidden selection:bg-[#e4efe9] selection:text-[#4a4036] bg-white">
       {/* Hero Section */}
-      <section className="pt-16 sm:pt-20 pb-12 sm:pb-16 border-b border-stone-100 px-4 sm:px-6">
-        <div className="container mx-auto max-w-4xl">
+      <section className="relative pt-16 sm:pt-20 pb-12 sm:pb-16 px-4 sm:px-6 overflow-hidden min-h-[400px] sm:min-h-[500px] flex items-center">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url("/patientBg.webp")'
+          }}
+        />
+        {/* Black Fade Overlay - 40% */}
+        <div className="absolute inset-0 bg-black/40"></div>
+        
+        <div className="container mx-auto max-w-4xl relative z-10">
           <div className="text-center">
-            <h1 className="font-[var(--font-playfair)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-[#4a4036] leading-[1.1] tracking-tight mb-4 sm:mb-6">
+            <h1 className="font-[var(--font-playfair)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.1] tracking-tight mb-4 sm:mb-6 drop-shadow-lg">
               Patient Stories
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-[#7c726a] max-w-2xl mx-auto leading-relaxed px-2">
+            <p className="text-base sm:text-lg md:text-xl text-white/95 max-w-2xl mx-auto leading-relaxed px-2 drop-shadow-md">
               Real experiences of healing, strength, and renewed life. See how precision care meets compassionate support.
             </p>
           </div>
