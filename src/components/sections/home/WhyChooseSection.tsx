@@ -56,6 +56,23 @@ export default function WhyChooseSection() {
             <p className="text-base sm:text-lg text-[#2D2A26]/60 max-w-xl leading-[1.7] mt-4">
               Combining advanced medical expertise with compassionate, personalized care for every stage of life.
             </p>
+            <div className="mt-5 sm:mt-6 space-y-2">
+              <p className="text-base sm:text-lg font-[var(--font-playfair)] font-bold text-[#2D2A26]">
+                Dr Smit Bharat Solanki
+              </p>
+              <p className="text-base sm:text-lg font-semibold text-[#5B3A33] leading-snug">
+                Director and Clinical Lead, Reproductive Medicine and IVF services
+              </p>
+              <p className="text-sm sm:text-base text-[#6b6358] leading-relaxed">
+                At Parul Sevashram Hospital affiliated with Parul Institute of Medical Sciences and Research, Parul University
+              </p>
+              <p className="text-base sm:text-lg font-semibold text-[#5B3A33] leading-snug pt-2">
+                Robotic Gynec Surgeon, Endometriosis Surgeon
+              </p>
+              <p className="text-sm sm:text-base text-[#6b6358] leading-relaxed">
+                at Parth Hospital Ahmedabad
+              </p>
+            </div>
           </div>
           <div className="relative max-w-md md:max-w-none mx-auto">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/70 bg-white">
