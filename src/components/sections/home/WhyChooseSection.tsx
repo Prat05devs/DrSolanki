@@ -60,7 +60,7 @@ export default function WhyChooseSection() {
           <div className="relative max-w-md md:max-w-none mx-auto">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/70 bg-white">
               <Image
-                src="/images/homePageBg.jpeg"
+                src="/images/homePageBg.png"
                 alt="Dr. Smit Bharat Solanki"
                 width={520}
                 height={620}
