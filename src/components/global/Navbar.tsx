@@ -43,6 +43,15 @@ export default function Navbar() {
                           About Dr. Smit
                         </span>
                       </Link>
+                      <Link
+                        href="/gallery"
+                        className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all group/item"
+                      >
+                        <span className="material-symbols-outlined text-[#8DA399] text-lg">photo_library</span>
+                        <span className="text-sm font-medium text-[#2D2A26] group-hover/item:text-[#C07766]">
+                          Gallery
+                        </span>
+                      </Link>
                     </div>
                   </div>
                 </li>
@@ -240,6 +249,14 @@ export default function Navbar() {
               >
                 <span className="material-symbols-outlined text-[#8DA399]">person</span>
                 <span className="text-base font-medium text-[#2D2A26]">About Dr. Smit</span>
+              </Link>
+              <Link
+                href="/gallery"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#F5F2EA] transition-all"
+              >
+                <span className="material-symbols-outlined text-[#8DA399]">photo_library</span>
+                <span className="text-base font-medium text-[#2D2A26]">Gallery</span>
               </Link>
             </div>
 

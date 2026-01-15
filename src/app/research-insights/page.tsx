@@ -1,16 +1,15 @@
 "use client";
 
-import { useState } from "react";
 import Footer from "@/components/global/Footer";
 import Link from "next/link";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 interface Publication {
   id: number;
+  topic: string;
+  quote: string;
+  benefit: string;
   title: string;
-  author: string;
-  journal?: string;
-  year?: number;
   doi?: string;
   pdfPath?: string;
   citation?: string;
@@ -22,8 +21,6 @@ interface Presentation {
 }
 
 export default function ResearchInsightsPage() {
-  const [activeTab, setActiveTab] = useState<number>(1);
-
   // Helper function to highlight month and year in presentation items
   const formatPresentationItem = (item: string) => {
     // Match patterns like "Jan 2023-", "June 2023-", "Sept 2024-", etc.
@@ -50,230 +47,116 @@ export default function ResearchInsightsPage() {
   };
 
   const publications: Publication[] = [
-    // 2024 Publications
     {
       id: 1,
-      title: "A study of peripheral nerve block for analgesia during caesarean section",
-      author: "Solanki S, Mishra V",
-      journal: "PMJUA",
-      year: 2024,
-      citation: "PMJUA [Internet]. 2024 Jan. 3 [cited 2024 Feb. 20];8(3-4):46-57"
+      topic: "Urine Leakage — Regain Your Confidence",
+      quote: "You deserve to live without embarrassment.",
+      benefit: "Gentle regenerative treatments help you laugh, exercise, and live freely again.",
+      title: "Solanki, Smit Bharat. Regenerative Synergy: Combining Platelet-rich Plasma with Transcutaneous Temperature-controlled Radiofrequency for Enhanced Treatment of Stress Urinary Incontinence in Peri- and Postmenopausal Women. Journal of Mid-life Health 16(2):p 179-185, Apr–Jun 2025.",
+      doi: "10.4103/jmh.jmh_34_25",
+      pdfPath: "/pdfs/publication-1.pdf"
     },
     {
       id: 2,
-      title: "Prevention of infection and assessment of fever following laparoscopic hysterectomy",
-      author: "Mishra VV, Solanki SB, Mishra NV, Aggarwal R, Shajan A",
-      journal: "The New Indian Journal of OBGYN",
-      year: 2024,
-      citation: "2024; 10(2): 242 - 48"
+      topic: "Overactive Bladder — Take Back Control",
+      quote: "Your bladder should not control your life.",
+      benefit: "Non-invasive therapies restore calm and comfort.",
+      title: "Efficacy of Transcutaneous Temperature-controlled Radiofrequency for Overactive Bladder.",
+      citation: "IUGA Scientific Meeting 2024. Int Urogynecol J (2024). https://doi.org/10.1007/s00192-024-05892-3",
+      pdfPath: "/pdfs/publication-2.pdf"
     },
     {
       id: 3,
-      title: "Efficacy of Transcutaneous temperature-controlled radiofrequency for overactive bladder",
-      author: "Smit Bharat Solanki",
-      journal: "IUGA Scientific Meeting 2024",
-      year: 2024,
-      citation: "Int Urogynecol J (2024). https://doi.org/10.1007/s00192-024-05892-3"
+      topic: "Vaginal Rejuvenation — Comfort, Health & Confidence",
+      quote: "Feeling comfortable in your body is your right.",
+      benefit: "Restores natural tissue health safely.",
+      title: "Solanki, Smit Bharat; Mishra, Vineet; Mishra, Nita; Desai, Sejal Ajmera; Alinsod, Red. Transcutaneous Temperature-controlled Radiofrequency for Vaginal Rejuvenation. Journal of Mid-life Health 15(4):p 250-257, Oct–Dec 2024.",
+      doi: "10.4103/jmh.jmh_32_24",
+      pdfPath: "/pdfs/publication-3.pdf"
     },
     {
       id: 4,
-      title: "Surgical management for stress urinary incontinence",
-      author: "Smit B. Solanki, Vineet V. Mishra",
-      journal: "MEDICHUB MEDIA",
-      year: 2024,
-      doi: "10.26416/Gine.45.3.2024.10083",
-      citation: "First published: 30 septembrie 2024"
+      topic: "Advanced Laser Vaginal Rejuvenation",
+      quote: "Science-backed rejuvenation, not cosmetic promises.",
+      benefit: "Long-lasting, natural tissue healing.",
+      title: "Smit Bharat Solanki, & Dutta, D. (2025). MECHANISMS AND OUTCOMES OF 1470NM LASER THERAPY FOR VAGINAL REJUVENATION: A MULTI-OMICS OBSERVATIONAL STUDY. Jurnal Rekonstruksi Dan Estetik, 10(2), 90–101.",
+      doi: "10.20473/jre.v10i2.74266",
+      pdfPath: "/pdfs/publication-4.pdf"
     },
     {
       id: 5,
-      title: "Evaluating the impact of the Cordia® digital health platform on maternal care in underserved areas: a pilot study",
-      author: "Smit B. Solanki",
-      journal: "MEDICHUB MEDIA",
-      year: 2024,
-      doi: "10.26416/Gine.46.4.2024.10361",
-      citation: "First published: 29 noiembrie 2024"
+      topic: "Painful Intercourse & Vaginismus — Gentle Healing",
+      quote: "Intimacy should never be painful.",
+      benefit: "Gentle treatment restores confidence and closeness.",
+      title: "S Solanki. Botulinum Toxin for Refractory Vaginismus: A Prospective, Randomized, Controlled Trial. Continence. Volume 15, Supplement, 2025, 102165.",
+      doi: "10.1016/j.cont.2025.102165",
+      citation: "https://www.sciencedirect.com/science/article/pii/S2772973725007829",
+      pdfPath: "/pdfs/publication-5.pdf"
     },
     {
       id: 6,
-      title: "Laparoscopy in urogynecology: advances, challenges and future directions",
-      author: "Smit B. Solanki, Vineet V. Mishra",
-      journal: "MEDICHUB MEDIA",
-      year: 2024,
-      doi: "10.26416/Gine.46.4.2024.10364",
-      citation: "First published: 29 noiembrie 2024"
+      topic: "Restoring Married Life in Vaginismus",
+      quote: "Because relationships deserve happiness.",
+      benefit: "Care that heals both body and emotions.",
+      title: "Solanki S, Nayani Z. Overcoming Refractory Vaginismus with Intra-vaginal Botulinum Toxin: A Case of Restored Marital Harmony. Journal of Psychosexual Health. 2025;0(0).",
+      doi: "10.1177/26318318251394062",
+      pdfPath: "/pdfs/publication-6.pdf"
     },
     {
       id: 7,
-      title: "Transcutaneous Temperature-controlled Radiofrequency for Vaginal Rejuvenation",
-      author: "Solanki, Smit Bharat; Mishra, Vineet; Mishra, Nita; Desai, Sejal Ajmera; Alinsod, Red",
-      journal: "Journal of Mid-life Health",
-      year: 2024,
-      doi: "10.4103/jmh.jmh_32_24",
-      citation: "15(4):p 250-257, Oct–Dec 2024"
+      topic: "IVF Care When Others Have Failed",
+      quote: "Hope is always possible.",
+      benefit: "Improving implantation and pregnancy chances.",
+      title: "Solanki SB. Comparative efficacy of granulocyte colony stimulating factor and platelet-rich plasma on clinical pregnancy rates and endometrial outcomes in women undergoing frozen embryo transfer: a randomized controlled trial with 560 subjects.",
+      citation: "Ginecologia.ro. 2025;47(1):46-52.",
+      pdfPath: "/pdfs/publication-7.pdf"
     },
-    // 2025 Publications
     {
       id: 8,
-      title: "Pregnancy after kidney transplantation: effect on maternal and foetal health",
-      author: "Solanki, S., & Mishra, V.",
-      journal: "KIDNEYS",
-      year: 2025,
-      doi: "10.22141/2307-1257.14.1.2025.489",
-      citation: "14(1), 2025"
+      topic: "Solving Rare IVF Failures",
+      quote: "Rare problems need experienced solutions.",
+      benefit: "Personalized fertility strategies.",
+      title: "Solanki SB. Two triggers, no oocytes: a rare case of genuine empty follicle syndrome overcome by dual trigger protocol.",
+      citation: "Ginecologia.ro. 2025;49(3):24-25.",
+      pdfPath: "/pdfs/publication-8.pdf"
     },
     {
       id: 9,
-      title: "Reducing Surgical Site Infections in Laparoscopic Gynecology: A Comparative Study of the Aesculap Aicon Sterile Container System vs. Traditional Packaging",
-      author: "Solanki SB, Dhiman AS, Mishra V",
-      journal: "Journal of Patient Safety and Quality Improvement",
-      year: 2025,
-      doi: "10.22038/psj.2025.85955.1459",
-      citation: "13(1): 3-9, 2025"
+      topic: "Gentle, Advanced Hysterectomy",
+      quote: "Smaller scars. Faster recovery. Greater peace of mind.",
+      benefit: "Safe, modern surgery.",
+      title: "Solanki SB, Mishra VV, Dhiman AS. Impact of 3D high definition laparoscopy on total laparoscopic hysterectomy: a body mass index-stratified retrospective analysis. Ann Saudi Med 2025; 45(4): 243-248.",
+      doi: "10.5144/0256-4947.2025.243",
+      pdfPath: "/pdfs/publication-9.pdf"
     },
     {
       id: 10,
-      title: "Comparative efficacy of granulocyte colony stimulating factor and platelet-rich plasma on clinical pregnancy rates and endometrial outcomes in women undergoing frozen embryo transfer: a randomized controlled trial with 560 subjects",
-      author: "Solanki SB",
-      journal: "Ginecologia.ro",
-      year: 2025,
-      citation: "47(1):46-52, 2025",
-      pdfPath: "/pdfs/article4.pdf"
+      topic: "Faster Recovery After Hysterectomy",
+      quote: "Healing should be quick and comfortable.",
+      benefit: "Early mobility, less pain.",
+      title: "Solanki SB. Enhanced recovery pathway for total laparoscopic hysterectomy performed by a single freelancing gynecologic surgeon.",
+      citation: "Ginecologia.ro. 2025;50(4):44-48.",
+      pdfPath: "/pdfs/publication-10.pdf"
     },
     {
       id: 11,
-      title: "Takotsubo Cardiomyopathy Following Intravaginal Local Anesthetic with Epinephrine in a Patient Undergoing McIndoe Vaginoplasty: A Rare Perioperative Event",
-      author: "Solanki SB, Patel S",
-      journal: "J South Asian Feder Obst Gynae",
-      year: 2025,
-      citation: "17(2):223–225, 2025"
+      topic: "Long-Term Relief From Urine Leakage Surgery",
+      quote: "Results that last.",
+      benefit: "Confidence in long-term outcomes.",
+      title: "Mishra, Vineet & Solanki, Smit & Aggarwal, Rohina & Shajan, Athulya. (2024). Patients with transobturator tape: a retrospective observational study of ten-year follow-up. Urogynaecologia. 36.",
+      doi: "10.4081/uij.2024.318",
+      pdfPath: "/pdfs/publication-11.pdf"
     },
     {
       id: 12,
-      title: "Managing pregnancy in a patient with Von Willebrand disease: a case report of tailored hemostatic care",
-      author: "Solanki SB",
-      journal: "Ginecologia.ro",
-      year: 2025,
-      citation: "48(2):15-18, 2025"
-    },
-    {
-      id: 13,
-      title: "Regenerative Synergy: Combining Platelet-rich Plasma with Transcutaneous Temperature-controlled Radiofrequency for Enhanced Treatment of Stress Urinary Incontinence in Peri- and Postmenopausal Women",
-      author: "Solanki, Smit Bharat",
-      journal: "Journal of Mid-life Health",
-      year: 2025,
-      doi: "10.4103/jmh.jmh_34_25",
-      citation: "16(2):p 179-185, Apr–Jun 2025",
-      pdfPath: "/pdfs/article1.pdf"
-    },
-    {
-      id: 14,
-      title: "Impact of 3D high-definition laparoscopy on total laparoscopic hysterectomy: a body mass index-stratified retrospective analysis",
-      author: "Solanki SB, Mishra VV, Dhiman AS",
-      journal: "Ann Saudi Med",
-      year: 2025,
-      doi: "10.5144/0256-4947.2025.243",
-      citation: "45(4): 243-248, 2025",
-      pdfPath: "/pdfs/article2.pdf"
-    },
-    {
-      id: 15,
-      title: "Botulinum Toxin for Refractory Vaginismus: A Prospective, Randomized, Controlled Trial",
-      author: "S Solanki",
-      journal: "Continence",
-      year: 2025,
-      doi: "10.1016/j.cont.2025.102165",
-      citation: "Volume 15, Supplement, 2025"
-    },
-    {
-      id: 16,
-      title: "Two triggers, no oocytes: a rare case of genuine empty follicle syndrome overcome by dual trigger protocol",
-      author: "Solanki SB",
-      journal: "Ginecologia.ro",
-      year: 2025,
-      citation: "49(3):24-25, 2025"
-    },
-    {
-      id: 17,
-      title: "Entrapment of the intrauterine device removing hook during difficult Mirena removal: a case report",
-      author: "Solanki SB, Rathore AS, Patel S",
-      journal: "Ginecologia.ro",
-      year: 2025,
-      citation: "49(3):42-44, 2025"
-    },
-    {
-      id: 18,
-      title: "Assessment of Bladder Neck Mobility in Stress Urinary Incontinence Using Rotational Angles and Pubourethral Distance: A Transperineal Ultrasonography Study",
-      author: "Smit Bharat Solanki",
-      journal: "IUGA/EUGA Joint Meeting 2025",
-      year: 2025,
-      citation: "IUGA 50th Annual Meeting – Barcelona, June 18-21, 2025"
-    },
-    {
-      id: 19,
-      title: "Evaluating the Efficacy of Pelvic Floor Muscle Training Enhanced by Biofeedback in Postpartum Women With Pelvic Organ Prolapse Symptoms",
-      author: "Smit Bharat Solanki",
-      journal: "IUGA/EUGA Joint Meeting 2025",
-      year: 2025,
-      citation: "IUGA 50th Annual Meeting – Barcelona, June 18-21, 2025"
-    },
-    {
-      id: 20,
-      title: "Overcoming Refractory Vaginismus with Intra-vaginal Botulinum Toxin: A Case of Restored Marital Harmony",
-      author: "Solanki S, Nayani Z",
-      journal: "Journal of Psychosexual Health",
-      year: 2025,
-      doi: "10.1177/26318318251394062",
-      citation: "2025"
-    },
-    {
-      id: 21,
-      title: "MECHANISMS AND OUTCOMES OF 1470NM LASER THERAPY FOR VAGINAL REJUVENATION: A MULTI-OMICS OBSERVATIONAL STUDY",
-      author: "Smit Bharat Solanki, & Dutta, D.",
-      journal: "Jurnal Rekonstruksi Dan Estetik",
-      year: 2025,
-      doi: "10.20473/jre.v10i2.74266",
-      citation: "10(2): 90–101, 2025",
-      pdfPath: "/pdfs/article3.pdf"
-    },
-    {
-      id: 22,
-      title: "Pheochromocytoma in pregnancy: a case report and review of management challenges",
-      author: "Rathore AS, Solanki SB",
-      journal: "Ginecologia.ro",
-      year: 2025,
-      citation: "50(4):10-13, 2025"
-    },
-    {
-      id: 23,
-      title: "Predictors of Gonadotropin Efficiency Index (GEI): a regression-based model using patient and stimulation parameters in controlled ovarian stimulation cycles",
-      author: "Solanki SB, Shah D",
-      journal: "Ginecologia.ro",
-      year: 2025,
-      citation: "50(4):24-29, 2025",
-      pdfPath: "/pdfs/article5.pdf"
-    },
-    {
-      id: 24,
-      title: "Comparative analysis of recombinant FSH versus human menopausal gonadotropin on embryo profile and gonadotropin efficiency in IVF cycles: a matched cohort study",
-      author: "Solanki SB, Shah D",
-      journal: "Ginecologia.ro",
-      year: 2025,
-      citation: "50(4):38-43, 2025"
-    },
-    {
-      id: 25,
-      title: "Enhanced recovery pathway for total laparoscopic hysterectomy performed by a single freelancing gynecologic surgeon",
-      author: "Solanki SB",
-      journal: "Ginecologia.ro",
-      year: 2025,
-      citation: "50(4):44-48, 2025"
+      topic: "Safe Pregnancy in High-Risk Conditions",
+      quote: "Motherhood should never feel impossible.",
+      benefit: "Careful planning ensures safety.",
+      title: "Solanki, S., & Mishra, V. (2025). Pregnancy after kidney transplantation: effect on maternal and foetal health. KIDNEYS, 14(1).",
+      doi: "10.22141/2307-1257.14.1.2025.489",
+      pdfPath: "/pdfs/publication-12.pdf"
     }
   ];
-
-  // Split publications into two tabs (13 in first tab, 12 in second)
-  const publicationsTab1 = publications.slice(0, 13);
-  const publicationsTab2 = publications.slice(13);
-  const currentPublications = activeTab === 1 ? publicationsTab1 : publicationsTab2;
 
   const presentations: Presentation[] = [
     {
@@ -329,31 +212,27 @@ export default function ResearchInsightsPage() {
           }}
         />
         {/* Black Fade Overlay */}
-        <div className="absolute inset-0 bg-black/60 dark:bg-black/30"></div>
+        <div className="absolute inset-0 bg-black/55 dark:bg-black/35"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="max-w-5xl mx-auto text-center">
-            <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-[var(--font-playfair)] font-bold leading-[1.1] tracking-tight mb-6 drop-shadow-lg">
+            <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-[var(--font-playfair)] font-bold leading-[1.1] tracking-tight mb-6 drop-shadow-[0_6px_18px_rgba(0,0,0,0.55)]">
               Research Publications &<br />
-              <span className="text-[#C07766]">Academic Contributions</span>
+              <span className="text-white">Academic Contributions</span>
             </h1>
-            <p className="text-white/90 text-lg sm:text-xl md:text-2xl font-light leading-relaxed max-w-3xl mx-auto mb-8 drop-shadow-md">
+            <p className="text-white text-lg sm:text-xl md:text-2xl font-light leading-relaxed max-w-3xl mx-auto mb-8 drop-shadow-[0_4px_14px_rgba(0,0,0,0.55)]">
               Evidence-based research published in leading medical journals, advancing the field of gynecology and women&apos;s health through rigorous scientific inquiry.
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-6 text-sm sm:text-base text-white/90">
+            <div className="flex flex-wrap items-center justify-center gap-6 text-sm sm:text-base text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.55)]">
               <div className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-[#C07766]">article</span>
-                <span className="font-semibold">{publications.length}</span>
+                <span className="material-symbols-outlined text-white">article</span>
+                <span className="font-semibold">70+</span>
                 <span>Publications</span>
           </div>
               <div className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-[#8DA399]">event</span>
-                <span className="font-semibold">{presentations.reduce((acc, p) => acc + p.items.length, 0)}</span>
-                <span>Presentations</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-[#C07766]">calendar_today</span>
-                <span>2024-2025</span>
+                <span className="material-symbols-outlined text-white">event</span>
+                <span className="font-semibold">24+</span>
+                <span>presentations in last 3 years</span>
               </div>
             </div>
           </div>
@@ -361,114 +240,86 @@ export default function ResearchInsightsPage() {
       </section>
 
       {/* Publications Section */}
-      <section className="py-12 sm:py-16 md:py-20 px-6 sm:px-8 md:px-12 lg:px-16 bg-[#fafafa] dark:bg-[#221e10]">
+      <section className="py-12 sm:py-16 md:py-20 px-6 sm:px-8 md:px-12 lg:px-16 bg-[#F7F3EE] dark:bg-[#1a1710]">
         <div className="max-w-7xl mx-auto">
           <div className="mb-8 sm:mb-12">
             <div className="mb-6">
-              <span className="text-[#C07766] dark:text-[#C07766] font-bold tracking-widest uppercase text-xs sm:text-sm mb-2 block">
-                Published Research
+              <span className="text-[#2F4A45] dark:text-[#2F4A45] font-bold tracking-widest uppercase text-xs sm:text-sm mb-2 block">
+                Evidence-Based Publications
             </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white leading-tight mb-4">
-                Research Publications
+                Advanced Gynecology Care. Compassionate, Safe, and Personal.
             </h2>
-              <p className="text-[#4a4a4a] dark:text-gray-400 text-base sm:text-lg leading-relaxed">
-                Peer-reviewed research published in leading medical journals, contributing to evidence-based practice in gynecology and women&apos;s health.
-            </p>
+              <p className="text-[#4a4a4a] dark:text-gray-400 text-base sm:text-lg leading-relaxed mb-4">
+                From fertility solutions to bladder control, vaginal health, and safe surgeries — every treatment is designed to restore
+                your confidence, comfort, and wellbeing.
+              </p>
+              <div className="flex flex-wrap gap-3 mb-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#2F4A45] text-white dark:bg-white dark:text-[#181611] text-sm font-semibold"
+                >
+                  Book a Consultation
+                </Link>
+                <Link
+                  href={getWhatsAppUrl("researchQuestions")}
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-[#2F4A45] text-[#2F4A45] dark:border-white dark:text-white text-sm font-semibold"
+                >
+                  Learn How I Can Help You
+                </Link>
+              </div>
+              <p className="text-[#4a4a4a] dark:text-gray-400 text-sm sm:text-base leading-relaxed">
+                Evidence-based treatments supported by published research and years of real patient success.
+              </p>
             </div>
           </div>
 
           <div>
-            <ol className="space-y-0">
-              {currentPublications.map((pub, index) => (
+            <ol className="space-y-6 sm:space-y-8">
+              {publications.map((pub, index) => (
                 <li
                 key={pub.id}
-                  className="py-6 sm:py-8"
+                  className="rounded-2xl border border-[#2F4A45]/15 dark:border-white/10 bg-white dark:bg-[#1a1710] p-5 sm:p-6"
                 >
-                  <div className="flex gap-4 sm:gap-6">
+                  <div className="flex flex-col gap-4">
+                    <div className="text-sm sm:text-base font-bold text-[#181611] dark:text-white">
+                      {pub.topic}
+                </div>
 
-                    {/* Content */}
-                    <div className="flex-1 min-w-0">
-                      <h3 className="text-base sm:text-lg md:text-xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white mb-3 leading-[1.4]">
-                        {pub.title}
-                      </h3>
-                      
-                      <div className="space-y-2 mb-4 text-sm sm:text-base text-[#4a4a4a] dark:text-gray-300 leading-relaxed">
+                    <div>
+                      <p className="text-lg sm:text-xl font-[var(--font-playfair)] font-bold text-[#181611] dark:text-white leading-[1.4] mb-2">
+                        {pub.quote}
+                      </p>
+                      <p className="text-[#4a4a4a] dark:text-gray-300 text-sm sm:text-base leading-relaxed">
+                        {pub.benefit}
+                    </p>
+                  </div>
+
+                    <div className="text-sm sm:text-base text-[#4a4a4a] dark:text-gray-300 leading-relaxed break-words">
+                      <p className="font-semibold text-[#181611] dark:text-white mb-2">Publication Reference</p>
+                      <p className="mb-2 break-words">{pub.title}</p>
+                      {pub.citation && <p className="mb-2 break-words">{pub.citation}</p>}
+                      {pub.doi && (
                         <p>
-                          <span className="font-semibold">Authors:</span> {pub.author}
+                          <span className="font-semibold">DOI:</span>{" "}
+                          <a
+                            href={`https://doi.org/${pub.doi}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#2F4A45] dark:text-[#2F4A45] hover:underline break-all"
+                          >
+                            {pub.doi}
+                          </a>
                         </p>
-                        
-                        {pub.journal && (
-                          <p>
-                            <span className="font-semibold">Journal:</span> <span className="italic">{pub.journal}</span>
-                          </p>
-                        )}
-                        
-                        {pub.citation && (
-                          <p>
-                            <span className="font-semibold">Citation:</span> {pub.citation}
-                          </p>
-                        )}
-                        
-                        {pub.doi && (
-                          <p>
-                            <span className="font-semibold">DOI:</span>{" "}
-                            <a 
-                              href={`https://doi.org/${pub.doi}`}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-[#8DA399] dark:text-[#8DA399] hover:underline"
-                            >
-                              {pub.doi}
-                            </a>
-                          </p>
-                        )}
-                      </div>
-
-                      {pub.pdfPath && (
-                        <a
-                          href={pub.pdfPath}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-4 py-2 bg-[#181611] dark:bg-white text-white dark:text-[#181611] font-medium rounded hover:bg-[#2a2a2a] dark:hover:bg-gray-100 transition-colors text-sm"
-                        >
-                          <span className="material-symbols-outlined text-base">description</span>
-                          <span>View PDF</span>
-                          <span className="material-symbols-outlined text-xs">open_in_new</span>
-                        </a>
                       )}
                     </div>
+
                   </div>
                 </li>
               ))}
             </ol>
-                </div>
-
-          {/* Tabs */}
-          <div className="mt-8 sm:mt-12">
-            <div className="flex items-center gap-1 bg-white dark:bg-[#1a1710] border border-[#e5dddc] dark:border-white/10 rounded-lg p-1 shadow-sm">
-              <button
-                onClick={() => setActiveTab(1)}
-                className={`flex-1 px-6 sm:px-8 py-3 sm:py-4 rounded-md font-semibold text-sm sm:text-base transition-all duration-200 touch-manipulation ${
-                  activeTab === 1
-                    ? "bg-[#181611] dark:bg-white text-white dark:text-[#181611] shadow-sm"
-                    : "text-[#6a6a6a] dark:text-gray-400 hover:text-[#181611] dark:hover:text-white"
-                }`}
-              >
-                Publications 1-13
-              </button>
-              <button
-                onClick={() => setActiveTab(2)}
-                className={`flex-1 px-6 sm:px-8 py-3 sm:py-4 rounded-md font-semibold text-sm sm:text-base transition-all duration-200 touch-manipulation ${
-                  activeTab === 2
-                    ? "bg-[#181611] dark:bg-white text-white dark:text-[#181611] shadow-sm"
-                    : "text-[#6a6a6a] dark:text-gray-400 hover:text-[#181611] dark:hover:text-white"
-                }`}
-              >
-                Publications 14-25
-              </button>
-            </div>
-                  </div>
-                    </div>
+          </div>
+        </div>
       </section>
 
       {/* Presentations Section */}

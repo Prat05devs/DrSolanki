@@ -229,8 +229,8 @@ export const clinicalExperience: ClinicalExperience[] = [
     ]
   },
   {
-    position: "Program Director & Clinical Lead",
-    department: "Reproductive Medicine & IVF Services",
+    position: "Program director and clinical lead in Reproductive medicine and IVF services",
+    department: "Reproductive Medicine and IVF Services",
     institution: "Parul Sevashram Hospital, Parul Institute of Medical Sciences & Research, Parul University",
     location: "Vadodara",
     period: "January 2026–Present"
