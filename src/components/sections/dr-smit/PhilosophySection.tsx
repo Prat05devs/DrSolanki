@@ -10,10 +10,10 @@ export default function PhilosophySection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="min-h-screen flex items-center px-4 sm:px-10 bg-white dark:bg-white/5 relative overflow-hidden">
+    <section ref={ref} className="min-h-screen flex items-center px-4 sm:px-10 bg-[#fbfbf9] dark:bg-[#0f0e0a] relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#C07766]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#8DA399]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#5B3A33]/6 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#5B3A33]/6 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
 
       <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto relative z-10 w-full py-12">
         <motion.div
@@ -24,7 +24,7 @@ export default function PhilosophySection() {
         >
           <h2 className="text-4xl md:text-5xl font-[var(--font-playfair)] font-black text-[#181611] dark:text-white mb-6 leading-[1.15] tracking-[-0.01em]">
             Every Patient Deserves<br />
-            <span className="text-[#C07766]">Precision & Compassion</span>
+            <span className="text-[#5B3A33]">Precision & Compassion</span>
           </h2>
         </motion.div>
 
@@ -36,7 +36,7 @@ export default function PhilosophySection() {
             className="relative w-full max-w-lg mx-auto"
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-              <div className="aspect-[4/5] bg-gradient-to-br from-[#C07766] to-[#8DA399] relative">
+              <div className="aspect-[4/5] bg-gradient-to-br from-[#5B3A33] to-[#5B3A33]/70 relative">
                 <Image
                   src="/dr2.jpeg"
                   alt="Dr. Smit Bharat Solanki - Professional Portrait"
@@ -52,10 +52,10 @@ export default function PhilosophySection() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-6 shadow-2xl border-4 border-[#f4c025]"
+              className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-6 shadow-2xl border-4 border-[#5B3A33]/40"
             >
               <div className="flex items-center gap-3">
-                <div className="size-12 bg-gradient-to-br from-[#C07766] to-[#8DA399] rounded-xl flex items-center justify-center">
+                <div className="size-12 bg-[#5B3A33] rounded-xl flex items-center justify-center">
                   <Award className="w-6 h-6 text-white" />
                 </div>
                 <div>

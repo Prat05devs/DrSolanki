@@ -25,7 +25,7 @@ export default function GallerySection() {
   ];
 
   return (
-    <section ref={ref} className="min-h-screen flex items-center px-4 sm:px-10 bg-white dark:bg-white/5 relative overflow-hidden">
+    <section ref={ref} className="min-h-screen flex items-center px-4 sm:px-10 bg-[#fbfbf9] dark:bg-[#0f0e0a] relative overflow-hidden">
       <div className="layout-content-container flex flex-col max-w-[1280px] mx-auto w-full py-12">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -49,7 +49,7 @@ export default function GallerySection() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: idx * 0.2 }}
               whileHover={{ y: -10 }}
-              className="group relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white"
+              className="group relative rounded-3xl overflow-hidden shadow-2xl border border-[#5B3A33]/10 bg-white"
             >
               <div className="aspect-[4/3] relative">
                 <Image

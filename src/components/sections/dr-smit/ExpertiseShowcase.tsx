@@ -13,32 +13,32 @@ export default function ExpertiseShowcase() {
       id: "01",
       title: "Robotic Surgery",
       description: "Precision Da Vinci Xi protocols for complex interventions.",
-      color: "from-rose-500/20 to-orange-500/20",
-      accent: "#f43f5e",
+      color: "from-[#5B3A33]/18 to-[#5B3A33]/6",
+      accent: "#5B3A33",
       stats: "1,000+ Cases"
     },
     {
       id: "02",
       title: "IVF & Fertility",
       description: "Advanced medicine focusing on high-complexity success.",
-      color: "from-blue-500/20 to-cyan-500/20",
-      accent: "#3b82f6",
+      color: "from-[#5B3A33]/18 to-[#5B3A33]/6",
+      accent: "#5B3A33",
       stats: "85% Success"
     },
     {
       id: "03",
       title: "Minimally Invasive",
       description: "Laparoscopic techniques for rapid 24-hour recovery.",
-      color: "from-emerald-500/20 to-teal-500/20",
-      accent: "#10b981",
+      color: "from-[#5B3A33]/18 to-[#5B3A33]/6",
+      accent: "#5B3A33",
       stats: "Rapid Recovery"
     },
     {
       id: "04",
       title: "Complex Cases",
       description: "Pioneering work in endometriosis and uterine transplants.",
-      color: "from-amber-500/20 to-yellow-500/20",
-      accent: "#f59e0b",
+      color: "from-[#5B3A33]/18 to-[#5B3A33]/6",
+      accent: "#5B3A33",
       stats: "Expert Level"
     }
   ];
@@ -46,7 +46,7 @@ export default function ExpertiseShowcase() {
   return (
     <section 
       ref={ref} 
-      className="relative min-h-screen w-full flex items-center justify-center py-12 md:py-20 bg-[#fafaf9] dark:bg-[#080807] overflow-hidden"
+      className="relative min-h-screen w-full flex items-center justify-center py-12 md:py-20 bg-[#fbfbf9] dark:bg-[#0f0e0a] overflow-hidden"
     >
       {/* Texture Overlay */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] z-0" />
@@ -58,11 +58,11 @@ export default function ExpertiseShowcase() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             className="flex flex-col gap-2"
           >
-            <span className="text-[10px] md:text-xs font-semibold tracking-[0.3em] uppercase text-slate-400 dark:text-slate-500 leading-[1.7]">
+            <span className="text-[10px] md:text-xs font-semibold tracking-[0.3em] uppercase text-[#5B3A33] leading-[1.7]">
               Technical Proficiency
             </span>
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-[var(--font-playfair)] font-black tracking-[-0.01em] text-slate-900 dark:text-white leading-[1.15]">
-              Core <span className="text-slate-400/50">Expertise</span>
+              Core <span className="text-[#5B3A33]/70">Expertise</span>
             </h2>
           </motion.div>
         </header>

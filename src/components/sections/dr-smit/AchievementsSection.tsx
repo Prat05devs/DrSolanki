@@ -14,40 +14,40 @@ export default function AchievementsSection() {
       suffix: "+",
       label: "Scientific Publications",
       subtext: "Peer-reviewed research in global medical journals.",
-      accent: "from-rose-500 to-orange-400"
+      accent: "from-[#5B3A33] to-[#5B3A33]/70"
     },
     {
       count: "50",
       suffix: "+",
       label: "Conference Keynotes",
       subtext: "Presentations at national and international summits.",
-      accent: "from-blue-500 to-indigo-400"
+      accent: "from-[#5B3A33] to-[#5B3A33]/70"
     },
     {
       count: "10",
       suffix: "+",
       label: "Excellence Awards",
       subtext: "Recognition for surgical innovation and patient care.",
-      accent: "from-emerald-500 to-teal-400"
+      accent: "from-[#5B3A33] to-[#5B3A33]/70"
     },
     {
       count: "05",
       suffix: "+",
       label: "Mentorship Programs",
       subtext: "Training and certifying the next generation of surgeons.",
-      accent: "from-amber-500 to-yellow-400"
+      accent: "from-[#5B3A33] to-[#5B3A33]/70"
     }
   ];
 
   return (
     <section 
       ref={ref} 
-      className="relative min-h-screen w-full flex items-center justify-center py-12 md:py-20 bg-[#f4f4f2] dark:bg-[#0a0a09] overflow-hidden"
+      className="relative min-h-screen w-full flex items-center justify-center py-12 md:py-20 bg-[#fbfbf9] dark:bg-[#0f0e0a] overflow-hidden"
     >
       {/* Dynamic Background elements for Glass Reflection */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl opacity-20 pointer-events-none">
-        <div className="absolute top-0 left-10 w-72 h-72 bg-rose-500 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute bottom-0 right-10 w-72 h-72 bg-blue-500 rounded-full blur-[120px]" />
+        <div className="absolute top-0 left-10 w-72 h-72 bg-[#5B3A33] rounded-full blur-[120px] animate-pulse opacity-40" />
+        <div className="absolute bottom-0 right-10 w-72 h-72 bg-[#5B3A33] rounded-full blur-[120px] opacity-35" />
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10 max-w-6xl">
@@ -58,7 +58,7 @@ export default function AchievementsSection() {
             className="flex flex-col gap-3"
           >
             <h2 className="text-5xl md:text-7xl font-[var(--font-playfair)] font-black tracking-[-0.01em] text-slate-900 dark:text-white leading-[1.15]">
-              The <span className="italic font-[var(--font-playfair)] font-light text-slate-400">Benchmark</span> of Success
+              The <span className="italic font-[var(--font-playfair)] font-light text-[#5B3A33]">Benchmark</span> of Success
             </h2>
           </motion.div>
         </header>

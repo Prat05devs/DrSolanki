@@ -87,8 +87,8 @@ export default function HeroSection() {
           >
             {[
               { number: "15,000+", label: "Patients Treated" },
-              { number: "1,000+", label: "Surgeries" },
-              { number: "15+", label: "Years Experience" }
+              { number: "5,000+", label: "Surgeries" },
+              { number: "14+", label: "Years Experience" }
             ].map((stat, idx) => (
               <motion.div
                 key={idx}
@@ -112,7 +112,7 @@ export default function HeroSection() {
           >
             <Link
               href="/contact"
-              className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white text-[#C07766] font-semibold tracking-[0.01em] rounded-lg sm:rounded-xl shadow-2xl active:shadow-3xl transition-all duration-300 active:-translate-y-1 text-sm sm:text-base touch-manipulation"
+              className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white text-[#5B3A33] font-semibold tracking-[0.01em] rounded-lg sm:rounded-xl shadow-2xl active:shadow-3xl transition-all duration-300 active:-translate-y-1 text-sm sm:text-base touch-manipulation"
             >
               <Calendar className="w-4 h-4 sm:w-5 sm:h-5" />
               <span>Book Consultation</span>

@@ -81,7 +81,7 @@ export default function HeroSection() {
                 <div className="flex items-center gap-2 text-white/90">
                   <MapPin className="w-4 h-4" />
                   <span className="text-sm font-medium">
-                    Ahmedabad, India
+                  Vadodara & Ahmedabad, Gujarat, India
                   </span>
                 </div>
                 <div className="flex items-center gap-2 text-white/90">

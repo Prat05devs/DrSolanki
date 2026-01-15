@@ -7,7 +7,6 @@ import CredentialsSection from "@/components/sections/dr-smit/CredentialsSection
 import ExpertiseShowcase from "@/components/sections/dr-smit/ExpertiseShowcase";
 import AchievementsSection from "@/components/sections/dr-smit/AchievementsSection";
 import GallerySection from "@/components/sections/dr-smit/GallerySection";
-import StatsSection from "@/components/sections/dr-smit/StatsSection";
 
 export default function DrSmitPage() {
   return (
@@ -18,7 +17,6 @@ export default function DrSmitPage() {
       <ExpertiseShowcase />
       <AchievementsSection />
       <GallerySection />
-      <StatsSection />
       <Footer />
     </main>
   );

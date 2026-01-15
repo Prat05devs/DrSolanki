@@ -13,14 +13,14 @@ export default function WhyChooseSection() {
     {
       icon: GraduationCap,
       title: "Highly Qualified",
-      description: "MBBS, MD (OB/GYN), Fellowship in Reproductive Medicine & Da Vinci Robotic Surgery",
+      description: "MBBS, MS (OB/GYN), Fellowship in Reproductive Medicine & Da Vinci Robotic Surgery",
       iconColor: "text-[#8DA399]",
       bgColor: "bg-[#8DA399]/10"
     },
     {
       icon: Award,
       title: "Award-Winning Care",
-      description: "Recognized internationally for excellence in minimally invasive gynecological surgery",
+      description: "Reproductive medicine and minimally invasive gynecological surgery",
       iconColor: "text-[#C07766]",
       bgColor: "bg-[#C07766]/10"
     },
@@ -41,7 +41,7 @@ export default function WhyChooseSection() {
   ];
 
   return (
-    <section ref={ref} className="min-h-screen flex items-center bg-gradient-to-br from-white via-[#FDFBF7] to-[#E4EFE9]/20">
+    <section ref={ref} className="min-h-[100svh] flex items-center bg-gradient-to-br from-white via-[#FDFBF7] to-[#E4EFE9]/20">
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl w-full py-12 sm:py-16 lg:py-20">
         {/* Header Section */}
         <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] items-center mb-10 sm:mb-12 lg:mb-16">

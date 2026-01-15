@@ -1,24 +1,14 @@
 "use client";
 
-import { motion, useInView, useScroll, useSpring } from "framer-motion";
-import { useRef } from "react";
-import { Stethoscope, Activity, GraduationCap, Award, MapPin, Calendar } from "lucide-react";
+import { motion, useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import { Stethoscope, Activity, GraduationCap, Award, MapPin } from "lucide-react";
 import { clinicalExperience, education, certifications } from "@/data/siteData";
 
 export default function CredentialsSection() {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
-
-  // Progress bar for the timeline
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end end"]
-  });
-  const scaleY = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
+  const [activeCategory, setActiveCategory] = useState<"all" | "clinical" | "education" | "cert">("clinical");
 
   const getIcon = (position: string) => {
     const pos = position.toLowerCase();
@@ -27,21 +17,11 @@ export default function CredentialsSection() {
     return Activity;
   };
 
-  const getColor = (idx: number) => {
-    const colors = [
-      "from-rose-400 to-orange-300",
-      "from-emerald-400 to-teal-500",
-      "from-blue-400 to-indigo-500",
-      "from-amber-400 to-yellow-600",
-    ];
-    return colors[idx % colors.length];
-  };
-
   const allCredentials = [
-    ...clinicalExperience.map((exp) => ({ ...exp, type: 'clinical' })),
-    ...education.map((edu) => ({ ...edu, type: 'education' })),
-    ...certifications.map((cert) => ({ ...cert, type: 'cert' }))
-  ].map((item, idx) => {
+    ...clinicalExperience.map((exp) => ({ ...exp, type: "clinical" })),
+    ...education.map((edu) => ({ ...edu, type: "education" })),
+    ...certifications.map((cert) => ({ ...cert, type: "cert" }))
+  ].map((item) => {
     const year = (item as any).period 
       ? ((item as any).period.split("–")[1] || (item as any).period.split("-")[1] || "Present")
       : (item as any).year || "Present";
@@ -53,106 +33,124 @@ export default function CredentialsSection() {
       location: item.location,
       description: (item as any).focus?.join(", ") || (item as any).description || "",
       icon: (item as any).type === 'education' ? GraduationCap : (item as any).type === 'cert' ? Award : getIcon((item as any).position),
-      color: getColor(idx),
+      type: (item as any).type,
       isCurrent: year === "Present"
     };
   }).sort((a, b) => (a.year === "Present" ? -1 : b.year === "Present" ? 1 : parseInt(b.year) - parseInt(a.year)));
 
-  return (
-    <section ref={containerRef} className="relative min-h-screen py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden bg-[#fbfbf9] dark:bg-[#0f0e0a]">
-      
-      {/* Background Decorative Elements for Glassmorphism */}
-      <div className="absolute top-1/4 -left-10 sm:-left-20 w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 bg-rose-200/20 dark:bg-rose-900/10 rounded-full blur-[120px]" />
-      <div className="absolute bottom-1/4 -right-10 sm:-right-20 w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 bg-teal-200/20 dark:bg-teal-900/10 rounded-full blur-[120px]" />
+  const filteredCredentials = activeCategory === "all"
+    ? allCredentials
+    : allCredentials.filter((cred) => cred.type === activeCategory);
 
+  const categories: { id: "all" | "clinical" | "education" | "cert"; label: string; icon: any }[] = [
+    { id: "clinical", label: "Clinical", icon: Stethoscope },
+    { id: "education", label: "Education", icon: GraduationCap },
+    { id: "cert", label: "Certifications", icon: Award },
+    { id: "all", label: "All", icon: Activity }
+  ];
+
+  const getCategoryLabel = (type: string) => {
+    if (type === "clinical") return "Clinical";
+    if (type === "education") return "Education";
+    return "Certification";
+  };
+
+  return (
+    <section ref={containerRef} className="relative py-12 sm:py-16 md:py-20 overflow-hidden bg-[#fbfbf9] dark:bg-[#0f0e0a]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          className="text-center mb-12 sm:mb-16 md:mb-20"
+          className="text-left mb-10 sm:mb-12 md:mb-14"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[var(--font-playfair)] font-black text-slate-900 dark:text-white mb-4 sm:mb-6 leading-[1.15] tracking-[-0.01em] px-2">
-            Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C07766] to-[#8DA399]">Milestones</span>
+          <p className="text-xs sm:text-sm uppercase tracking-[0.35em] text-[#5B3A33] mb-3">
+            Academic Journey
+          </p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-[var(--font-playfair)] font-black text-slate-900 dark:text-white mb-4 leading-[1.15] tracking-[-0.01em]">
+            Professional <span className="text-[#5B3A33]">Milestones</span>
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-[1.7] px-4">
-            A comprehensive timeline of clinical excellence, specialized education, and professional certifications.
+          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-3xl leading-[1.7]">
+            A refined view of clinical leadership, specialized training, and certifications — presented as a continuous academic journey.
           </p>
         </motion.div>
 
-        <div className="relative">
-          {/* Main Timeline Rail */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-slate-200 dark:bg-slate-800 transform md:-translate-x-1/2">
-            <motion.div 
-              style={{ scaleY, originY: 0 }}
-              className="absolute top-0 w-full h-full bg-gradient-to-b from-[#C07766] via-[#8DA399] to-[#f4c025]"
-            />
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+          <div className="lg:w-60">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400 mb-3">
+              Filter
+            </p>
+            <div className="flex flex-wrap lg:flex-col gap-2">
+              {categories.map((cat) => (
+                <button
+                  key={cat.id}
+                  onClick={() => setActiveCategory(cat.id)}
+                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold border transition-all ${
+                    activeCategory === cat.id
+                      ? "bg-[#5B3A33] text-white border-[#5B3A33]"
+                      : "bg-white text-slate-700 border-slate-200 hover:border-[#5B3A33]/40"
+                  }`}
+                  aria-pressed={activeCategory === cat.id}
+                >
+                  <cat.icon className="w-4 h-4" />
+                  {cat.label}
+                </button>
+              ))}
+            </div>
           </div>
 
-          <div className="space-y-8 sm:space-y-12 md:space-y-16">
-            {allCredentials.map((cred, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className={`relative flex flex-col md:flex-row items-center gap-4 sm:gap-6 md:gap-8 ${
-                  idx % 2 === 0 ? "md:flex-row-reverse" : ""
-                }`}
-              >
-                {/* Timeline Node */}
-                <div className="absolute left-3 sm:left-4 md:left-1/2 w-3 h-3 sm:w-4 sm:h-4 transform md:-translate-x-1/2 z-20">
-                  <div className={`w-full h-full rounded-full border-2 sm:border-4 border-white dark:border-slate-900 bg-[#C07766] ${cred.isCurrent ? 'animate-pulse ring-2 sm:ring-4 ring-[#C07766]/30' : ''}`} />
-                </div>
-
-                {/* Content Card */}
-                <div className={`w-full md:w-1/2 ${idx % 2 === 0 ? "md:text-right" : "md:text-left pl-8 sm:pl-10 md:pl-16"}`}>
-                  <motion.div
-                    whileHover={{ y: -5, scale: 1.01 }}
-                    className="group relative p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-white/20 dark:border-white/10 bg-white/40 dark:bg-white/5 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(31,38,135,0.07)]"
+          <div className="relative flex-1">
+            <div className="absolute left-3 sm:left-4 top-2 bottom-2 w-px bg-slate-200 dark:bg-white/10" />
+            <ol className="space-y-6 sm:space-y-8">
+              {filteredCredentials.map((cred, idx) => (
+                <li key={`${cred.title}-${idx}`} className="relative pl-10 sm:pl-12 lg:pl-16">
+                  <span className="absolute left-2.5 sm:left-3.5 top-4 size-3 rounded-full bg-[#5B3A33] shadow-[0_0_0_6px_rgba(91,58,51,0.15)]" />
+                  <motion.article
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.35, delay: idx * 0.04 }}
+                    whileHover={{ y: -2 }}
+                    className="group rounded-2xl border border-slate-200/70 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur-md px-5 sm:px-6 py-4 sm:py-5 shadow-sm hover:shadow-lg transition-all"
                   >
-                    {/* Glass Shine Effect */}
-                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/40 to-transparent pointer-events-none" />
-                    
-                    <div className={`flex flex-col ${idx % 2 === 0 ? "md:items-end" : "md:items-start"}`}>
-                      <div className={`flex items-center gap-2 mb-3 sm:mb-4 px-2.5 sm:px-3 py-1 rounded-full bg-white/60 dark:bg-white/10 border border-white/50 dark:border-white/5 text-xs sm:text-sm font-semibold text-[#C07766] leading-[1.7]`}>
-                        <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                    <div className="flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm">
+                      <span className="inline-flex items-center gap-2 text-[#5B3A33] font-semibold">
+                        <span className="size-2 rounded-full bg-[#5B3A33]" />
                         {cred.year}
-                      </div>
+                      </span>
+                      <span className="uppercase tracking-[0.25em] text-slate-400">
+                        {getCategoryLabel(cred.type)}
+                      </span>
+                    </div>
 
-                      <div className={`flex items-start gap-3 sm:gap-4 md:gap-5 mb-3 sm:mb-4 ${idx % 2 === 0 ? "md:flex-row-reverse" : "flex-row"}`}>
-                        <div className={`flex-shrink-0 size-10 sm:size-12 md:size-14 rounded-xl sm:rounded-2xl bg-gradient-to-br ${cred.color} flex items-center justify-center text-white shadow-lg transform group-hover:rotate-6 transition-transform`}>
-                          <cred.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
-                        </div>
-                        <div className="min-w-0">
-                          <h3 className="text-lg sm:text-xl md:text-2xl font-[var(--font-playfair)] font-bold text-slate-900 dark:text-white mb-1 leading-[1.15] tracking-[-0.01em]">
+                    <div className="mt-4 flex items-start gap-3 sm:gap-4">
+                      <div className="size-10 sm:size-11 rounded-xl bg-slate-100 dark:bg-white/10 flex items-center justify-center text-[#5B3A33]">
+                        <cred.icon className="w-5 h-5" />
+                      </div>
+                      <div className="min-w-0">
+                        <h3 className="text-lg sm:text-xl font-[var(--font-playfair)] font-semibold text-slate-900 dark:text-white leading-tight break-words">
                           {cred.title}
                         </h3>
-                          <p className="text-[#8DA399] font-medium flex items-center gap-2 leading-[1.7] text-sm sm:text-base">
-                             <span className="opacity-70 truncate">{cred.subtitle}</span>
-                          </p>
-                        </div>
-                      </div>
-
-                      {cred.description && (
-                        <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-[1.7] mb-3 sm:mb-4">
-                          {cred.description}
+                        <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed break-words">
+                          {cred.subtitle}
                         </p>
-                      )}
-
-                      {cred.location && (
-                        <div className="flex items-center gap-1.5 text-[10px] sm:text-xs font-semibold text-slate-400 uppercase tracking-wider leading-[1.7]">
-                          <MapPin className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
-                          {cred.location}
-                        </div>
-                      )}
+                      </div>
                     </div>
-                  </motion.div>
-                </div>
 
-                {/* Date Spacer for Desktop */}
-                <div className="hidden md:block w-1/2" />
-              </motion.div>
-            ))}
+                    {cred.location && (
+                      <div className="flex items-center gap-1.5 text-[11px] font-semibold text-slate-400 uppercase tracking-wider mt-3">
+                        <MapPin className="w-3 h-3" />
+                        <span className="truncate">{cred.location}</span>
+                      </div>
+                    )}
+
+                    {cred.description && (
+                      <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-3 break-words">
+                        {cred.description}
+                      </p>
+                    )}
+                  </motion.article>
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
       </div>
