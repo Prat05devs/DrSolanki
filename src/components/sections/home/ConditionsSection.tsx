@@ -38,9 +38,9 @@ export default function ConditionsSection() {
             Specialized Care for Complex Conditions
           </h2>
           <p className="text-lg text-[#2D2A26]/60 max-w-2xl mx-auto leading-[1.7]">
-            {/* TODO: Add conditions overview from single_source_of_truth.md */}
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Reproductive medicine addresses hormonal health, ovulation, fertility, and reproductive organs, while surgery treats structural
+            problems in conditions such as irregular periods, PCOS, endometriosis, fibroids, blocked fallopian tubes, and unexplained
+            infertility.
           </p>
         </div>
 

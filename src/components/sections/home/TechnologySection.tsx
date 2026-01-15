@@ -42,10 +42,9 @@ export default function TechnologySection() {
               Cutting-Edge Surgical Technology
             </h2>
             <p className="text-lg text-[#2D2A26]/70 leading-[1.7] mb-8">
-              {/* TODO: Add detailed technology description from single_source_of_truth.md */}
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              Internationally accepted advanced robotic surgery systems like the Da Vinci Si System ensure top-of-the-line surgical
+              standards. We use state-of-the-art technology and cutting-edge surgical and medical techniques to deliver outstanding
+              outcomes with precision and safety.
             </p>
 
             <div className="space-y-4 mb-8">

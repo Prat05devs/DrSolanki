@@ -371,10 +371,10 @@ export default function FAQPage() {
                           {topic.category}
                 </span>
                       </div>
-                    </div>
+              </div>
                     <h3 className="text-base sm:text-lg lg:text-xl font-bold leading-tight">{topic.title}</h3>
-                  </div>
-                </div>
+              </div>
+              </div>
 
                 {/* Content */}
                 <div className="p-4 sm:p-6 flex-1 flex flex-col">
@@ -383,17 +383,17 @@ export default function FAQPage() {
                     <p className="text-[#8a8060] dark:text-gray-300 leading-relaxed text-xs sm:text-sm line-clamp-4">
                       {topic.summary}
                     </p>
-                  </div>
+              </div>
 
                   {/* Why It Matters */}
                   <div className="bg-white/60 dark:bg-white/5 backdrop-blur-md rounded-lg sm:rounded-xl p-3 sm:p-4 mb-3 sm:mb-4 border border-white/50 dark:border-white/10 shadow-sm">
                     <div className="flex items-start gap-2 mb-1 sm:mb-2">
                       <span className="material-symbols-outlined text-[#C07766] text-lg sm:text-xl flex-shrink-0">lightbulb</span>
                       <p className="font-bold text-[#181611] dark:text-white text-xs sm:text-sm">Why This Matters</p>
-                    </div>
+          </div>
                     <p className="text-xs sm:text-sm text-[#8a8060] dark:text-gray-300 leading-relaxed line-clamp-2">
                       {topic.whyItMatters}
-                    </p>
+                </p>
               </div>
 
                   {/* Learn More Button */}
@@ -406,12 +406,12 @@ export default function FAQPage() {
                       <span>Learn More</span>
                       <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
                     </button>
-                  </div>
+            </div>
                 </div>
               </div>
             ))}
           </div>
-        </div>
+                </div>
       </section>
 
       {/* Call to Action */}
@@ -449,7 +449,7 @@ export default function FAQPage() {
                 </a>
               </div>
             </div>
-          </div>
+            </div>
           </div>
         </section>
 

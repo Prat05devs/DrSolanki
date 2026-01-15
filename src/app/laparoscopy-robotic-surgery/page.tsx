@@ -153,9 +153,9 @@ export default function LaparoscopyRoboticSurgeryPage() {
               Conditions We Treat
             </h2>
             <p className="text-[#8a8060] dark:text-gray-300 text-lg max-w-3xl mx-auto">
-              {/* TODO: Add conditions treated details from single_source_of_truth.md */}
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              These minimally invasive “keyhole” surgeries are performed through very small incisions. The approach offers less pain,
+              minimal scarring, faster recovery, and a lower risk of complications compared to open surgery—making it ideal for a wide
+              range of gynecological conditions.
             </p>
           </div>
 

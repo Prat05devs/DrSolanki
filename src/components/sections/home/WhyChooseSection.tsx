@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { GraduationCap, Award, Users, Activity } from "lucide-react";
@@ -40,10 +41,10 @@ export default function WhyChooseSection() {
   ];
 
   return (
-    <section ref={ref} className="min-h-screen flex items-center py-12 sm:py-16 md:py-20 bg-gradient-to-br from-white via-[#FDFBF7] to-[#E4EFE9]/20">
-      <div className="container mx-auto px-4 sm:px-6 max-w-7xl w-full">
+    <section ref={ref} className="min-h-screen flex items-center bg-gradient-to-br from-white via-[#FDFBF7] to-[#E4EFE9]/20">
+      <div className="container mx-auto px-4 sm:px-6 max-w-7xl w-full py-12 sm:py-16 lg:py-20">
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 sm:mb-16 gap-6 md:gap-8">
+        <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] items-center mb-10 sm:mb-12 lg:mb-16">
           <div className="max-w-2xl">
             <span className="text-[#C07766] font-semibold tracking-widest uppercase text-xs sm:text-sm mb-3 block leading-[1.7]">
               Why Choose Us
@@ -52,10 +53,26 @@ export default function WhyChooseSection() {
               Excellence in <br /> 
               <span className="italic">Women's Healthcare</span>
             </h2>
+            <p className="text-base sm:text-lg text-[#2D2A26]/60 max-w-xl leading-[1.7] mt-4">
+              Combining advanced medical expertise with compassionate, personalized care for every stage of life.
+            </p>
           </div>
-          <p className="text-base sm:text-lg text-[#2D2A26]/50 max-w-sm leading-[1.7]">
-            Combining advanced medical expertise with compassionate, personalized care for every stage of life.
-          </p>
+          <div className="relative max-w-md md:max-w-none mx-auto">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/70 bg-white">
+              <Image
+                src="/images/homePageBg.jpeg"
+                alt="Dr. Smit Bharat Solanki"
+                width={520}
+                height={620}
+                className="w-full h-[280px] sm:h-[360px] md:h-[420px] object-cover"
+                priority={false}
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-black/10 via-transparent to-white/10" />
+            </div>
+            <div className="absolute -bottom-3 left-4 sm:left-6 bg-white/90 backdrop-blur px-4 py-2 rounded-xl shadow-lg border border-white/70 text-xs sm:text-sm font-semibold text-[#2D2A26]">
+              Meet your doctor
+            </div>
+          </div>
         </div>
 
         {/* Features Grid */}

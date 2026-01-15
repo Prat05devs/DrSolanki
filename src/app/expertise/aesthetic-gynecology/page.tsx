@@ -33,9 +33,9 @@ export default function AestheticGynecologyPage() {
               <span className="text-[#f4c025] drop-shadow-md">Restoring Confidence, Enhancing Wellness.</span>
             </h1>
             <p className="text-white/90 text-lg sm:text-xl font-normal leading-relaxed max-w-[600px] drop-shadow-md">
-              {/* TODO: Add aesthetic gynecology hero description from single_source_of_truth.md */}
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Aesthetic gynecology addresses functional discomfort and emotional well-being, not just appearance. It supports women
+              experiencing vaginal laxity, dryness, stress urinary incontinence, or pain during intimacy—restoring comfort, confidence,
+              and sexual well-being.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-4">
               <Link href="/contact" className="flex items-center justify-center gap-2 bg-white hover:bg-white/90 transition-all text-[#8FA392] h-12 px-8 rounded-full text-base font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5">
@@ -75,15 +75,13 @@ export default function AestheticGynecologyPage() {
               </h2>
               <div className="w-20 h-1.5 bg-[#8FA392] rounded-full"></div>
               <p className="text-[#8a8060] dark:text-gray-300 text-lg leading-relaxed">
-                {/* TODO: Add detailed aesthetic gynecology description from single_source_of_truth.md */}
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Aesthetic and cosmetic gynaecology addresses functional discomfort as well as emotional well-being, not just appearance.
+                Women experiencing vaginal laxity, labiaplasty concerns, or dyspareunia (pain during intercourse) deserve care that restores
+                comfort, confidence, and sexual well-being.
               </p>
               <p className="text-[#8a8060] dark:text-gray-300 text-lg leading-relaxed">
-                {/* TODO: Add treatment approach details from single_source_of_truth.md */}
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Treatments are designed to improve daily comfort and intimate health—supporting concerns such as vaginismus, stress urinary
+                incontinence, vaginal dryness, and overactive bladder with respectful, personalized care.
               </p>
               <div className="flex flex-wrap gap-4 mt-2">
                 <div className="flex items-center gap-2 text-[#181611] dark:text-white font-medium">

@@ -93,9 +93,8 @@ export default function ProceduresSection() {
             Robotic Procedures We Perform
           </h2>
           <p className="text-[#8a8060] dark:text-gray-300 text-lg max-w-3xl mx-auto">
-            {/* TODO: Add comprehensive robotic procedures overview from single_source_of_truth.md */}
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Robotic surgery uses advanced robotic arms controlled by the surgeon for greater precision. This approach means less pain,
+            minimal scarring, faster recovery, and a lower risk of complications compared to open surgery—especially for complex cases.
           </p>
         </div>
 

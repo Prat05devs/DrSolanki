@@ -43,9 +43,9 @@ export default function JourneySection() {
             Your Robotic Surgery Journey
           </h2>
           <p className="text-[#8a8060] dark:text-gray-300 text-lg max-w-3xl mx-auto">
-            {/* TODO: Add detailed robotic surgery journey description from single_source_of_truth.md */}
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Our approach follows Enhanced Recovery After Surgery (ERAS), focusing on better pain control, early walking and eating, and a
+            short, safe hospital stay. Discharge happens only when you are comfortable, walking, eating, and medically stable, with clear
+            guidance for recovery at home.
           </p>
         </div>
 

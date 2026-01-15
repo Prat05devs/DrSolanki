@@ -11,11 +11,11 @@ export default function Navbar() {
       {/* Global Navigation Bar */}
       <div className="fixed top-0 left-0 w-full z-50">
         <header className="bg-[#FDFBF7] shadow-[0_4px_20px_-2px_rgba(45,42,38,0.05)] border-b border-[#E6E2D6] transition-all duration-300">
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 h-16 sm:h-20 flex items-center justify-between gap-3 sm:gap-4">
+          <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-12 h-16 sm:h-20 flex items-center justify-between gap-3 sm:gap-4">
             {/* 1. Left: Logo */}
-            <div className="flex-shrink-0 min-w-0">
+            <div className="flex-shrink min-w-0 max-w-[70%] sm:max-w-none">
               <Link href="/" className="flex items-center group">
-                <h1 className="font-serif text-sm sm:text-base md:text-lg font-bold text-[#2D2A26] tracking-tight group-hover:text-[#C07766] transition-colors truncate">
+                <h1 className="font-serif text-xs sm:text-base md:text-lg font-bold text-[#2D2A26] tracking-tight group-hover:text-[#C07766] transition-colors truncate">
                   Dr. Smit Bharat Solanki
                 </h1>
               </Link>
@@ -205,7 +205,7 @@ export default function Navbar() {
             </nav>
 
             {/* 3. Right: Actions */}
-            <div className="flex items-center gap-2 sm:gap-4 lg:gap-6">
+            <div className="flex items-center gap-2 sm:gap-4 lg:gap-6 flex-shrink-0">
               {/* CTA Button */}
               <Link href="/appointment" className="hidden sm:block">
                 <button className="group flex items-center gap-2 bg-gradient-to-r from-[#f4c025] to-[#dba915] hover:from-[#dba915] hover:to-[#f4c025] text-white rounded-full h-9 sm:h-11 px-4 sm:px-6 shadow-md hover:shadow-lg hover:shadow-[#f4c025]/20 transition-all duration-300 transform hover:-translate-y-0.5 touch-manipulation">
@@ -217,7 +217,7 @@ export default function Navbar() {
               {/* Mobile Menu Button (Visible on small screens) */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="xl:hidden flex items-center justify-center size-9 sm:size-10 rounded-full bg-[#F5F2EA] text-[#2D2A26] active:bg-[#C07766] active:text-white transition-colors touch-manipulation"
+                className="xl:hidden flex items-center justify-center size-9 sm:size-10 rounded-full bg-white border border-[#E6E2D6] text-[#2D2A26] shadow-sm hover:bg-[#F5F2EA] active:bg-[#C07766] active:text-white transition-colors touch-manipulation"
                 aria-label="Toggle menu"
               >
                 <span className="material-symbols-outlined text-xl sm:text-2xl">{mobileMenuOpen ? 'close' : 'menu'}</span>
@@ -229,8 +229,8 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="xl:hidden fixed inset-0 top-16 sm:top-20 bg-white z-40 overflow-y-auto">
-          <div className="px-4 py-4 sm:py-6 space-y-3 sm:space-y-4">
+        <div className="xl:hidden fixed inset-x-0 top-16 sm:top-20 bottom-0 bg-white/95 backdrop-blur-md z-40 overflow-y-auto overscroll-contain">
+          <div className="px-4 py-4 sm:py-6 space-y-3 sm:space-y-4 pb-10">
             {/* About */}
             <div>
               <Link
@@ -325,7 +325,7 @@ export default function Navbar() {
       )}
 
       {/* Spacer for fixed navbar */}
-      <div className="h-16"></div>
+      <div className="h-16 sm:h-20"></div>
     </>
   );
 }
