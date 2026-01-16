@@ -263,24 +263,6 @@ export const consultationMessage = {
 
 export const hospitals: Hospital[] = [
   {
-    name: "Parth Hospital",
-    slug: "parth",
-    city: "Ahmedabad",
-    description: "Parth Hospital is committed to providing accessible, advanced, and compassionate gynaecological care for women—today and for the future. Services at Parth Hospital combine modern surgical techniques which includes DaVinci robotic surgical system with a woman-centric approach, ensuring personalized treatment plans, Minimally invasive surgical options and privacy, comfort, and continuity of care. With cutting-edge technology, experienced clinicians, and a patient-first philosophy, Parth Hospital continues to set new benchmarks in surgical excellence. Parth Hospital, Ahmedabad believes in precision in surgery & compassion in care is dedicated to delivering carefree healing, faster recovery, and better quality of life for every patient.",
-    features: [
-      "Personalized treatment plans",
-      "Minimally invasive surgical options",
-      "Privacy, comfort, and continuity of care",
-      "DaVinci robotic surgical system",
-      "Cutting-edge technology",
-      "Patient-first philosophy"
-    ],
-    tagline: "Precision in Surgery. Compassion in Care",
-    mapLink: "https://maps.app.goo.gl/B5Q8pyjJwgajL5zY8", // From existing code
-    timing: "Evening OPDs: 6-8 PM",
-    schedule: "Evening appointments"
-  },
-  {
     name: "Parul Sevashram Hospital",
     slug: "parul-sevashram",
     city: "Vadodara",
@@ -294,8 +276,8 @@ export const hospitals: Hospital[] = [
       "Ethical and evidence-based diagnosis"
     ],
     mapLink: "https://maps.app.goo.gl/ErunpD3mjQmR9mnQ7", // From existing code
-    timing: "Daily Day OPDs",
-    schedule: "Daily"
+    timing: "Timings- on appointment",
+    schedule: "Available- on appointment"
   },
   {
     name: "Satyam Hospital",
@@ -310,8 +292,26 @@ export const hospitals: Hospital[] = [
       "Operates as a unit of Parul Sevashram Hospital"
     ],
     mapLink: "https://maps.app.goo.gl/QXr9YgMurJym8A9s5", // From existing code
-    timing: "Alternate Day OPDs",
-    schedule: "Alternate days"
+    timing: "Timings- on appointment",
+    schedule: "Available- on appointment"
+  },
+  {
+    name: "Parth Hospital",
+    slug: "parth",
+    city: "Ahmedabad",
+    description: "Parth Hospital is committed to providing accessible, advanced, and compassionate gynaecological care for women—today and for the future. Services at Parth Hospital combine modern surgical techniques which includes DaVinci robotic surgical system with a woman-centric approach, ensuring personalized treatment plans, Minimally invasive surgical options and privacy, comfort, and continuity of care. With cutting-edge technology, experienced clinicians, and a patient-first philosophy, Parth Hospital continues to set new benchmarks in surgical excellence. Parth Hospital, Ahmedabad believes in precision in surgery & compassion in care is dedicated to delivering carefree healing, faster recovery, and better quality of life for every patient.",
+    features: [
+      "Personalized treatment plans",
+      "Minimally invasive surgical options",
+      "Privacy, comfort, and continuity of care",
+      "DaVinci robotic surgical system",
+      "Cutting-edge technology",
+      "Patient-first philosophy"
+    ],
+    tagline: "Precision in Surgery. Compassion in Care",
+    mapLink: "https://maps.app.goo.gl/B5Q8pyjJwgajL5zY8", // From existing code
+    timing: "Timings- on appointment",
+    schedule: "Available- on appointment"
   }
 ];
 
