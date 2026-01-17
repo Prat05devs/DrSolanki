@@ -10,7 +10,7 @@ export default function DaVinciComponentsSection() {
             Understanding the Da Vinci® Surgical System
           </h2>
           <p className="text-[#8a8060] dark:text-gray-300 text-lg max-w-3xl mx-auto">
-            Internationally accepted advanced robotic surgery systems like the Da Vinci Si System ensure top-of-the-line surgical
+            Internationally accepted advanced robotic surgery systems like the Da Vinci Xi System ensure top-of-the-line surgical
             standards. They combine precise control, enhanced visualization, and minimally invasive techniques to improve safety,
             recovery, and outcomes for complex gynecological procedures.
           </p>
