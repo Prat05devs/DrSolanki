@@ -67,7 +67,7 @@ const galleryImages = [
   {
     src: "/gallery/img10.jpeg",
     alt: "International Conference",
-    title: "Dr Smit Bharat Solanki Representing India at the International Podium – IUGA Annual Meeting 2025, Barcelona, Spain",
+    title: "Representing India at the International Podium – IUGA Annual Meeting 2025, Barcelona, Spain",
     description: "Dr Smit Bharat Solanki presenting his work at International Podium of Annual Meeting of IUGA, 2025 in Barcelona, Spain"
   },
 ];
