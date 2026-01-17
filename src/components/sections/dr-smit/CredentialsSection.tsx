@@ -70,7 +70,7 @@ export default function CredentialsSection() {
             Professional <span className="text-[#5B3A33]">Milestones</span>
           </h2>
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-3xl leading-[1.7]">
-            A refined view of clinical leadership, specialized training, and certifications — presented as a continuous academic journey.
+            A refined view of clinical leadership, specialized training, and certifications, presented as a continuous academic journey.
           </p>
         </motion.div>
 

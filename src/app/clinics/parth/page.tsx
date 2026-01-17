@@ -1,6 +1,21 @@
 import Footer from "@/components/global/Footer";
 import Link from "next/link";
 import { hospitals } from "@/data/siteData";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "Parth Hospital | Ahmedabad Clinic",
+  description:
+    "Robotic gynecology and minimally invasive surgical care at Parth Hospital, Ahmedabad. Book an appointment with Dr. Smit Bharat Solanki.",
+  path: "/clinics/parth",
+  keywords: [
+    "Parth Hospital",
+    "Ahmedabad gynecologist",
+    "robotic surgery",
+    "minimally invasive gynecology",
+    "Dr. Smit Bharat Solanki",
+  ],
+});
 
 export default function ParthHospitalPage() {
   const hospital = hospitals.find(h => h.name === "Parth Hospital");

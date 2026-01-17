@@ -94,7 +94,7 @@ export default function ProceduresSection() {
           </h2>
           <p className="text-[#8a8060] dark:text-gray-300 text-lg max-w-3xl mx-auto">
             Robotic surgery uses advanced robotic arms controlled by the surgeon for greater precision. This approach means less pain,
-            minimal scarring, faster recovery, and a lower risk of complications compared to open surgery—especially for complex cases.
+            minimal scarring, faster recovery, and a lower risk of complications compared to open surgery, especially for complex cases.
           </p>
         </div>
 

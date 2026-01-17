@@ -21,27 +21,81 @@ interface Presentation {
 }
 
 export default function ResearchInsightsPage() {
-  // Helper function to highlight month and year in presentation items
+  // Helper function to format presentation items with bold headings and dates
   const formatPresentationItem = (item: string) => {
+    const formatHeading = (headingText: string) => {
+      const [prefix, suffix] = headingText.split(" | ");
+      return (
+        <span className="font-bold text-[#181611] dark:text-white">
+          {prefix}
+          {suffix ? (
+            <>
+              {" | "}
+              <span className="underline">{suffix}</span>
+            </>
+          ) : null}
+        </span>
+      );
+    };
+
+    const formatLine = (line: string, idx: number) => {
+      const trimmedLine = line.trim();
+      const quotedLineMatch = trimmedLine.match(/^"([^"]+)"$/);
+
+      return (
+        <span key={idx} className="block">
+          {quotedLineMatch ? formatHeading(quotedLineMatch[1]) : trimmedLine}
+        </span>
+      );
+    };
+
+    const quotedHeadingPattern = /^"([^"]+)"\s*([\s\S]*)$/;
+    const quotedMatch = item.match(quotedHeadingPattern);
+
+    if (quotedMatch) {
+      const heading = quotedMatch[1];
+      const remainder = quotedMatch[2]?.trim() ?? "";
+      const lines = remainder
+        ? remainder
+            .split("\n")
+            .map((line) => line.trim())
+            .filter(Boolean)
+        : [];
+
+      return (
+        <>
+          {formatHeading(heading)}
+          {lines.length > 0 ? (
+            <>
+              <br />
+              {lines.map((line, idx) => formatLine(line, idx))}
+            </>
+          ) : null}
+        </>
+      );
+    }
+
     // Match patterns like "Jan 2023-", "June 2023-", "Sept 2024-", etc.
     const monthYearPattern = /^([A-Za-z]+)\s+(\d{4})(\s*-\s*)/;
     const match = item.match(monthYearPattern);
-    
+
     if (match) {
       const month = match[1];
       const year = match[2];
       const separator = match[3];
       const rest = item.substring(match[0].length);
-      
+
       return (
         <>
-          <span className="font-bold text-[#181611] dark:text-gray-100">{month} {year}</span>
+          <span className="font-bold text-[#181611] dark:text-gray-100">
+            {month} {year}
+          </span>
           {separator}
           {rest}
         </>
       );
     }
-    
+
     // If no match, return as is
     return item;
   };
@@ -49,7 +103,7 @@ export default function ResearchInsightsPage() {
   const publications: Publication[] = [
     {
       id: 1,
-      topic: "Urine Leakage — Regain Your Confidence",
+      topic: "Urine Leakage: Regain Your Confidence",
       quote: "You deserve to live without embarrassment.",
       benefit: "Gentle regenerative treatments help you laugh, exercise, and live freely again.",
       title: "Solanki, Smit Bharat. Regenerative Synergy: Combining Platelet-rich Plasma with Transcutaneous Temperature-controlled Radiofrequency for Enhanced Treatment of Stress Urinary Incontinence in Peri- and Postmenopausal Women. Journal of Mid-life Health 16(2):p 179-185, Apr–Jun 2025.",
@@ -58,7 +112,7 @@ export default function ResearchInsightsPage() {
     },
     {
       id: 2,
-      topic: "Overactive Bladder — Take Back Control",
+      topic: "Overactive Bladder: Take Back Control",
       quote: "Your bladder should not control your life.",
       benefit: "Non-invasive therapies restore calm and comfort.",
       title: "Efficacy of Transcutaneous Temperature-controlled Radiofrequency for Overactive Bladder.",
@@ -67,7 +121,7 @@ export default function ResearchInsightsPage() {
     },
     {
       id: 3,
-      topic: "Vaginal Rejuvenation — Comfort, Health & Confidence",
+      topic: "Vaginal Rejuvenation: Comfort, Health & Confidence",
       quote: "Feeling comfortable in your body is your right.",
       benefit: "Restores natural tissue health safely.",
       title: "Solanki, Smit Bharat; Mishra, Vineet; Mishra, Nita; Desai, Sejal Ajmera; Alinsod, Red. Transcutaneous Temperature-controlled Radiofrequency for Vaginal Rejuvenation. Journal of Mid-life Health 15(4):p 250-257, Oct–Dec 2024.",
@@ -85,7 +139,7 @@ export default function ResearchInsightsPage() {
     },
     {
       id: 5,
-      topic: "Painful Intercourse & Vaginismus — Gentle Healing",
+      topic: "Painful Intercourse & Vaginismus: Gentle Healing",
       quote: "Intimacy should never be painful.",
       benefit: "Gentle treatment restores confidence and closeness.",
       title: "S Solanki. Botulinum Toxin for Refractory Vaginismus: A Prospective, Randomized, Controlled Trial. Continence. Volume 15, Supplement, 2025, 102165.",
@@ -160,42 +214,39 @@ export default function ResearchInsightsPage() {
 
   const presentations: Presentation[] = [
     {
-      year: 2023,
+      year: 2025,
       items: [
-        "Jan 2023- Faculty in AICOG 2023 Kolkata- Panel discussion on male subfertility",
-        "June 2023- Delegate at 18th AAGL International congress on \"unravelling uterine issues and beyond\" along with IAGE supported by FOGSI, Mumbai. Presented video of \"Laparoscopic excision of rudimentary uterine horn\"",
-        "June 2023- Presented a poster at IUGA Annual meeting 2023, at the Hague, Netherlands on TTCRF: Groundbreaking Technology - Female SUI Can Be Treated Non-Invasively and with Vulvovaginal Rejuvenation? 14 ECMEC points",
-        "August 2023- Moderator in panel discussion on \"Complications of urogynecological surgeries\" in IMS West Zonal Conference",
-        "October 2023- Talk on \"Current status, challenges and future of uterus transplant in India\"- Chairperson was Dr Stefan G. Tullius at ISOT 2023",
-        "October 2023- Video Presentation in YAG category at APAGE Annual Congress 2023 in Singapore \"Laparoscopic uterine rudimentary horn excision in fertility\"",
-        "Contributor for Uterus transplant Chapter in NOTTO transplant manual 2023 released by NOTTO. Directorate General of Health Services, MOHFW, Government of INDIA",
-        "December 2023- Podium Presentation at ESAG 2023 on TTCRF on OAB, London 2023"
+        "\"Guest Faculty | 112th AMASI Skill Course & FMAS Examination, Parul Institute of Medical Sciences and Research, Baroda\"",
+        "\"Oral Presentation | 50th Annual Meeting IUGA-EUGA 2025, Barcelona, Spain\"\nPelvic Floor Muscle Training with Biofeedback in Postpartum POP",
+        "\"Poster | 50th Annual Meeting IUGA-EUGA 2025, Barcelona\"\nBladder Neck Mobility Assessment in SUI Using Transperineal Ultrasonography",
+        "\"Invited Session | Fertility Update, BOGS\"\nEndometrial Microbiome in Fertility - New Frontiers",
+        "\"Faculty | ICS-EUS 2025, Abu Dhabi\"\nPoster: Diode Laser Therapy for Vaginal Rejuvenation - Prospective Study\nOral Presentation (Best in Category Award - Female Sexual Dysfunction): Botulinum Toxin for Refractory Vaginismus - RCT",
+        "\"Faculty | 5th Congress of International Society of Uterus Transplantation 2025, Antalya, Turkey\"\n\"Posters\"\n1. Establishing a Uterus Transplant Program in India\n2. Dual Laparoscopic-Assisted Uterus Retrieval from Living Donors\n3. Comprehensive Perioperative Protocol in Uterus Transplantation\n4. Immunosuppressive Strategy in Uterus Transplantation\n\"Oral Presentations\"\n5. Early Recipient Outcomes after Dual Living Donor Uterus Transplantation\n6. Ethical Challenges in Living Donor Uterus Transplantation under NOTTO Framework"
       ]
     },
     {
       year: 2024,
       items: [
-        "April 2024- Invited as faculty for Case discussion in Hiding under the sheets: Sexual Pain in 1st Annual Conference of FEFFA at Medanta, Gurugram",
-        "June 2024- Abstract poster presentation on \"Efficacy of Transcutaneous Temperature-Controlled Radiofrequency for Overactive Bladder \"at IUGA annual meeting 2024, Singapore",
-        "Sept 2024- Successfully completed the BCME (Basic Course in Medical Education) course conducted by the NMC at Pramukh Swami Medical College, Karamsad",
-        "Sept 2024- Delivered a lecture on TTCRF in Overactive bladder at Baroda, FOGSI national conference WWWCON 2024",
-        "Sept 2024- Podium presentation on \"Empowering maternal health- Preventing GDM from becoming chronic\" in colloboration with Vcare Denmark at DiaCare Con 2024, Ahmedabad",
-        "Oct 2024- Chaired a session on Uterine Transplant development worldwide by Dr. Stefan G. Tullius, at ISOT 2024, Ahmedabad",
-        "Oct 2024- Faculty in training workshop Registration for Day-3 during 44th Congress of the Société Internationale d&apos;Urologie (SIU) 2024, New Delhi",
-        "Dec 2024- Faculty presentation on \"Alternative Therapy for Stress Urinary Incontinence\" at WZ- IMSCON 2024, Udaipur",
-        "Dec 2024- Attended workshop on Cosmetic gynecology on 12th Dec at Oracle Clinic, Nagpur by Dr Sejal Ajmera and Dr Parul Saoji"
+        "\"Faculty | FEFFA Annual Conference 2024, Medanta, Gurugram\"\nCase discussion: Hiding Under the Sheets - Sexual Pain",
+        "\"Abstract Poster | IUGA 49th Annual Meeting 2024, Singapore\"\nEfficacy of Transcutaneous Temperature-Controlled Radiofrequency for Overactive Bladder",
+        "\"Invited Lecture | WWWCON 2024, Baroda (FOGSI National Conference)\"\nTTCRF in Overactive Bladder",
+        "\"Podium Presentation | DiaCare Con 2024, Ahmedabad\"\nEmpowering Maternal Health - Preventing GDM from Becoming Chronic\n(In collaboration with Vcare Denmark)",
+        "\"Session Chair | 34th Annual Conference of ISOT 2024, Ahmedabad\"\nUterine Transplant Development Worldwide\nSpeaker: Dr. Stefan G. Tullius",
+        "\"Faculty | 44th Congress of the Société Internationale d'Urologie SIU 2024, New Delhi\"\nTraining Workshop",
+        "\"Faculty Presentation | West Zone- Indian Menopause Society WZ-IMSCON 2024, Udaipur\"\nAlternative Therapy for Stress Urinary Incontinence"
       ]
     },
     {
-      year: 2025,
+      year: 2023,
       items: [
-        "April 2025- Guest speaker at 112th AMASI Skill Course and FMAS Examination on 25th, 26th & 27th, April 2025 at Parul Institute of Medical Sciences & Research, Baroda \" Laparoscopic rudimentary uterine horn excision\" and \" Uterine Transplant\"",
-        "June 2025- Oral presentation on \"Evaluating the Efficacy of Pelvic Floor Muscle Training Enhanced by Biofeedback in Postpartum Women with Pelvic Organ Prolapse Symptoms\" at IUGA- EUGA 2025 Annual meeting in Barcelona, Spain",
-        "June 2025- E poster presentation on \"Assessment of Bladder Neck Mobility in Stress Urinary Incontinence Using Rotational Angles and Pubourethral Distance: A Transperineal Ultrasonography Study\" at IUGA- EUGA 2025 Annual Meeting in Barcelona, Spain (7 ECMEC points)",
-        "Aug 2025- Session on \"Endometrial Microbiome in fertility- New frontiers in reproductive medicine\" at fertility update organized by BOGS",
-        "Sept 2025- E poster presentation with discussion on \"Efficacy and Safety of Diode Laser Therapy for Vaginal Rejuvenation: A Prospective Clinical Study\" at ICS- EUS 2025 in Abu Dhabi",
-        "Sept 2025- Oral presentation on Botulinum Toxin for Refractory Vaginismus: A Prospective, Randomized, Controlled Trial at ICS- EUS 2025 in Abu Dhabi (Awarded best in category award – female sexual dysfunction, 28.5 CME points accredited by EACCME and 23.5 CME points accredited by EHS)",
-        "October 2025- 2 Oral presentation and 4 Poster presentation at 5th Annual Meeting of ISUTx, Antalya, Turkey: Establishing a uterus transplant program in India: regulatory roadmap, institutional readiness, and early experience from a nationally authorized center (Poster), Dual laparoscopic-assisted uterus retrieval from living donors for uterine transplantation: surgical technique and perioperative outcomes (Poster), Implementation of a comprehensive perioperative protocol for uterus transplantation: clinical outcomes from a dual living donor cohort in India (Poster), Immunosuppressive therapy in uterus transplantation: drug-specific strategy for rejection prevention and fertility preservation in a dual living donor experience (Poster), Early recipient outcomes after dual uterus transplantation from living donors retrieved laparoscopically: challenges and lessons learned (Oral), Navigating ethical challenges in living donor uterus transplantation in India: insights from the NOTTO framework (Oral)"
+        "\"Faculty | 65th All India Congress of Obstetrics & Gynaecology AICOG 2023, Kolkata\"\nPanel discussion on Male Subfertility",
+        "\"Video Presentation | 18th AAGL International Congress, Mumbai\"\nLaparoscopic Excision of Rudimentary Uterine Horn\n(\"Unravelling Uterine Issues and Beyond\", IAGE-FOGSI supported)",
+        "\"Poster Presentation | IUGA 48th Annual Meeting- The Hague, The Netherlands\"\nTTCRF: Groundbreaking Technology - Female SUI Can Be Treated Non-Invasively with Vulvovaginal Rejuvenation?",
+        "\"Moderator | IMS West Zonal Conference 2023, Surat\"\nPanel: Complications of Urogynecological Surgeries",
+        "\"Invited Talk | 33rd Annual Conference of ISOT 2023, Kolkata\"\nCurrent Status, Challenges and Future of Uterus Transplant in India\nChairperson: Dr. Stefan G. Tullius",
+        "\"Video Presentation (YAG Category) | APAGE Annual Congress 2023, Singapore\"\nLaparoscopic Rudimentary Uterine Horn Excision in Fertility",
+        "\"National Contributor | NOTTO Transplant Manual 2023\"\nChapter contribution on Uterus Transplantation\n(NOTTO, DGHS, Ministry of Health & Family Welfare, Government of India)",
+        "\"Podium Presentation | ESAG 7th World Congress 2023, London\"\nTTCRF in Overactive Bladder"
       ]
     }
   ];
@@ -251,7 +302,7 @@ export default function ResearchInsightsPage() {
                 Advanced Gynecology Care. Compassionate, Safe, and Personal.
             </h2>
               <p className="text-[#4a4a4a] dark:text-gray-400 text-base sm:text-lg leading-relaxed mb-4">
-                From fertility solutions to bladder control, vaginal health, and safe surgeries — every treatment is designed to restore
+                From fertility solutions to bladder control, vaginal health, and safe surgeries, every treatment is designed to restore
                 your confidence, comfort, and wellbeing.
               </p>
               <div className="flex flex-wrap gap-3 mb-4">

@@ -47,23 +47,7 @@ export default function PhilosophySection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#2D2A26]/20 to-transparent"></div>
               </div>
             </div>
-            {/* Decorative Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-6 shadow-2xl border-4 border-[#5B3A33]/40"
-            >
-              <div className="flex items-center gap-3">
-                <div className="size-12 bg-[#5B3A33] rounded-xl flex items-center justify-center">
-                  <Award className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <p className="text-xs text-[#8a8060] font-medium leading-[1.7]">Certified</p>
-                  <p className="text-sm font-[var(--font-playfair)] font-black text-[#181611] leading-[1.15] tracking-[-0.01em]">Da Vinci Robotics</p>
-                </div>
-              </div>
-            </motion.div>
+            
           </motion.div>
 
           <motion.div

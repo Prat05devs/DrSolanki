@@ -226,13 +226,12 @@ export default function DaVinciComponentsSection() {
             </div>
           </div>
           <p className="text-[#8a8060] dark:text-gray-300 text-lg leading-relaxed mb-4">
-            The evolution of robotic surgery continues with next-generation systems like the Da Vinci DV5 
-            and SP platforms. These advanced systems emphasize improved integration, enhanced adaptability, 
+            The evolution of robotic surgery continues with next-generation systems like the Da Vinci Xi platform. These advanced systems emphasize improved integration, enhanced adaptability, 
             and even greater surgical precision. Dr. Smit Bharat Solanki stays at the forefront of these technological 
             advancements, ensuring patients receive access to the most advanced surgical care available.
           </p>
           <p className="text-[#8a8060] dark:text-gray-300 text-lg leading-relaxed">
-            Our commitment to excellence extends beyond technology—we believe in the power of mentorship 
+            Our commitment to excellence extends beyond technology we believe in the power of mentorship 
             and collaboration among surgical teams. This collaborative approach ensures continuous 
             improvement in robotic surgical techniques and outcomes, benefiting every patient we serve.
           </p>

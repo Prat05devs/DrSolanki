@@ -1,6 +1,21 @@
 import Footer from "@/components/global/Footer";
 import Link from "next/link";
 import { hospitals } from "@/data/siteData";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "Parul Sevashram Hospital | Vadodara Clinic",
+  description:
+    "Comprehensive fertility and gynecology care at Parul Sevashram Hospital, Vadodara. IVF services and advanced treatments.",
+  path: "/clinics/parul-sevashram",
+  keywords: [
+    "Parul Sevashram Hospital",
+    "Vadodara gynecologist",
+    "IVF",
+    "fertility clinic",
+    "Dr. Smit Bharat Solanki",
+  ],
+});
 
 export default function ParulSevashramPage() {
   const hospital = hospitals.find(h => h.name === "Parul Sevashram Hospital");

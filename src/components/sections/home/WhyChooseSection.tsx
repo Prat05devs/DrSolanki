@@ -13,7 +13,7 @@ export default function WhyChooseSection() {
     {
       icon: GraduationCap,
       title: "Highly Qualified",
-      description: "MBBS, MS (OB/GYN), Fellowship in Reproductive Medicine & Da Vinci Robotic Surgery",
+      description: "M.B.B.S., M.S. ( OBGyn ), FMAS , FRM , Trained in Da Vinci ( Intuitive Surgical ) Surgical System",
       iconColor: "text-[#8DA399]",
       bgColor: "bg-[#8DA399]/10"
     },
@@ -67,7 +67,8 @@ export default function WhyChooseSection() {
                 At Parul Sevashram Hospital affiliated with Parul Institute of Medical Sciences and Research, Parul University
               </p>
               <p className="text-base sm:text-lg font-semibold text-[#5B3A33] leading-snug pt-2">
-                Robotic Gynec Surgeon, Endometriosis Surgeon
+                Robotic Gynec Surgeon, Endometriosis Surgeon Trained in Da Vinci ( Intuitive Surgical ) Surgical System
+
               </p>
               <p className="text-sm sm:text-base text-[#6b6358] leading-relaxed">
                 at Parth Hospital Ahmedabad

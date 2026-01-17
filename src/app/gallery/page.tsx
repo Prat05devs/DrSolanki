@@ -1,5 +1,19 @@
 import Image from "next/image";
 import Footer from "@/components/global/Footer";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "Gallery",
+  description:
+    "Gallery of Dr. Smit Bharat Solanki at international conferences, meetings, and professional events.",
+  path: "/gallery",
+  keywords: [
+    "Dr. Smit Bharat Solanki gallery",
+    "medical conferences",
+    "international meetings",
+    "gynecology expert",
+  ],
+});
 
 const galleryImages = [
   {

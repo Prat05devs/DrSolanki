@@ -2,6 +2,22 @@ import Footer from "@/components/global/Footer";
 import Link from "next/link";
 import Image from "next/image";
 import { ivfInjectionsInfo, thinEndometriumFaqContent, contactInfo } from "@/data/siteData";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "IVF & IUI Fertility Treatments",
+  description:
+    "IVF, IUI, and fertility treatments with personalized care. Advanced reproductive medicine and support for conception in Vadodara and Ahmedabad.",
+  path: "/expertise/ivf-iui",
+  keywords: [
+    "IVF",
+    "IUI",
+    "fertility treatment",
+    "reproductive medicine",
+    "infertility care",
+    "Dr. Smit Bharat Solanki",
+  ],
+});
 
 export default function InfertilityPage() {
   return (

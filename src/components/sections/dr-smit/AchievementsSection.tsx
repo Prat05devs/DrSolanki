@@ -10,7 +10,7 @@ export default function AchievementsSection() {
 
   const achievements = [
     {
-      count: "15",
+      count: "70",
       suffix: "+",
       label: "Scientific Publications",
       subtext: "Peer-reviewed research in global medical journals.",
@@ -30,13 +30,6 @@ export default function AchievementsSection() {
       subtext: "Recognition for surgical innovation and patient care.",
       accent: "from-[#5B3A33] to-[#5B3A33]/70"
     },
-    {
-      count: "05",
-      suffix: "+",
-      label: "Mentorship Programs",
-      subtext: "Training and certifying the next generation of surgeons.",
-      accent: "from-[#5B3A33] to-[#5B3A33]/70"
-    }
   ];
 
   return (

@@ -53,14 +53,58 @@ export default function FemifineLaserSection() {
               </p>
             </div>
           </div>
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-            <Image
-              alt="Vaginal rejuvenation with 1470-nm laser"
-              className="w-full h-full object-cover"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOMPk_Dd6bT5pLuAMKxbOOHCE8SjJmz-oshaqjHxL6yQZKGDQ4PMtCxZ4QLhPIUmULcMzxUiaPNnGNx7dU3zuaPiZ64-th7EBoPVunr9AHbeViSm_ZsYq8mOIAKWUA3La84LRqLwgi95M328YXXSHCOD5xjmB3bnjvfoRgeOPt2_ToX95joRuj4BPdIeeUGOEQCGvVw-zMRFR7f6gOXBxsRszEdlUCah3f8EjxhReUAdDYxsTIzE8FEqis9t3I2kwbUXfqEMfrYQ"
-              width={800}
-              height={600}
-            />
+          <div>
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                alt="Medency RAPIDO medical laser system"
+                className="w-full h-full object-cover"
+                src="/astheticGyno.png"
+                width={800}
+                height={600}
+              />
+            </div>
+            <div className="mt-6 bg-white dark:bg-white/5 rounded-2xl p-6 border border-[#8FA392]/20 shadow-sm">
+              <p className="text-sm uppercase tracking-widest text-[#8FA392] dark:text-[#8FA392] font-bold">
+                Medency RAPIDO
+              </p>
+              <h4 className="text-xl font-bold text-[#181611] dark:text-white mt-2">
+                Medical Laser System
+              </h4>
+              <div className="mt-4 grid gap-3 text-sm sm:text-base text-[#8a8060] dark:text-gray-300">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                  <span className="font-semibold text-[#181611] dark:text-white">Code</span>
+                  <span>LADER 005.2</span>
+                </div>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                  <span className="font-semibold text-[#181611] dark:text-white">Wavelength/power</span>
+                  <span>1470nm @8W</span>
+                </div>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                  <span className="font-semibold text-[#181611] dark:text-white">Frequency</span>
+                  <span>Up to 25 kHz</span>
+                </div>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                  <span className="font-semibold text-[#181611] dark:text-white">Pulse mode</span>
+                  <span>Continuous - Multiple Single</span>
+                </div>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                  <span className="font-semibold text-[#181611] dark:text-white">Pulse range</span>
+                  <span>20µs up to 2s</span>
+                </div>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                  <span className="font-semibold text-[#181611] dark:text-white">Medical/Laser class</span>
+                  <span>IIB / 4</span>
+                </div>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                  <span className="font-semibold text-[#181611] dark:text-white">Dimensions/Weight</span>
+                  <span>205x130x50mm</span>
+                </div>
+              </div>
+              <p className="mt-4 text-sm text-[#8a8060] dark:text-gray-300">
+                Medency RAPIDO is a medical device with CE trademark. In accordance with current EEC
+                Directives for Medical Device, all Medency products are MADE IN ITALY.
+              </p>
+            </div>
           </div>
         </div>
       </div>

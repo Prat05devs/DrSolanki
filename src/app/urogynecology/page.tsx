@@ -1,6 +1,21 @@
 import Footer from "@/components/global/Footer";
 import Link from "next/link";
 import { services } from "@/data/siteData";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "Urogynecology & Pelvic Floor Care",
+  description:
+    "Urogynecology care for pelvic floor health, urinary incontinence, and bladder concerns with compassionate, personalized treatment.",
+  path: "/urogynecology",
+  keywords: [
+    "urogynecology",
+    "pelvic floor",
+    "urinary incontinence",
+    "bladder health",
+    "Dr. Smit Bharat Solanki",
+  ],
+});
 
 export default function UrogynecologyPage() {
   const urogynecologyService = services.find(s => s.id === "uro-gynecology");

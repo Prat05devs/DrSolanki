@@ -288,7 +288,7 @@ export default function Footer() {
                       Ask Your Questions Instantly
                   </h2>
                     <p className="text-[#181611]/90 text-xs sm:text-sm md:text-base font-medium leading-[1.7] mb-2 sm:mb-3">
-                      Get instant answers about surgery, recovery, fertility, and more. Our interactive chatbot guides partners and families through common questions—no typing required, just click and explore.
+                      Get instant answers about surgery, recovery, fertility, and more. Our interactive chatbot guides partners and families through common questions, no typing required, just click and explore.
                     </p>
                     <div className="flex flex-wrap gap-1.5 sm:gap-2 justify-center md:justify-start mb-2 sm:mb-3">
                       <div className="flex items-center gap-1.5 sm:gap-2 text-[#181611]/80 text-xs sm:text-sm">
@@ -333,7 +333,7 @@ export default function Footer() {
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all group-hover:w-full"></span>
             </a>
             <Link
-              href="/sitemap"
+              href="/html-sitemap"
               className="hover:text-white active:text-white transition-colors relative group touch-manipulation"
             >
               Sitemap

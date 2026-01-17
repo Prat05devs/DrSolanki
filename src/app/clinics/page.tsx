@@ -1,6 +1,23 @@
 import Footer from "@/components/global/Footer";
 import Link from "next/link";
 import { hospitals } from "@/data/siteData";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "Clinics & Locations",
+  description:
+    "Find Dr. Smit Bharat Solanki's clinic locations in Vadodara and Ahmedabad, including Parul Sevashram Hospital, Satyam Hospital, and Parth Hospital.",
+  path: "/clinics",
+  keywords: [
+    "clinics",
+    "Parul Sevashram Hospital",
+    "Satyam Hospital",
+    "Parth Hospital",
+    "Vadodara",
+    "Ahmedabad",
+    "gynecologist clinic",
+  ],
+});
 
 export default function ClinicsPage() {
   return (

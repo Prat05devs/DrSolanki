@@ -1,6 +1,7 @@
 import Footer from "@/components/global/Footer";
 import Link from "next/link";
 import Image from "next/image";
+import { buildMetadata } from "@/lib/seo";
 import {
   FemifineLaserSection,
   TreatmentOptionsSection,
@@ -8,6 +9,21 @@ import {
   TreatmentProcessSection,
   CTASection
 } from "@/components/sections/aesthetic-gynecology";
+
+export const metadata = buildMetadata({
+  title: "Aesthetic Gynecology",
+  description:
+    "Aesthetic gynecology treatments for comfort, confidence, and intimate wellness. Laser therapy, vaginal rejuvenation, and non-surgical care.",
+  path: "/expertise/aesthetic-gynecology",
+  keywords: [
+    "aesthetic gynecology",
+    "vaginal rejuvenation",
+    "laser gynecology",
+    "stress urinary incontinence",
+    "intimate wellness",
+    "Dr. Smit Bharat Solanki",
+  ],
+});
 
 export default function AestheticGynecologyPage() {
   return (
@@ -34,7 +50,7 @@ export default function AestheticGynecologyPage() {
             </h1>
             <p className="text-white/90 text-lg sm:text-xl font-normal leading-relaxed max-w-[600px] drop-shadow-md">
               Aesthetic gynecology addresses functional discomfort and emotional well-being, not just appearance. It supports women
-              experiencing vaginal laxity, dryness, stress urinary incontinence, or pain during intimacy—restoring comfort, confidence,
+              experiencing vaginal laxity, dryness, stress urinary incontinence, or pain during intimacy, restoring comfort, confidence,
               and sexual well-being.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-4">
@@ -80,7 +96,7 @@ export default function AestheticGynecologyPage() {
                 comfort, confidence, and sexual well-being.
               </p>
               <p className="text-[#8a8060] dark:text-gray-300 text-lg leading-relaxed">
-                Treatments are designed to improve daily comfort and intimate health—supporting concerns such as vaginismus, stress urinary
+                Treatments are designed to improve daily comfort and intimate health, supporting concerns such as vaginismus, stress urinary
                 incontinence, vaginal dryness, and overactive bladder with respectful, personalized care.
               </p>
               <div className="flex flex-wrap gap-4 mt-2">

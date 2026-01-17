@@ -1,6 +1,21 @@
 import Footer from "@/components/global/Footer";
 import Link from "next/link";
 import { hospitals } from "@/data/siteData";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "Satyam Hospital | Vadodara Clinic",
+  description:
+    "Multi-specialty women's healthcare at Satyam Hospital, Vadodara. Consult Dr. Smit Bharat Solanki for gynecology care.",
+  path: "/clinics/satyam",
+  keywords: [
+    "Satyam Hospital",
+    "Vadodara clinic",
+    "gynecology care",
+    "women's health",
+    "Dr. Smit Bharat Solanki",
+  ],
+});
 
 export default function SatyamHospitalPage() {
   const hospital = hospitals.find(h => h.name === "Satyam Hospital");
@@ -16,7 +31,7 @@ export default function SatyamHospitalPage() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url("/images/satyamHospital.PNG")',
+            backgroundImage: 'url("/images/satyamHospital.png")',
           }}
         ></div>
         <div className="absolute inset-0 bg-black/30"></div>

@@ -1,5 +1,14 @@
 import Link from "next/link";
 import Footer from "@/components/global/Footer";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "HTML Sitemap",
+  description: "Browse all pages on drsmitbharatsolanki.com.",
+  path: "/html-sitemap",
+  keywords: ["sitemap", "website pages", "drsmitbharatsolanki"],
+  noIndex: true,
+});
 
 interface SitemapSection {
   title: string;
@@ -9,152 +18,152 @@ interface SitemapSection {
   }[];
 }
 
-export default function SitemapPage() {
+export default function HtmlSitemapPage() {
   const sitemapSections: SitemapSection[] = [
     {
       title: "1. Home / First Page",
       links: [
         {
           path: "/",
-          label: "Home"
-        }
-      ]
+          label: "Home",
+        },
+      ],
     },
     {
       title: "2. About Dr. Smit Bharat Solanki",
       links: [
         {
           path: "/about",
-          label: "About Dr. Smit Bharat Solanki"
+          label: "About Dr. Smit Bharat Solanki",
         },
         {
           path: "/expertise/dr-smit",
-          label: "Detailed Profile (Alternative Link)"
-        }
-      ]
+          label: "Detailed Profile (Alternative Link)",
+        },
+      ],
     },
     {
       title: "3. Clinics / Hospitals",
       links: [
         {
           path: "/clinics",
-          label: "All Clinics & Hospitals"
+          label: "All Clinics & Hospitals",
         },
         {
           path: "/clinics/parul-sevashram",
-          label: "Parul Sevashram Hospital (IVF)"
+          label: "Parul Sevashram Hospital (IVF)",
         },
         {
           path: "/clinics/parth",
-          label: "Parth Hospital (Robotic)"
+          label: "Parth Hospital (Robotic)",
         },
         {
           path: "/clinics/satyam",
-          label: "Satyam Hospital"
-        }
-      ]
+          label: "Satyam Hospital",
+        },
+      ],
     },
     {
       title: "4. Fertility Page",
       links: [
         {
           path: "/fertility",
-          label: "Fertility Treatments Overview"
+          label: "Fertility Treatments Overview",
         },
         {
           path: "/expertise/ivf-iui",
-          label: "IVF & IUI Services (Detailed)"
-        }
-      ]
+          label: "IVF & IUI Services (Detailed)",
+        },
+      ],
     },
     {
       title: "5. Laparoscopy & Robotic Surgery",
       links: [
         {
           path: "/laparoscopy-robotic-surgery",
-          label: "Laparoscopy & Robotic Surgery Overview"
-        }
-      ]
+          label: "Laparoscopy & Robotic Surgery Overview",
+        },
+      ],
     },
     {
       title: "6. Aesthetic Gynecology",
       links: [
         {
           path: "/expertise/aesthetic-gynecology",
-          label: "Aesthetic Gynecology"
-        }
-      ]
+          label: "Aesthetic Gynecology",
+        },
+      ],
     },
     {
       title: "7. Urogynecology",
       links: [
         {
           path: "/urogynecology",
-          label: "Urogynecology"
-        }
-      ]
+          label: "Urogynecology",
+        },
+      ],
     },
     {
       title: "8. Testimonials",
       links: [
         {
           path: "/testimonials",
-          label: "Patient Testimonials"
+          label: "Patient Testimonials",
         },
         {
           path: "/patient-support/stories",
-          label: "Stories of Hope (Alternative Link)"
-        }
-      ]
+          label: "Stories of Hope (Alternative Link)",
+        },
+      ],
     },
     {
       title: "Support Circle",
       links: [
         {
           path: "/patient-support/support-circle",
-          label: "The Support Circle - Direct Doctor Communication"
-        }
-      ]
+          label: "The Support Circle - Direct Doctor Communication",
+        },
+      ],
     },
     {
       title: "9. FAQs",
       links: [
         {
           path: "/faqs",
-          label: "Frequently Asked Questions"
+          label: "Frequently Asked Questions",
         },
         {
           path: "/patient-support/faqs",
-          label: "FAQs (Alternative Link)"
-        }
-      ]
+          label: "FAQs (Alternative Link)",
+        },
+      ],
     },
     {
       title: "10. Papers / Achievements",
       links: [
         {
           path: "/papers",
-          label: "Papers & Achievements"
+          label: "Papers & Achievements",
         },
         {
           path: "/research-insights",
-          label: "Research & Insights (Alternative Link)"
-        }
-      ]
+          label: "Research & Insights (Alternative Link)",
+        },
+      ],
     },
     {
       title: "Contact & Appointment",
       links: [
         {
           path: "/contact",
-          label: "Contact Us"
+          label: "Contact Us",
         },
         {
           path: "/appointment",
-          label: "Book Appointment"
-        }
-      ]
-    }
+          label: "Book Appointment",
+        },
+      ],
+    },
   ];
 
   return (

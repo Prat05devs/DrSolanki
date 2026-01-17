@@ -2,6 +2,21 @@ import Footer from "@/components/global/Footer";
 import Link from "next/link";
 import { DaVinciComponentsSection, ProceduresSection, JourneySection } from "@/components/sections/robotic-surgery";
 import { laparoscopy3DFaqContent } from "@/data/siteData";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "Laparoscopy & Robotic Surgery",
+  description:
+    "Minimally invasive laparoscopic and robotic gynecologic surgery with advanced technology for safer outcomes and faster recovery.",
+  path: "/laparoscopy-robotic-surgery",
+  keywords: [
+    "laparoscopy",
+    "robotic surgery",
+    "Da Vinci surgery",
+    "minimally invasive gynecology",
+    "Dr. Smit Bharat Solanki",
+  ],
+});
 
 export default function LaparoscopyRoboticSurgeryPage() {
   return (
@@ -154,7 +169,7 @@ export default function LaparoscopyRoboticSurgeryPage() {
             </h2>
             <p className="text-[#8a8060] dark:text-gray-300 text-lg max-w-3xl mx-auto">
               These minimally invasive “keyhole” surgeries are performed through very small incisions. The approach offers less pain,
-              minimal scarring, faster recovery, and a lower risk of complications compared to open surgery—making it ideal for a wide
+              minimal scarring, faster recovery, and a lower risk of complications compared to open surgery, making it ideal for a wide
               range of gynecological conditions.
             </p>
           </div>

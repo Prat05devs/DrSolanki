@@ -292,7 +292,7 @@ export default function FAQPage() {
         <div 
           className="absolute top-0 left-0 right-0 w-full h-[200%] bg-cover bg-top bg-no-repeat"
           style={{
-            backgroundImage: 'url("/images/homePageBg.jpeg")',
+            backgroundImage: 'url("https://images.unsplash.com/photo-1512314889357-e157c22f938d?q=80&w=2942&auto=format&fit=crop")',
             backgroundPosition: 'center top',
           }}
         ></div>
@@ -331,7 +331,7 @@ export default function FAQPage() {
             </div>
             <blockquote className="text-lg text-[#8a8060] dark:text-gray-300 italic leading-relaxed border-l-4 border-[#C07766] pl-6">
               &quot;I believe in empowering my patients with knowledge. Understanding your condition and treatment options 
-              helps you make informed decisions. Here are answers to questions many patients ask—I hope they help you too.&quot;
+              helps you make informed decisions. Here are answers to questions many patients ask, I hope they help you too.&quot;
             </blockquote>
             </div>
           </div>

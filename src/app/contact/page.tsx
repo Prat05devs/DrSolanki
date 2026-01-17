@@ -1,6 +1,23 @@
 import Footer from "@/components/global/Footer";
 import { hospitals, consultationMessage, contactInfo } from "@/data/siteData";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "Contact Dr. Smit Bharat Solanki",
+  description:
+    "Get in touch with Dr. Smit Bharat Solanki for appointments, clinic details, and women’s healthcare support in Vadodara and Ahmedabad.",
+  path: "/contact",
+  keywords: [
+    "contact",
+    "Dr. Smit Bharat Solanki",
+    "gynecologist contact",
+    "Vadodara",
+    "Ahmedabad",
+    "women's health",
+    "appointment",
+  ],
+});
 
 export default function ContactPage() {
   const getIcon = (name: string) => {

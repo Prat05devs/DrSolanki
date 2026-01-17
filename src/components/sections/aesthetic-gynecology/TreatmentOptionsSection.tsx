@@ -83,7 +83,7 @@ export default function TreatmentOptionsSection() {
           <p className="text-[#8a8060] dark:text-gray-300 text-lg max-w-3xl mx-auto">
             Aesthetic and cosmetic gynaecology focuses on restoring comfort and confidence for women experiencing concerns such as vaginal
             laxity, labiaplasty discomfort, pain during intimacy, or dryness. These treatments address real, common issues with a respectful,
-            health-first approach—not cosmetic perfection.
+            health-first approach, not cosmetic perfection.
           </p>
         </div>
 

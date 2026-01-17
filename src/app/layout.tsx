@@ -22,8 +22,55 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Dr. Smit Bharat Solanki - Digital Health Sanctuary",
-  description: "Welcome to a sanctuary where advanced robotics meets the gentle touch of care. A safe haven for your most intimate health journeys.",
+  metadataBase: new URL("https://www.drsmitbharatsolanki.com"),
+  title: {
+    default: "Dr. Smit Bharat Solanki | Gynecologist in Vadodara & Ahmedabad",
+    template: "%s | Dr. Smit Bharat Solanki",
+  },
+  description:
+    "Compassionate women's healthcare in Vadodara and Ahmedabad. Advanced gynecology, IVF, robotic surgery, aesthetic gynecology, and urogynecology care.",
+  applicationName: "Dr. Smit Bharat Solanki",
+  creator: "Dr. Smit Bharat Solanki",
+  publisher: "Dr. Smit Bharat Solanki",
+  keywords: [
+    "Dr. Smit Bharat Solanki",
+    "gynecologist",
+    "gynaecologist",
+    "Vadodara",
+    "Ahmedabad",
+    "Gujarat",
+    "women's health",
+    "IVF",
+    "robotic surgery",
+    "aesthetic gynecology",
+    "urogynecology",
+  ],
+  alternates: {
+    canonical: "https://www.drsmitbharatsolanki.com",
+  },
+  openGraph: {
+    title: "Dr. Smit Bharat Solanki | Women's Healthcare",
+    description:
+      "Compassionate women's healthcare with advanced gynecology, IVF, robotic surgery, aesthetic gynecology, and urogynecology.",
+    url: "https://www.drsmitbharatsolanki.com",
+    siteName: "Dr. Smit Bharat Solanki",
+    type: "website",
+    images: [
+      {
+        url: "/dr1.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Dr. Smit Bharat Solanki",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dr. Smit Bharat Solanki | Women's Healthcare",
+    description:
+      "Compassionate women's healthcare with advanced gynecology, IVF, robotic surgery, aesthetic gynecology, and urogynecology.",
+    images: ["/dr1.jpeg"],
+  },
 };
 
 export default function RootLayout({
