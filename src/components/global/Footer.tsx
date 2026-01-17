@@ -3,6 +3,8 @@ import { contactInfo, hospitals } from "@/data/siteData";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 export default function Footer() {
+  const primaryMapLink = hospitals.find((hospital) => hospital.mapLink)?.mapLink ?? "/contact";
+
   return (
     <footer className="bg-[#006D77] text-white border-t border-white/10 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[400px] h-[400px] sm:w-[600px] sm:h-[600px] md:w-[800px] md:h-[800px] bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none opacity-30"></div>
@@ -23,32 +25,36 @@ export default function Footer() {
             </p>
             <div className="flex gap-3 sm:gap-4 mt-2">
               <a
-                aria-label="Facebook"
+                aria-label="Call"
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-[#faeec8] hover:bg-[#f4c025] hover:text-[#006D77] transition-all duration-300 transform hover:-translate-y-1 backdrop-blur-sm"
-                href="#"
+                href={`tel:${contactInfo.phone}`}
               >
-                <span className="material-symbols-outlined text-[20px]">thumb_up</span>
+                <span className="material-symbols-outlined text-[20px]">call</span>
               </a>
               <a
-                aria-label="Instagram"
+                aria-label="Email"
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-[#faeec8] hover:bg-[#f4c025] hover:text-[#006D77] transition-all duration-300 transform hover:-translate-y-1 backdrop-blur-sm"
-                href="#"
+                href={`mailto:${contactInfo.email}`}
               >
-                <span className="material-symbols-outlined text-[20px]">photo_camera</span>
+                <span className="material-symbols-outlined text-[20px]">mail</span>
               </a>
               <a
-                aria-label="LinkedIn"
+                aria-label="WhatsApp"
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-[#faeec8] hover:bg-[#f4c025] hover:text-[#006D77] transition-all duration-300 transform hover:-translate-y-1 backdrop-blur-sm"
-                href="#"
+                href={getWhatsAppUrl("generalContact")}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <span className="material-symbols-outlined text-[20px]">business_center</span>
+                <span className="material-symbols-outlined text-[20px]">chat</span>
               </a>
               <a
-                aria-label="YouTube"
+                aria-label="Directions"
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-[#faeec8] hover:bg-[#f4c025] hover:text-[#006D77] transition-all duration-300 transform hover:-translate-y-1 backdrop-blur-sm"
-                href="#"
+                href={primaryMapLink}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <span className="material-symbols-outlined text-[20px]">play_circle</span>
+                <span className="material-symbols-outlined text-[20px]">location_on</span>
               </a>
             </div>
           </div>
@@ -322,16 +328,22 @@ export default function Footer() {
 
         
         <div className="border-t border-white/10 py-4 sm:py-5 flex flex-col md:flex-row justify-between items-center gap-2 sm:gap-3 text-xs sm:text-sm text-[#faeec8]/80">
-          <p className="text-center md:text-left">© 2024 Dr. Smit Bharat Solanki. All rights reserved.</p>
+          <p className="text-center md:text-left">© 2025 Dr. Smit Bharat Solanki. All rights reserved.</p>
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
-            <a className="hover:text-white active:text-white transition-colors relative group touch-manipulation" href="#">
+            <Link
+              className="hover:text-white active:text-white transition-colors relative group touch-manipulation"
+              href="/privacy-policy"
+            >
               Privacy Policy
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all group-hover:w-full"></span>
-            </a>
-            <a className="hover:text-white active:text-white transition-colors relative group touch-manipulation" href="#">
+            </Link>
+            <Link
+              className="hover:text-white active:text-white transition-colors relative group touch-manipulation"
+              href="/terms-and-conditions"
+            >
               Terms &amp; Conditions
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all group-hover:w-full"></span>
-            </a>
+            </Link>
             <Link
               href="/html-sitemap"
               className="hover:text-white active:text-white transition-colors relative group touch-manipulation"

@@ -17,41 +17,47 @@ export const metadata = buildMetadata({
 
 const galleryImages = [
   {
-    src: "/gallery/01.jpg",
-    alt: "Dr. Smit Bharat Solanki speaking at an international conference",
-    title: "International Conference",
-    description: "Keynote session and expert panel discussion"
+    src: "/gallery/img1.jpeg",
+    alt: "International Conference",
+    title: "An inspiring interaction with the pioneers of uterus transplant",
+    description: "With Prof Dr. Mats Branstrom and Prof Dr. Stefan Tullius at Turkiye"
   },
   {
-    src: "/gallery/02.jpg",
-    alt: "Dr. Smit Bharat Solanki at a global medical summit",
-    title: "Global Medical Summit",
-    description: "Sharing advancements in women’s health"
+    src: "/gallery/img2.jpeg",
+    alt: "Robotic Surgery Care Team",
+    title: "Robotic Surgery Care Team",
+    description: "A highly trained robotic surgery team committed to safe, precise, and faster recovery surgeries."
   },
   {
-    src: "/gallery/03.jpg",
-    alt: "Dr. Smit Bharat Solanki receiving recognition at a meeting",
-    title: "Recognition & Honors",
-    description: "Acknowledged for clinical leadership"
+    src: "/gallery/img3.jpeg",
+    alt: "International Meeting",
+    title: "Dinner Table Conversation",
+    description: "Connecting with global leaders in urogynecology and pelvic health at ICS-EUS 2025."
   },
   {
-    src: "/gallery/04.jpg",
-    alt: "Dr. Smit Bharat Solanki with peers at an international meeting",
-    title: "International Meeting",
-    description: "Collaborating with global experts"
+    src: "/gallery/img4.jpeg",
+    alt: "International Conference",
+    title: "International Conference Award",
+    description: "Recognition for excellent work in womens health at an international conference ICS- EUS 2025, Abu Dhabi."
   },
   {
-    src: "/gallery/05.jpg",
-    alt: "Dr. Smit Bharat Solanki presenting research findings",
-    title: "Research Presentation",
-    description: "Showcasing evidence-based outcomes"
+    src: "/gallery/img6.jpeg",
+    alt: "International Conference",
+    title: "Asia Pacific Association of Gynec-endoscopy 2023",
+    description: "Dr Smit Bharat Solanki joined leading endoscopy surgeons during Asia Pacific Association of Gynec-endoscopy 2023, held in Singapore."
   },
   {
-    src: "/gallery/06.jpg",
-    alt: "Dr. Smit Bharat Solanki at a professional conference",
-    title: "Professional Conference",
-    description: "Continuing education and knowledge exchange"
-  }
+    src: "/gallery/img7.jpeg",
+    alt: "International Conference",
+    title: "Global Academic Platform – IUGA 2023, Netherlands",
+    description: "Sharing clinical insights at the 48th Annual Meeting of the International Urogynecological Association."
+  },
+  {
+    src: "/gallery/img8.jpeg",
+    alt: "International Conference",
+    title: "India’s voice in the global uterus transplantation dialogue — ISUTx 2025 at Antalya, Turkiye",
+    description: "India’s voice in the global uterus transplantation dialogue — ISUTx 2025 at Antalya, Turkiye"
+  },
 ];
 
 export default function GalleryPage() {

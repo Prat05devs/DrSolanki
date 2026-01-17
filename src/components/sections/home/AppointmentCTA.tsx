@@ -26,8 +26,7 @@ export default function AppointmentCTA() {
             </h2>
             
             <p className="text-xl text-white/90 mb-10 leading-[1.7] max-w-2xl mx-auto">
-              Schedule your consultation with Dr. Smit Bharat Solanki and discover how advanced robotic surgery 
-              can provide gentle, effective solutions for your health concerns.
+            Schedule your consultation today. Gentle, advanced gynecology care just a click away.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

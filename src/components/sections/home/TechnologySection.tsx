@@ -42,7 +42,7 @@ export default function TechnologySection() {
               Cutting-Edge Surgical Technology
             </h2>
             <p className="text-lg text-[#2D2A26]/70 leading-[1.7] mb-8">
-              Internationally accepted advanced robotic surgery systems like the Da Vinci Si System ensure top-of-the-line surgical
+              Internationally accepted advanced robotic surgery systems like the Da Vinci Xi System ensure top-of-the-line surgical
               standards. We use state-of-the-art technology and cutting-edge surgical and medical techniques to deliver outstanding
               outcomes with precision and safety.
             </p>

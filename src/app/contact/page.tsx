@@ -63,7 +63,7 @@ export default function ContactPage() {
               Our Locations
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-[#181611] dark:text-white mt-4 mb-6">
-              Practice Locations in Ahmedabad
+              Practice Locations in Vadodara and Ahmedabad
             </h2>
             <p className="text-[#8a8060] dark:text-gray-300 text-lg max-w-3xl mx-auto">
               Choose the location and timing that works best for you. All locations require prior appointment booking.
