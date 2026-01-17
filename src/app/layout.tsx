@@ -71,6 +71,11 @@ export const metadata: Metadata = {
       "Compassionate women's healthcare with advanced gynecology, IVF, robotic surgery, aesthetic gynecology, and urogynecology.",
     images: ["/dr1.jpeg"],
   },
+  icons: {
+    icon: "/doctorfavicon.png",
+    shortcut: "/doctorfavicon.png",
+    apple: "/doctorfavicon.png",
+  },
 };
 
 export default function RootLayout({

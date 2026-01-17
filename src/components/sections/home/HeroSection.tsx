@@ -15,7 +15,7 @@ export default function HeroSection() {
     <section className="relative min-h-[100svh] flex items-end overflow-hidden">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-[50%_20%]"
+        className="absolute inset-0 bg-cover bg-right sm:bg-[70%_20%] lg:bg-[50%_20%]"
         style={{ backgroundImage: 'url("/heroBG.png")' }}
       />
 
