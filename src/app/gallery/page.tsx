@@ -23,6 +23,12 @@ const galleryImages = [
     description: "With Prof Dr. Mats Branstrom and Prof Dr. Stefan Tullius at Turkiye"
   },
   {
+    src: "/gallery/img5.jpeg",
+    alt: "International Conference",
+    title: "An inspiring interaction with the pioneers of uterus transplant",
+    description: "With Prof Dr. Mats Branstrom and Prof Dr. Stefan Tullius at Turkiye"
+  },
+  {
     src: "/gallery/img2.jpeg",
     alt: "Robotic Surgery Care Team",
     title: "Robotic Surgery Care Team",
@@ -57,6 +63,18 @@ const galleryImages = [
     alt: "International Conference",
     title: "India’s voice in the global uterus transplantation dialogue — ISUTx 2025 at Antalya, Turkiye",
     description: "India’s voice in the global uterus transplantation dialogue — ISUTx 2025 at Antalya, Turkiye"
+  },
+  {
+    src: "/gallery/img9.jpeg",
+    alt: "International Conference",
+    title: "Dr Smit Bharat Solanki presenting his work at International Podium of Annual Meeting of IUGA, 2025 in Barcelona, Spain",
+    description: "Dr Smit Bharat Solanki presenting his work at International Podium of Annual Meeting of IUGA, 2025 in Barcelona, Spain"
+  },
+  {
+    src: "/gallery/img10.jpeg",
+    alt: "International Conference",
+    title: "Dr Smit Bharat Solanki presenting his work at International Podium of Annual Meeting of IUGA, 2025 in Barcelona, Spain",
+    description: "Dr Smit Bharat Solanki presenting his work at International Podium of Annual Meeting of IUGA, 2025 in Barcelona, Spain"
   },
 ];
 
