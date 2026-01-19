@@ -12,7 +12,7 @@ import {
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[100svh] flex items-end overflow-hidden">
+    <section className="relative min-h-[100svh] flex items-end overflow-hidden -mt-16 sm:-mt-20">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-right sm:bg-[70%_20%] lg:bg-[50%_20%]"
@@ -29,12 +29,15 @@ export default function HeroSection() {
       </div>
 
       <div className="relative z-10 container mx-auto px-6 w-full">
-        <div className="max-w-7xl mx-auto min-h-[100svh] pt-12 sm:pt-14 lg:pt-16 pb-10 sm:pb-12 lg:pb-16 flex flex-col gap-8 sm:gap-10 justify-between">
+        <div className="max-w-7xl mx-auto min-h-[100svh] pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-10 lg:pb-12 flex flex-col gap-6 sm:gap-8 justify-center">
           {/* Headline */}
           <div className="max-w-3xl">
-            <h1 className="font-[var(--font-playfair)] text-4xl sm:text-5xl md:text-[3.5rem] font-black text-white leading-[1.15] tracking-[-0.01em]">
-              Where Compassion Meets Advanced Women&apos;s Care
+            <h1 className="font-[var(--font-playfair)] text-5xl sm:text-6xl md:text-[4rem] lg:text-[4.5rem] font-black text-[#E8B4C8] leading-[1.15] tracking-[-0.01em] mb-6 drop-shadow-lg">
+              Where Compassion Shapes Women&apos;s Care.
             </h1>
+            <p className="text-xl sm:text-2xl md:text-3xl text-white/95 font-medium leading-[1.4] drop-shadow-md">
+              Precision gynaecology. Thoughtful care. Meaningful outcomes.
+            </p>
           </div>
 
           {/* Content Grid */}
@@ -57,7 +60,7 @@ export default function HeroSection() {
                   className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all"
                 >
                   <Calendar className="w-5 h-5" />
-                  Book Appointment
+                  Schedule Appointment
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
 
@@ -109,7 +112,7 @@ export default function HeroSection() {
                     <span className="text-white/70">Personalized plans</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span>Aesthetic & Urogynecology</span>
+                    <span>Aesthetic & Urogynaecology</span>
                     <span className="text-white/70">
                       Comfort & confidence
                     </span>

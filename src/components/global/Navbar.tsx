@@ -10,7 +10,7 @@ export default function Navbar() {
     <>
       {/* Global Navigation Bar */}
       <div className="fixed top-0 left-0 w-full z-50">
-        <header className="bg-[#FDFBF7] shadow-[0_4px_20px_-2px_rgba(45,42,38,0.05)] border-b border-[#E6E2D6] transition-all duration-300">
+        <header className="bg-[#FDFBF7]/95 backdrop-blur-md shadow-[0_4px_20px_-2px_rgba(45,42,38,0.05)] border-b border-[#E6E2D6]/50 transition-all duration-300">
           <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-12 h-16 sm:h-20 flex items-center justify-between gap-3 sm:gap-4">
             {/* 1. Left: Logo */}
             <div className="flex-shrink min-w-0 max-w-[70%] sm:max-w-none">
@@ -219,7 +219,7 @@ export default function Navbar() {
               <Link href="/appointment" className="hidden sm:block">
                 <button className="group flex items-center gap-2 bg-gradient-to-r from-[#f4c025] to-[#dba915] hover:from-[#dba915] hover:to-[#f4c025] text-white rounded-full h-9 sm:h-11 px-4 sm:px-6 shadow-md hover:shadow-lg hover:shadow-[#f4c025]/20 transition-all duration-300 transform hover:-translate-y-0.5 touch-manipulation">
                   <span className="material-symbols-outlined text-base sm:text-[20px]">calendar_month</span>
-                  <span className="text-xs sm:text-sm font-bold tracking-wide">Book Appointment</span>
+                  <span className="text-xs sm:text-sm font-bold tracking-wide">Schedule Appointment</span>
                 </button>
               </Link>
 
@@ -334,7 +334,7 @@ export default function Navbar() {
                 className="flex items-center gap-3 p-3 rounded-lg bg-[#F5F2EA] hover:bg-[#E8EFED] transition-all"
               >
                 <span className="material-symbols-outlined text-[#C07766]">calendar_month</span>
-                <span className="text-base font-semibold text-[#2D2A26]">Book Appointment</span>
+                <span className="text-base font-semibold text-[#2D2A26]">Schedule Appointment</span>
               </Link>
             </div>
           </div>

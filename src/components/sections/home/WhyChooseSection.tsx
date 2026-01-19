@@ -12,7 +12,7 @@ export default function WhyChooseSection() {
   const features = [
     {
       icon: GraduationCap,
-      title: "Highly Qualified",
+      title: "Clinically Accomplished",
       description: "M.B.B.S., M.S. ( OBGyn ), FMAS , FRM , Trained in Da Vinci ( Intuitive Surgical ) Surgical System",
       iconColor: "text-[#8DA399]",
       bgColor: "bg-[#8DA399]/10"
@@ -20,7 +20,7 @@ export default function WhyChooseSection() {
     {
       icon: Award,
       title: "Award-Winning Care",
-      description: "Reproductive medicine and minimally invasive gynecological surgery",
+      description: "Reproductive medicine and minimally invasive gynaecological surgery",
       iconColor: "text-[#C07766]",
       bgColor: "bg-[#C07766]/10"
     },
@@ -47,11 +47,10 @@ export default function WhyChooseSection() {
         <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] items-center mb-10 sm:mb-12 lg:mb-16">
           <div className="max-w-2xl">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-[var(--font-playfair)] font-medium text-[#2D2A26] leading-[1.15] tracking-[-0.01em]">
-            Advance Gyanecological Care<br /> 
-              starts here
+              Thoughtful Care, Proven Outcomes
             </h2>
             <p className="text-base sm:text-lg text-[#2D2A26]/60 max-w-xl leading-[1.7] mt-4">
-              Combining advanced medical expertise with compassionate, personalized care for every stage of life.
+              Combining advanced clinical expertise with compassionate, individualised care across every stage of a woman&apos;s life.
             </p>
             <div className="mt-5 sm:mt-6 space-y-2">
               <p className="text-base sm:text-lg font-[var(--font-playfair)] font-bold text-[#2D2A26]">
@@ -83,9 +82,6 @@ export default function WhyChooseSection() {
                 priority={false}
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-black/10 via-transparent to-white/10" />
-            </div>
-            <div className="absolute -bottom-3 left-4 sm:left-6 bg-white/90 backdrop-blur px-4 py-2 rounded-xl shadow-lg border border-white/70 text-xs sm:text-sm font-semibold text-[#2D2A26]">
-              Meet your doctor
             </div>
           </div>
         </div>

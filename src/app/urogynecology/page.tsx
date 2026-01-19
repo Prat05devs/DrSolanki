@@ -146,7 +146,7 @@ export default function UrogynecologyPage() {
               </p>
               <Link href="/appointment" className="flex min-w-[220px] cursor-pointer items-center justify-center rounded-xl h-14 px-8 bg-white text-[#C07766] text-lg font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
                 <span className="material-symbols-outlined mr-2 text-2xl">calendar_month</span>
-                Book Consultation
+                Schedule Appointment
               </Link>
             </div>
           </div>

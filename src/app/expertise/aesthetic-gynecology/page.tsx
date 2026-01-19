@@ -56,7 +56,7 @@ export default function AestheticGynecologyPage() {
             <div className="flex flex-col sm:flex-row gap-4 mt-4">
               <Link href="/appointment" className="flex items-center justify-center gap-2 bg-white hover:bg-white/90 transition-all text-[#8FA392] h-12 px-8 rounded-full text-base font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5">
                 <span className="material-symbols-outlined">calendar_month</span>
-                Schedule Consultation
+                Schedule Appointment
               </Link>
               <a href="#treatment-options" className="flex items-center justify-center gap-2 bg-white/10 border border-white/30 text-white hover:bg-white/20 transition-all h-12 px-8 rounded-full text-base font-medium backdrop-blur-sm">
                 <span className="material-symbols-outlined">info</span>

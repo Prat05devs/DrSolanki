@@ -142,7 +142,7 @@ export default function ContactPage() {
                 <span className="material-symbols-outlined text-5xl">calendar_month</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Book Your Appointment
+                Schedule Appointment
               </h2>
               <p className="text-white/90 text-lg mb-4 leading-relaxed">
                 {consultationMessage.philosophy}

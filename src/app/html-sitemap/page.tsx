@@ -160,7 +160,7 @@ export default function HtmlSitemapPage() {
         },
         {
           path: "/appointment",
-          label: "Book Appointment",
+          label: "Schedule Appointment",
         },
       ],
     },

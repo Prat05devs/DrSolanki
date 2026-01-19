@@ -20,7 +20,7 @@ export default function SpecializationsSection() {
   const specializations = [
     {
       title: "Robotic & Laparoscopic Surgery",
-      description: "Advanced minimally invasive procedures for complex gynecological conditions with faster recovery.",
+      description: "Advanced minimally invasive procedures for complex gynaecological conditions with faster recovery.",
       icon: Cpu,
       link: "/laparoscopy-robotic-surgery",
       className: "md:col-span-2 md:row-span-1", // Featured Wide Card
@@ -35,7 +35,7 @@ export default function SpecializationsSection() {
       theme: "bg-[#C07766]/5 border-[#C07766]/20"
     },
     {
-      title: "Aesthetic Gynecology",
+      title: "Aesthetic Gynaecology",
       description: "Restoring confidence through functional and aesthetic wellness.",
       icon: Sparkles,
       link: "/expertise/aesthetic-gynecology",
@@ -43,7 +43,7 @@ export default function SpecializationsSection() {
       theme: "bg-white/50 border-gray-100"
     },
     {
-      title: "Urogynecology",
+      title: "Urogynaecology",
       description: "Specialized care for pelvic floor health and intimate comfort.",
       icon: Activity,
       link: "/urogynecology",
@@ -80,8 +80,7 @@ export default function SpecializationsSection() {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-6xl font-[var(--font-playfair)] font-bold text-[#2D2A26] leading-[1.15] tracking-[-0.01em] mb-6"
           >
-            Specialized Care for <br />
-            <span className="italic">Every Stage of Life</span>
+            Gynaecological care for every woman, at every stage of her life.
           </motion.h2>
           <motion.p 
              initial={{ opacity: 0 }}
@@ -89,7 +88,7 @@ export default function SpecializationsSection() {
              transition={{ delay: 0.2 }}
              className="text-lg text-[#2D2A26]/60 leading-[1.7]"
           >
-            From revolutionary robotic-assisted surgeries to personalized fertility journeys, we provide a full spectrum of advanced gynecological care.
+            From revolutionary robotic-assisted surgeries to personalized fertility journeys, we provide a full spectrum of advanced gynaecological care.
           </motion.p>
         </div>
 

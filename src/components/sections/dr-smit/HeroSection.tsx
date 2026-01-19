@@ -115,7 +115,7 @@ export default function HeroSection() {
               className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white text-[#5B3A33] font-semibold tracking-[0.01em] rounded-lg sm:rounded-xl shadow-2xl active:shadow-3xl transition-all duration-300 active:-translate-y-1 text-sm sm:text-base touch-manipulation"
             >
               <Calendar className="w-4 h-4 sm:w-5 sm:h-5" />
-              <span>Book Consultation</span>
+              <span>Schedule Appointment</span>
               <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-active:translate-x-1 transition-transform" />
             </Link>
             <Link
