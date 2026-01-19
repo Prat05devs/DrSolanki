@@ -46,7 +46,7 @@ export default function LaparoscopyRoboticSurgeryPage() {
               Unmatched precision, faster recovery, and superior outcomes for complex gynecological procedures.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-4">
-              <Link href="/contact" className="flex items-center justify-center gap-2 bg-[#df4320] hover:bg-[#df4320]/90 transition-all text-white h-12 px-8 rounded-full text-base font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+              <Link href="/appointment" className="flex items-center justify-center gap-2 bg-[#df4320] hover:bg-[#df4320]/90 transition-all text-white h-12 px-8 rounded-full text-base font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5">
                 <span className="material-symbols-outlined">calendar_month</span>
                 Schedule Consultation
               </Link>
@@ -210,7 +210,7 @@ export default function LaparoscopyRoboticSurgeryPage() {
               <p className="text-white/90 text-xl max-w-2xl">
                 Discover how laparoscopic and robotic surgery can transform your treatment experience.
               </p>
-              <Link href="/contact" className="flex min-w-[220px] cursor-pointer items-center justify-center rounded-xl h-14 px-8 bg-white text-[#df4320] text-lg font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+              <Link href="/appointment" className="flex min-w-[220px] cursor-pointer items-center justify-center rounded-xl h-14 px-8 bg-white text-[#df4320] text-lg font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
                 <span className="material-symbols-outlined mr-2 text-2xl">calendar_month</span>
                 Schedule Consultation
               </Link>

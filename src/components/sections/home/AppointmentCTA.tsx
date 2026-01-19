@@ -30,7 +30,7 @@ export default function AppointmentCTA() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link href="/contact" className="group inline-flex items-center gap-2 px-8 py-4 bg-white hover:bg-gray-50 text-[#C07766] font-semibold tracking-[0.01em] rounded-xl shadow-2xl hover:shadow-3xl transition-all">
+              <Link href="/appointment" className="group inline-flex items-center gap-2 px-8 py-4 bg-white hover:bg-gray-50 text-[#C07766] font-semibold tracking-[0.01em] rounded-xl shadow-2xl hover:shadow-3xl transition-all">
                 <Calendar className="w-5 h-5" />
                 Schedule Appointment
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

@@ -54,7 +54,7 @@ export default function AestheticGynecologyPage() {
               and sexual well-being.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-4">
-              <Link href="/contact" className="flex items-center justify-center gap-2 bg-white hover:bg-white/90 transition-all text-[#8FA392] h-12 px-8 rounded-full text-base font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+              <Link href="/appointment" className="flex items-center justify-center gap-2 bg-white hover:bg-white/90 transition-all text-[#8FA392] h-12 px-8 rounded-full text-base font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5">
                 <span className="material-symbols-outlined">calendar_month</span>
                 Schedule Consultation
               </Link>

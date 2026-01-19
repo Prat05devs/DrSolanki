@@ -53,7 +53,7 @@ export default function HeroSection() {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
-                  href="/contact"
+                  href="/appointment"
                   className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all"
                 >
                   <Calendar className="w-5 h-5" />
@@ -118,7 +118,7 @@ export default function HeroSection() {
 
                 <div className="mt-4">
                   <Link
-                    href="/contact"
+                    href="/appointment"
                     className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-white/80 transition-colors drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]"
                   >
                     Start your consultation

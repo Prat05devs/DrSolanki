@@ -46,12 +46,9 @@ export default function WhyChooseSection() {
         {/* Header Section */}
         <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] items-center mb-10 sm:mb-12 lg:mb-16">
           <div className="max-w-2xl">
-            <span className="text-[#C07766] font-semibold tracking-widest uppercase text-xs sm:text-sm mb-3 block leading-[1.7]">
-              Why Choose Us
-            </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-[var(--font-playfair)] font-medium text-[#2D2A26] leading-[1.15] tracking-[-0.01em]">
-              Excellence in <br /> 
-              <span className="italic">Women's Healthcare</span>
+            Advance Gyanecological Care<br /> 
+              starts here
             </h2>
             <p className="text-base sm:text-lg text-[#2D2A26]/60 max-w-xl leading-[1.7] mt-4">
               Combining advanced medical expertise with compassionate, personalized care for every stage of life.
@@ -78,7 +75,7 @@ export default function WhyChooseSection() {
           <div className="relative max-w-md md:max-w-none mx-auto">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/70 bg-white">
               <Image
-                src="/images/homePageBg.png"
+                src="/gallery/DrSmit.jpeg"
                 alt="Dr. Smit Bharat Solanki"
                 width={520}
                 height={620}
@@ -101,9 +98,9 @@ export default function WhyChooseSection() {
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ delay: idx * 0.1, duration: 0.8 }}
-              className="bg-white p-6 sm:p-8 group hover:bg-[#F9F9F9] transition-colors duration-500 flex flex-col"
+              className="bg-white px-6 py-3 sm:px-8 sm:py-4 group hover:bg-[#F9F9F9] transition-colors duration-500 flex flex-col"
             >
-              <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full ${feature.bgColor} flex items-center justify-center mb-6 sm:mb-8 group-hover:scale-110 transition-transform duration-500 flex-shrink-0`}>
+              <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full ${feature.bgColor} flex items-center justify-center mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-500 flex-shrink-0`}>
                 <feature.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${feature.iconColor}`} />
               </div>
               

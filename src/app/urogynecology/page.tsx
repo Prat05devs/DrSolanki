@@ -144,7 +144,7 @@ export default function UrogynecologyPage() {
                 Early evaluation allows effective treatment often without major surgery. 
                 Schedule a consultation to discuss your options.
               </p>
-              <Link href="/contact" className="flex min-w-[220px] cursor-pointer items-center justify-center rounded-xl h-14 px-8 bg-white text-[#C07766] text-lg font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+              <Link href="/appointment" className="flex min-w-[220px] cursor-pointer items-center justify-center rounded-xl h-14 px-8 bg-white text-[#C07766] text-lg font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
                 <span className="material-symbols-outlined mr-2 text-2xl">calendar_month</span>
                 Book Consultation
               </Link>

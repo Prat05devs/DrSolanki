@@ -16,7 +16,7 @@ export default function CTASection() {
               consultation to discuss your concerns and explore treatment options tailored to your needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-5">
-              <Link href="/contact" className="flex min-w-[220px] cursor-pointer items-center justify-center rounded-xl h-14 px-8 bg-white text-[#8FA392] text-lg font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+              <Link href="/appointment" className="flex min-w-[220px] cursor-pointer items-center justify-center rounded-xl h-14 px-8 bg-white text-[#8FA392] text-lg font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
                 <span className="material-symbols-outlined mr-2 text-2xl">calendar_month</span>
                 Schedule Consultation
               </Link>

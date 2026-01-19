@@ -307,7 +307,7 @@ export default function ResearchInsightsPage() {
               </p>
               <div className="flex flex-wrap gap-3 mb-4">
                 <Link
-                  href="/contact"
+                  href="/appointment"
                   className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#2F4A45] text-white dark:bg-white dark:text-[#181611] text-sm font-semibold"
                 >
                   Book a Consultation

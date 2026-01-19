@@ -432,7 +432,7 @@ export default function FAQPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-2">
                 <a
-                  href="/contact"
+                  href="/appointment"
                   className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white text-[#C07766] font-semibold rounded-lg sm:rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 text-sm sm:text-base touch-manipulation"
                 >
                   <span className="material-symbols-outlined text-lg sm:text-xl">calendar_month</span>

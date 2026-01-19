@@ -352,7 +352,6 @@ export default function Footer() {
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all group-hover:w-full"></span>
             </Link>
           </div>
-          <p className="opacity-60 text-[10px] sm:text-xs text-center md:text-right">Website Designed &amp; Developed by Prateek @BasicTech</p>
         </div>
       </div>
     </footer>

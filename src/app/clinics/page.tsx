@@ -27,7 +27,7 @@ export default function ClinicsPage() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1567745566980-4378a3db17fc?q=80&w=3174&auto=format&fit=crop")',
+            backgroundImage: 'url("/gallery/clinic.png")',
           }}
         ></div>
         <div className="absolute inset-0 bg-black/30"></div>
