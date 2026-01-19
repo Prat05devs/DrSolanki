@@ -16,7 +16,7 @@ export default function HeroSection() {
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-right sm:bg-[70%_20%] lg:bg-[50%_20%]"
-        style={{ backgroundImage: 'url("/heroBG.webp")' }}
+        style={{ backgroundImage: 'url("/heroBG.png")' }}
       />
 
       {/* Soft overlay to preserve faces */}
