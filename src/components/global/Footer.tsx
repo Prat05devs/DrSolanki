@@ -7,65 +7,65 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#006D77] text-white border-t border-white/10 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] sm:w-[600px] sm:h-[600px] md:w-[800px] md:h-[800px] bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none opacity-30"></div>
+      <div className="absolute top-0 right-0 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[600px] md:h-[600px] lg:w-[800px] lg:h-[800px] bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none opacity-30"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4 sm:gap-6 lg:gap-6 py-8 sm:py-10 md:py-12">
-          <div className="lg:col-span-4 flex flex-col gap-3 sm:gap-4 pr-0 sm:pr-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-8 md:gap-10 lg:gap-6 py-8 sm:py-10 md:py-12 lg:py-14">
+          <div className="lg:col-span-4 flex flex-col gap-3 sm:gap-3.5 md:gap-4 pr-0 sm:pr-4">
             <div className="flex flex-col gap-1">
-              <h2 className="text-white text-2xl sm:text-3xl font-bold tracking-tight font-[var(--font-playfair)] leading-[1.15] tracking-[-0.01em]">
+              <h2 className="text-white text-xl sm:text-2xl md:text-2xl lg:text-3xl font-bold tracking-tight font-[var(--font-playfair)] leading-[1.15] tracking-[-0.01em]">
                 Dr. Smit Bharat Solanki
               </h2>
-              <p className="text-xs sm:text-sm font-medium text-[#f4c025] uppercase tracking-wider leading-[1.7]">
+              <p className="text-[10px] sm:text-xs md:text-sm font-medium text-[#f4c025] uppercase tracking-wider leading-[1.7]">
                 Compassion. Precision. Results.
               </p>
             </div>
-            <p className="text-sm sm:text-base leading-[1.7] text-[#edfcf9]/90 font-light">
+            <p className="text-xs sm:text-sm md:text-base leading-[1.7] text-[#edfcf9]/90 font-light">
               Restoring hope, redefining women's health with advanced robotics and heartfelt care. A sanctuary for
               your healing journey.
             </p>
-            <div className="flex gap-3 sm:gap-4 mt-2">
+            <div className="flex gap-2.5 sm:gap-3 md:gap-3.5 lg:gap-4 mt-1 sm:mt-1.5 md:mt-2">
               <a
                 aria-label="Call"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-[#faeec8] hover:bg-[#f4c025] hover:text-[#006D77] transition-all duration-300 transform hover:-translate-y-1 backdrop-blur-sm"
+                className="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 flex items-center justify-center rounded-full bg-white/10 text-[#faeec8] hover:bg-[#f4c025] hover:text-[#006D77] transition-all duration-300 transform hover:-translate-y-1 backdrop-blur-sm"
                 href={`tel:${contactInfo.phone}`}
               >
-                <span className="material-symbols-outlined text-[20px]">call</span>
+                <span className="material-symbols-outlined text-lg sm:text-[20px] md:text-[22px]">call</span>
               </a>
               <a
                 aria-label="Email"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-[#faeec8] hover:bg-[#f4c025] hover:text-[#006D77] transition-all duration-300 transform hover:-translate-y-1 backdrop-blur-sm"
+                className="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 flex items-center justify-center rounded-full bg-white/10 text-[#faeec8] hover:bg-[#f4c025] hover:text-[#006D77] transition-all duration-300 transform hover:-translate-y-1 backdrop-blur-sm"
                 href={`mailto:${contactInfo.email}`}
               >
-                <span className="material-symbols-outlined text-[20px]">mail</span>
+                <span className="material-symbols-outlined text-lg sm:text-[20px] md:text-[22px]">mail</span>
               </a>
               <a
                 aria-label="WhatsApp"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-[#faeec8] hover:bg-[#f4c025] hover:text-[#006D77] transition-all duration-300 transform hover:-translate-y-1 backdrop-blur-sm"
+                className="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 flex items-center justify-center rounded-full bg-white/10 text-[#faeec8] hover:bg-[#f4c025] hover:text-[#006D77] transition-all duration-300 transform hover:-translate-y-1 backdrop-blur-sm"
                 href={getWhatsAppUrl("generalContact")}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="material-symbols-outlined text-[20px]">chat</span>
+                <span className="material-symbols-outlined text-lg sm:text-[20px] md:text-[22px]">chat</span>
               </a>
               <a
                 aria-label="Directions"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-[#faeec8] hover:bg-[#f4c025] hover:text-[#006D77] transition-all duration-300 transform hover:-translate-y-1 backdrop-blur-sm"
+                className="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 flex items-center justify-center rounded-full bg-white/10 text-[#faeec8] hover:bg-[#f4c025] hover:text-[#006D77] transition-all duration-300 transform hover:-translate-y-1 backdrop-blur-sm"
                 href={primaryMapLink}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="material-symbols-outlined text-[20px]">location_on</span>
+                <span className="material-symbols-outlined text-lg sm:text-[20px] md:text-[22px]">location_on</span>
               </a>
             </div>
           </div>
           <div className="lg:col-span-2">
-            <h3 className="text-white font-bold text-base sm:text-lg mb-4 sm:mb-5 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-0.5 after:bg-[#f4c025]">
+            <h3 className="text-white font-bold text-sm sm:text-base md:text-lg mb-3 sm:mb-4 md:mb-5 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-0.5 after:bg-[#f4c025]">
               Quick Links
             </h3>
-            <ul className="flex flex-col gap-2 sm:gap-2.5">
+            <ul className="flex flex-col gap-1.5 sm:gap-2 md:gap-2.5">
               <li>
                 <Link
-                  className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
+                  className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group text-xs sm:text-sm md:text-base"
                   href="/"
                 >
                   <span className="w-0 overflow-hidden group-hover:w-2 group-hover:mr-1 transition-all duration-300 text-[#f4c025]">
@@ -76,7 +76,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
+                  className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group text-xs sm:text-sm md:text-base"
                   href="/expertise/dr-smit"
                 >
                   <span className="w-0 overflow-hidden group-hover:w-2 group-hover:mr-1 transition-all duration-300 text-[#f4c025]">
@@ -87,7 +87,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
+                  className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group text-xs sm:text-sm md:text-base"
                   href="/laparoscopy-robotic-surgery"
                 >
                   <span className="w-0 overflow-hidden group-hover:w-2 group-hover:mr-1 transition-all duration-300 text-[#f4c025]">
@@ -98,7 +98,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
+                  className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group text-xs sm:text-sm md:text-base"
                   href="/fertility"
                 >
                   <span className="w-0 overflow-hidden group-hover:w-2 group-hover:mr-1 transition-all duration-300 text-[#f4c025]">
@@ -109,7 +109,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
+                  className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group text-xs sm:text-sm md:text-base"
                   href="/expertise/aesthetic-gynecology"
                 >
                   <span className="w-0 overflow-hidden group-hover:w-2 group-hover:mr-1 transition-all duration-300 text-[#f4c025]">
@@ -120,7 +120,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
+                  className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group text-xs sm:text-sm md:text-base"
                   href="/urogynecology"
                 >
                   <span className="w-0 overflow-hidden group-hover:w-2 group-hover:mr-1 transition-all duration-300 text-[#f4c025]">
@@ -131,7 +131,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
+                  className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group text-xs sm:text-sm md:text-base"
                   href="/clinics"
                 >
                   <span className="w-0 overflow-hidden group-hover:w-2 group-hover:mr-1 transition-all duration-300 text-[#f4c025]">
@@ -143,13 +143,13 @@ export default function Footer() {
             </ul>
           </div>
           <div className="lg:col-span-3">
-            <h3 className="text-white font-bold text-base sm:text-lg mb-4 sm:mb-5 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-0.5 after:bg-[#f4c025]">
+            <h3 className="text-white font-bold text-sm sm:text-base md:text-lg mb-3 sm:mb-4 md:mb-5 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-0.5 after:bg-[#f4c025]">
               Patient Hub
             </h3>
-            <ul className="flex flex-col gap-2 sm:gap-2.5">
+            <ul className="flex flex-col gap-1.5 sm:gap-2 md:gap-2.5">
               <li>
                 <Link
-                  className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
+                  className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group text-xs sm:text-sm md:text-base"
                   href="/patient-support/support-circle#ask-your-questions"
                   scroll={true}
                 >
@@ -165,7 +165,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
+                  className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group text-xs sm:text-sm md:text-base"
                   href="/patient-support/stories"
                 >
                   <span className="w-0 overflow-hidden group-hover:w-2 group-hover:mr-1 transition-all duration-300 text-[#f4c025]">
@@ -176,7 +176,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
+                  className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group text-xs sm:text-sm md:text-base"
                   href="/patient-support/faqs"
                 >
                   <span className="w-0 overflow-hidden group-hover:w-2 group-hover:mr-1 transition-all duration-300 text-[#f4c025]">
@@ -187,7 +187,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
+                  className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group text-xs sm:text-sm md:text-base"
                   href="/research-insights"
                 >
                   <span className="w-0 overflow-hidden group-hover:w-2 group-hover:mr-1 transition-all duration-300 text-[#f4c025]">
@@ -198,7 +198,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
+                  className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group text-xs sm:text-sm md:text-base"
                   href="/research-insights"
                 >
                   <span className="w-0 overflow-hidden group-hover:w-2 group-hover:mr-1 transition-all duration-300 text-[#f4c025]">
@@ -209,7 +209,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group"
+                  className="text-[#edfcf9] hover:text-[#f4c025] hover:pl-2 transition-all duration-300 flex items-center group text-xs sm:text-sm md:text-base"
                   href="/patient-support/stories"
                 >
                   <span className="w-0 overflow-hidden group-hover:w-2 group-hover:mr-1 transition-all duration-300 text-[#f4c025]">
@@ -220,68 +220,68 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="lg:col-span-3 flex flex-col gap-4 sm:gap-5">
-            <h3 className="text-white font-bold text-base sm:text-lg mb-2 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-0.5 after:bg-[#f4c025]">
+          <div className="lg:col-span-3 flex flex-col gap-3 sm:gap-4 md:gap-5">
+            <h3 className="text-white font-bold text-sm sm:text-base md:text-lg mb-1 sm:mb-2 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-0.5 after:bg-[#f4c025]">
               Connect With Us
             </h3>
             <div className="flex flex-col gap-2 sm:gap-2.5">
               <a
-                className="flex items-center gap-3 text-[#edfcf9] hover:text-[#f4c025] transition-colors group"
+                className="flex items-center gap-2 sm:gap-3 text-[#edfcf9] hover:text-[#f4c025] transition-colors group"
                 href={`tel:${contactInfo.phone}`}
               >
-                <span className="material-symbols-outlined text-[#f4c025] group-hover:text-white transition-colors">
+                <span className="material-symbols-outlined text-base sm:text-lg text-[#f4c025] group-hover:text-white transition-colors">
                   call
                 </span>
-                <span className="font-medium tracking-wide">{contactInfo.phone}</span>
+                <span className="font-medium tracking-wide text-xs sm:text-sm md:text-base">{contactInfo.phone}</span>
               </a>
               <a
-                className="flex items-center gap-3 text-[#edfcf9] hover:text-[#f4c025] transition-colors group"
+                className="flex items-center gap-2 sm:gap-3 text-[#edfcf9] hover:text-[#f4c025] transition-colors group"
                 href={`mailto:${contactInfo.email}`}
               >
-                <span className="material-symbols-outlined text-[#f4c025] group-hover:text-white transition-colors">
+                <span className="material-symbols-outlined text-base sm:text-lg text-[#f4c025] group-hover:text-white transition-colors">
                   mail
                 </span>
-                <span className="font-medium tracking-wide">{contactInfo.email}</span>
+                <span className="font-medium tracking-wide text-xs sm:text-sm md:text-base">{contactInfo.email}</span>
               </a>
             </div>
-            <a
-              href={getWhatsAppUrl("generalContact")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-[#dcfce7] hover:bg-white text-[#166534] py-3 px-4 rounded-xl transition-all duration-300 w-full md:w-auto font-bold shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
-            >
-              <span className="material-symbols-outlined text-xl">chat</span>
-              <span>Chat Now on WhatsApp</span>
-            </a>
-            <div className="flex flex-col gap-4 mt-2 border-l-2 border-white/20 pl-4">
+            <div className="flex flex-col gap-3 sm:gap-4 mt-1 sm:mt-2 border-l-2 border-white/20 pl-3 sm:pl-4 order-1">
               {hospitals.map((hospital, idx) => (
                 <div key={idx} className="flex gap-2 items-start">
                 <div>
                     <Link
                       href={`/clinics/${hospital.slug}`}
-                      className="font-bold text-white text-sm hover:text-[#f4c025] transition-colors"
+                      className="font-bold text-white text-xs sm:text-sm md:text-base hover:text-[#f4c025] transition-colors"
                     >
                       {hospital.name}
                     </Link>
-                    <p className="text-xs text-[#edfcf9]/70 mt-0.5">{hospital.timing}</p>
+                    <p className="text-[10px] sm:text-xs text-[#edfcf9]/70 mt-0.5">{hospital.timing}</p>
               </div>
                 </div>
               ))}
               <Link
-                className="text-xs font-bold text-[#f4c025] hover:text-white transition-colors uppercase tracking-wide"
+                className="text-[10px] sm:text-xs font-bold text-[#f4c025] hover:text-white transition-colors uppercase tracking-wide"
                 href="/contact"
               >
                 View Full Contact Page →
               </Link>
             </div>
+            <a
+              href={getWhatsAppUrl("generalContact")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-1.5 sm:gap-2 bg-[#dcfce7] hover:bg-white text-[#166534] py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg sm:rounded-xl transition-all duration-300 w-full md:w-auto font-bold shadow-sm hover:shadow-md transform hover:-translate-y-0.5 order-2 text-xs sm:text-sm md:text-base"
+            >
+              <span className="material-symbols-outlined text-lg sm:text-xl">chat</span>
+              <span>Chat Now on WhatsApp</span>
+            </a>
           </div>
         </div>
         
         {/* Interactive Chatbot Feature - Prominently Displayed */}
-        <div className="border-t border-white/10 py-4 sm:py-6">
-          <div className="bg-gradient-to-br from-[#f4c025] via-[#e0b020] to-[#d9a010] rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 relative overflow-hidden shadow-[0_20px_60px_-10px_rgba(244,192,37,0.4)] border-2 border-white/20">
-            <div className="absolute top-0 right-0 w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 bg-white/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-            <div className="absolute bottom-0 left-0 w-36 h-36 sm:w-56 sm:h-56 md:w-72 md:h-72 bg-white/10 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+        <div className="border-t border-white/10 py-3 sm:py-4 md:py-5 lg:py-6">
+          <div className="bg-gradient-to-br from-[#f4c025] via-[#e0b020] to-[#d9a010] rounded-lg sm:rounded-xl md:rounded-2xl p-3 sm:p-4 md:p-5 lg:p-6 relative overflow-hidden shadow-[0_20px_60px_-10px_rgba(244,192,37,0.4)] border-2 border-white/20">
+            <div className="absolute top-0 right-0 w-32 h-32 sm:w-48 sm:h-48 md:w-72 md:h-72 lg:w-96 lg:h-96 bg-white/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 w-24 h-24 sm:w-36 sm:h-36 md:w-56 md:h-56 lg:w-72 lg:h-72 bg-white/10 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
             <div className="relative z-10">
               <div className="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
                 <div className="flex flex-col md:flex-row items-center gap-3 sm:gap-4 text-center md:text-left flex-1 w-full">

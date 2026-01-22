@@ -4,10 +4,8 @@ import {
   HeroSection,
   WhyChooseSection,
   SpecializationsSection,
-  TechnologySection,
   TestimonialsSection,
-  ConditionsSection,
-  AppointmentCTA
+  ConditionsSection
 } from "@/components/sections/home";
 
 export const metadata = buildMetadata({
@@ -33,10 +31,8 @@ export default function Home() {
       <HeroSection />
       <WhyChooseSection />
       <SpecializationsSection />
-      <TechnologySection />
       <TestimonialsSection />
       <ConditionsSection />
-      <AppointmentCTA />
       <Footer />
     </>
   );

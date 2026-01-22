@@ -28,25 +28,25 @@ export default function HeroSection() {
         <div className="hero-lines hero-lines-b" />
       </div>
 
-      <div className="relative z-10 container mx-auto px-6 w-full">
-        <div className="max-w-7xl mx-auto min-h-[100svh] pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-10 lg:pb-12 flex flex-col gap-6 sm:gap-8 justify-center">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-7xl mx-auto min-h-[100svh] pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-6 sm:pb-8 md:pb-10 lg:pb-12 flex flex-col gap-5 sm:gap-6 md:gap-7 lg:gap-8 justify-center">
           {/* Headline */}
           <div className="max-w-3xl">
-            <h1 className="font-[var(--font-playfair)] text-5xl sm:text-6xl md:text-[4rem] lg:text-[4.5rem] font-black text-[#E8B4C8] leading-[1.15] tracking-[-0.01em] mb-6 drop-shadow-lg">
+            <h1 className="font-[var(--font-playfair)] text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] xl:text-[4.5rem] font-black text-[#E8B4C8] leading-[1.15] tracking-[-0.01em] mb-4 sm:mb-5 md:mb-6 drop-shadow-lg">
               Where Compassion Shapes Women&apos;s Care.
             </h1>
-            <p className="text-xl sm:text-2xl md:text-3xl text-white/95 font-medium leading-[1.4] drop-shadow-md">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/95 font-medium leading-[1.4] drop-shadow-md">
               Precision gynaecology. Thoughtful care. Meaningful outcomes.
             </p>
           </div>
 
           {/* Content Grid */}
-          <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-8 sm:gap-10 items-end">
+          <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-6 sm:gap-8 md:gap-10 items-end">
             {/* Left Main Card */}
-            <div className="space-y-6 lg:translate-y-10 pb-6 sm:pb-8">
+            <div className="space-y-5 sm:space-y-6 lg:translate-y-10 pb-4 sm:pb-6 md:pb-8">
               
 
-              <p className="text-lg sm:text-xl text-white/95 leading-[1.7] mb-8 drop-shadow-[0_3px_10px_rgba(0,0,0,0.7)]">
+              <p className="text-base sm:text-lg md:text-xl text-white/95 leading-[1.7] mb-6 sm:mb-7 md:mb-8 drop-shadow-[0_3px_10px_rgba(0,0,0,0.7)]">
                 A trusted gynaecologist&apos;s clinic designed around women&apos;s
                 comfort, safety, and outcomes. From preventive care to advanced
                 surgery, we focus on restoring health, confidence, and quality of
@@ -54,82 +54,49 @@ export default function HeroSection() {
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link
                   href="/appointment"
-                  className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#C07766] hover:bg-[#C07766]/90 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all"
+                  className="group inline-flex items-center justify-center gap-2 px-6 sm:px-7 md:px-8 py-3 sm:py-3.5 md:py-4 bg-[#C07766] hover:bg-[#C07766]/90 text-white text-sm sm:text-base font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all"
                 >
-                  <Calendar className="w-5 h-5" />
-                  Schedule Appointment
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <Calendar className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <span className="whitespace-nowrap">Schedule Appointment</span>
+                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
 
                 <Link
                   href="/expertise/dr-smit"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl border border-white/30 transition-all backdrop-blur"
+                  className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 md:px-8 py-3 sm:py-3.5 md:py-4 bg-white/10 hover:bg-white/20 text-white text-sm sm:text-base font-semibold rounded-xl border border-white/30 transition-all backdrop-blur"
                 >
-                  <Stethoscope className="w-5 h-5" />
-                  Meet Dr. Smit Bharat Solanki
+                  <Stethoscope className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <span className="whitespace-nowrap">Meet Dr. Smit Bharat Solanki</span>
                 </Link>
               </div>
 
               {/* Contact Info */}
-              <div className="flex flex-wrap items-center gap-6 mt-8 pt-8 border-t border-white/25 drop-shadow-[0_3px_10px_rgba(0,0,0,0.7)]">
+              <div className="flex flex-wrap items-center gap-4 sm:gap-5 md:gap-6 mt-6 sm:mt-7 md:mt-8 pt-6 sm:pt-7 md:pt-8 border-t border-white/25 drop-shadow-[0_3px_10px_rgba(0,0,0,0.7)]">
                 <div className="flex items-center gap-2 text-white/90">
-                  <Phone className="w-4 h-4" />
-                  <span className="text-sm font-medium">
+                  <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  <span className="text-xs sm:text-sm font-medium">
                     +91 97129 82198
                   </span>
                 </div>
                 <div className="flex items-center gap-2 text-white/90">
-                  <MapPin className="w-4 h-4" />
-                  <span className="text-sm font-medium">
+                  <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  <span className="text-xs sm:text-sm font-medium">
                   Vadodara & Ahmedabad, Gujarat, India
                   </span>
                 </div>
                 <div className="flex items-center gap-2 text-white/90">
-                  <Clock className="w-4 h-4" />
-                  <span className="text-sm font-medium">
+                  <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  <span className="text-xs sm:text-sm font-medium">
                     Mon–Sat: 9AM–6PM
                   </span>
                 </div>
               </div>
             </div>
 
-            {/* Right Secondary Cards */}
-            <div className="space-y-6 lg:translate-y-10">
-              <div className="rounded-3xl border border-white/15 bg-white/8 backdrop-blur-lg p-6 sm:p-8 shadow-xl">
-                <p className="text-sm uppercase tracking-[0.25em] text-white/75 mb-3">
-                  Key Services
-                </p>
-                <div className="grid gap-2 text-white/95 text-sm sm:text-base">
-                  <div className="flex items-center justify-between">
-                    <span>Robotic & Laparoscopic Surgery</span>
-                    <span className="text-white/70">Precision care</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span>IVF & Fertility Treatments</span>
-                    <span className="text-white/70">Personalized plans</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span>Aesthetic & Urogynaecology</span>
-                    <span className="text-white/70">
-                      Comfort & confidence
-                    </span>
-                  </div>
-                </div>
-
-                <div className="mt-4">
-                  <Link
-                    href="/appointment"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-white/80 transition-colors drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]"
-                  >
-                    Start your consultation
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>
