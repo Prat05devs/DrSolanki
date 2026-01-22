@@ -11,7 +11,7 @@ export default function GallerySection() {
 
   const galleryImages = [
     {
-      src: "/dr3.jpeg",
+      src: "/dr33.webp",
       alt: "Dr. Smit Bharat Solanki - In Practice",
       title: "In Practice",
       description: "Dedicated to excellence in patient care"

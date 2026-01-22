@@ -32,7 +32,7 @@ export default function HeroSection() {
         <div className="max-w-7xl mx-auto min-h-[100svh] pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-6 sm:pb-8 md:pb-10 lg:pb-12 flex flex-col gap-5 sm:gap-6 md:gap-7 lg:gap-8 justify-center">
           {/* Headline */}
           <div className="max-w-3xl">
-            <h1 className="font-[var(--font-playfair)] text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] xl:text-[4.5rem] font-black text-[#CD2C58] leading-[1.15] tracking-[-0.01em] mb-4 sm:mb-5 md:mb-6 drop-shadow-lg">
+            <h1 className="font-[var(--font-playfair)] text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] xl:text-[4.5rem] font-black text-[#F075AE] leading-[1.15] tracking-[-0.01em] mb-4 sm:mb-5 md:mb-6 drop-shadow-lg">
               Where Compassion Shapes Women&apos;s Care.
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/95 font-medium leading-[1.4] drop-shadow-md">
