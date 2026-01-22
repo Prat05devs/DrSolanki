@@ -77,8 +77,8 @@ export default function WhyChooseSection() {
                 src="/gallery/DrSmit.jpeg"
                 alt="Dr. Smit Bharat Solanki"
                 width={520}
-                height={620}
-                className="w-full h-[240px] sm:h-[280px] md:h-[360px] lg:h-[420px] object-cover"
+                height={700}
+                className="w-full h-full object-cover"
                 priority={false}
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-black/10 via-transparent to-white/10" />

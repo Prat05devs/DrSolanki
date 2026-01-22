@@ -34,7 +34,7 @@ export default function AestheticGynecologyPage() {
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage:
-              'linear-gradient(to right, rgba(143, 158, 155, 0.95) 0%, rgba(143, 158, 155, 0.8) 50%, rgba(143, 158, 155, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAOMPk_Dd6bT5pLuAMKxbOOHCE8SjJmz-oshaqjHxL6yQZKGDQ4PMtCxZ4QLhPIUmULcMzxUiaPNnGNx7dU3zuaPiZ64-th7EBoPVunr9AHbeViSm_ZsYq8mOIAKWUA3La84LRqLwgi95M328YXXSHCOD5xjmB3bnjvfoRgeOPt2_ToX95joRuj4BPdIeeUGOEQCGvVw-zMRFR7f6gOXBxsRszEdlUCah3f8EjxhReUAdDYxsTIzE8FEqis9t3I2kwbUXfqEMfrYQ")',
+              'linear-gradient(to right, rgba(143, 158, 155, 0.95) 0%, rgba(143, 158, 155, 0.8) 50%, rgba(143, 158, 155, 0.6) 100%), url("/asthetic.jpeg")',
           }}
         ></div>
 
@@ -76,7 +76,7 @@ export default function AestheticGynecologyPage() {
               <Image
                 alt="Aesthetic gynecology and intimate wellness treatments"
                 className="w-full h-full object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOMPk_Dd6bT5pLuAMKxbOOHCE8SjJmz-oshaqjHxL6yQZKGDQ4PMtCxZ4QLhPIUmULcMzxUiaPNnGNx7dU3zuaPiZ64-th7EBoPVunr9AHbeViSm_ZsYq8mOIAKWUA3La84LRqLwgi95M328YXXSHCOD5xjmB3bnjvfoRgeOPt2_ToX95joRuj4BPdIeeUGOEQCGvVw-zMRFR7f6gOXBxsRszEdlUCah3f8EjxhReUAdDYxsTIzE8FEqis9t3I2kwbUXfqEMfrYQ"
+                src="/asthetic2.jpeg"
                 width={800}
                 height={600}
               />
