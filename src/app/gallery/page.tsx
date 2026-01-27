@@ -29,6 +29,12 @@ const galleryImages = [
     description: "With Prof Dr. Mats Branstrom and Prof Dr. Stefan Tullius at Turkiye"
   },
   {
+    src: "/gallery/collage.png",
+    alt: "Award",
+    title: "Leading robotic innovation in reproductive medicine with a commitment to safety, outcomes, and surgical excellence.",
+    description: "Recognized at Parth RoboCon 2026 for excellence in robotic gynecologic surgery."
+  },
+  {
     src: "/gallery/img2.jpeg",
     alt: "Robotic Surgery Care Team",
     title: "Robotic Surgery Care Team",

@@ -57,7 +57,7 @@ export default function WhyChooseSection() {
                 Dr Smit Bharat Solanki
               </p>
               <p className="text-sm sm:text-base md:text-lg font-semibold text-[#5B3A33] leading-snug">
-                Director and Clinical Lead, Reproductive Medicine and IVF services
+              Program Director and Clinical Lead, Reproductive Medicine and Surgery ( IVF services )
               </p>
               <p className="text-xs sm:text-sm md:text-base text-[#6b6358] leading-relaxed">
                 At Parul Sevashram Hospital affiliated with Parul Institute of Medical Sciences and Research, Parul University

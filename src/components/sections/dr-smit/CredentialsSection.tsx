@@ -8,12 +8,19 @@ import { clinicalExperience, education, certifications } from "@/data/siteData";
 export default function CredentialsSection() {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
-  const [activeCategory, setActiveCategory] = useState<"all" | "clinical" | "education" | "cert">("clinical");
+  const [activeCategory, setActiveCategory] =
+    useState<"all" | "clinical" | "education" | "cert">("clinical");
 
   const getIcon = (position: string) => {
     const pos = position.toLowerCase();
     if (pos.includes("director") || pos.includes("lead")) return Stethoscope;
-    if (pos.includes("professor") || pos.includes("resident") || pos.includes("fellow") || pos.includes("student")) return GraduationCap;
+    if (
+      pos.includes("professor") ||
+      pos.includes("resident") ||
+      pos.includes("fellow") ||
+      pos.includes("student")
+    )
+      return GraduationCap;
     return Activity;
   };
 
@@ -21,28 +28,54 @@ export default function CredentialsSection() {
     ...clinicalExperience.map((exp) => ({ ...exp, type: "clinical" })),
     ...education.map((edu) => ({ ...edu, type: "education" })),
     ...certifications.map((cert) => ({ ...cert, type: "cert" }))
-  ].map((item) => {
-    const year = (item as any).period 
-      ? ((item as any).period.split("–")[1] || (item as any).period.split("-")[1] || "Present")
-      : (item as any).year || "Present";
-    
-    return {
-      year,
-      title: (item as any).position || (item as any).degree || (item as any).title,
-      subtitle: item.institution,
-      location: item.location,
-      description: (item as any).focus?.join(", ") || (item as any).description || "",
-      icon: (item as any).type === 'education' ? GraduationCap : (item as any).type === 'cert' ? Award : getIcon((item as any).position),
-      type: (item as any).type,
-      isCurrent: year === "Present"
-    };
-  }).sort((a, b) => (a.year === "Present" ? -1 : b.year === "Present" ? 1 : parseInt(b.year) - parseInt(a.year)));
+  ]
+    .map((item) => {
+      const period =
+        (item as any).period ||
+        ((item as any).year ? String((item as any).year) : "Present");
 
-  const filteredCredentials = activeCategory === "all"
-    ? allCredentials
-    : allCredentials.filter((cred) => cred.type === activeCategory);
+      return {
+        period,
+        title:
+          (item as any).position ||
+          (item as any).degree ||
+          (item as any).title,
+        subtitle: item.institution,
+        location: item.location,
+        description:
+          (item as any).focus?.join(", ") ||
+          (item as any).description ||
+          "",
+        icon:
+          (item as any).type === "education"
+            ? GraduationCap
+            : (item as any).type === "cert"
+            ? Award
+            : getIcon((item as any).position),
+        type: (item as any).type,
+        isCurrent: period.toLowerCase().includes("present")
+      };
+    })
+    .sort((a, b) => {
+      if (a.isCurrent) return -1;
+      if (b.isCurrent) return 1;
 
-  const categories: { id: "all" | "clinical" | "education" | "cert"; label: string; icon: any }[] = [
+      const getEndYear = (p: string) =>
+        parseInt(p.split("–")[1] || p.split("-")[1] || p);
+
+      return getEndYear(b.period) - getEndYear(a.period);
+    });
+
+  const filteredCredentials =
+    activeCategory === "all"
+      ? allCredentials
+      : allCredentials.filter((cred) => cred.type === activeCategory);
+
+  const categories: {
+    id: "all" | "clinical" | "education" | "cert";
+    label: string;
+    icon: any;
+  }[] = [
     { id: "clinical", label: "Clinical", icon: Stethoscope },
     { id: "education", label: "Education", icon: GraduationCap },
     { id: "cert", label: "Certifications", icon: Award },
@@ -56,7 +89,10 @@ export default function CredentialsSection() {
   };
 
   return (
-    <section ref={containerRef} className="relative py-12 sm:py-16 md:py-20 overflow-hidden bg-[#fbfbf9] dark:bg-[#0f0e0a]">
+    <section
+      ref={containerRef}
+      className="relative py-12 sm:py-16 md:py-20 overflow-hidden bg-[#fbfbf9] dark:bg-[#0f0e0a]"
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -70,7 +106,8 @@ export default function CredentialsSection() {
             Professional <span className="text-[#5B3A33]">Milestones</span>
           </h2>
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-3xl leading-[1.7]">
-            A refined view of clinical leadership, specialized training, and certifications, presented as a continuous academic journey.
+            A refined view of clinical leadership, specialized training, and
+            certifications, presented as a continuous academic journey.
           </p>
         </motion.div>
 
@@ -102,7 +139,10 @@ export default function CredentialsSection() {
             <div className="absolute left-3 sm:left-4 top-2 bottom-2 w-px bg-slate-200 dark:bg-white/10" />
             <ol className="space-y-6 sm:space-y-8">
               {filteredCredentials.map((cred, idx) => (
-                <li key={`${cred.title}-${idx}`} className="relative pl-10 sm:pl-12 lg:pl-16">
+                <li
+                  key={`${cred.title}-${idx}`}
+                  className="relative pl-10 sm:pl-12 lg:pl-16"
+                >
                   <span className="absolute left-2.5 sm:left-3.5 top-4 size-3 rounded-full bg-[#5B3A33] shadow-[0_0_0_6px_rgba(91,58,51,0.15)]" />
                   <motion.article
                     initial={{ opacity: 0, y: 12 }}
@@ -114,7 +154,7 @@ export default function CredentialsSection() {
                     <div className="flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm">
                       <span className="inline-flex items-center gap-2 text-[#5B3A33] font-semibold">
                         <span className="size-2 rounded-full bg-[#5B3A33]" />
-                        {cred.year}
+                        {cred.period}
                       </span>
                       <span className="uppercase tracking-[0.25em] text-slate-400">
                         {getCategoryLabel(cred.type)}
